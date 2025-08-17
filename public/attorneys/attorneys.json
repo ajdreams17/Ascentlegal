@@ -44,9 +44,11 @@ export default function JaneSmithPage() {
       {/* Bio */}
       <section className="mt-10 space-y-4 text-gray-700 leading-relaxed">
         <p>
-          Jane helps founders and growing teams put clear, fair agreements in place—
-          from MSAs and vendor contracts to employment policies and handbooks.
-          Her guidance is practical and business-first, balancing risk with speed.
+     As a business and entertainment attorney, April gained valuable experience at Sheppard Mullin Richter & Hampton LLP, where she focused on providing legal counsel in the entertainment, media, and technology sectors. In her role, she handled transactional matters related to the creation, production, and distribution of audiovisual content, including television, feature films, and podcasts. April advised clients on rights acquisition, licensing, and brand collaborations, working with producers, studios, media companies, and major brands entering the content creation space.
+
+In addition to her entertainment law experience, April has worked closely with startups, providing high-touch legal services throughout their lifecycle—from formation to exit—helping them navigate the legal complexities of growing and scaling their businesses.
+
+With a JD from Georgetown Law and a Master’s in Communication Management from USC, April blends legal acumen with an understanding of the media landscape. April’s competencies span development, production, and distribution matters, and takes pride in offering bespoke solutions that cater to the unique challenges faced by Latin American entities in the entertainment sector.
         </p>
         <p>
           She’s known for straightforward communication, predictable fees, and

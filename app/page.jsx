@@ -132,9 +132,12 @@ function Home() {
               polish you expect and the speed you need.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <button className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90">
-                Schedule a Call
-              </button>
+              <Link
+  href="/contact"
+  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
+>
+  Schedule a Call
+</Link>
               <a href="#practice" className="group inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-indigo-600">
                 Explore practice areas
                 <span className="h-[2px] w-8 bg-gradient-to-r from-indigo-500 to-teal-400 transition-all group-hover:w-14" />

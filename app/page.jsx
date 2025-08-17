@@ -1,4 +1,4 @@
-// app/page.jsx
+import Link from "next/link";
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -30,15 +30,18 @@ function Shell({ children, onNavigate, current }) {
             <span className="font-semibold tracking-tight">Ascent Legal</span>
           </button>
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            {nav.map((n) => (
-              <button
-                key={n.k}
-                onClick={() => onNavigate(n.k)}
-                className={`transition-colors ${current === n.k ? "text-indigo-600" : "text-gray-700 hover:text-indigo-600"}`}
-              >
-                {n.label}
-              </button>
-            ))}
+        {nav.map((n) => (
+  <Link
+    key={n.k}
+    href={`/${n.k === "home" ? "" : n.k}`} 
+    className={`transition-colors ${
+      current === n.k ? "text-indigo-600" : "text-gray-700 hover:text-indigo-600"
+    }`}
+  >
+    {n.label}
+  </Link>
+))}
+
             <button
               onClick={() => onNavigate("contact")}
               className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow"

@@ -18,7 +18,7 @@ const attorneys = [
     name: "Jane Smith", 
     role: "Attorney – Contracts & Employment Law", 
     slug: "jane-smith",
-    image: "/attorneys/jane-smith.jpg" // headshot for Jane
+    image: "/attorneys/april_paredes.jpg" // headshot for April
   },
 ];
 

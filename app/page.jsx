@@ -242,9 +242,12 @@ function Home() {
     </div>
 
     <div className="text-center mt-12">
-      <button className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow hover:bg-gray-100 transition">
-        Protect Your Brand
-      </button>
+     <Link
+  href="/contact"
+  className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow hover:bg-gray-100 transition inline-block"
+>
+  Protect Your Brand
+</Link>
     </div>
   </div>
 </section>

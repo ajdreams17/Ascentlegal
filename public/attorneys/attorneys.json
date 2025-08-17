@@ -7,7 +7,7 @@ export const metadata = {
     "Legal Counsel in Corporate & Entertainment Law for Small Business Owners and Creative Professionals. Practical, business-first agreements and policies.",
 };
 
-export default function JaneSmithPage() {
+export default function AprilParedesPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-16">
       <div className="flex flex-col items-center text-center">

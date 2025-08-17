@@ -22,13 +22,11 @@ function Shell({ children, onNavigate, current }) {
       {/* top nav */}
       <header className="sticky top-0 z-40 border-b border-gray-100 bg-white/80 backdrop-blur">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          <button
-            onClick={() => onNavigate("home")}
-            className="flex items-center gap-3"
-          >
-            <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400" />
-            <span className="font-semibold tracking-tight">Ascent Legal</span>
-          </button>
+         <Link href="/" className="flex items-center gap-3">
+  <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400" />
+  <span className="font-semibold tracking-tight">Ascent Legal</span>
+</Link>
+
           <nav className="hidden md:flex items-center gap-6 text-sm">
         {nav.map((n) => (
   <Link

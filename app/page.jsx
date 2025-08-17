@@ -40,12 +40,12 @@ function Shell({ children, onNavigate, current }) {
   </Link>
 ))}
 
-            <button
-              onClick={() => onNavigate("contact")}
-              className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow"
-            >
-              Book Consultation
-            </button>
+           <Link
+  href="/contact"
+  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow inline-block"
+>
+  Book Consultation
+</Link>
           </nav>
         </div>
       </header>

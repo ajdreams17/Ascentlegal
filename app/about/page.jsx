@@ -13,12 +13,7 @@ const attorneys = [
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
-      {/* DEBUG BAR */}
-      <div className="mb-6 rounded-lg bg-violet-100 px-4 py-2 text-sm text-violet-800">
-        DEBUG: You are seeing the latest /about page.
-      </div>
-
+    
       {/* ===== Hero / About Ascent Legal ===== */}
       <h1 className="text-4xl md:text-5xl font-bold">
         About <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">Ascent Legal</span>

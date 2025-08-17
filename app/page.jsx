@@ -112,10 +112,6 @@ function Shell({ children, onNavigate, current }) {
 
 /* ---------- PAGES ---------- */
 function Home() {
-
-
-/* ---------- PAGES ---------- */
-function Home() {
   return (
     <>
       {/* hero */}

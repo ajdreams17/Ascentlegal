@@ -52,7 +52,6 @@ function Shell({ children, onNavigate, current }) {
 
       {children}
 
-     import Link from "next/link";
 
 {/* footer */}
 <footer className="border-t border-gray-100 mt-20">

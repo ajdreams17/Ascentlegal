@@ -14,6 +14,11 @@ const attorneys = [
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
+      {/* DEBUG BAR */}
+      <div className="mb-6 rounded-lg bg-violet-100 px-4 py-2 text-sm text-violet-800">
+        DEBUG: You are seeing the latest /about page.
+      </div>
+
       {/* ===== Hero / About Ascent Legal ===== */}
       <h1 className="text-4xl md:text-5xl font-bold">
         About <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">Ascent Legal</span>
@@ -22,7 +27,7 @@ export default function AboutPage() {
         Use this section to introduce the firm—mission, values, and what makes your counsel practical and business-first.
       </p>
 
-      {/* ===== Stats Section ===== */}
+      {/* ===== Stats ===== */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
           <h2 className="text-2xl font-bold text-indigo-600">15+</h2>
@@ -42,9 +47,7 @@ export default function AboutPage() {
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Our approach</h3>
-          <p className="text-gray-600 mt-2">
-            Clear communication, predictable fees, pragmatic advice.
-          </p>
+          <p className="text-gray-600 mt-2">Clear communication, predictable fees, pragmatic advice.</p>
         </div>
         <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Who we serve</h3>
@@ -66,7 +69,7 @@ export default function AboutPage() {
             <Link
               key={a.slug}
               href={`/attorneys/${a.slug}`}
-              className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow transition"
+              className="group rounded-2xl border-2 border-dashed border-indigo-200 bg-white p-6 shadow-sm hover:shadow transition"
             >
               <h3 className="text-lg font-semibold">{a.name}</h3>
               <p className="text-sm text-gray-600">{a.role}</p>

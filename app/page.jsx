@@ -200,6 +200,7 @@ function Home() {
     title: "Contracts Drafting",
     icon: FileText,
     desc: "Drafting and reviewing contracts that protect your interests.",
+    href: "/services/contracts-drafting"
   },
   {
     title: "Employment",

@@ -1,6 +1,4 @@
-"use client";
-import { motion } from "framer-motion";
-
+// app/contact/page.jsx  (Server Component)
 export const metadata = {
   title: "Contact | Ascent Legal",
   description: "Tell us about your matter and we'll get back within one business day.",
@@ -33,11 +31,12 @@ export default function ContactPage() {
           <input type="email" className="h-11 rounded-md border border-gray-300 px-3" placeholder="Email" />
           <input className="h-11 rounded-md border border-gray-300 px-3" placeholder="Company" />
           <textarea rows={5} className="rounded-md border border-gray-300 px-3 py-2" placeholder="How can we help?" />
-          <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.99 }}>
+          {/* was motion.div; simple div keeps it server-safe */}
+          <div>
             <button className="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-3 text-white">
               Send message
             </button>
-          </motion.div>
+          </div>
         </div>
         <p className="mt-3 text-xs text-gray-500">By submitting, you agree to our privacy policy.</p>
       </form>

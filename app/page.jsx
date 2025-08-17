@@ -170,11 +170,11 @@ function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "Corporate & Formation", icon: Building2, desc: "Entity setup, founder agreements, and governance." },
-              { title: "Commercial Contracts", icon: FileText, desc: "MSAs, SaaS, vendor, and partnership agreements." },
+              { title: "Contracts Drafting", icon: FileText, desc: "Drafting and reviewing contracts that protect your interests." },
               { title: "Employment", icon: Users, desc: "Offers, handbooks, compliance, and disputes." },
-              { title: "Regulatory & Compliance", icon: ShieldCheck, desc: "Privacy, data, and industry-specific guidance." },
-              { title: "Dispute Strategy", icon: Scale, desc: "Risk assessment and efficient resolution." },
-              { title: "General Counsel Services", icon: Briefcase, desc: "Flexible support for scaling companies." },
+              { title: "Trademark Protection", icon: ShieldCheck, desc: "Registration, search, and industry-specific guidance." },
+              { title: "Entertainment Law", icon: Film, desc: "Entertainment contracts, licensing, and royalties for artists & creators." },
+              { title: "Tailed Legal Services", icon: Briefcase, desc: "Customized solutions for startups, media, and more." },
             ].map(({ title, icon: Icon, desc }) => (
               <div key={title} className="group rounded-2xl border border-gray-100 p-6 hover:shadow-sm transition-shadow">
                 <div className="flex items-center gap-3">

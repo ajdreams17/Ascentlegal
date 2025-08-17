@@ -78,9 +78,11 @@ function Shell({ children, onNavigate, current }) {
           <div>
             <h4 className="font-medium">Contact</h4>
             <ul className="mt-3 space-y-2 text-gray-600">
+              <li>3780 Kilroy Airport Way</li>
+              <li>Suite 200</li>
+              <li>Long Beach, CA 90806</li>
               <li>info@ascentlegal.io</li>
-              <li>+1 (555) 555-1234</li>
-              <li>San Francisco, CA</li>
+              <li>(714)203-3535y</li>
             </ul>
           </div>
         </div>

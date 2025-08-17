@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Jane Smith – Attorney | Ascent Legal",
+  title: "April Paredes – Attorney | Ascent Legal",
   description:
-    "Contracts & Employment Law counsel for founders and growing teams. Practical, business-first agreements and policies.",
+    "Legal Counsel in Corporate & Entertainment Law for Small Business Owners and Creative Professionals. Practical, business-first agreements and policies.",
 };
 
 export default function JaneSmithPage() {

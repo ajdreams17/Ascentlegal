@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Jane Smith",
+    "title": "Partner, Employment Litigation",
+    "email": "jane.smith@ascentlegal.io",
+    "location": "Los Angeles, CA",
+    "practice_areas": ["Employment", "Wage & Hour", "Class Actions"],
+    "keywords": ["Spanish", "trial", "wage", "PAGA"],
+    "photo": "/attorneys/headshots/smith-jane.jpg",
+    "photoAlt": "Jane Smith, Partner",
+    "profile_url": "/attorneys/jane-smith"
+  },
+  {
+    "name": "Michael Chen",
+    "title": "Senior Associate, Complex Litigation",
+    "email": "michael.chen@ascentlegal.io",
+    "location": "San Diego, CA",
+    "practice_areas": ["Discrimination", "Retaliation", "Harassment"],
+    "keywords": ["mediation", "FEHA"],
+    "photo": "/attorneys/headshots/chen-michael.jpg",
+    "photoAlt": "Michael Chen, Senior Associate",
+    "profile_url": "/attorneys/michael-chen"
+  },
+  {
+    "name": "Sophia Martinez",
+    "title": "Associate, Workers’ Compensation",
+    "email": "sophia.martinez@ascentlegal.io",
+    "location": "Sacramento, CA",
+    "practice_areas": ["Workers’ Compensation", "OSHA Compliance"],
+    "keywords": ["Spanish", "injury claims"],
+    "photo": "/attorneys/headshots/martinez-sophia.jpg",
+    "photoAlt": "Sophia Martinez, Associate",
+    "profile_url": "/attorneys/sophia-martinez"
+  }
+]

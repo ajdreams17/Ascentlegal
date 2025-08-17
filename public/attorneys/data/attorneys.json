@@ -6,7 +6,7 @@
     "location": "Los Angeles, CA",
     "practice_areas": ["Employment", "Wage & Hour", "Class Actions"],
     "keywords": ["Spanish", "trial", "wage", "PAGA"],
-    "photo": "/attorneys/headshots/smith-jane.jpg",
+    "photo": "/attorneys/headshots/april_paredes.jpg",
     "photoAlt": "Jane Smith, Partner",
     "profile_url": "/attorneys/jane-smith"
   },
@@ -21,15 +21,4 @@
     "photoAlt": "Michael Chen, Senior Associate",
     "profile_url": "/attorneys/michael-chen"
   },
-  {
-    "name": "Sophia Martinez",
-    "title": "Associate, Workers’ Compensation",
-    "email": "sophia.martinez@ascentlegal.io",
-    "location": "Sacramento, CA",
-    "practice_areas": ["Workers’ Compensation", "OSHA Compliance"],
-    "keywords": ["Spanish", "injury claims"],
-    "photo": "/attorneys/headshots/martinez-sophia.jpg",
-    "photoAlt": "Sophia Martinez, Associate",
-    "profile_url": "/attorneys/sophia-martinez"
-  }
 ]

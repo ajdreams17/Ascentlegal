@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Check, Scale, ShieldCheck, Briefcase, Building2, FileText,
+  Check, Film, ShieldCheck, Briefcase, Building2, FileText,
   Users, MessageSquare, Stamp
 } from "lucide-react";
 

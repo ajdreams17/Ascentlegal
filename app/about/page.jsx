@@ -15,22 +15,24 @@ export default function AboutPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16">
       {/* ===== Hero / About Ascent Legal ===== */}
-      <h1 className="text-4xl md:text-5xl font-bold">About Ascent Legal</h1>
+      <h1 className="text-4xl md:text-5xl font-bold">
+        About <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">Ascent Legal</span>
+      </h1>
       <p className="mt-6 text-lg text-gray-600">
         Use this section to introduce the firm—mission, values, and what makes your counsel practical and business-first.
       </p>
 
       {/* ===== Stats Section ===== */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="rounded-2xl bg-white shadow p-6 text-center">
+        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
           <h2 className="text-2xl font-bold text-indigo-600">15+</h2>
           <p className="text-gray-600">Years experience</p>
         </div>
-        <div className="rounded-2xl bg-white shadow p-6 text-center">
+        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
           <h2 className="text-2xl font-bold text-indigo-600">300+</h2>
           <p className="text-gray-600">Clients served</p>
         </div>
-        <div className="rounded-2xl bg-white shadow p-6 text-center">
+        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
           <h2 className="text-2xl font-bold text-indigo-600">&lt;4h</h2>
           <p className="text-gray-600">Avg. response</p>
         </div>
@@ -38,13 +40,13 @@ export default function AboutPage() {
 
       {/* ===== Approach & Who We Serve ===== */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div className="rounded-2xl bg-white shadow p-6">
+        <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Our approach</h3>
           <p className="text-gray-600 mt-2">
             Clear communication, predictable fees, pragmatic advice.
           </p>
         </div>
-        <div className="rounded-2xl bg-white shadow p-6">
+        <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Who we serve</h3>
           <p className="text-gray-600 mt-2">
             Startups, SMBs, and mid-market operators in tech, commerce, and regulated industries.

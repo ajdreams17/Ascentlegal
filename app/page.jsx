@@ -190,23 +190,59 @@ function Home() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Corporate & Formation", icon: Building2, desc: "Entity setup, founder agreements, and governance." },
-              { title: "Contracts Drafting", icon: FileText, desc: "Drafting and reviewing contracts that protect your interests." },
-              { title: "Employment", icon: Users, desc: "Offers, handbooks, compliance, and disputes." },
-              { title: "Trademark Protection", icon: ShieldCheck, desc: "Registration, search, and industry-specific guidance." },
-              { title: "Entertainment Law", icon: Film, desc: "Entertainment contracts, licensing, and royalties for artists & creators." },
-              { title: "Tailed Legal Services", icon: Briefcase, desc: "Customized solutions for startups, media, and more." },
-            ].map(({ title, icon: Icon, desc }) => (
-              <div key={title} className="group rounded-2xl border border-gray-100 p-6 hover:shadow-sm transition-shadow">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400 flex items-center justify-center">
-                    <Icon className="h-5 w-5 text-white" />
-                  </div>
-                  <h3 className="font-semibold">{title}</h3>
-                </div>
-                <p className="mt-3 text-sm text-gray-600">{desc}</p>
-              </div>
-            ))}
+  {
+    title: "Corporate & Formation",
+    icon: Building2,
+    desc: "Entity setup, founder agreements, and governance.",
+    href: "/services/corporate-formation", // 👈 new link
+  },
+  {
+    title: "Contracts Drafting",
+    icon: FileText,
+    desc: "Drafting and reviewing contracts that protect your interests.",
+  },
+  {
+    title: "Employment",
+    icon: Users,
+    desc: "Offers, handbooks, compliance, and disputes.",
+  },
+  {
+    title: "Trademark Protection",
+    icon: ShieldCheck,
+    desc: "Registration, search, and industry-specific guidance.",
+  },
+  {
+    title: "Entertainment Law",
+    icon: Film,
+    desc: "Entertainment contracts, licensing, and royalties for artists & creators.",
+  },
+  {
+    title: "Tailed Legal Services",
+    icon: Briefcase,
+    desc: "Customized solutions for startups, media, and more.",
+  },
+].map(({ title, icon: Icon, desc, href }) => {
+  const CardContent = (
+    <div className="group rounded-2xl border border-gray-100 p-6 hover:shadow-sm transition-shadow">
+      <div className="flex items-center gap-3">
+        <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400 flex items-center justify-center">
+          <Icon className="h-5 w-5 text-white" />
+        </div>
+        <h3 className="font-semibold">{title}</h3>
+      </div>
+      <p className="mt-3 text-sm text-gray-600">{desc}</p>
+    </div>
+  );
+
+  return href ? (
+    <Link key={title} href={href}>
+      {CardContent}
+    </Link>
+  ) : (
+    <div key={title}>{CardContent}</div>
+  );
+})}
+
           </div>
         </div>
       </section>

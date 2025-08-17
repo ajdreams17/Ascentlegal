@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function JaneSmithPage() {
+export default function AprilParedesPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-16">
       <h1 className="text-4xl font-bold">April Paredes</h1>

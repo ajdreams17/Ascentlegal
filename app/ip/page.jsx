@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Intellectual Property | Ascent Legal",
+  title: "Intellectual Property Protection | Ascent Legal",
   description:
-    "Brand and content protection for founders and operators—trademarks, copyright, licensing, monitoring, and enforcement (no patents).",
+    "Brand and content protection for founders and operators—trademarks, copyright, licensing, monitoring, and practical enforcement.",
 };
 
 const services = [
@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: "Trademark Filing & Prosecution",
-    desc: "USPTO application drafting, specimen guidance, Office Action responses, and Madrid Protocol coordination.",
+    desc: "USPTO application drafting, specimen guidance, and Office Action responses.",
     items: ["TEAS filing", "Specimen prep", "Office Action responses"],
     href: "/trademark-registration",
     cta: "File now",
@@ -24,7 +24,7 @@ const services = [
   {
     title: "Brand Monitoring & Enforcement",
     desc: "Continuous watch services and practical takedowns across marketplaces and social platforms.",
-    items: ["Watch notices", "Amazon/eBay takedowns", "Platform removals"],
+    items: ["Watch notices", "Marketplace takedowns", "Platform removals"],
     href: "/contact",
     cta: "Set up monitoring",
   },
@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     q: "Do you work on flat fees?",
-    a: "Most filings and common enforcement actions are flat-fee. Complex disputes are scoped up front so there are no surprises.",
+    a: "Most filings and common enforcement actions are flat-fee. Complex matters are scoped up front so there are no surprises.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function IPPage() {
         <h1 className="text-4xl md:text-5xl font-bold">
           Intellectual Property{" "}
           <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            (no patents)
+            Protection
           </span>
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
@@ -151,7 +151,7 @@ export default function IPPage() {
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
             { step: "1", title: "Assess & Plan", text: "We audit your brand/content footprint and map risk & priority." },
-            { step: "2", title: "File & Secure", text: "We lock in registrations and set up monitoring where it matters." },
+            { step: "2", title: "File & Secure", text: "We lock in registrations and set up monitoring where it matters most." },
             { step: "3", title: "Enforce & Scale", text: "We remove infringers fast and keep your assets working for you." },
           ].map((p) => (
             <div key={p.step} className="rounded-2xl border border-gray-100 bg-white p-6">

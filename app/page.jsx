@@ -93,6 +93,7 @@ function Shell({ children, onNavigate, current }) {
       <h4 className="font-medium">Legal</h4>
       <ul className="mt-3 space-y-2 text-gray-600">
         <li>Terms & Conditions</li>
+         <li>Privacy Policy</li>
       </ul>
     </div>
 

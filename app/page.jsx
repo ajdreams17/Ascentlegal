@@ -77,10 +77,10 @@ function Shell({ children, onNavigate, current }) {
           </Link>
         </li>
         <li>
-          <Link href="/#services" className="hover:text-indigo-600">
-            Practice Areas
-          </Link>
-        </li>
+  <a href="/#practice" className="hover:text-indigo-600">
+    Practice Areas
+  </a>
+</li>
         <li>
           <Link href="/resources" className="hover:text-indigo-600">
             Resources

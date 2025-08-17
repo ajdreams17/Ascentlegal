@@ -5,11 +5,9 @@ export default function AprilParedesPage() {
     <main className="mx-auto max-w-4xl px-6 py-16">
           <div className="mb-6">
         <Link
-          href="/about"
-          className="text-indigo-600 hover:text-indigo-800 flex items-center gap-2"
-        >
-          ← Back to About
-        </Link>
+           <Link href="/about" className="inline-flex items-center gap-2 text-sm text-indigo-600 hover:text-indigo-700">
+        ← Back to About
+      </Link>
       </div>
       <h1 className="text-4xl font-bold">April Paredes</h1>
       <p className="mt-2 text-gray-600">Attorney – Corporate & Entertainment Law</p>

@@ -52,7 +52,7 @@ function Shell({ children, onNavigate, current }) {
 
       {children}
 
-      import Link from "next/link";
+     import Link from "next/link";
 
 {/* footer */}
 <footer className="border-t border-gray-100 mt-20">
@@ -63,11 +63,9 @@ function Shell({ children, onNavigate, current }) {
         <span className="font-semibold">Ascent Legal</span>
       </div>
       <p className="mt-3 text-gray-600">
-        We combine integrity, excellence, and personalized legal strategy to safeguard
-        your intellectual property, contracts, and business growth.
+        We combine integrity, excellence, and personalized legal strategy to safeguard your intellectual property, contracts, and business growth.
       </p>
     </div>
-
     <div>
       <h4 className="font-medium">Firm</h4>
       <ul className="mt-3 space-y-2 text-gray-600">
@@ -77,10 +75,10 @@ function Shell({ children, onNavigate, current }) {
           </Link>
         </li>
         <li>
-  <a href="/#practice" className="hover:text-indigo-600">
-    Practice Areas
-  </a>
-</li>
+          <Link href="/#practice" className="hover:text-indigo-600">
+            Practice Areas
+          </Link>
+        </li>
         <li>
           <Link href="/resources" className="hover:text-indigo-600">
             Resources
@@ -88,15 +86,12 @@ function Shell({ children, onNavigate, current }) {
         </li>
       </ul>
     </div>
-
     <div>
       <h4 className="font-medium">Legal</h4>
       <ul className="mt-3 space-y-2 text-gray-600">
         <li>Terms & Conditions</li>
-         <li>Privacy Policy</li>
       </ul>
     </div>
-
     <div>
       <h4 className="font-medium">Contact</h4>
       <ul className="mt-3 space-y-2 text-gray-600">
@@ -108,14 +103,11 @@ function Shell({ children, onNavigate, current }) {
       </ul>
     </div>
   </div>
-
   <div className="border-t border-gray-100 py-6 text-center text-xs text-gray-500">
     © {new Date().getFullYear()} Ascent Legal. All rights reserved.
   </div>
 </footer>
-    </div>
-  );
-}
+
 
 /* ---------- PAGES ---------- */
 function Home() {

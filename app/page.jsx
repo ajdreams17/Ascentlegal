@@ -59,7 +59,7 @@ function Shell({ children, onNavigate, current }) {
               <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400" />
               <span className="font-semibold">Ascent Legal</span>
             </div>
-            <p className="mt-3 text-gray-600">Modern legal services for ambitious teams.</p>
+            <p className="mt-3 text-gray-600">We combine integrity, excellence, and personalized legal strategy to safeguard your intellectual property, contracts, and business growth.</p>
           </div>
           <div>
             <h4 className="font-medium">Firm</h4>

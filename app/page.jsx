@@ -106,7 +106,9 @@ function Shell({ children, onNavigate, current }) {
     © {new Date().getFullYear()} Ascent Legal. All rights reserved.
   </div>
 </footer>
-
+ </div>
+  );
+} /
 
 /* ---------- PAGES ---------- */
 function Home() {

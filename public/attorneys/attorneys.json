@@ -13,15 +13,15 @@ export default function JaneSmithPage() {
       <div className="flex flex-col items-center text-center">
         <Image
           src="/attorneys/april_paredes.jpg"  // exact filename in /public/attorneys/
-          alt="Jane Smith headshot"
+          alt="April Paredes headshot"
           width={240}
           height={240}
           className="rounded-full object-cover shadow-md"
           priority
         />
-        <h1 className="mt-6 text-4xl font-bold">Jane Smith</h1>
+        <h1 className="mt-6 text-4xl font-bold">April Paredes</h1>
         <p className="mt-2 text-gray-600">
-          Attorney — Contracts &amp; Employment Law
+          Attorney — Corporate &amp; Employment Law
         </p>
       </div>
 

@@ -461,4 +461,32 @@ function Contact() {
             <button className="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-3 text-white">
               Send message
             </button>
-          </
+          </motion.div>
+        </div>
+        <p className="mt-3 text-xs text-gray-500">By submitting, you agree to our privacy policy.</p>
+      </form>
+    </section>
+  );
+}
+
+/* ---------- APP (client-side page switcher) ---------- */
+export default function Page() {
+  const [page, setPage] = useState("home");
+  const go = (p) => setPage(p);
+
+  return (
+    <Shell onNavigate={go} current={page}>
+      {page === "home" && <Home />}
+      {page === "about" && <About />}
+      {page === "services" && <Services />}
+      {page === "ip" && <IP />}
+      {page === "trademark" && <Trademark />}
+      {page === "trademark-registration" && <TrademarkRegistration />}
+      {page === "copyright" && <Copyright />}
+      {page === "startup" && <BusinessStartup />}
+      {page === "entertainment" && <Entertainment />}
+      {page === "resources" && <Resources />}
+      {page === "contact" && <Contact />}
+    </Shell>
+  );
+}

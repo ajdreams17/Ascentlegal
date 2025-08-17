@@ -190,25 +190,44 @@ function Home() {
         </div>
       </section>
 
-      {/* testimonials */}
-      <section className="border-t border-gray-100">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">What clients say</h2>
-          <div className="mt-10 grid md:grid-cols-3 gap-6">
-            {[
-              { quote: "Ascent Legal helped us navigate our funding round with clarity and speed.", name: "COO, Fintech Startup" },
-              { quote: "Pragmatic advice that saved us both time and money.", name: "Founder, SaaS Platform" },
-              { quote: "Responsive, detail-oriented, and business-minded—exactly what we needed.", name: "Head of Ops, eCommerce" },
-            ].map((t, i) => (
-              <div key={i} className="rounded-2xl border border-gray-100 p-6">
-                <MessageSquare className="h-5 w-5 text-indigo-500" />
-                <p className="mt-4 text-gray-700">“{t.quote}”</p>
-                <p className="mt-3 text-sm text-gray-500">{t.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <section className="py-20 bg-gradient-to-r from-indigo-500 to-blue-400 text-white">
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+      How Ascent Legal Protects What You’ve Built
+    </h2>
+    <div className="grid md:grid-cols-3 gap-8">
+      
+      <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+        <h3 className="text-xl font-semibold mb-2">1. Schedule a Consultation</h3>
+        <p className="text-sm text-white/90">
+          Book a free intro call. We’ll learn about your goals and assess your legal needs.
+        </p>
+      </div>
+
+      <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+        <h3 className="text-xl font-semibold mb-2">2. Get a Tailored IP Strategy</h3>
+        <p className="text-sm text-white/90">
+          We provide customized legal services for trademarks, copyrights, and contracts tailored to your business or brand.
+        </p>
+      </div>
+
+      <div className="bg-white/10 p-6 rounded-xl shadow-lg">
+        <h3 className="text-xl font-semibold mb-2">3. Secure & Grow</h3>
+        <p className="text-sm text-white/90">
+          We handle filings, enforcement, and advisory so you can focus on building with confidence.
+        </p>
+      </div>
+      
+    </div>
+
+    <div className="text-center mt-12">
+      <button className="px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow hover:bg-gray-100 transition">
+        Protect Your Brand
+      </button>
+    </div>
+  </div>
+</section>
+
     </>
   );
 }

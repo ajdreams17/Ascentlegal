@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function AprilParedesPage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-16">
-       <div className="mb-6">
+          <div className="mb-6">
         <Link
           href="/about"
           className="text-indigo-600 hover:text-indigo-800 flex items-center gap-2"

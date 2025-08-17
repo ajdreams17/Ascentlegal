@@ -105,10 +105,14 @@ function Shell({ children, onNavigate, current }) {
   <div className="border-t border-gray-100 py-6 text-center text-xs text-gray-500">
     © {new Date().getFullYear()} Ascent Legal. All rights reserved.
   </div>
-</footer>
- </div>
+      </footer>
+    </div>
   );
-} /
+} // end Shell
+
+/* ---------- PAGES ---------- */
+function Home() {
+
 
 /* ---------- PAGES ---------- */
 function Home() {

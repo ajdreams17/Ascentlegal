@@ -223,6 +223,7 @@ function Home() {
     title: "Tailed Legal Services",
     icon: Briefcase,
     desc: "Customized solutions for startups, media, and more.",
+    href: "/services/general"
   },
 ].map(({ title, icon: Icon, desc, href }) => {
   const CardContent = (

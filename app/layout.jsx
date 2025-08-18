@@ -1,6 +1,6 @@
 import "./globals.css";
-import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
+import Nav from "../components/Nav";      // <-- changed
+import Footer from "../components/Footer"; // <-- changed
 
 export const metadata = {
   title: "Ascent Legal",

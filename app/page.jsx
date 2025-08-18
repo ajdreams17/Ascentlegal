@@ -217,6 +217,7 @@ function Home() {
     title: "Entertainment Law",
     icon: Film,
     desc: "Entertainment contracts, licensing, and royalties for artists & creators.",
+    href: "/services/entertainment"
   },
   {
     title: "Tailed Legal Services",

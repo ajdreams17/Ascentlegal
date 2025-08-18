@@ -93,7 +93,9 @@ function Shell({ children, onNavigate, current }) {
     Terms & Conditions
   </a>
 </li>
-
+<li>
+  <a href="/privacy" className="hover:text-indigo-600">Privacy Policy</a>
+</li>
       </ul>
     </div>
     <div>

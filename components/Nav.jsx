@@ -10,7 +10,7 @@ export default function Nav() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/intellectual-property", label: "Intellectual Property" }, // 👈 add this
+    { href: "/ip", label: "Intellectual Property" }, // 👈 add this
     { href: "/resources", label: "Resources" },
     { href: "/contact", label: "Contact" },
   ];

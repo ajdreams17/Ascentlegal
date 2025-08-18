@@ -211,6 +211,7 @@ function Home() {
     title: "Trademark Protection",
     icon: ShieldCheck,
     desc: "Registration, search, and industry-specific guidance.",
+    href: "/services/trademark"
   },
   {
     title: "Entertainment Law",

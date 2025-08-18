@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const attorneys = [
-  { name: "John Doe", role: "Founding Attorney – Business & IP Law", slug: "john-doe" },
+  { name: "Anthony Paredes", role: "Founding Attorney – Business & IP Law", slug: "john-doe" },
   { name: "April Paredes", role: "Attorney – Corporate & Entertainment Law", slug: "april-paredes" },
 ];
 

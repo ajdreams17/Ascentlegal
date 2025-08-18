@@ -88,7 +88,12 @@ function Shell({ children, onNavigate, current }) {
     <div>
       <h4 className="font-medium">Legal</h4>
       <ul className="mt-3 space-y-2 text-gray-600">
-        <li>Terms & Conditions</li>
+        <li>
+  <a href="/terms" className="hover:text-indigo-600">
+    Terms & Conditions
+  </a>
+</li>
+
       </ul>
     </div>
     <div>

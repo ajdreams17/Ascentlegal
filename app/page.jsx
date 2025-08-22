@@ -95,7 +95,6 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="mb-10 flex items-end justify-between">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Practice Areas</h2>
-            <span className="text-sm text-gray-500">Preview of services</span>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

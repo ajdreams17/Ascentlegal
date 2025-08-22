@@ -7,7 +7,7 @@ import {
 export const metadata = {
   title: "Ascent Legal | Modern Counsel for Ambitious Businesses",
   description:
-    "Business-first legal guidance for founders and operators—trademarks, contracts, corporate, and entertainment.",
+    "Strategic legal support for entrepreneurs, creators, and business owners, practical, proactive, and tailored to your growth",
 };
 
 export default function HomePage() {

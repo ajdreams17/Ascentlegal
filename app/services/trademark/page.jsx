@@ -77,20 +77,34 @@ export default function TrademarkPage() {
       </section>
 
       {/* Proof / Stats */}
-      <section className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {[
-          { label: "Trademarks filed", value: "300+" },
-          { label: "Avg. response time", value: "<4h" },
-          { label: "Platforms covered", value: "10+" },
-        ].map((s) => (
-          <div key={s.label} className="rounded-2xl border border-gray-100 p-6 text-center bg-white">
-            <div className="text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-              {s.value}
-            </div>
-            <div className="mt-1 text-xs text-gray-500">{s.label}</div>
-          </div>
-        ))}
-      </section>
+      <div className="mt-10 grid sm:grid-cols-3 gap-6">
+  {/* 1) Keep your real metric */}
+  <div className="rounded-xl border border-gray-100 p-6 text-center">
+    <div className="text-3xl font-semibold text-indigo-600">300+</div>
+    <div className="mt-2 text-sm text-gray-600">Trademarks filed</div>
+  </div>
+
+  {/* 2) Replace “response time” */}
+  <div className="rounded-xl border border-gray-100 p-6 text-center">
+    <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+      Office actions & monitoring
+    </div>
+    <div className="mt-2 text-sm text-gray-600">
+      Response and ongoing watch services.
+    </div>
+  </div>
+
+  {/* 3) Replace “platforms covered” */}
+  <div className="rounded-xl border border-gray-100 p-6 text-center">
+    <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+      Marketplace support
+    </div>
+    <div className="mt-2 text-sm text-gray-600">
+      Amazon Brand Registry, Shopify, and social.
+    </div>
+  </div>
+</div>
+
 
       {/* Offerings */}
       <section className="mt-16">

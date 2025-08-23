@@ -3,6 +3,7 @@ import {
   Check, Film, ShieldCheck, Briefcase, Building2, FileText,
   Users, Stamp
 } from "lucide-react";
+import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
   title: "Ascent Legal | Modern Counsel for Ambitious Businesses",
@@ -69,6 +70,10 @@ export default function HomePage() {
           <span className="h-[2px] w-8 bg-gradient-to-r from-indigo-500 to-teal-400 transition-all group-hover:w-14" />
         </a>
       </div>
+      
+<div className="mt-6">
+  <TrustpilotBadge />
+</div>
 
       <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-600">
         {["Transparent pricing", "Responsive team", "Business-first advice"].map((item) => (

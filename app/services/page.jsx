@@ -17,7 +17,7 @@ const areas = [
   {
     title: "Commercial Contracts",
     desc: "Draft, review, and negotiate clear agreements that protect revenue and reduce risk.",
-    bullets: ["MSA/SOW & SaaS", "Vendor & Partnership", "NDA & DPAs"],
+    bullets: ["Independent Contractor Agreements", "Service Agreements", "Film, TV & Media Agreements"],
     href: "/contact",
     cta: "Review my contract",
   },

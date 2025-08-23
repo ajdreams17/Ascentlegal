@@ -105,7 +105,6 @@ export default function TrademarkPage() {
   </div>
 </div>
 
-
       {/* Offerings */}
       <section className="mt-16">
         <h2 className="text-2xl md:text-3xl font-semibold">How we help</h2>

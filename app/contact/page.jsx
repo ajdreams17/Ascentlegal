@@ -109,24 +109,9 @@ export default function ContactPage() {
         </p>
       </form>
       {/* ✅ Trustpilot Widget (added below form, full width across section) */}
-      <div className="col-span-2 mt-12">
-        <div
-          className="trustpilot-widget"
-          data-locale="en-US"
-          data-template-id="56278e9abfbbba0bdcd568bc"
-          data-businessunit-id="68aa42eff868ed4fa17d7bfb"
-          data-style-height="52px"
-          data-style-width="100%"
-          data-token="ab081c9e-b885-4d34-90b5-5faf86d5f9c4"
-        >
-          <a
-            href="https://www.trustpilot.com/review/ascentlegal.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Trustpilot
-          </a>
-        </div>
+     <div className="mt-10">
+  <TrustpilotBadge />
+</div>
       </div>
     </section>
   );

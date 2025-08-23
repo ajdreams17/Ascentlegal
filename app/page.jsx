@@ -62,8 +62,7 @@ export default function HomePage() {
         </span>
       </h1>
       <p className="mt-6 text-lg text-gray-600 max-w-xl">
-        Practical, proactive legal guidance for founders and operators—delivered with the
-        polish you expect and the speed you need.
+       Practical, proactive legal guidance for founders and operators, delivered with the polish you expect and the speed you need.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -195,7 +194,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-2">1. Schedule a Consultation</h3>
-              <p className="text-sm text-white/90">Book a free intro call—we’ll assess your goals and needs.</p>
+              <p className="text-sm text-white/90">Book a free intro call, we’ll assess your goals and needs.</p>
             </div>
             <div className="bg-white/10 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-2">2. Get a Tailored IP Strategy</h3>

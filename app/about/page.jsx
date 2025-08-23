@@ -57,8 +57,7 @@ export default function AboutPage() {
         <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Who we serve</h3>
           <p className="text-gray-600 mt-2">
-            Startups, SMBs, and mid-market operators in tech, commerce, and regulated industries.
-          </p>
+Entrepreneurs, growing companies, and creative professionals in tech, media, and entertainment.          </p>
         </div>
       </div>
 

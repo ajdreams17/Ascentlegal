@@ -160,7 +160,7 @@ export default function ServicesPage() {
           regulated industries.
         </p>
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-sm text-gray-700">
-          {["SaaS", "E-commerce", "Content/Media", "Consumer Goods", "Health & Wellness", "Professional Services"].map(
+          {["Startups & Founders", "E-commerce", "Content/Media", "Consumer Goods", "Entertainment & Creators", "Professional Services"].map(
             (i) => (
               <div
                 key={i}

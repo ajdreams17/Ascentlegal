@@ -1,10 +1,11 @@
+// app/layout.jsx
 import "./globals.css";
-import Nav from "../components/Nav";      // <-- changed
-import Footer from "../components/Footer"; // <-- changed
+import Nav from "./components/Nav";       // ⬅️ relative path from /app
+import Footer from "./components/Footer"; // if you have a Footer component
 
 export const metadata = {
   title: "Ascent Legal",
-  description: "Modern counsel for ambitious businesses",
+  description: "Modern Counsel for Ambitious Businesses",
 };
 
 export default function RootLayout({ children }) {
@@ -12,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Nav />
-        <main>{children}</main>
+        {children}
         <Footer />
       </body>
     </html>

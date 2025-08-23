@@ -23,20 +23,30 @@ export default function AboutPage() {
       </p>
 
       {/* ===== Stats ===== */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">15+</h2>
-          <p className="text-gray-600">Years experience</p>
-        </div>
-        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">300+</h2>
-          <p className="text-gray-600">Clients served</p>
-        </div>
-        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">&lt;4h</h2>
-          <p className="text-gray-600">Avg. response</p>
-        </div>
+ <div className="mt-10 grid sm:grid-cols-3 gap-6">
+  {[
+    {
+      title: "Transparent Pricing",
+      desc: "Predictable flat-fee options, no surprise bills."
+    },
+    {
+      title: "Fast Response",
+      desc: "Quick turnaround and accessible communication."
+    },
+    {
+      title: "Business-First Advice",
+      desc: "Legal strategies aligned with your growth."
+    }
+  ].map((s) => (
+    <div key={s.title} className="rounded-xl border border-gray-100 p-6 text-center">
+      <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+        {s.title}
       </div>
+      <div className="mt-2 text-sm text-gray-600">{s.desc}</div>
+    </div>
+  ))}
+</div>
+
 
       {/* ===== Approach & Who We Serve ===== */}
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">

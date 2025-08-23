@@ -13,100 +13,117 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* hero */}
-     <section className="relative overflow-hidden bg-white">
-  {/* wave background */}
-  <div aria-hidden="true" className="absolute inset-0 -z-10">
+     {/* hero */}
+<section className="relative overflow-hidden bg-white">
+  {/* decorative: gradient glow + waves (behind content) */}
+  <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
+    {/* soft glow */}
+    <div className="absolute -top-48 -right-48 w-[42rem] h-[42rem] rounded-full bg-gradient-to-tr from-indigo-500/20 to-teal-400/20 blur-3xl" />
+    {/* wave lines */}
     <svg
-      className="absolute top-0 left-0 w-full h-full opacity-20"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 1440 320"
-      preserveAspectRatio="none"
+      className="absolute -top-20 right-[-15%] w-[1200px] h-[700px]"
+      viewBox="0 0 1000 600"
+      fill="none"
+      preserveAspectRatio="xMidYMid slice"
     >
-      <path
-        fill="url(#gradient)"
-        fillOpacity="1"
-        d="M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,176C672,192,768,224,864,224C960,224,1056,192,1152,186.7C1248,181,1344,203,1392,213.3L1440,224V0H0Z"
-      ></path>
       <defs>
-        <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#6366f1" /> {/* indigo-500 */}
-          <stop offset="100%" stopColor="#14b8a6" /> {/* teal-400 */}
+        <linearGradient id="ascentWave" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#6366F1" />   {/* indigo-500 */}
+          <stop offset="100%" stopColor="#14B8A6" /> {/* teal-500 */}
         </linearGradient>
       </defs>
+
+      {/* 10 offset wave paths for a subtle stacked effect */}
+      {Array.from({ length: 10 }).map((_, i) => {
+        const dy = i * 18; // vertical offset between lines
+        const base = 300 - dy;
+        return (
+          <path
+            key={i}
+            d={`M0 ${base}
+               C 150 ${base - 100}, 350 ${base + 100}, 500 ${base}
+               C 650 ${base - 100}, 850 ${base + 100}, 1000 ${base}`}
+            stroke="url(#ascentWave)"
+            strokeWidth="1.25"
+            opacity="0.22"
+          />
+        );
+      })}
     </svg>
   </div>
 
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+  {/* content (kept exactly as you have) */}
+  <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+        Modern Counsel for{" "}
+        <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+          Ambitious Businesses
+        </span>
+      </h1>
+      <p className="mt-6 text-lg text-gray-600 max-w-xl">
+        Practical, proactive legal guidance for founders and operators—delivered with the
+        polish you expect and the speed you need.
+      </p>
+
+      <div className="mt-8 flex flex-wrap items-center gap-4">
+        <Link
+          href="/contact"
+          className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
+        >
+          Schedule a Call
+        </Link>
+
+        <a
+          href="#practice"
+          className="group inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-indigo-600"
+        >
+          Explore practice areas
+          <span className="h-[2px] w-8 bg-gradient-to-r from-indigo-500 to-teal-400 transition-all group-hover:w-14" />
+        </a>
+      </div>
+
+      <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-600">
+        {["Transparent pricing", "Responsive team", "Business-first advice"].map((item) => (
+          <li key={item} className="flex items-center gap-2">
+            <Check className="h-4 w-4 text-indigo-500" /> {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* static “client matter” showcase */}
+    <div className="md:justify-self-end">
+      <div className="relative rounded-2xl border border-gray-100 p-6 shadow-sm bg-white">
+        <div className="absolute -top-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400 flex items-center justify-center">
+          <Stamp className="h-6 w-6 text-white" />
+        </div>
+        <div className="space-y-3">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-              Modern Counsel for{" "}
-              <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-                Ambitious Businesses
-              </span>
-            </h1>
-            <p className="mt-6 text-lg text-gray-600 max-w-xl">
-              Practical, proactive legal guidance for founders and operators—delivered with the
-              polish you expect and the speed you need.
-            </p>
-
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
-              >
-                Schedule a Call
-              </Link>
-
-              <a
-                href="#practice"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-indigo-600"
-              >
-                Explore practice areas
-                <span className="h-[2px] w-8 bg-gradient-to-r from-indigo-500 to-teal-400 transition-all group-hover:w-14" />
-              </a>
-            </div>
-
-            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-600">
-              {["Transparent pricing", "Responsive team", "Business-first advice"].map((item) => (
-                <li key={item} className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-indigo-500" /> {item}
-                </li>
-              ))}
-            </ul>
+            <p className="text-sm text-gray-500">Client matter</p>
+            <p className="font-medium">Trademark Protection</p>
           </div>
-
-          {/* static “client matter” showcase */}
-          <div className="md:justify-self-end">
-            <div className="relative rounded-2xl border border-gray-100 p-6 shadow-sm bg-white">
-              <div className="absolute -top-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-500 to-teal-400 flex items-center justify-center">
-                <Stamp className="h-6 w-6 text-white" />
+          <div className="grid grid-cols-3 gap-3 text-xs">
+            {[
+              { label: "Search", icon: FileText },
+              { label: "USPTO Filing", icon: Stamp },
+              { label: "Monitoring", icon: ShieldCheck },
+            ].map(({ label, icon: Icon }) => (
+              <div
+                key={label}
+                className="rounded-xl border border-gray-100 p-4 shadow-sm flex items-center gap-2"
+              >
+                <Icon className="h-4 w-4 text-indigo-500" />
+                <span>{label}</span>
               </div>
-              <div className="space-y-3">
-                <div>
-                  <p className="text-sm text-gray-500">Client matter</p>
-                  <p className="font-medium">Trademark Protection</p>
-                </div>
-                <div className="grid grid-cols-3 gap-3 text-xs">
-                  {[
-                    { label: "Search", icon: FileText },
-                    { label: "USPTO Filing", icon: Stamp },
-                    { label: "Monitoring", icon: ShieldCheck },
-                  ].map(({ label, icon: Icon }) => (
-                    <div
-                      key={label}
-                      className="rounded-xl border border-gray-100 p-4 shadow-sm flex items-center gap-2"
-                    >
-                      <Icon className="h-4 w-4 text-indigo-500" />
-                      <span>{label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* practice preview */}
       <section id="practice" className="border-t border-gray-100 bg-gray-50/50">

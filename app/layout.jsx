@@ -1,6 +1,6 @@
 import "./globals.css";
-import Nav from "./components/Nav";       // path is case-sensitive
-import Footer from "./components/Footer"; // make sure file exists
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Ascent Legal",

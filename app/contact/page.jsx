@@ -1,40 +1,56 @@
-export const metadata = {
-  title: "Contact | Ascent Legal",
-  description: "Tell us about your matter and we'll get back within one business day.",
-};
+"use client";
 
-import ContactForm from "./ContactForm.client";
-
-export default function ContactPage() {
+export default function ContactForm() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-12 md:gap-16">
-      {/* Left column */}
-      <div>
-        <h1 className="text-4xl md:text-5xl font-bold">Let&apos;s talk</h1>
-        <p className="mt-4 text-gray-600 max-w-xl">
-          Tell us about your matter and we&apos;ll get back within one business day.
-        </p>
+    <form
+      action="https://formspree.io/f/mrbladoo"
+      method="POST"
+      className="space-y-4"
+    >
+      {/* honeypot */}
+      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
-        <ul className="mt-8 space-y-5 text-sm text-gray-700">
-          <li className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-indigo-500 inline-block" />
-            Transparent flat-fee options
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-teal-400 inline-block" />
-            Dedicated point of contact
-          </li>
-          <li className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-indigo-500 inline-block" />
-            Secure client portal
-          </li>
-        </ul>
-      </div>
+      <input
+        name="name"
+        placeholder="Your name"
+        autoComplete="name"
+        required
+        className="w-full h-12 rounded-lg border border-gray-200 bg-white px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-indigo-100 focus:border-indigo-400"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        autoComplete="email"
+        required
+        className="w-full h-12 rounded-lg border border-gray-200 bg-white px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-indigo-100 focus:border-indigo-400"
+      />
+      <input
+        name="company"
+        placeholder="Company"
+        autoComplete="organization"
+        className="w-full h-12 rounded-lg border border-gray-200 bg-white px-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-indigo-100 focus:border-indigo-400"
+      />
+      <textarea
+        name="message"
+        rows={6}
+        placeholder="How can we help?"
+        required
+        className="w-full rounded-lg border border-gray-200 bg-white px-3 py-3 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-indigo-100 focus:border-indigo-400"
+      />
 
-      {/* Right column: card form */}
-      <div className="rounded-[20px] border border-gray-100 shadow-sm bg-white p-6 sm:p-8">
-        <ContactForm />
-      </div>
-    </section>
+      <button
+        type="submit"
+        className="w-full h-12 rounded-xl text-white font-medium shadow
+                   bg-gradient-to-r from-indigo-500 to-teal-400
+                   hover:opacity-95 transition"
+      >
+        Send message
+      </button>
+
+      <p className="text-xs text-gray-500">
+        By submitting, you agree to our privacy policy.
+      </p>
+    </form>
   );
 }

@@ -202,7 +202,7 @@ export default function IPPage() {
             Book a Consultation
           </Link>
           <Link
-            href="/trademark-registration"
+            "/contact"
             className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
           >
             Learn about trademark filing

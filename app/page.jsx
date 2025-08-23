@@ -50,7 +50,7 @@ export default function HomePage() {
         </span>
       </h1>
       <p className="mt-6 text-lg text-gray-600 max-w-xl">
-        Practical, proactive legal guidance for founders and operators—delivered with the
+        Practical, proactive legal guidance for founders and operators, delivered with the
         polish you expect and the speed you need.
       </p>
 

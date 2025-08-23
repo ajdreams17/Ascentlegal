@@ -19,8 +19,7 @@ export default function AboutPage() {
         About <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">Ascent Legal</span>
       </h1>
       <p className="mt-6 text-lg text-gray-600">
-        Use this section to introduce the firm—mission, values, and what makes your counsel practical and business-first.
-      </p>
+Founded in Los Angeles by attorney Anthony, Ascent Legal aims to make legal services accessible without sacrificing excellence. We guide entrepreneurs and creatives to build, protect, and grow their intellectual property and business assets with clarity, integrity, and reliability.      </p>
 
       {/* ===== Stats ===== */}
  <div className="mt-10 grid sm:grid-cols-3 gap-6">

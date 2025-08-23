@@ -11,14 +11,14 @@ const services = [
     title: "Trademark Strategy & Clearance",
     desc: "Name strength analysis, knockout & comprehensive searches, and risk scoring before you invest in a brand.",
     items: ["Name strength scoring", "Class & goods strategy", "Conflict/risk analysis"],
-    href: "/trademark-registration",
+    href: "/contact",
     cta: "Start trademark",
   },
   {
     title: "Trademark Filing & Prosecution",
     desc: "USPTO application drafting, specimen guidance, and Office Action responses.",
     items: ["TEAS filing", "Specimen prep", "Office Action responses"],
-    href: "/trademark-registration",
+    href: "/contact",
     cta: "File now",
   },
   {

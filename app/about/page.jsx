@@ -52,7 +52,7 @@ export default function AboutPage() {
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Our approach</h3>
-          <p className="text-gray-600 mt-2">Clear communication, predictable fees, pragmatic advice.</p>
+          <p className="text-gray-600 mt-2">A reliable partner invested in your long-term success.</p>
         </div>
         <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Who we serve</h3>

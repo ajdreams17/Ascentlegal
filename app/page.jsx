@@ -16,9 +16,9 @@ export default function HomePage() {
      {/* hero */}
 <section className="relative overflow-hidden bg-white">
   {/* decorative: gradient glow + waves (behind content) */}
-  <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0">
-    {/* soft glow */}
-    <div className="absolute -top-48 -right-48 w-[42rem] h-[42rem] rounded-full bg-gradient-to-tr from-indigo-500/20 to-teal-400/20 blur-3xl" />
+    <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-20 pointer-events-none">
+    <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tr from-indigo-500 to-teal-400 blur-3xl" />
+  </div>
     {/* wave lines */}
     <svg
       className="absolute -top-20 right-[-15%] w-[1200px] h-[700px]"

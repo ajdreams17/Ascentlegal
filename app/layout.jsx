@@ -1,7 +1,6 @@
-// app/layout.jsx
 import "./globals.css";
-import Nav from "./components/Nav";       // ⬅️ relative path from /app
-import Footer from "./components/Footer"; // if you have a Footer component
+import Nav from "./components/Nav";       // path is case-sensitive
+import Footer from "./components/Footer"; // make sure file exists
 
 export const metadata = {
   title: "Ascent Legal",

@@ -1,58 +1,40 @@
-// app/contact/ContactForm.client.jsx
-"use client";
+export const metadata = {
+  title: "Contact | Ascent Legal",
+  description: "Tell us about your matter and we'll get back within one business day.",
+};
 
-export default function ContactForm() {
+import ContactForm from "./ContactForm.client";
+
+export default function ContactPage() {
   return (
-    <form
-      action="https://formspree.io/f/mrbladoo"
-      method="POST"
-      className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
-    >
-      {/* Spam honeypot */}
-      <input type="text" name="_gotcha" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
+    <section className="mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-12 md:gap-16">
+      {/* Left column */}
+      <div>
+        <h1 className="text-4xl md:text-5xl font-bold">Let&apos;s talk</h1>
+        <p className="mt-4 text-gray-600 max-w-xl">
+          Tell us about your matter and we&apos;ll get back within one business day.
+        </p>
 
-      {/* Optional redirect after success: create /thanks and then uncomment */}
-      {/*
-      <input type="hidden" name="_redirect" value="https://your-domain.com/thanks" />
-      */}
-
-      <div className="grid grid-cols-1 gap-4">
-        <input
-          name="name"
-          className="h-11 rounded-md border border-gray-300 px-3"
-          placeholder="Your name"
-          autoComplete="name"
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          className="h-11 rounded-md border border-gray-300 px-3"
-          placeholder="Email"
-          autoComplete="email"
-          required
-        />
-        <input
-          name="company"
-          className="h-11 rounded-md border border-gray-300 px-3"
-          placeholder="Company"
-          autoComplete="organization"
-        />
-        <textarea
-          name="message"
-          rows={5}
-          className="rounded-md border border-gray-300 px-3 py-2"
-          placeholder="How can we help?"
-          required
-        />
-        <div>
-          <button type="submit" className="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-3 text-white">
-            Send message
-          </button>
-        </div>
+        <ul className="mt-8 space-y-5 text-sm text-gray-700">
+          <li className="flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-indigo-500 inline-block" />
+            Transparent flat-fee options
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-teal-400 inline-block" />
+            Dedicated point of contact
+          </li>
+          <li className="flex items-center gap-3">
+            <span className="h-2 w-2 rounded-full bg-indigo-500 inline-block" />
+            Secure client portal
+          </li>
+        </ul>
       </div>
 
-      <p className="mt-3 text-xs text-gray-500">By submitting, you agree to our privacy policy.</p>
-    </form>
+      {/* Right column: card form */}
+      <div className="rounded-[20px] border border-gray-100 shadow-sm bg-white p-6 sm:p-8">
+        <ContactForm />
+      </div>
+    </section>
   );
 }

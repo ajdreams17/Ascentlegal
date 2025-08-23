@@ -1,4 +1,6 @@
 // app/contact/page.jsx
+import TrustpilotBadge from "../../components/TrustpilotBadge";
+
 export const metadata = {
   title: "Contact | Ascent Legal",
   description:
@@ -12,8 +14,7 @@ export default function ContactPage() {
       <div>
         <h1 className="text-4xl md:text-5xl font-bold">Let&apos;s talk</h1>
         <p className="mt-4 text-gray-600">
-          Tell us about your matter and we&apos;ll get back within one business
-          day.
+          Tell us about your matter and we&apos;ll get back within one business day.
         </p>
 
         <div className="mt-8 space-y-4 text-sm text-gray-600">
@@ -28,6 +29,11 @@ export default function ContactPage() {
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-indigo-500" />
             Secure client portal
+          </div>
+
+          {/* Trustpilot on the left column */}
+          <div className="pt-4 max-w-xs">
+            <TrustpilotBadge />
           </div>
         </div>
       </div>
@@ -108,12 +114,6 @@ export default function ContactPage() {
           .
         </p>
       </form>
-      {/* ✅ Trustpilot Widget (added below form, full width across section) */}
-     <div className="mt-10">
-  <TrustpilotBadge />
-</div>
-      </div>
     </section>
   );
 }
-    

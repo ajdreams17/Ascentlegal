@@ -98,20 +98,23 @@ export default function ServicesPage() {
       </section>
 
       {/* Quick proof */}
-      <section className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {[
-          { label: "Years experience", value: "15+" },
-          { label: "Clients served", value: "300+" },
-          { label: "Avg. response", value: "<4h" },
-        ].map((s) => (
-          <div key={s.label} className="rounded-2xl border border-gray-100 p-6 text-center bg-white">
-            <div className="text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-              {s.value}
-            </div>
-            <div className="mt-1 text-xs text-gray-500">{s.label}</div>
-          </div>
-        ))}
-      </section>
+     <div className="mt-10 grid sm:grid-cols-3 gap-6">
+  {[
+    { label: "Founder-Focused", desc: "Built for startups and growing businesses." },
+    { label: "Creative & IP Expertise", desc: "Specialized in protecting brands and creators." },
+    { label: "Practical Counsel", desc: "Actionable advice without the legalese." },
+  ].map((item) => (
+    <div
+      key={item.label}
+      className="rounded-xl border border-gray-100 p-6 text-center"
+    >
+      <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+        {item.label}
+      </div>
+      <div className="mt-2 text-sm text-gray-600">{item.desc}</div>
+    </div>
+  ))}
+</div>
 
       {/* Practice Areas */}
       <section id="practice" className="mt-16">

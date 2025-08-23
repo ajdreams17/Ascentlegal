@@ -16,7 +16,7 @@ export default function AprilParedesPage() {
 
       <h1 className="text-4xl font-bold">April Paredes</h1>
       <p className="mt-2 text-gray-600">
-        Attorney – Corporate &amp; Entertainment Law
+        Co-Owner & Principal Attorney 
       </p>
 
       {/* Headshot */}

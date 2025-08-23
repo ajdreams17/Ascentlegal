@@ -39,7 +39,7 @@ export default function Footer() {
             <li>Suite 200</li>
             <li>Long Beach, CA 90806</li>
             <li>info@ascentlegal.io</li>
-            <li>(562) 481-4168</li>
+            <li>(714) 203-3535</li>
           </ul>
         </div>
       </div>

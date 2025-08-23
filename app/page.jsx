@@ -14,10 +14,28 @@ export default function HomePage() {
   return (
     <>
       {/* hero */}
-      <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="absolute inset-0 opacity-20 pointer-events-none">
-          <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-tr from-indigo-500 to-teal-400 blur-3xl" />
-        </div>
+     <section className="relative overflow-hidden bg-white">
+  {/* wave background */}
+  <div aria-hidden="true" className="absolute inset-0 -z-10">
+    <svg
+      className="absolute top-0 left-0 w-full h-full opacity-20"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 320"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="url(#gradient)"
+        fillOpacity="1"
+        d="M0,96L48,106.7C96,117,192,139,288,149.3C384,160,480,160,576,176C672,192,768,224,864,224C960,224,1056,192,1152,186.7C1248,181,1344,203,1392,213.3L1440,224V0H0Z"
+      ></path>
+      <defs>
+        <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#6366f1" /> {/* indigo-500 */}
+          <stop offset="100%" stopColor="#14b8a6" /> {/* teal-400 */}
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
 
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
           <div>

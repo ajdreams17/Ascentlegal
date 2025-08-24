@@ -78,9 +78,10 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
-     <div className="mt-6 flex justify-start">
+    <div className="mt-8 text-left">
   <TrustpilotBadge />
 </div>
+
     </div>
     
     {/* static showcase card */}

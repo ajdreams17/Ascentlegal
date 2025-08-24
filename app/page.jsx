@@ -78,9 +78,11 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
-    <div className="mt-8 text-left">
-  <TrustpilotBadge />
+   {/* Inside hero left column */}
+<div className="mt-8 flex justify-start">
+  <TrustpilotBadge />  {/* client component, loads script in useEffect */}
 </div>
+
 
     </div>
     

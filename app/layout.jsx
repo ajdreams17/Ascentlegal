@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "Ascent Legal",
     description: "Modern Counsel for Ambitious Businesses",
-    url: "https://ascentlegal.io", // update to your live site URL
+    url: "https://68aa8d36f0303a000843dd33--aesthetic-rabanadas-aa1783.netlify.app/", // update to your live site URL
     siteName: "Ascent Legal",
     images: [
       {

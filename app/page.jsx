@@ -71,10 +71,6 @@ export default function HomePage() {
         </a>
       </div>
       
-<div className="mt-6">
-  <TrustpilotBadge />
-</div>
-
       <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-gray-600">
         {["Transparent pricing", "Responsive team", "Business-first advice"].map((item) => (
           <li key={item} className="flex items-center gap-2">
@@ -83,7 +79,9 @@ export default function HomePage() {
         ))}
       </ul>
     </div>
-
+<div className="mt-6">
+  <TrustpilotBadge />
+</div>
     {/* static showcase card */}
     <div className="md:justify-self-end">
       <div className="relative rounded-2xl border border-gray-100 p-6 shadow-sm bg-white">

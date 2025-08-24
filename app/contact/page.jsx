@@ -31,10 +31,11 @@ export default function ContactPage() {
             Secure client portal
           </div>
 
-          {/* Trustpilot on the left column */}
-          <div className="pt-4 max-w-xs">
-            <TrustpilotBadge />
-          </div>
+         {/* Inside hero left column */}
+<div className="mt-8 flex justify-start">
+  <TrustpilotBadge />  {/* client component, loads script in useEffect */}
+</div>
+
         </div>
       </div>
 

@@ -78,10 +78,11 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
-    </div>
-<div className="mt-6">
+      <div className="mt-6">
   <TrustpilotBadge />
 </div>
+    </div>
+    
     {/* static showcase card */}
     <div className="md:justify-self-end">
       <div className="relative rounded-2xl border border-gray-100 p-6 shadow-sm bg-white">

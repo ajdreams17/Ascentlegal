@@ -78,7 +78,7 @@ export default function HomePage() {
           </li>
         ))}
       </ul>
-      <div className="mt-6">
+     <div className="mt-6 flex justify-start">
   <TrustpilotBadge />
 </div>
     </div>

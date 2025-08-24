@@ -40,81 +40,80 @@ export default function ContactPage() {
       </div>
 
       {/* Right column: Formspree-connected form */}
-      <form
-        action="https://formspree.io/f/mrbladoo"
-        method="POST"
-        className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+     <form
+  action="https://formspree.io/f/mrbladoo"
+  method="POST"
+  className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+>
+  {/* (Optional) redirect after submit – create /thank-you if you want this */}
+  <input type="hidden" name="_redirect" value="/thank-you" />
+
+  {/* Custom subject line for emails */}
+  <input type="hidden" name="_subject" value="New Ascent Legal Inquiry" />
+
+  {/* Honeypot spam trap */}
+  <input type="text" name="_gotcha" className="hidden" tabIndex={-1} />
+
+  {/* Extra hidden replyto field for email clients */}
+  <input type="email" name="_replyto" className="hidden" />
+
+  {/* Your visible fields start here */}
+  <div className="grid grid-cols-1 gap-4">
+    <label className="sr-only" htmlFor="name">Your name</label>
+    <input
+      id="name"
+      name="name"
+      placeholder="Your name"
+      className="h-11 rounded-md border border-gray-300 px-3"
+      required
+    />
+
+    <label className="sr-only" htmlFor="email">Email</label>
+    <input
+      id="email"
+      type="email"
+      name="email"
+      placeholder="Email"
+      className="h-11 rounded-md border border-gray-300 px-3"
+      required
+    />
+
+    <label className="sr-only" htmlFor="company">Company</label>
+    <input
+      id="company"
+      name="company"
+      placeholder="Company"
+      className="h-11 rounded-md border border-gray-300 px-3"
+    />
+
+    <label className="sr-only" htmlFor="message">How can we help?</label>
+    <textarea
+      id="message"
+      name="message"
+      rows={5}
+      placeholder="How can we help?"
+      className="rounded-md border border-gray-300 px-3 py-2"
+      required
+    />
+
+    <div>
+      <button
+        type="submit"
+        className="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-3 text-white"
       >
-        {/* (Optional) redirect after submit – create /thank-you if you want this */}
-        {/* <input type="hidden" name="_redirect" value="/thank-you" /> */}
+        Send message
+      </button>
+    </div>
+  </div>
 
-        {/* (Optional) honeypot spam trap */}
-        <input type="text" name="_gotcha" className="hidden" tabIndex={-1} />
+  <p className="mt-3 text-xs text-gray-500">
+    By submitting, you agree to our{" "}
+    <a href="/privacy" className="underline hover:text-indigo-600">
+      privacy policy
+    </a>.
+  </p>
+</form>
 
-        <div className="grid grid-cols-1 gap-4">
-          <label className="sr-only" htmlFor="name">
-            Your name
-          </label>
-          <input
-            id="name"
-            name="name"
-            placeholder="Your name"
-            className="h-11 rounded-md border border-gray-300 px-3"
-            required
-          />
-
-          <label className="sr-only" htmlFor="email">
-            Email
-          </label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="h-11 rounded-md border border-gray-300 px-3"
-            required
-          />
-
-          <label className="sr-only" htmlFor="company">
-            Company
-          </label>
-          <input
-            id="company"
-            name="company"
-            placeholder="Company"
-            className="h-11 rounded-md border border-gray-300 px-3"
-          />
-
-          <label className="sr-only" htmlFor="message">
-            How can we help?
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            placeholder="How can we help?"
-            className="rounded-md border border-gray-300 px-3 py-2"
-            required
-          />
-
-          <div>
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-3 text-white"
-            >
-              Send message
-            </button>
-          </div>
-        </div>
-
-        <p className="mt-3 text-xs text-gray-500">
-          By submitting, you agree to our{" "}
-          <a href="/privacy" className="underline hover:text-indigo-600">
-            privacy policy
-          </a>
-          .
-        </p>
-      </form>
     </section>
   );
 }

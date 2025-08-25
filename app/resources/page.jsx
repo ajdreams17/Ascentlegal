@@ -42,7 +42,7 @@ const downloads = [
   {
     title: "Operating Agreement",
     desc: "Collect the info we need to evaluate and file your mark.",
-    href: "/Ascent-Client-Intake.docx",
+    href: "/operating_agreement.docx",
   },
 ];
 

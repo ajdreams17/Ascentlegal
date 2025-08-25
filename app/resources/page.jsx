@@ -40,11 +40,13 @@ const downloads = [
     href: "/resources/downloads/mutual-nda.docx",
   },
   {
-    title: "Trademark Intake Sheet",
+    title: "Operating Agreement",
     desc: "Collect the info we need to evaluate and file your mark.",
-    href: "/resources/downloads/trademark-intake.pdf",
+    href: "/Ascent-Client-Intake.docx",
   },
 ];
+
+
 
 const faqs = [
   {

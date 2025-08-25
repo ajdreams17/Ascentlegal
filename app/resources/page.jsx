@@ -41,7 +41,7 @@ const downloads = [
   },
   {
     title: "Operating Agreement",
-    desc: "Collect the info we need to evaluate and file your mark.",
+    desc: "Customizable operating agreement template for LLC owners.",
     href: "/operating_agreement.docx",
   },
 ];

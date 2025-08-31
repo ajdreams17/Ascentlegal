@@ -6,7 +6,7 @@ export const metadata = {
     "Guides and practical playbooks for founders, creators, and growing businesses.",
 };
 
-const posts = [
+const guides = [
   {
     slug: "how-to-trademark-your-logo",
     title: "How to Trademark Your Startup Logo",

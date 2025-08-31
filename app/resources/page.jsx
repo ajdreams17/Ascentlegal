@@ -42,7 +42,7 @@ const downloads = [
       "One-page checklist to sanity-check hiring & onboarding. PDF.",
     // Put the PDF in /public/downloads/ and make sure this filename matches exactly
     href:
-      "/downloads/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
+      "/download/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
 
   },
   {

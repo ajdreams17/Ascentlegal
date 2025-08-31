@@ -25,16 +25,18 @@ const guides = [
     badge: "Checklist",
     href: "/resources/contract-red-flags",
   },
-  {
-    slug: "startup-employment-basics",
-    title: "Hiring 101 for Startups",
-    description:
-      "Offers, at-will language, IP assignment, and confidentiality made simple.",
-    readTime: "4 min read",
-    badge: "Primer",
-    href: "/resources/startup-employment-basics",
-  },
-];
+{
+  slug: "hr-compliance-checklist",
+  title: "HR Compliance Audit Checklist (California Employers)",
+  description:
+    "A fillable, attorney-crafted checklist covering hiring, onboarding, policies, and more—designed for CA employers.",
+  readTime: "Free PDF",
+  badge: "Checklist",
+  // point directly at the file in /public
+  href: "/downloads/hr-compliance-audit-checklist-ca.pdf",
+  cta: "Download PDF",
+  isDownload: true
+}
 const downloads = [
   {
     title: "Mutual NDA (Short Form)",

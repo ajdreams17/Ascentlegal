@@ -3,37 +3,38 @@ import Link from "next/link";
 export const metadata = {
   title: "Resources | Ascent Legal",
   description:
-    "Practical guides, templates, and FAQs on trademarks, contracts, and startup law—written for founders and operators.",
+    "Guides and practical playbooks for founders, creators, and growing businesses.",
 };
 
-const guides = [
+const posts = [
   {
-    slug: "trademark-basics-for-founders",
+    slug: "how-to-trademark-your-logo",
     title: "How to Trademark Your Startup Logo",
-    summary:
+    description:
       "Step-by-step guide to trademarking your startup logo. Learn how to protect your brand identity, avoid copycats, and build long-term value.",
     readTime: "6 min read",
     badge: "Guide",
-    href: "/resources/how-to-trademark-your-logo
+    href: "/resources/how-to-trademark-your-logo", // ✅ closed string
   },
   {
     slug: "contract-red-flags",
-    title: "10 Contract Red Flags (and Fixes)",
-    summary:
-      "Negotiation tips and sample clauses you can use in MSAs, SaaS, and vendor agreements.",
-    readTime: "7 min read",
+    title: "7 Contract Red Flags Founders Miss",
+    description:
+      "Indemnities, IP ownership, auto-renewals, and other clauses that can bite later.",
+    readTime: "5 min read",
     badge: "Checklist",
+    href: "/resources/contract-red-flags",
   },
   {
-    slug: "employment-offer-letters",
-    title: "Employment Offer Letters 101",
-    summary:
-      "Key terms to include, IP assignment, and at-will language that actually holds up.",
-    readTime: "5 min read",
-    badge: "Playbook",
+    slug: "startup-employment-basics",
+    title: "Hiring 101 for Startups",
+    description:
+      "Offers, at-will language, IP assignment, and confidentiality made simple.",
+    readTime: "4 min read",
+    badge: "Primer",
+    href: "/resources/startup-employment-basics",
   },
 ];
-
 const downloads = [
   {
     title: "Mutual NDA (Short Form)",

@@ -1,3 +1,5 @@
+import DownloadDisclaimer from "/components/DownloadDisclaimer";
+
 import Link from "next/link";
 
 export const metadata = {

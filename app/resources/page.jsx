@@ -53,7 +53,7 @@ const downloads = [
 ];
 
 // app/resources/page.jsx
-import DownloadDisclaimer from "@/components/DownloadDisclaimer";
+import DownloadDisclaimer from "/components/DownloadDisclaimer";
 
 // …within your default export JSX, after the downloads grid/card section:
 <DownloadDisclaimer />

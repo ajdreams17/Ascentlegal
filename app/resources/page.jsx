@@ -25,18 +25,15 @@ const guides = [
     badge: "Checklist",
     href: "/resources/contract-red-flags",
   },
-{
-  slug: "hr-compliance-checklist",
-  title: "HR Compliance Audit Checklist (California Employers)",
-  description:
-    "A fillable, attorney-crafted checklist covering hiring, onboarding, policies, and more—designed for CA employers.",
-  readTime: "Free PDF",
-  badge: "Checklist",
-  // point directly at the file in /public
-  href: "/downloads/hr-compliance-audit-checklist-ca.pdf",
-  cta: "Download PDF",
-  isDownload: true
-}
+  {
+    slug: "contract-red-flags",
+    title: "7 Contract Red Flags Founders Miss",
+    description:
+      "Indemnities, IP ownership, auto-renewals, and other clauses that can bite later.",
+    readTime: "5 min read",
+    badge: "Checklist",
+    href: "/resources/contract-red-flags",
+  },
 const downloads = [
   {
     title: "Mutual NDA (Short Form)",

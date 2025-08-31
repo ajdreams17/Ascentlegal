@@ -90,7 +90,6 @@ export default function ResourcesPage() {
       <section className="mt-8">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Featured Guides</h2>
-          <span className="text-sm text-gray-500">Updated regularly</span>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

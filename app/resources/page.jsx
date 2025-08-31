@@ -18,14 +18,14 @@ const guides = [
     badge: "Posts",
     href: "/resources/how-to-trademark-your-logo", // ✅ closed string
   },
-  {
-    slug: "contract-red-flags",
-    title: "7 Contract Red Flags Founders Miss",
+ {
+    slug: "trademark-101",
+    title: "Trademark 101: What Every Small Business Should Know",
     description:
-      "Indemnities, IP ownership, auto-renewals, and other clauses that can bite later.",
-    readTime: "5 min read",
-    badge: "Checklist",
-    href: "/resources/contract-red-flags",
+      "Learn why trademarks matter, what can and cannot be trademarked, and how to avoid common mistakes when registering your brand.",
+    readTime: "7 min read",
+    badge: "Post",
+    href: "/resources/trademark-101",  // <-- New blog route
   },
 {
   slug: "finding-right-trademark-copyright-lawyer",

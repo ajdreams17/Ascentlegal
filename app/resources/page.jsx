@@ -6,14 +6,14 @@ export const metadata = {
     "Guides and practical playbooks for founders, creators, and growing businesses.",
 };
 
-const guides = [
+const posts = [
   {
     slug: "how-to-trademark-your-logo",
     title: "How to Trademark Your Startup Logo",
     description:
       "Step-by-step guide to trademarking your startup logo. Learn how to protect your brand identity, avoid copycats, and build long-term value.",
     readTime: "6 min read",
-    badge: "Guide",
+    badge: "Posts",
     href: "/resources/how-to-trademark-your-logo", // ✅ closed string
   },
   {

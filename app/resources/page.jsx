@@ -33,12 +33,16 @@ const guides = [
     readTime: "5 min read",
     badge: "Checklist",
     href: "/resources/contract-red-flags",
-  },
+  ];
 const downloads = [
-  {
-    title: "Mutual NDA (Short Form)",
-    desc: "A concise mutual NDA for early-stage partnerships.",
-    href: "/resources/downloads/mutual-nda.docx",
+   {
+    title: "HR Compliance Audit Checklist (California)",
+    desc:
+      "One-page checklist to sanity-check hiring & onboarding. PDF.",
+    // Put the PDF in /public/downloads/ and make sure this filename matches exactly
+    href:
+      "/downloads/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
+    cta: "Download PDF",
   },
   {
     title: "Operating Agreement",

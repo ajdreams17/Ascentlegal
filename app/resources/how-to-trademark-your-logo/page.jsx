@@ -184,8 +184,8 @@ export default function Post() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm">
             <Link href="/resources" className="text-gray-700 hover:text-indigo-600">← All resources</Link>
             <div className="flex gap-3">
-              <Link href="/resources/contract-red-flags" className="text-gray-700 hover:text-indigo-600">
-                Next: 7 Contract Red Flags →
+              <Link href="/resources/trademark-101" className="text-gray-700 hover:text-indigo-600">
+                Next: Trademark 101: What Every Small Business Should Know →
               </Link>
             </div>
           </div>

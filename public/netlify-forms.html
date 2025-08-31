@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><title>Netlify Forms Detection</title></head>
+  <body>
+    <!-- This file lets Netlify detect the form at build time. -->
+    <form name="newsletter" method="POST" data-netlify="true" action="/Thanks">
+      <input type="hidden" name="form-name" value="newsletter" />
+      <input type="email" name="email" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </body>
+</html>

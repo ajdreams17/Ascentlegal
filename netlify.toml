@@ -1,14 +1,10 @@
-# Tell Netlify how to build and enable forms support with the Next.js plugin
+# netlify.toml
 [build]
   command = "npm run build"
   publish = ".next"
 
-# (Recommended) use esbuild for functions in case you add any later
 [functions]
   node_bundler = "esbuild"
 
-# Enable the official Next.js plugin and TURN ON forms support
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    includeForms = true

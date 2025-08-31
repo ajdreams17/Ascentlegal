@@ -27,15 +27,15 @@ const guides = [
     badge: "Checklist",
     href: "/resources/contract-red-flags",
   },
-  {
-    slug: "contract-red-flags",
-    title: "7 Contract Red Flags Founders Miss",
-    description:
-      "Indemnities, IP ownership, auto-renewals, and other clauses that can bite later.",
-    readTime: "5 min read",
-    badge: "Checklist",
-    href: "/resources/contract-red-flags",
-     },
+{
+  slug: "finding-right-trademark-copyright-lawyer",
+  title: "Finding the Right Trademark & Copyright Lawyer Near You",
+  description:
+    "What to look for, where to search, and the exact questions to ask to protect your creative work.",
+  readTime: "7 min read",
+  badge: "Post",
+  href: "/resources/finding-right-trademark-copyright-lawyer",
+},
   ];
 const downloads = [
    {

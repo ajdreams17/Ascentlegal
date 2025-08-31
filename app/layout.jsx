@@ -1,20 +1,28 @@
 // app/layout.js
 import "./globals.css";
-import Header from "/components/Header";
-import Nav from "../components/Nav";
+// Use ONE of these two imports depending on your setup:
+// If you have a tsconfig/jsconfig with path alias "@/*":
+// import Header from "@/components/Header";
+// Otherwise, use a relative path from /app to /components:
+import Header from "../components/Header";
+
 import Footer from "../components/Footer";
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://aesthetic-rabanadas-aa1783.netlify.app"
+  ),
   title: "Ascent Legal",
   description: "Modern Counsel for Ambitious Businesses",
   openGraph: {
     title: "Ascent Legal",
     description: "Modern Counsel for Ambitious Businesses",
-    url: "https://68aa8d36f0303a000843dd33--aesthetic-rabanadas-aa1783.netlify.app/", // update to your live site URL
+    url: "/",
     siteName: "Ascent Legal",
     images: [
       {
-        url: "/og-image.png", // save your mockup as og-image.png in /public
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Ascent Legal - Modern Counsel for Ambitious Businesses",
@@ -27,9 +35,8 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ascent Legal",
     description: "Modern Counsel for Ambitious Businesses",
-    images: ["/og-image.png"], // same image
+    images: ["/og-image.png"],
   },
-  // Optional but useful for Instagram/Yelp previews
   other: {
     "instagram:card": "summary_large_image",
     "yelp:card": "summary_large_image",
@@ -39,8 +46,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Nav />
+      <body className="antialiased">
+        <Header />
         {children}
         <Footer />
       </body>

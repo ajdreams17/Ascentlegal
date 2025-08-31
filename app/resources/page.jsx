@@ -9,11 +9,12 @@ export const metadata = {
 const guides = [
   {
     slug: "trademark-basics-for-founders",
-    title: "Trademark Basics for Founders",
+    title: "How to Trademark Your Startup Logo",
     summary:
-      "What a trademark protects, how to choose a strong name, and when to file with the USPTO.",
+      "Step-by-step guide to trademarking your startup logo. Learn how to protect your brand identity, avoid copycats, and build long-term value.",
     readTime: "6 min read",
     badge: "Guide",
+    href: "/resources/how-to-trademark-your-logo
   },
   {
     slug: "contract-red-flags",

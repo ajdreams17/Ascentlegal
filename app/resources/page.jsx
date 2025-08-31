@@ -33,6 +33,7 @@ const guides = [
     readTime: "5 min read",
     badge: "Checklist",
     href: "/resources/contract-red-flags",
+     },
   ];
 const downloads = [
    {

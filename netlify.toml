@@ -5,10 +5,11 @@
 [functions]
   node_bundler = "esbuild"
 
+# Next.js plugin pinned to v4 (works with Netlify Forms without the v5 migration)
 [[plugins]]
-  # Pin the older runtime that supports Forms
-  package = "@netlify/plugin-nextjs@4"
+  package = "@netlify/plugin-nextjs"
+  pinned_version = "4.41.2"   # any latest 4.x is fine
 
-# (optional) keep lighthouse
+# (optional) Lighthouse plugin
 [[plugins]]
   package = "@netlify/plugin-lighthouse"

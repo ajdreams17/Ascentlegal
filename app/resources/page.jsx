@@ -52,13 +52,6 @@ const downloads = [
   },
 ];
 
-// app/resources/page.jsx
-import DownloadDisclaimer from "/components/DownloadDisclaimer";
-
-// …within your default export JSX, after the downloads grid/card section:
-<DownloadDisclaimer />
-
-
 const faqs = [
   {
     q: "When should I file a trademark?",
@@ -150,6 +143,8 @@ export default function ResourcesPage() {
             </div>
           ))}
         </div>
+       {/* Disclaimer lives INSIDE the component, AFTER the downloads grid */}
+        <DownloadDisclaimer />
       </section>
 
       {/* Newsletter CTA */}

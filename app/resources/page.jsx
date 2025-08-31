@@ -43,7 +43,7 @@ const downloads = [
     // Put the PDF in /public/downloads/ and make sure this filename matches exactly
     href:
       "/downloads/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
-    cta: "Download PDF",
+
   },
   {
     title: "Operating Agreement",

@@ -158,12 +158,14 @@ export default function ResourcesPage() {
               Monthly, no-spam roundups on legal changes and practical tips for founders.
             </p>
           </div>
-   <form 
-  name="newsletter" 
-  method="POST" 
-  data-netlify="true" 
+  <form
+  name="newsletter"
+  method="POST"
+  data-netlify="true"
+  action="/Thanks"
   className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
 >
+  <input type="hidden" name="form-name" value="newsletter" />
   <input
     type="email"
     name="email"
@@ -175,6 +177,7 @@ export default function ResourcesPage() {
     Subscribe
   </button>
 </form>
+
 
         </div>
       </section>

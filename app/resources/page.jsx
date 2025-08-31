@@ -158,24 +158,12 @@ export default function ResourcesPage() {
               Monthly, no-spam roundups on legal changes and practical tips for founders.
             </p>
           </div>
-     <form
-  name="newsletter"               // <-- name your form
-  method="POST"                   // <-- Netlify parses POSTed HTML forms
-  data-netlify="true"             // <-- turn on Netlify Forms
-  data-netlify-honeypot="bot-field" // <-- simple spam trap
-  action="/thanks"                // <-- where to send users after submit (we'll add this page)
+   <form 
+  name="newsletter" 
+  method="POST" 
+  data-netlify="true" 
   className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
 >
-  {/* Required hidden inputs for Netlify */}
-  <input type="hidden" name="form-name" value="newsletter" />
-  <p className="hidden">
-    <label>
-      Don’t fill this out if you’re human:
-      <input name="bot-field" />
-    </label>
-  </p>
-
-  {/* Your visible email field */}
   <input
     type="email"
     name="email"
@@ -183,14 +171,11 @@ export default function ResourcesPage() {
     placeholder="you@company.com"
     className="h-11 rounded-md border border-gray-300 px-3"
   />
-
-  <button
-    type="submit"
-    className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700"
-  >
+  <button className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
     Subscribe
   </button>
 </form>
+
         </div>
       </section>
 

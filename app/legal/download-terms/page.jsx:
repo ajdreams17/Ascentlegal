@@ -1,0 +1,59 @@
+// app/legal/download-terms/page.jsx
+export const metadata = {
+  title: "Download Terms | Ascent Legal",
+  description: "Terms for using Ascent Legal's downloadable resources.",
+};
+
+export default function DownloadTermsPage() {
+  return (
+    <section className="mx-auto max-w-3xl px-6 py-16">
+      <h1 className="text-3xl md:text-4xl font-bold">Download Terms</h1>
+      <p className="mt-4 text-gray-600">
+        Last updated: {new Date().toLocaleDateString("en-US")}
+      </p>
+
+      <div className="prose prose-slate mt-8">
+        <h2>1. No Legal Advice</h2>
+        <p>
+          The materials you download (including templates, checklists, and guides) are
+          provided for informational purposes only and do not constitute legal advice.
+          Use of these materials does not create an attorney–client relationship with
+          Ascent Legal or any of its attorneys.
+        </p>
+
+        <h2>2. Limited License</h2>
+        <p>
+          We grant you a non-exclusive, non-transferable license to use and modify the
+          materials for your internal business purposes. You may not resell, publicly
+          distribute, or host the materials as your own.
+        </p>
+
+        <h2>3. No Warranties</h2>
+        <p>
+          The materials are provided “as is” without warranties of any kind. Ascent
+          Legal disclaims all warranties, express or implied, including fitness for a
+          particular purpose and non-infringement.
+        </p>
+
+        <h2>4. Jurisdiction & Updates</h2>
+        <p>
+          Laws vary by jurisdiction and change over time. You are responsible for
+          ensuring any template is appropriate for your situation. We may update the
+          materials without notice.
+        </p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>
+          To the fullest extent permitted by law, Ascent Legal will not be liable for
+          any indirect, consequential, incidental, or special damages arising from your
+          use of the materials.
+        </p>
+
+        <h2>6. Contact</h2>
+        <p>
+          Questions? <a href="/contact">Contact us</a>.
+        </p>
+      </div>
+    </section>
+  );
+}

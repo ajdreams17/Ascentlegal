@@ -54,24 +54,24 @@ export default function EntertainmentLawPage() {
           Practical, production-ready contracts for film, TV, music, and digital media. We move fast,
           protect your rights, and keep deals on schedule—so you can create with confidence.
         </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
-          >
-            Book a Consultation
-          </Link>
-          <a
-            href="#agreements"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            See agreements
-          </a>
-        </div>
-      </section>
+    <div className="flex gap-3 mb-6">
+  <a
+    href="/contact"
+    className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 px-6 py-2 text-white font-medium shadow hover:opacity-90"
+  >
+    Book a Consultation
+  </a>
 
-{/* Gradient Stat Boxes */}
-<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  <a
+    href="/agreements"
+    className="rounded-full border border-gray-200 px-6 py-2 text-gray-700 hover:bg-gray-50"
+  >
+    See agreements
+  </a>
+</div>
+
+{/* Add margin-top here */}
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
   <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
     <p className="font-semibold">Detail-first legal review process</p>
   </div>
@@ -84,6 +84,7 @@ export default function EntertainmentLawPage() {
     <p className="font-semibold">Direct access to your attorney</p>
   </div>
 </div>
+
 
 
 

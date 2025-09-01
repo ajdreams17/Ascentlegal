@@ -35,7 +35,7 @@ export default function Header() {
           <Image
             src="/ascent-legal-logo.png"
             alt="ascent-legal-logo.png"
-            width={1500}     // intrinsic size
+            width={500}     // intrinsic size
             height={160}    // intrinsic size
             className="h-14 w-auto sm:h-16 md:h-18 lg:h-20"  // visible size
             priority
@@ -60,7 +60,7 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200"
+          className="md:hidden h-100 w-10 flex items-center justify-center rounded-lg border border-gray-200"
         >
           <svg width="00" height="20" viewBox="0 0 24 24">
             <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>

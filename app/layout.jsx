@@ -1,11 +1,7 @@
 // app/layout.js
 import "./globals.css";
-// Use ONE of these two imports depending on your setup:
-// If you have a tsconfig/jsconfig with path alias "@/*":
-// import Header from "@/components/Header";
-// Otherwise, use a relative path from /app to /components:
+import Script from "next/script"; // ← add this
 import Header from "../components/Header";
-
 import Footer from "../components/Footer";
 
 export const metadata = {
@@ -43,10 +39,32 @@ export const metadata = {
   },
 };
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
+        {/* GA4 – loads after page is interactive */}
+        {GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}', {
+                  anonymize_ip: true
+                });
+              `}
+            </Script>
+          </>
+        )}
+
         <Header />
         {children}
         <Footer />

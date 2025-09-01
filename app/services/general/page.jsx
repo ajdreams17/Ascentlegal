@@ -43,12 +43,12 @@ const packages = [
 ];
 
 const industries = [
-  "SaaS & AI",
-  "E-commerce & Marketplaces",
+  "Startup & Founders",
+  "E-commerce",
   "Media, Entertainment & Creators",
   "Professional Services",
   "Consumer Brands",
-  "Healthcare-adjacent & Regulated",
+  "Logistics & Transportation",
 ];
 
 const faqs = [

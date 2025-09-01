@@ -55,7 +55,7 @@ export default function Header() {
             src="/ascent_Legal_logo.jpg"   // <-- make sure this file exists in /public
             alt="Ascent Legal"
             width={160}                     // tweak as needed
-            height={40}
+            height={80}
             priority
             className="h-10 w-auto drop-shadow-md"
           />

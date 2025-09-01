@@ -107,20 +107,21 @@ export default function EntertainmentPage() {
         </div>
       </section>
 
-      {/* Agreements */}
-      <section id="agreements" className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Core agreements</h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {agreements.map((a) => (
-            <div key={a} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <div className="flex gap-2">
-                <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                <p className="text-sm text-gray-700">{a}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+{/* Agreements */}
+<section id="agreements" className="mt-16">
+  <h2 className="text-2xl md:text-3xl font-semibold">Core agreements</h2>
+
+  <ul className="mt-6 space-y-3">
+    {agreements.map((item) => (
+      <AgreementCard
+        key={typeof item === "string" ? item : item.title}
+        title={typeof item === "string" ? item : item.title}
+        blurb={typeof item === "string" ? undefined : item.blurb}
+      />
+    ))}
+  </ul>
+</section>
+
 
       {/* Process */}
       <section className="mt-16">

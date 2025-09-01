@@ -58,8 +58,8 @@ export default function EntertainmentPage() {
         </h1>
 
         <p className="mt-4 text-gray-600 max-w-3xl">
-          Practical, production-ready contracts for film, TV, music, and digital
-          media. We move fast, protect your rights, and keep deals on
+          Practical, production-ready contracts for film, TV, music, and
+          digital media. We move fast, protect your rights, and keep deals on
           schedule—so you can create with confidence.
         </p>
 

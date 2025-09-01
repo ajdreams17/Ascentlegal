@@ -1,3 +1,4 @@
+// app/services/entertainment/page.jsx
 import Link from "next/link";
 
 export const metadata = {
@@ -39,15 +40,6 @@ const faqs = [
   },
 ];
 
-// app/services/entertainment/page.jsx
-import Link from "next/link";
-
-export const metadata = {
-  title: "Entertainment Law | Ascent Legal",
-  description:
-    "Practical, production-ready contracts for film, TV, music, and digital media.",
-};
-
 export default function EntertainmentPage() {
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -58,9 +50,8 @@ export default function EntertainmentPage() {
         </h1>
 
         <p className="mt-4 text-gray-600 max-w-3xl">
-          Practical, production-ready contracts for film, TV, music, and
-          digital media. We move fast, protect your rights, and keep deals on
-          schedule—so you can create with confidence.
+          Practical, production-ready contracts for film, TV, music, and digital media.
+          We move fast, protect your rights, and keep deals on schedule—so you can create with confidence.
         </p>
 
         {/* Primary actions */}
@@ -72,7 +63,7 @@ export default function EntertainmentPage() {
             Book a Consultation
           </Link>
 
-          <Link
+        <Link
             href="/resources"
             className="rounded-xl border border-gray-200 bg-white px-4 sm:px-5 py-2.5 text-gray-700 hover:bg-gray-50"
           >
@@ -93,12 +84,6 @@ export default function EntertainmentPage() {
           </div>
         </div>
       </section>
-    </main>
-  );
-}
-
-
-
 
       {/* Sectors */}
       <section className="mt-16">
@@ -109,7 +94,10 @@ export default function EntertainmentPage() {
         </p>
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {sectors.map((s) => (
-            <div key={s.title} className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow">
+            <div
+              key={s.title}
+              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
+            >
               <h3 className="font-semibold">{s.title}</h3>
               <p className="mt-2 text-sm text-gray-600">{s.blurb}</p>
             </div>
@@ -164,9 +152,11 @@ export default function EntertainmentPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="mt-16 text-center">
+      <section className="mt-16 text-center mb-20">
         <h3 className="text-xl font-semibold">Ready to lock terms and protect your rights?</h3>
-        <p className="mt-2 text-gray-600">Tell us your production or deal timeline—we’ll map the fastest path to signature.</p>
+        <p className="mt-2 text-gray-600">
+          Tell us your production or deal timeline—we’ll map the fastest path to signature.
+        </p>
         <div className="mt-4 flex gap-3 justify-center">
           <Link
             href="/contact"

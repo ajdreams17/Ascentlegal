@@ -51,14 +51,14 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link href="/" className="flex items-center gap-3" aria-label="Ascent Legal home">
-          <Image
-            src="/ascent_Legal_logo.jpg"   // <-- make sure this file exists in /public
-            alt="Ascent Legal"
-            width={160}                     // tweak as needed
-            height={80}
-            priority
-            className="h-10 w-auto drop-shadow-md"
-          />
+         <Image
+  src="/ascent_legal_logo.jpg"
+  alt="Ascent Legal"
+  width={220}          // ⬅ wider
+  height={60}          // ⬅ taller
+  priority
+  className="h-12 w-auto drop-shadow-md md:h-14"
+/>
           {/* Optional accessible name if you ever hide text logo */}
           <span className="sr-only">Ascent Legal</span>
         </Link>

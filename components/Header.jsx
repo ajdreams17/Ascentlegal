@@ -35,7 +35,7 @@ export default function Header() {
           <Image
             src="/ascent-legal-logo.png"
             alt="ascent-legal-logo.png"
-            width={500}     // intrinsic size
+            width={1500}     // intrinsic size
             height={160}    // intrinsic size
             className="h-14 w-auto sm:h-16 md:h-18 lg:h-20"  // visible size
             priority

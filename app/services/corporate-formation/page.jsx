@@ -88,21 +88,30 @@ export default function CorporateFormationPage() {
         </div>
       </section>
 
-      {/* Proof / Stats */}
-      <section className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        {[
-          { label: "Entities formed", value: "200+" },
-          { label: "Avg. response time", value: "<4h" },
-          { label: "States supported", value: "Multi-state" },
-        ].map((s) => (
-          <div key={s.label} className="rounded-2xl border border-gray-100 p-6 text-center bg-white">
-            <div className="text-2xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-              {s.value}
-            </div>
-            <div className="mt-1 text-xs text-gray-500">{s.label}</div>
-          </div>
-        ))}
-      </section>
+   {/* Roadmap Features */}
+<section className="mt-10 space-y-6">
+  <div className="flex items-start gap-3">
+    <span className="text-indigo-600 text-lg">✔</span>
+    <p>
+      <strong>Roadmap that keeps you moving</strong><br />
+      Formation simplified with step-by-step guidance.
+    </p>
+  </div>
+  <div className="flex items-start gap-3">
+    <span className="text-indigo-600 text-lg">✔</span>
+    <p>
+      <strong>Packages built for your business</strong><br />
+      Industry-specific legal & compliance needs covered.
+    </p>
+  </div>
+  <div className="flex items-start gap-3">
+    <span className="text-indigo-600 text-lg">✔</span>
+    <p>
+      <strong>No hidden costs, ever</strong><br />
+      Transparent pricing you can trust.
+    </p>
+  </div>
+</section>
 
       {/* What’s included */}
       <section id="overview" className="mt-16">

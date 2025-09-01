@@ -197,7 +197,7 @@ export default function CorporateFormationPage() {
       <section id="packages" className="mt-16">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Packages</h2>
-          <span className="text-sm text-gray-500">Transparent options</span>
+          
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">

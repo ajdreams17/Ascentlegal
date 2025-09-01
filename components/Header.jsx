@@ -55,7 +55,18 @@ export default function Header() {
             Book Consultation
           </Link>
         </nav>
-
+  {/* Mobile menu button */}
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="md:hidden h-10 w-10 flex items-center justify-center rounded-lg border border-gray-200"
+          aria-label="Open menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+      </div>
 {/* Mobile overlay + panel */}
       {open && (
         <div className="fixed inset-0 z-50 md:hidden">

@@ -11,8 +11,8 @@ export default function Footer() {
           <Image
             src="/ascent-legal-logo.png"
             alt="Ascent Legal Logo"
-            width={180}   // adjust as needed
-            height={100}   // adjust as needed
+            width={160}   // adjust as needed
+            height={80}   // adjust as needed
             priority
           />
         </Link>

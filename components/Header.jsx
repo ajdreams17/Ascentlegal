@@ -28,16 +28,16 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 h-20 flex items-center justify-between">
         
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/ascent-logo.png"
             alt="Ascent Legal Logo"
-            width={400}     // intrinsic size
-            height={120}    // intrinsic size
-            className="h-12 w-auto sm:h-14 md:h-16"  // responsive scaling
+            width={500}     // intrinsic size
+            height={160}    // intrinsic size
+            className="h-14 w-auto sm:h-16 md:h-18 lg:h-20"  // visible size
             priority
           />
         </Link>

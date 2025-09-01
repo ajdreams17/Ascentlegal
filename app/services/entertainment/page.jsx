@@ -39,21 +39,18 @@ const faqs = [
   },
 ];
 
-export default function EntertainmentLawPage() {
+// app/services/entertainment/page.jsx
+import Link from "next/link";
+
+export const metadata = {
+  title: "Entertainment Law | Ascent Legal",
+  description:
+    "Practical, production-ready contracts for film, TV, music, and digital media.",
+};
+
+export default function EntertainmentPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-16">
-      {/* Hero */}
-      <section>
-        <h1 className="text-4xl md:text-5xl font-bold">
-          Entertainment{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            Law
-          </span>
-        </h1>
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Practical, production-ready contracts for film, TV, music, and digital media. We move fast,
-          protect your rights, and keep deals on schedule—so you can create with confidence.
-        </p>
+    <main className="mx-auto max-w-7xl px-4 sm:px-6">
       {/* Hero */}
       <section className="pt-16 sm:pt-24">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
@@ -62,8 +59,8 @@ export default function EntertainmentLawPage() {
 
         <p className="mt-4 text-gray-600 max-w-3xl">
           Practical, production-ready contracts for film, TV, music, and digital
-          media. We move fast, protect your rights, and keep deals on schedule—so
-          you can create with confidence.
+          media. We move fast, protect your rights, and keep deals on
+          schedule—so you can create with confidence.
         </p>
 
         {/* Primary actions */}
@@ -96,6 +93,10 @@ export default function EntertainmentLawPage() {
           </div>
         </div>
       </section>
+    </main>
+  );
+}
+
 
 
 

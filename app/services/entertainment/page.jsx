@@ -70,18 +70,20 @@ export default function EntertainmentLawPage() {
         </div>
       </section>
 
-<div className="grid gap-6 md:grid-cols-3">
-  <div className="rounded-xl border p-6 text-center">
-    <p className="text-lg font-semibold text-gray-800">Detail-first legal review process</p>
+{/* Gradient Stat Boxes */}
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+  <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
+    <p className="font-semibold">Detail-first legal review process</p>
   </div>
-  <div className="rounded-xl border p-6 text-center">
-    <p className="text-lg font-semibold text-gray-800">Every contract tailored to you</p>
+
+  <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
+    <p className="font-semibold">Every contract tailored to you</p>
   </div>
-  <div className="rounded-xl border p-6 text-center">
-    <p className="text-lg font-semibold text-gray-800">Direct access to your attorney</p>
+
+  <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
+    <p className="font-semibold">Direct access to your attorney</p>
   </div>
 </div>
-
 
 
 

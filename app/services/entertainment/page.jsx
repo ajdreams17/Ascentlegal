@@ -17,15 +17,15 @@ const sectors = [
 ];
 
 const agreements = [
-  "Option & Purchase Agreements",
-  "Production Services & Location Agreements",
-  "Talent, Crew & Appearance Releases",
-  "Music Licenses & Sync/Master Use",
-  "Recording, Producer & Feature Artist Deals",
-  "Distribution & Sales Agency Agreements",
-  "Sponsorships, Endorsements & Brand Partnerships",
-  "Copyright & Trademark Counseling (no patent)",
+  { title: "Option & Purchase Agreements", blurb: "Chain of title, reversion terms, and clean rights transfer." },
+  { title: "Production Services & Location Agreements", blurb: "Scope, insurance, safety, and indemnity balanced." },
+  { title: "Talent, Crew & Appearance Releases", blurb: "Clear usage rights and image/likeness consent." },
+  { title: "Music Licenses & Sync/Master Use", blurb: "Split sheets, ownership, term & territory." },
+  { title: "Recording, Producer & Feature Artist Deals", blurb: "Work-for-hire vs. splits, credits, royalties." },
+  { title: "Distribution & Sales Agency Agreements", blurb: "MGs, recoupment, reporting & audit rights." },
+  { title: "Sponsorships, Endorsements & Brand Partnerships", blurb: "Usage rights, exclusivity, deliverables, approvals." },
 ];
+
 
 const faqs = [
   {

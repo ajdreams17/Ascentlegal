@@ -1,5 +1,7 @@
 // app/services/entertainment/page.jsx
 import Link from "next/link";
+import AgreementCard from "../../../components/AgreementCard";
+
 
 export const metadata = {
   title: "Entertainment Law | Ascent Legal",

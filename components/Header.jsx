@@ -35,8 +35,8 @@ export default function Header() {
           <Image
             src="/ascent-legal-logo.png"
             alt="Ascent Legal Logo"
-            width={140}   // adjust as needed
-            height={40}   // adjust as needed
+            width={160}   // adjust as needed
+            height={80}   // adjust as needed
             priority
           />
         </Link>

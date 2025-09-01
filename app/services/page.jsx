@@ -120,7 +120,6 @@ export default function ServicesPage() {
       <section id="practice" className="mt-16">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Practice Areas</h2>
-          <span className="text-sm text-gray-500">Overview</span>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

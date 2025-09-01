@@ -70,17 +70,17 @@ export default function EntertainmentLawPage() {
         </div>
       </section>
 
-import ServiceHighlights from "@/app/components/ServiceHighlights";
-
-export default function Page() {
-  return (
-    <>
-      {/* ...other content... */}
-      <ServiceHighlights />
-      {/* ...other content... */}
-    </>
-  );
-}
+<div className="grid gap-6 md:grid-cols-3">
+  <div className="rounded-xl border p-6 text-center">
+    <p className="text-lg font-semibold text-gray-800">Detail-first legal review process</p>
+  </div>
+  <div className="rounded-xl border p-6 text-center">
+    <p className="text-lg font-semibold text-gray-800">Every contract tailored to you</p>
+  </div>
+  <div className="rounded-xl border p-6 text-center">
+    <p className="text-lg font-semibold text-gray-800">Direct access to your attorney</p>
+  </div>
+</div>
 
 
 

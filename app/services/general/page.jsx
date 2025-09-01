@@ -124,22 +124,60 @@ export default function TailoredServicesPage() {
       </section>
 
       {/* Industries */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Who we support</h2>
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {industries.map((i) => (
-            <div key={i} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400" />
-                <h3 className="font-semibold">{i}</h3>
-              </div>
-              <p className="mt-2 text-sm text-gray-600">
-                Practical templates, fast reviews, and market-tested terms for this vertical.
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
+    <section className="mt-16">
+  <h2 className="text-2xl md:text-3xl font-semibold">Who we support</h2>
+
+  <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {/* Startup & Founders */}
+    <div className="rounded-2xl border border-gray-100 bg-white p-6">
+      <h3 className="font-semibold">Startup & Founders</h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Guidance from formation to fundraising — contracts, equity, and compliance tailored for startups.
+      </p>
+    </div>
+
+    {/* E-commerce */}
+    <div className="rounded-2xl border border-gray-100 bg-white p-6">
+      <h3 className="font-semibold">E-commerce</h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Seller agreements, terms of service, and privacy policies designed for online growth.
+      </p>
+    </div>
+
+    {/* Media, Entertainment & Creators */}
+    <div className="rounded-2xl border border-gray-100 bg-white p-6">
+      <h3 className="font-semibold">Media, Entertainment & Creators</h3>
+      <p className="mt-2 text-sm text-gray-600">
+        IP protection, licensing, and brand deals so creators can monetize safely.
+      </p>
+    </div>
+
+    {/* Professional Services */}
+    <div className="rounded-2xl border border-gray-100 bg-white p-6">
+      <h3 className="font-semibold">Professional Services</h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Engagement letters, liability protections, and operational agreements for consultants and firms.
+      </p>
+    </div>
+
+    {/* Consumer Brands */}
+    <div className="rounded-2xl border border-gray-100 bg-white p-6">
+      <h3 className="font-semibold">Consumer Brands</h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Packaging, advertising, and compliance support to help your brand scale with confidence.
+      </p>
+    </div>
+
+    {/* Logistics & Transportation */}
+    <div className="rounded-2xl border border-gray-100 bg-white p-6">
+      <h3 className="font-semibold">Logistics & Transportation</h3>
+      <p className="mt-2 text-sm text-gray-600">
+        Contracts, vendor terms, and regulatory guidance for delivery, freight, and mobility companies.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Process */}
       <section className="mt-16">

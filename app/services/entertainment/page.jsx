@@ -70,117 +70,111 @@ export default function EntertainmentLawPage() {
         </div>
       </section>
 
-<!-- START: Ascent Legal “stats” block -->
-<section class="al-stats" role="region" aria-labelledby="al-stats-title">
-  <h2 id="al-stats-title" class="sr-only">Service Highlights</h2>
+{/* START: Ascent Legal "stats" block */}
+<section className="al-stats" role="region" aria-labelledby="al-stats-title">
+  <h2 id="al-stats-title" className="sr-only">Service Highlights</h2>
 
-  <div class="al-stats-grid">
-    <div class="al-card">
-      <h3 class="al-stat">
-        <span class="al-line1">Detail-first</span>
-        <span class="al-line2">Legal review process</span>
+  <div className="al-stats-grid">
+    <div className="al-card">
+      <h3 className="al-stat">
+        <span className="al-line1">Detail-first</span>
+        <span className="al-line2">Legal review process</span>
       </h3>
     </div>
 
-    <div class="al-card">
-      <h3 class="al-stat">
-        <span class="al-line1">Every contract</span>
-        <span class="al-line2">Tailored to you</span>
+    <div className="al-card">
+      <h3 className="al-stat">
+        <span className="al-line1">Every contract</span>
+        <span className="al-line2">Tailored to you</span>
       </h3>
     </div>
 
-    <div class="al-card">
-      <h3 class="al-stat">
-        <span class="al-line1">Direct access</span>
-        <span class="al-line2">To your attorney</span>
+    <div className="al-card">
+      <h3 className="al-stat">
+        <span className="al-line1">Direct access</span>
+        <span className="al-line2">To your attorney</span>
       </h3>
     </div>
   </div>
-</section>
 
-<style>
-  :root {
-    --al-bg: #0b0d12;
-    --al-border: rgba(255, 255, 255, .12);
-    --al-card: rgba(255, 255, 255, .04);
-    --al-text: #e9edf4;
-    --al-accent: #6ea8fe;
-    --al-radius: 16px;
-    --al-gap: clamp(14px, 2vw, 24px);
-    --al-pad: clamp(16px, 2.2vw, 28px);
-  }
-  @media (prefers-color-scheme: light) {
+  <style jsx>{`
     :root {
-      --al-bg: #f6f8fb;
-      --al-border: rgba(17, 24, 39, .08);
-      --al-card: #ffffff;
-      --al-text: #0f172a;
-      --al-accent: #2456d3;
+      --al-bg: #0b0d12;
+      --al-border: rgba(255, 255, 255, .12);
+      --al-card: rgba(255, 255, 255, .04);
+      --al-text: #e9edf4;
+      --al-accent: #6ea8fe;
+      --al-radius: 16px;
+      --al-gap: clamp(14px, 2vw, 24px);
+      --al-pad: clamp(16px, 2.2vw, 28px);
     }
-  }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --al-bg: #f6f8fb;
+        --al-border: rgba(17, 24, 39, .08);
+        --al-card: #ffffff;
+        --al-text: #0f172a;
+        --al-accent: #2456d3;
+      }
+    }
+    .al-stats {
+      background: var(--al-bg);
+      color: var(--al-text);
+      padding: clamp(28px, 4vw, 56px);
+      border-radius: var(--al-radius);
+    }
+    .al-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--al-gap);
+    }
+    @media (max-width: 900px) {
+      .al-stats-grid { grid-template-columns: 1fr; }
+    }
+    .al-card {
+      position: relative;
+      border: 1px solid var(--al-border);
+      background: linear-gradient(180deg, var(--al-card), transparent);
+      border-radius: var(--al-radius);
+      padding: var(--al-pad);
+      isolation: isolate;
+      overflow: hidden;
+    }
+    .al-card::after {
+      content: "";
+      position: absolute; inset: -1px;
+      background:
+        radial-gradient(120px 120px at 96% 8%,
+                        color-mix(in oklab, var(--al-accent) 35%, transparent),
+                        transparent 60%);
+      opacity: .35; pointer-events: none; z-index: -1;
+      border-radius: inherit;
+    }
+    .al-stat {
+      display: flex; flex-direction: column;
+      line-height: 1.1; margin: 0;
+    }
+    .al-line1 {
+      font-weight: 800;
+      font-size: clamp(20px, 3.2vw, 28px);
+      letter-spacing: -.01em;
+      text-wrap: balance;
+    }
+    .al-line2 {
+      margin-top: .35rem;
+      font-weight: 500;
+      font-size: clamp(16px, 2.2vw, 18px);
+      opacity: .9;
+    }
+    .sr-only {
+      position: absolute !important;
+      width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+  `}</style>
+</section>
+{/* END: Ascent Legal "stats" block */}
 
-  .al-stats {
-    background: var(--al-bg);
-    color: var(--al-text);
-    padding: clamp(28px, 4vw, 56px);
-    border-radius: var(--al-radius);
-  }
-
-  .al-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--al-gap);
-  }
-  @media (max-width: 900px) {
-    .al-stats-grid { grid-template-columns: 1fr; }
-  }
-
-  .al-card {
-    position: relative;
-    border: 1px solid var(--al-border);
-    background: linear-gradient(180deg, var(--al-card), transparent);
-    border-radius: var(--al-radius);
-    padding: var(--al-pad);
-    isolation: isolate;
-    overflow: hidden;
-  }
-  .al-card::after {
-    /* subtle corner glow */
-    content: "";
-    position: absolute; inset: -1px;
-    background:
-      radial-gradient(120px 120px at 96% 8%,
-                      color-mix(in oklab, var(--al-accent) 35%, transparent),
-                      transparent 60%);
-    opacity: .35; pointer-events: none; z-index: -1;
-    border-radius: inherit;
-  }
-
-  .al-stat {
-    display: flex; flex-direction: column;
-    line-height: 1.1; margin: 0;
-  }
-  .al-line1 {
-    font-weight: 800;
-    font-size: clamp(20px, 3.2vw, 28px);
-    letter-spacing: -.01em;
-    text-wrap: balance;
-  }
-  .al-line2 {
-    margin-top: .35rem;
-    font-weight: 500;
-    font-size: clamp(16px, 2.2vw, 18px);
-    opacity: .9;
-  }
-
-  /* Visually hidden but accessible heading */
-  .sr-only {
-    position: absolute !important;
-    width: 1px; height: 1px; padding: 0; margin: -1px;
-    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
-  }
-</style>
-<!-- END: Ascent Legal “stats” block -->
 
 
       {/* Sectors */}

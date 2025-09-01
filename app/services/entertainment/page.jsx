@@ -54,7 +54,7 @@ export default function EntertainmentLawPage() {
           Practical, production-ready contracts for film, TV, music, and digital media. We move fast,
           protect your rights, and keep deals on schedule—so you can create with confidence.
         </p>
-        <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"

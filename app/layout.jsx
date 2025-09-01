@@ -1,9 +1,10 @@
 // app/layout.js
 import "./globals.css";
 import Script from "next/script";
+import { Suspense } from "react";       // ← add this
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import GA from "../components/GA"; // pageview tracker (client component below)
+import GA from "../components/GA";
 
 export const metadata = {
   metadataBase: new URL(
@@ -17,14 +18,7 @@ export const metadata = {
     description: "Modern Counsel for Ambitious Businesses",
     url: "/",
     siteName: "Ascent Legal",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Ascent Legal - Modern Counsel for Ambitious Businesses",
-      },
-    ],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascent Legal - Modern Counsel for Ambitious Businesses" }],
     locale: "en_US",
     type: "website",
   },
@@ -40,13 +34,12 @@ export const metadata = {
   },
 };
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID; // <-- must exist in Netlify env
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        {/* GA4 scripts (only render if an ID is set) */}
         {GA_ID && (
           <>
             <Script
@@ -58,7 +51,6 @@ export default function RootLayout({ children }) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                // We'll send page_view manually on route changes to avoid duplicates
                 gtag('config', '${GA_ID}', { send_page_view: false, anonymize_ip: true });
               `}
             </Script>
@@ -69,8 +61,12 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
 
-        {/* Tracks page_view on client-side navigation (App Router) */}
-        {GA_ID && <GA />}
+        {/* Wrap any component that uses useSearchParams in Suspense */}
+        {GA_ID && (
+          <Suspense fallback={null}>
+            <GA />
+          </Suspense>
+        )}
       </body>
     </html>
   );

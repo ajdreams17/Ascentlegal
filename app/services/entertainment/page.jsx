@@ -54,37 +54,48 @@ export default function EntertainmentLawPage() {
           Practical, production-ready contracts for film, TV, music, and digital media. We move fast,
           protect your rights, and keep deals on schedule—so you can create with confidence.
         </p>
-    <div className="flex gap-3 mb-6">
-  <a
-    href="/contact"
-    className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 px-6 py-2 text-white font-medium shadow hover:opacity-90"
-  >
-    Book a Consultation
-  </a>
+      {/* Hero */}
+      <section className="pt-16 sm:pt-24">
+        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+          Entertainment <span className="text-indigo-500">Law</span>
+        </h1>
 
-  <a
-    href="/agreements"
-    className="rounded-full border border-gray-200 px-6 py-2 text-gray-700 hover:bg-gray-50"
-  >
-    See agreements
-  </a>
-</div>
+        <p className="mt-4 text-gray-600 max-w-3xl">
+          Practical, production-ready contracts for film, TV, music, and digital
+          media. We move fast, protect your rights, and keep deals on schedule—so
+          you can create with confidence.
+        </p>
 
-{/* Add margin-top here */}
-<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-  <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
-    <p className="font-semibold">Detail-first legal review process</p>
-  </div>
+        {/* Primary actions */}
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <Link
+            href="/contact"
+            className="rounded-xl bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-400 px-4 sm:px-5 py-2.5 text-white font-medium shadow hover:opacity-95"
+          >
+            Book a Consultation
+          </Link>
 
-  <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
-    <p className="font-semibold">Every contract tailored to you</p>
-  </div>
+          <Link
+            href="/resources"
+            className="rounded-xl border border-gray-200 bg-white px-4 sm:px-5 py-2.5 text-gray-700 hover:bg-gray-50"
+          >
+            See agreements
+          </Link>
+        </div>
 
-  <div className="rounded-full bg-gradient-to-r from-indigo-500 to-teal-400 text-white text-center p-4 shadow hover:opacity-90">
-    <p className="font-semibold">Direct access to your attorney</p>
-  </div>
-</div>
-
+        {/* Pills row */}
+        <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-center">
+            Detail-first legal review process
+          </div>
+          <div className="rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-center">
+            Every contract tailored to you
+          </div>
+          <div className="rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-center">
+            Direct access to your attorney
+          </div>
+        </div>
+      </section>
 
 
 

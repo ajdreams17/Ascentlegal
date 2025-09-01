@@ -43,15 +43,15 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/ascent-logo.png"        // put this file in /public
-            alt="Ascent Legal"
-            width={160}
-            height={40}
-            priority
-            className="h-8 w-auto sm:h-9"
-          />
-        </Link>
+  <Image
+    src="/ascent-logo.png"
+    alt="Ascent Legal Logo"
+    width={200}        // bump up width
+    height={60}        // bump up height
+    priority
+    className="h-12 w-auto sm:h-14" // responsive sizing
+  />
+</Link>
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1 text-sm">

@@ -33,8 +33,8 @@ export default function Header() {
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/ascent-logo.png"
-            alt="Ascent Legal Logo"
+            src="/ascent-legal-logo.png"
+            alt="ascent-legal-logo.png"
             width={500}     // intrinsic size
             height={160}    // intrinsic size
             className="h-14 w-auto sm:h-16 md:h-18 lg:h-20"  // visible size

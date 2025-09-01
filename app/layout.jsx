@@ -1,8 +1,9 @@
 // app/layout.js
 import "./globals.css";
-import Script from "next/script"; // ← add this
+import Script from "next/script";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import GA from "../components/GA"; // pageview tracker (client component below)
 
 export const metadata = {
   metadataBase: new URL(
@@ -39,13 +40,13 @@ export const metadata = {
   },
 };
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID; // <-- must exist in Netlify env
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="antialiased">
-        {/* GA4 – loads after page is interactive */}
+        {/* GA4 scripts (only render if an ID is set) */}
         {GA_ID && (
           <>
             <Script
@@ -57,9 +58,8 @@ export default function RootLayout({ children }) {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${GA_ID}', {
-                  anonymize_ip: true
-                });
+                // We'll send page_view manually on route changes to avoid duplicates
+                gtag('config', '${GA_ID}', { send_page_view: false, anonymize_ip: true });
               `}
             </Script>
           </>
@@ -68,6 +68,9 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+
+        {/* Tracks page_view on client-side navigation (App Router) */}
+        {GA_ID && <GA />}
       </body>
     </html>
   );

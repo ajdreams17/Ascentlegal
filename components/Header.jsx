@@ -93,8 +93,8 @@ export default function Header() {
 
             <nav className="px-4 pb-4 flex flex-col text-base">
               <Link href="/" onClick={() => setOpen(false)} className="py-2">Home</Link>
+               <Link href="/about" onClick={() => setOpen(false)} className="py-2">About</Link>
               <Link href="/services" onClick={() => setOpen(false)} className="py-2">Services</Link>
-              <Link href="/ip" onClick={() => setOpen(false)} className="py-2">Intellectual Property</Link>
               <Link href="/resources" onClick={() => setOpen(false)} className="py-2">Resources</Link>
               <Link href="/contact" onClick={() => setOpen(false)} className="py-2">Contact</Link>
               <Link

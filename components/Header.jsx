@@ -44,6 +44,7 @@ export default function Header() {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1 text-sm">
           <Link href="/" className="px-3 py-2 hover:text-indigo-600">Home</Link>
+          <Link href="/about" className="px-3 py-2 hover:text-indigo-600">about</Link>
           <Link href="/services" className="px-3 py-2 hover:text-indigo-600">Services</Link>
           <Link href="/ip" className="px-3 py-2 hover:text-indigo-600">Intellectual Property</Link>
           <Link href="/resources" className="px-3 py-2 hover:text-indigo-600">Resources</Link>

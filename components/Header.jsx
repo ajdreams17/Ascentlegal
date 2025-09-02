@@ -46,7 +46,6 @@ export default function Header() {
           <Link href="/" className="px-3 py-2 hover:text-indigo-600">Home</Link>
           <Link href="/about" className="px-3 py-2 hover:text-indigo-600">About</Link>
           <Link href="/services" className="px-3 py-2 hover:text-indigo-600">Services</Link>
-          <Link href="/ip" className="px-3 py-2 hover:text-indigo-600">Intellectual Property</Link>
           <Link href="/resources" className="px-3 py-2 hover:text-indigo-600">Resources</Link>
           <Link href="/contact" className="px-3 py-2 hover:text-indigo-600">Contact</Link>
           <Link

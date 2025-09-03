@@ -13,7 +13,10 @@ export const metadata = {
     index: true,
     follow: true,
   },
-
+// app/thanks/page.jsx
+export const metadata = {
+  robots: { index: false, follow: false },
+},
   title: "Ascent Legal",
   description: "Modern Counsel for Ambitious Businesses",
   openGraph: {

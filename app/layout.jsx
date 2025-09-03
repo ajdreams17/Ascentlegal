@@ -8,7 +8,7 @@ import GA from "../components/GA";
 
 export const metadata = {
   metadataBase: new URL("https://ascentlegal.io"),
-};
+
   title: "Ascent Legal",
   description: "Modern Counsel for Ambitious Businesses",
   openGraph: {

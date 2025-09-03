@@ -179,7 +179,8 @@ export default function ResourcesPage() {
     Subscribe
   </button>
 </form>
-
+ </div>
+</section>
 
       {/* FAQs */}
       <section className="mt-16">

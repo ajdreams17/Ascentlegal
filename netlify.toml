@@ -8,6 +8,20 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# (Optional) Keep Lighthouse if you want:
+# (Optional)
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
+
+# --- Add these redirects ---
+# Ensure POST /resources is NOT rewritten to /index.html by the SPA rule.
+[[redirects]]
+  from = "/resources"
+  to = "/resources"
+  status = 200
+  force = true
+
+# Your SPA catch-all (keeps client routing working)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -7,10 +7,8 @@ import Footer from "../components/Footer";
 import GA from "../components/GA";
 
 export const metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ||
-      "https://aesthetic-rabanadas-aa1783.netlify.app"
-  ),
+  metadataBase: new URL("https://ascentlegal.io"),
+};
   title: "Ascent Legal",
   description: "Modern Counsel for Ambitious Businesses",
   openGraph: {

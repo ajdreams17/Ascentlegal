@@ -158,67 +158,28 @@ export default function ResourcesPage() {
               Monthly, no-spam roundups on legal changes and practical tips for founders.
             </p>
           </div>
-'use client' // <— add at the top of this file OR move the form into a small client component
-
-function encode(data) {
-  return Object.keys(data)
-    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
-    .join('&');
-}
-
-export default function ResourcesPage() {
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const email = form.email.value;
-
-    await fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'newsletter',
-        email,
-        'bot-field': '', // honeypot empty
-      }),
-    });
-
-    window.location.assign('/thanks'); // make sure you have this route/page
-  }
-
-  return (
-    // … your page … 
-    <form
-      name="newsletter"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      onSubmit={handleSubmit}                 // <— key change
-      className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
-    >
-      {/* Netlify still wants these fields/names */}
-      <input type="hidden" name="form-name" value="newsletter" />
-      <p hidden>
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
-
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="you@company.com"
-        className="h-11 rounded-md border border-gray-300 px-3"
-      />
-      <button type="submit" className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
-        Subscribe
-      </button>
-    </form>
-    // …
-  );
-}
 
 
+<form
+  name="newsletter"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/resources"
+  className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
+>
+  <input type="hidden" name="form-name" value="newsletter" />
+  <p hidden>
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
 
-        </div>
-      </section>
+  <input type="email" name="email" required placeholder="you@company.com"
+         className="h-11 rounded-md border border-gray-300 px-3" />
+  <button type="submit" className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
+    Subscribe
+  </button>
+</form>
+
 
       {/* FAQs */}
       <section className="mt-16">

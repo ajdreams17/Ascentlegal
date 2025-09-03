@@ -6,8 +6,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GA from "../components/GA";
 
+// app/layout.jsx
 export const metadata = {
   metadataBase: new URL("https://ascentlegal.io"),
+  robots: {
+    index: true,
+    follow: true,
+  },
 
   title: "Ascent Legal",
   description: "Modern Counsel for Ambitious Businesses",

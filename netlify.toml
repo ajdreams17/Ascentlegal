@@ -4,7 +4,7 @@
 
 [functions]
   node_bundler = "esbuild"
-  
+
 # --- Canonical domain & HTTPS (NON-WWW) ---
 [[redirects]]
   from = "http://ascentlegal.io/*"
@@ -24,12 +24,10 @@
   status = 301
   force = true
 
-# Next.js plugin pinned to v4 (works with Netlify Forms without the v5 migration)
+# Next.js runtime (let Netlify use the current v5)
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  pinned_version = "4.41.2"   # any latest 4.x is fine
 
-# (optional) Lighthouse plugin
-# (Optional) Keep Lighthouse if you want:
+# Optional
 [[plugins]]
   package = "@netlify/plugin-lighthouse"

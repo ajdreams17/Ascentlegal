@@ -4,6 +4,25 @@
 
 [functions]
   node_bundler = "esbuild"
+  
+# --- Canonical domain & HTTPS (NON-WWW) ---
+[[redirects]]
+  from = "http://ascentlegal.io/*"
+  to = "https://ascentlegal.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.ascentlegal.io/*"
+  to = "https://ascentlegal.io/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ascentlegal.io/*"
+  to = "https://ascentlegal.io/:splat"
+  status = 301
+  force = true
 
 # Next.js plugin pinned to v4 (works with Netlify Forms without the v5 migration)
 [[plugins]]

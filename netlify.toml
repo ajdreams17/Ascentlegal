@@ -5,23 +5,12 @@
 [functions]
   node_bundler = "esbuild"
 
+# Next.js plugin pinned to v4 (works with Netlify Forms without the v5 migration)
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  pinned_version = "4.41.2"   # any latest 4.x is fine
 
-# (Optional)
+# (optional) Lighthouse plugin
+# (Optional) Keep Lighthouse if you want:
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
-
-# --- Add these redirects ---
-# Ensure POST /resources is NOT rewritten to /index.html by the SPA rule.
-[[redirects]]
-  from = "/resources"
-  to = "/resources"
-  status = 200
-  force = true
-
-# Your SPA catch-all (keeps client routing working)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

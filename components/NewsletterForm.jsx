@@ -1,36 +1,55 @@
-// app/components/NewsletterForm.jsx  (Server Component - no "use client")
+'use client';
+
+function encode(data) {
+  return Object.keys(data)
+    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+    .join('&');
+}
+
 export default function NewsletterForm() {
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const email = e.currentTarget.email.value;
+
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'newsletter', email, 'bot-field': '' }),
+    });
+
+    window.location.assign('/thanks');
+  }
+
   return (
-    <form
-      name="newsletter"           // must match the hidden field below
-      method="POST"
-      data-netlify="true"         // tells Netlify to process it
-      netlify-honeypot="bot-field"
-      action="/thanks"            // optional thank-you page you have
-      className="space-y-3"
-    >
-      {/* Required hidden input so Netlify knows which form this is */}
-      <input type="hidden" name="form-name" value="newsletter" />
+    <>
+      {/* Hidden build-time form for Netlify parsing */}
+      <form name="newsletter" data-netlify="true" hidden>
+        <input type="email" name="email" />
+        <input type="hidden" name="form-name" value="newsletter" />
+      </form>
 
-      {/* Honeypot (spam trap) */}
-      <p className="hidden">
-        <label>Don’t fill this out: <input name="bot-field" /></label>
-      </p>
-
-      <label className="block">
-        <span className="sr-only">Email</span>
+      <form
+        name="newsletter"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+        className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
+      >
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p hidden>
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
         <input
           type="email"
-          name="email"              // every field needs a name
+          name="email"
           required
-          className="w-full rounded-md border px-3 py-2"
-          placeholder="you@email.com"
+          placeholder="you@company.com"
+          className="h-11 rounded-md border border-gray-300 px-3"
         />
-      </label>
-
-      <button type="submit" className="rounded-md bg-black px-4 py-2 text-white">
-        Subscribe
-      </button>
-    </form>
+        <button type="submit" className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
+          Subscribe
+        </button>
+      </form>
+    </>
   );
 }

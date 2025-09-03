@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Netlify Forms Test</title>
+
+  <!-- Minimal form Netlify will 100% parse and capture -->
+  <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/">
+    <input type="hidden" name="form-name" value="newsletter" />
+    <p style="display:none">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
+    <label>
+      Email: <input type="email" name="email" required />
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</html>

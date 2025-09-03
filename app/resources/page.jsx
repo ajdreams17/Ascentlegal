@@ -1,6 +1,6 @@
 import DownloadDisclaimer from "/components/DownloadDisclaimer";
-
 import Link from "next/link";
+import NewsletterForm from "/components/NewsletterForm";
 
 export const metadata = {
   title: "Resources | Ascent Legal",
@@ -16,36 +16,33 @@ const guides = [
       "Step-by-step guide to trademarking your startup logo. Learn how to protect your brand identity, avoid copycats, and build long-term value.",
     readTime: "6 min read",
     badge: "Posts",
-    href: "/resources/how-to-trademark-your-logo", // ✅ closed string
+    href: "/resources/how-to-trademark-your-logo",
   },
- {
+  {
     slug: "trademark-101",
     title: "Trademark 101: What Every Small Business Should Know",
     description:
       "Learn why trademarks matter, what can and cannot be trademarked, and how to avoid common mistakes when registering your brand.",
     readTime: "7 min read",
     badge: "Post",
-    href: "/resources/trademark-101",  // <-- New blog route
+    href: "/resources/trademark-101",
   },
-{
-  slug: "finding-right-trademark-copyright-lawyer",
-  title: "Finding the Right Trademark & Copyright Lawyer Near You",
-  description:
-    "What to look for, where to search, and the exact questions to ask to protect your creative work.",
-  readTime: "7 min read",
-  badge: "Post",
-  href: "/resources/finding-right-trademark-copyright-lawyer",
-},
-  ];
-const downloads = [
-   {
-    title: "HR Compliance Audit Checklist (California)",
-    desc:
-      "One-page checklist to sanity-check hiring & onboarding. PDF.",
-    // Put the PDF in /public/downloads/ and make sure this filename matches exactly
-    href:
-      "/download/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
+  {
+    slug: "finding-right-trademark-copyright-lawyer",
+    title: "Finding the Right Trademark & Copyright Lawyer Near You",
+    description:
+      "What to look for, where to search, and the exact questions to ask to protect your creative work.",
+    readTime: "7 min read",
+    badge: "Post",
+    href: "/resources/finding-right-trademark-copyright-lawyer",
+  },
+];
 
+const downloads = [
+  {
+    title: "HR Compliance Audit Checklist (California)",
+    desc: "One-page checklist to sanity-check hiring & onboarding. PDF.",
+    href: "/download/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
   },
   {
     title: "Operating Agreement",
@@ -104,7 +101,7 @@ export default function ResourcesPage() {
                 <span className="text-gray-500">{g.readTime}</span>
               </div>
               <h3 className="mt-3 text-lg font-semibold">{g.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{g.summary}</p>
+              <p className="mt-2 text-sm text-gray-600">{g.description}</p>
               <div className="mt-4">
                 <Link
                   href={`/resources/${g.slug}`}
@@ -145,7 +142,8 @@ export default function ResourcesPage() {
             </div>
           ))}
         </div>
-       {/* Disclaimer lives INSIDE the component, AFTER the downloads grid */}
+
+        {/* Disclaimer lives INSIDE the component, AFTER the downloads grid */}
         <DownloadDisclaimer />
       </section>
 
@@ -159,28 +157,16 @@ export default function ResourcesPage() {
             </p>
           </div>
 
+          {/* Client-side Netlify form (Option B) */}
+          <NewsletterForm />
+        </div>
 
-<form
-  name="newsletter"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/resources"
-  className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
->
-  <input type="hidden" name="form-name" value="newsletter" />
-  <p hidden>
-    <label>Don’t fill this out: <input name="bot-field" /></label>
-  </p>
-
-  <input type="email" name="email" required placeholder="you@company.com"
-         className="h-11 rounded-md border border-gray-300 px-3" />
-  <button type="submit" className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
-    Subscribe
-  </button>
-</form>
- </div>
-</section>
+        {/* Build-time hidden copy for Netlify parser (keeps the form definition) */}
+        <form name="newsletter" data-netlify="true" hidden>
+          <input type="email" name="email" />
+          <input type="hidden" name="form-name" value="newsletter" />
+        </form>
+      </section>
 
       {/* FAQs */}
       <section className="mt-16">

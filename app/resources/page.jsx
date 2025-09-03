@@ -158,14 +158,21 @@ export default function ResourcesPage() {
               Monthly, no-spam roundups on legal changes and practical tips for founders.
             </p>
           </div>
-  <form
+<form
   name="newsletter"
   method="POST"
   data-netlify="true"
-  action="/Thanks"
+  netlify-honeypot="bot-field"
+  action="/resources?no-cache=1"   // <- key fix
   className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
 >
   <input type="hidden" name="form-name" value="newsletter" />
+  <input type="hidden" name="subject" value="Newsletter signup" />
+  <p hidden>
+    {/* Honeypot field to reduce spam and helps parsing */}
+    <label>Don’t fill this out: <input name="bot-field" /></label>
+  </p>
+
   <input
     type="email"
     name="email"

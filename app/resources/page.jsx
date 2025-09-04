@@ -1,11 +1,12 @@
-import DownloadDisclaimer from "/components/DownloadDisclaimer";
+// app/resources/page.jsx
 import Link from "next/link";
-import NewsletterForm from "/components/NewsletterForm";
+import DownloadDisclaimer from "/components/DownloadDisclaimer";
 
 export const metadata = {
   title: "Resources | Ascent Legal",
   description:
     "Guides and practical playbooks for founders, creators, and growing businesses.",
+  alternates: { canonical: "/resources" },
 };
 
 const guides = [
@@ -15,17 +16,15 @@ const guides = [
     description:
       "Step-by-step guide to trademarking your startup logo. Learn how to protect your brand identity, avoid copycats, and build long-term value.",
     readTime: "6 min read",
-    badge: "Posts",
-    href: "/resources/how-to-trademark-your-logo",
+    badge: "Post",
   },
   {
     slug: "trademark-101",
     title: "Trademark 101: What Every Small Business Should Know",
     description:
-      "Learn why trademarks matter, what can and cannot be trademarked, and how to avoid common mistakes when registering your brand.",
+      "Why trademarks matter, what can and cannot be trademarked, and how to avoid common mistakes when registering your brand.",
     readTime: "7 min read",
     badge: "Post",
-    href: "/resources/trademark-101",
   },
   {
     slug: "finding-right-trademark-copyright-lawyer",
@@ -34,7 +33,6 @@ const guides = [
       "What to look for, where to search, and the exact questions to ask to protect your creative work.",
     readTime: "7 min read",
     badge: "Post",
-    href: "/resources/finding-right-trademark-copyright-lawyer",
   },
 ];
 
@@ -54,11 +52,11 @@ const downloads = [
 const faqs = [
   {
     q: "When should I file a trademark?",
-    a: "As soon as you have a distinctive brand name and intend to use it in commerce—early filing can preserve priority.",
+    a: "As soon as you have a distinctive brand name and intend to use it in commerce — early filing can preserve priority.",
   },
   {
     q: "Do you offer flat fees?",
-    a: "Yes. Many matters—trademark filing, contract packages, and formations—are offered at transparent flat rates.",
+    a: "Yes. Many matters — trademark filing, contract packages, and formations — are offered at transparent flat rates.",
   },
   {
     q: "Can you review an existing contract?",
@@ -79,7 +77,7 @@ export default function ResourcesPage() {
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
           Practical, business-first content on trademarks, contracts, employment, and formation.
-          No fluff—just what you need to move fast and stay protected.
+          No fluff — just what you need to move fast and stay protected.
         </p>
       </section>
 
@@ -143,7 +141,7 @@ export default function ResourcesPage() {
           ))}
         </div>
 
-        {/* Disclaimer lives INSIDE the component, AFTER the downloads grid */}
+        {/* Disclaimer below downloads */}
         <DownloadDisclaimer />
       </section>
 
@@ -157,17 +155,25 @@ export default function ResourcesPage() {
             </p>
           </div>
 
-          {/* Client-side Netlify form (Option B) */}
-          <NewsletterForm />
+          {/* ActiveCampaign via API route (Option B) */}
+          <form
+            action="/api/subscribe"
+            method="POST"
+            className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
+          >
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="you@company.com"
+              className="h-11 rounded-md border border-gray-300 px-3"
+            />
+            <button className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
+              Subscribe
+            </button>
+          </form>
         </div>
-
-        {/* Build-time hidden copy for Netlify parser (keeps the form definition) */}
-      <form action="/api/subscribe" method="POST" className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3">
-  <input type="email" name="email" required placeholder="you@company.com"
-         className="h-11 rounded-md border border-gray-300 px-3" />
-  <button className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">Subscribe</button>
-</form>
-
+      </section>
 
       {/* FAQs */}
       <section className="mt-16">

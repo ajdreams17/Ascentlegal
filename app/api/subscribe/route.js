@@ -1,37 +1,37 @@
 import { NextResponse } from "next/server";
 
-function requireEnv(name) {
+function need(name) {
   const v = process.env[name];
   if (!v) throw new Error(`Missing env var ${name}`);
   return v;
 }
 
-async function acFetch(path, method = "GET", body) {
-  const base = requireEnv("AC_API_URL").replace(/\/+$/, ""); // no trailing slash
-  const key  = requireEnv("AC_API_KEY");
+async function ac(path, method = "GET", body) {
+  const base = need("AC_API_URL").replace(/\/+$/, "");
+  const key  = need("AC_API_KEY");
   const url  = `${base}/api/3${path}`;
 
   const res = await fetch(url, {
     method,
-    headers: {
-      "Content-Type": "application/json",
-      "Api-Token": key,
-    },
+    headers: { "Content-Type": "application/json", "Api-Token": key },
     body: body ? JSON.stringify(body) : undefined,
     cache: "no-store",
   });
 
-  // Help debug: capture body text on non-2xx
+  // If AC returns non-2xx, capture the full body for logs
   if (!res.ok) {
     const text = await res.text().catch(() => "");
-    throw new Error(`${method} ${path} -> ${res.status} ${res.statusText} :: ${text}`);
+    const err  = new Error(`${method} ${path} -> ${res.status} ${res.statusText} :: ${text}`);
+    err.status = res.status;
+    err.body   = text;
+    throw err;
   }
   return res.json();
 }
 
 export async function POST(req) {
   try {
-    // 1) Parse the HTML form post
+    // accept HTML form or JSON
     const ct = req.headers.get("content-type") || "";
     let email = "";
     if (ct.includes("application/x-www-form-urlencoded")) {
@@ -43,27 +43,33 @@ export async function POST(req) {
     }
     if (!email) return NextResponse.json({ ok:false, error:"Email required" }, { status: 400 });
 
-    // 2) Upsert contact
-    const sync = await acFetch("/contact/sync", "POST", { contact: { email } });
+    // upsert contact
+    const sync = await ac("/contact/sync", "POST", { contact: { email } });
     const contactId = sync?.contact?.id;
-    if (!contactId) throw new Error("No contact id returned from contact/sync");
+    if (!contactId) throw new Error("No contact id from /contact/sync");
 
-    // 3) Subscribe to list (status 1 = subscribed)
-    const listId = requireEnv("AC_LIST_ID"); // e.g., "4"
-    await acFetch("/contactLists", "POST", {
-      contactList: { list: listId, contact: contactId, status: 1 },
-    });
+    // subscribe to list (1=subscribed)
+    const listId = need("AC_LIST_ID");
+    try {
+      await ac("/contactLists", "POST", { contactList: { list: listId, contact: contactId, status: 1 } });
+    } catch (e) {
+      // If already subscribed / validation noise, treat as success
+      const msg = (e.body || "").toLowerCase();
+      if (e.status === 422 || msg.includes("already") || msg.includes("exists")) {
+        console.warn("[subscribe] already on list, continuing:", e.message);
+      } else {
+        throw e;
+      }
+    }
 
-    // 4) Success → redirect to /thanks
     return NextResponse.redirect(new URL("/thanks", req.url), 303);
   } catch (err) {
-    // This shows up in Netlify → **Logs → Functions**
+    // shows in Netlify → Logs → Functions → subscribe
     console.error("[subscribe] error:", err);
     return NextResponse.json({ ok:false, error:"Subscription failed" }, { status: 500 });
   }
 }
 
-// Optional: helpful when you accidentally visit /api/subscribe in the browser
 export async function GET() {
-  return NextResponse.json({ ok:true, hint:"POST an email to subscribe" });
+  return NextResponse.json({ ok:true, hint:"POST email to subscribe" });
 }

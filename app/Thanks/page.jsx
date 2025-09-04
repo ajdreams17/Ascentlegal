@@ -1,9 +1,8 @@
-// app/thanks/page.jsx
 export const metadata = {
   title: "Thanks",
   description: "You're subscribed.",
   alternates: { canonical: "/thanks" },
-  robots: { index: false, follow: false }, // optional
+  robots: { index: false, follow: false },
 };
 
 export default function ThanksPage() {

@@ -157,21 +157,42 @@ export default function ResourcesPage() {
 
           {/* ActiveCampaign via API route (Option B) */}
           <form
-            action="/api/subscribe"
-            method="POST"
-            className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-3"
-          >
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="you@company.com"
-              className="h-11 rounded-md border border-gray-300 px-3"
-            />
-            <button className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700">
-              Subscribe
-            </button>
-          </form>
+  action="/api/subscribe"
+  method="POST"
+  className="grid grid-cols-1 sm:grid-cols-[180px,1fr,auto] gap-3 items-center"
+>
+  {/* First name */}
+  <label htmlFor="firstName" className="sr-only">First name</label>
+  <input
+    id="firstName"
+    name="firstName"
+    type="text"
+    autoComplete="given-name"
+    placeholder="First name"
+    className="h-11 rounded-md border border-gray-300 px-3"
+  />
+
+  {/* Email */}
+  <label htmlFor="email" className="sr-only">Email</label>
+  <input
+    id="email"
+    name="email"
+    type="email"
+    required
+    autoComplete="email"
+    placeholder="you@company.com"
+    className="h-11 rounded-md border border-gray-300 px-3"
+  />
+
+  {/* Submit */}
+  <button
+    type="submit"
+    className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700"
+  >
+    Subscribe
+  </button>
+</form>
+
         </div>
       </section>
 

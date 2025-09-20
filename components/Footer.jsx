@@ -26,16 +26,16 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-4 mt-5 text-xl text-gray-500">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram className="hover:text-indigo-600" />
             </a>
-            <a href="https://yelp.com" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
+            <a href="https://www.yelp.com/biz/ascent-legal-long-beach" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
               <FaYelp className="hover:text-indigo-600" />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/ascent-legal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin className="hover:text-indigo-600" />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <a href="https://www.facebook.com/ascentlegallaw" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebook className="hover:text-indigo-600" />
             </a>
           </div>

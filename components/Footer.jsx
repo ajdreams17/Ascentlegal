@@ -1,15 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaYelp, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaInstagram, FaYelp, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="border-t border-gray-100 mt-20">
       <div className="mx-auto max-w-7xl px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-        {/* LOGO + Description */}
         <div>
+          {/* LOGO */}
           <Link href="/" className="flex items-center gap-2">
-            {/* adjust logo dimensions as needed */}
             <Image
               src="/ascent-legal-logo.png"
               alt="Ascent Legal Logo"
@@ -19,12 +18,47 @@ export default function Footer() {
             />
           </Link>
           <p className="mt-3 text-gray-600">
-            We combine integrity, excellence, and personalized legal strategy to safeguard your intellectual property,
-            contracts, and business growth.
+            We combine integrity, excellence, and personalized legal strategy to safeguard your
+            intellectual property, contracts, and business growth.
           </p>
+
+          {/* SOCIAL ICONS */}
+          <div className="flex gap-4 mt-4 text-xl text-gray-600">
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-600"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://www.yelp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-600"
+            >
+              <FaYelp />
+            </a>
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-600"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-indigo-600"
+            >
+              <FaFacebook />
+            </a>
+          </div>
         </div>
 
-        {/* Firm Section */}
         <div>
           <h4 className="font-medium">Firm</h4>
           <ul className="mt-3 space-y-2 text-gray-600">
@@ -34,7 +68,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Legal Section */}
         <div>
           <h4 className="font-medium">Legal</h4>
           <ul className="mt-3 space-y-2 text-gray-600">
@@ -43,7 +76,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact Section */}
         <div>
           <h4 className="font-medium">Contact</h4>
           <ul className="mt-3 space-y-2 text-gray-600">
@@ -55,48 +87,6 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-
-      {/* Social Icons Row */}
-      <div className="flex justify-center gap-6 text-gray-600 pb-6">
-        <a
-          href="https://instagram.com/yourhandle"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="hover:text-indigo-600"
-        >
-          <FaInstagram size={20} />
-        </a>
-        <a
-          href="https://yelp.com/biz/yourbusiness"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Yelp"
-          className="hover:text-indigo-600"
-        >
-          <FaYelp size={20} />
-        </a>
-        <a
-          href="https://linkedin.com/company/yourcompany"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="hover:text-indigo-600"
-        >
-          <FaLinkedinIn size={20} />
-        </a>
-        <a
-          href="https://facebook.com/yourpage"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          className="hover:text-indigo-600"
-        >
-          <FaFacebookF size={20} />
-        </a>
-      </div>
-
-      {/* Copyright */}
       <div className="border-t border-gray-100 py-6 text-center text-xs text-gray-500">
         © {new Date().getFullYear()} Ascent Legal. All rights reserved.
       </div>

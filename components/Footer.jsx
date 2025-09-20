@@ -1,19 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaYelp, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaYelp, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   return (
     <footer className="border-t border-gray-100 mt-20">
       <div className="mx-auto max-w-7xl px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+        {/* LOGO + Description */}
         <div>
-          {/* LOGO */}
           <Link href="/" className="flex items-center gap-2">
+            {/* adjust logo dimensions as needed */}
             <Image
               src="/ascent-legal-logo.png"
               alt="Ascent Legal Logo"
-              width={160}   {/* adjust as needed */}
-              height={80}   {/* adjust as needed */}
+              width={160}
+              height={80}
               priority
             />
           </Link>
@@ -23,6 +24,7 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Firm Section */}
         <div>
           <h4 className="font-medium">Firm</h4>
           <ul className="mt-3 space-y-2 text-gray-600">
@@ -32,6 +34,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Legal Section */}
         <div>
           <h4 className="font-medium">Legal</h4>
           <ul className="mt-3 space-y-2 text-gray-600">
@@ -40,6 +43,7 @@ export default function Footer() {
           </ul>
         </div>
 
+        {/* Contact Section */}
         <div>
           <h4 className="font-medium">Contact</h4>
           <ul className="mt-3 space-y-2 text-gray-600">
@@ -54,20 +58,45 @@ export default function Footer() {
 
       {/* Social Icons Row */}
       <div className="flex justify-center gap-6 text-gray-600 pb-6">
-        <a href="https://instagram.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-indigo-600">
+        <a
+          href="https://instagram.com/yourhandle"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="hover:text-indigo-600"
+        >
           <FaInstagram size={20} />
         </a>
-        <a href="https://yelp.com/biz/yourbusiness" target="_blank" rel="noopener noreferrer" aria-label="Yelp" className="hover:text-indigo-600">
+        <a
+          href="https://yelp.com/biz/yourbusiness"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Yelp"
+          className="hover:text-indigo-600"
+        >
           <FaYelp size={20} />
         </a>
-        <a href="https://linkedin.com/company/yourcompany" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-indigo-600">
-          <FaLinkedin size={20} />
+        <a
+          href="https://linkedin.com/company/yourcompany"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="hover:text-indigo-600"
+        >
+          <FaLinkedinIn size={20} />
         </a>
-        <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-indigo-600">
-          <FaFacebook size={20} />
+        <a
+          href="https://facebook.com/yourpage"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="hover:text-indigo-600"
+        >
+          <FaFacebookF size={20} />
         </a>
       </div>
 
+      {/* Copyright */}
       <div className="border-t border-gray-100 py-6 text-center text-xs text-gray-500">
         © {new Date().getFullYear()} Ascent Legal. All rights reserved.
       </div>

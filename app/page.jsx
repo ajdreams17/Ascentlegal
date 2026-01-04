@@ -138,16 +138,16 @@ export default function HomePage() {
                 href: "/services/contracts-drafting",
               },
               {
-                title: "Employment",
-                icon: Users,
-                desc: "Offers, handbooks, and compliance.",
-                href: "/services/employment",
-              },
-              {
                 title: "Trademark Protection",
                 icon: ShieldCheck,
                 desc: "Registration, searching, and monitoring.",
                 href: "/services/trademark",
+              },
+              {
+                title: "Employment",
+                icon: Users,
+                desc: "Offers, handbooks, and compliance.",
+                href: "/services/employment",
               },
               {
                 title: "Entertainment Law",

@@ -152,7 +152,7 @@ export default function HomePage() {
               {
                 title: "Entertainment Law",
                 icon: Film,
-                desc: "Deals, licensing, and royalties for creators.",
+                desc: "Deals, licensing, and royalties for creators and entertainment businesses.",
                 href: "/services/entertainment",
               },
               {

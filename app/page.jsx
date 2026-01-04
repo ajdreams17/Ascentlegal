@@ -117,7 +117,7 @@ export default function HomePage() {
 
 
       {/* practice preview */}
-      <section id="practice" className="border-t border-gray-100 bg-gray-50/50">
+      <section id="practice" className="scroll-mt-24 border-t border-gray-100 bg-gray-50/50">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="mb-10 flex items-end justify-between">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Practice Areas</h2>

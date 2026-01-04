@@ -59,7 +59,7 @@ export default function HomePage() {
           href="/contact"
           className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
         >
-          Schedule a Call
+          Discuss Your Business or Project
         </Link>
         <a
           href="#practice"

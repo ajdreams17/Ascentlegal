@@ -126,11 +126,11 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Corporate & Formation",
-                icon: Building2,
-                desc: "Entity setup, founder agreements, and governance.",
-                href: "/services/corporate-formation",
-              },
+                title: "Entertainment Law",
+                icon: Film,
+                desc: "Deals, licensing, and royalties for creators and entertainment businesses.",
+                href: "/services/entertainment",
+              },  
               {
                 title: "Contracts Drafting",
                 icon: FileText,
@@ -144,16 +144,16 @@ export default function HomePage() {
                 href: "/services/trademark",
               },
               {
+                title: "Corporate & Formation",
+                icon: Building2,
+                desc: "Entity setup, founder agreements, and governance.",
+                href: "/services/corporate-formation",
+              },
+              {
                 title: "Employment",
                 icon: Users,
                 desc: "Offers, handbooks, and compliance.",
                 href: "/services/employment",
-              },
-              {
-                title: "Entertainment Law",
-                icon: Film,
-                desc: "Deals, licensing, and royalties for creators and entertainment businesses.",
-                href: "/services/entertainment",
               },
               {
                 title: "Tailored Legal Services",

@@ -189,8 +189,8 @@ export default function HomePage() {
               <p className="text-sm text-white/90">Book a free intro call, we’ll assess your goals and needs.</p>
             </div>
             <div className="bg-white/10 p-6 rounded-xl shadow-lg">
-              <h3 className="text-xl font-semibold mb-2">2. Get a Tailored IP Strategy</h3>
-              <p className="text-sm text-white/90">Practical plans for trademarks, copyrights, and contracts.</p>
+              <h3 className="text-xl font-semibold mb-2">2. Get a Tailored Legal Strategy</h3>
+              <p className="text-sm text-white/90">Practical plans for contracts, trademarks, copyrights, and business growth.</p>
             </div>
             <div className="bg-white/10 p-6 rounded-xl shadow-lg">
               <h3 className="text-xl font-semibold mb-2">3. Secure & Grow</h3>

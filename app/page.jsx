@@ -51,7 +51,7 @@ export default function HomePage() {
         </span>
       </h1>
       <p className="mt-6 text-lg text-gray-600 max-w-xl">
-        Practical, business-first legal guidance for entrepreneurs, creators, and entertainment businesses—covering contracts, trademarks, employment, and growth-stage risk.
+        Practical, business-first legal guidance for entrepreneurs, creators, and entertainment businesses covering contracts, trademarks, employment, and growth-stage risk.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">

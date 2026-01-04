@@ -6,9 +6,9 @@ import {
 import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
-  title: "Ascent Legal | Modern Counsel for Ambitious Businesses",
+  title: "Ascent LegalXX | Modern Counsel for Ambitious Businesses",
   description:
-    "Strategic legal support for entrepreneurs, creators, and business owners, practical, proactive, and tailored to your growth",
+    "StrategicXX legal support for entrepreneurs, creators, and business owners, practical, proactive, and tailored to your growth",
 };
 
 export default function HomePage() {

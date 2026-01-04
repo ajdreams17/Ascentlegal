@@ -6,9 +6,9 @@ import {
 import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
-  title: "Ascent LegalXX | Modern Counsel for Ambitious Businesses",
+  title: "Ascent Legal | Modern Counsel for Ambitious Businesses",
   description:
-    "StrategicXX legal support for entrepreneurs, creators, and business owners, practical, proactive, and tailored to your growth",
+    "Strategic legal support for entrepreneurs, creators, and business owners, practical, proactive, and tailored to your growth",
 };
 
 export default function HomePage() {
@@ -45,14 +45,13 @@ export default function HomePage() {
   <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
     <div>
       <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-        Modern Counsel for{" "}
+        Legal Counsel for{" "}
         <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-          Ambitious Businesses
+          Small Businesses and Creative Professionals
         </span>
       </h1>
       <p className="mt-6 text-lg text-gray-600 max-w-xl">
-        Practical, proactive legal guidance for founders and operators, delivered with the
-        polish you expect and the speed you need.
+        Practical, business-first legal guidance for entrepreneurs, creators, and entertainment businesses—covering contracts, trademarks, employment, and growth-stage risk.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">

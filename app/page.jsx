@@ -94,7 +94,7 @@ export default function HomePage() {
         <div className="space-y-3">
           <div>
             <p className="text-sm text-gray-500">Client matter</p>
-            <p className="font-medium">Trademark Protection</p>
+            <p className="font-medium">Brand Deal Review</p>
           </div>
           <div className="grid grid-cols-3 gap-3 text-xs">
             {[

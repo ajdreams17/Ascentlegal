@@ -49,13 +49,6 @@ const areas = [
     href: "/services/employment",
     cta: "Set up team docs",
   },
-  {
-    title: "General Counsel (Ongoing Support)",
-    desc: "Right-sized legal support for creators and growing companies—contracts, IP strategy, and ongoing guidance.",
-    bullets: ["Priority Support", "Repeat-Deal Templates", "Ongoing Contract + IP Guidance"],
-    href: "/services/general",
-    cta: "Discuss ongoing support",
-  },
 ];
 
 const faqs = [

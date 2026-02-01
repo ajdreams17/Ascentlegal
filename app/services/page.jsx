@@ -155,11 +155,17 @@ export default function ServicesPage() {
                 ))}
               </ul>
 
-              <div className="mt-4">
-                <Link href={a.href} className="text-sm font-medium text-indigo-600 hover:underline">
-                  {a.cta} →
-                </Link>
-              </div>
+            <div className="mt-4 space-y-2">
+  <Link href={a.href} className="text-sm font-medium text-indigo-600 hover:underline">
+    {a.cta} →
+  </Link>
+
+  {a.also && (
+    <Link href={a.also.href} className="text-sm text-gray-600 hover:underline">
+      Also: {a.also.label} →
+    </Link>
+  )}
+</div>
             </div>
           ))}
         </div>

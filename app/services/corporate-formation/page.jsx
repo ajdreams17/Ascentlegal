@@ -68,10 +68,17 @@ export default function CorporateFormationPage() {
             Formation
           </span>
         </h1>
+
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
           Choose the right entity, align founders, and set governance that scales. We make
           formation decisions clear, filings accurate, and next steps actionable.
         </p>
+
+        {/* SEO support line (natural keywords) */}
+        <p className="mt-3 text-sm text-gray-600 max-w-3xl">
+          We support LLC formation, C-Corp formation, and founder documentation including operating agreements and bylaws.
+        </p>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
@@ -88,30 +95,33 @@ export default function CorporateFormationPage() {
         </div>
       </section>
 
-   {/* Roadmap Features */}
-<section className="mt-10 space-y-6">
-  <div className="flex items-start gap-3">
-    <span className="text-indigo-600 text-lg">✔</span>
-    <p>
-      <strong>Roadmap that keeps you moving</strong><br />
-      Formation simplified with step-by-step guidance.
-    </p>
-  </div>
-  <div className="flex items-start gap-3">
-    <span className="text-indigo-600 text-lg">✔</span>
-    <p>
-      <strong>Packages built for your business</strong><br />
-      Industry-specific legal & compliance needs covered.
-    </p>
-  </div>
-  <div className="flex items-start gap-3">
-    <span className="text-indigo-600 text-lg">✔</span>
-    <p>
-      <strong>No hidden costs, ever</strong><br />
-      Transparent pricing you can trust.
-    </p>
-  </div>
-</section>
+      {/* Roadmap Features */}
+      <section className="mt-10 space-y-6">
+        <div className="flex items-start gap-3">
+          <span className="text-indigo-600 text-lg">✔</span>
+          <p className="text-gray-800">
+            <strong>Roadmap that keeps you moving</strong>
+            <br />
+            Formation simplified with step-by-step guidance.
+          </p>
+        </div>
+        <div className="flex items-start gap-3">
+          <span className="text-indigo-600 text-lg">✔</span>
+          <p className="text-gray-800">
+            <strong>Packages built for your business</strong>
+            <br />
+            Legal and compliance basics covered with clear scope.
+          </p>
+        </div>
+        <div className="flex items-start gap-3">
+          <span className="text-indigo-600 text-lg">✔</span>
+          <p className="text-gray-800">
+            <strong>No hidden costs</strong>
+            <br />
+            Transparent pricing you can trust.
+          </p>
+        </div>
+      </section>
 
       {/* What’s included */}
       <section id="overview" className="mt-16">
@@ -120,8 +130,7 @@ export default function CorporateFormationPage() {
           <div className="rounded-2xl border border-gray-100 bg-white p-6">
             <h3 className="font-semibold">Entity Strategy</h3>
             <p className="mt-2 text-sm text-gray-600">
-              Clear guidance on LLC, C-Corp, or S-Corp based on taxes, ownership, investors, and
-              hiring plans.
+              Clear guidance on LLC, C-Corp, or S-Corp based on taxes, ownership, investors, and hiring plans.
             </p>
             <ul className="mt-3 space-y-1 text-sm text-gray-600">
               {[
@@ -136,6 +145,7 @@ export default function CorporateFormationPage() {
               ))}
             </ul>
           </div>
+
           <div className="rounded-2xl border border-gray-100 bg-white p-6">
             <h3 className="font-semibold">Filings & Core Docs</h3>
             <p className="mt-2 text-sm text-gray-600">
@@ -154,6 +164,7 @@ export default function CorporateFormationPage() {
               ))}
             </ul>
           </div>
+
           <div className="rounded-2xl border border-gray-100 bg-white p-6">
             <h3 className="font-semibold">Founder Alignment</h3>
             <p className="mt-2 text-sm text-gray-600">
@@ -172,6 +183,7 @@ export default function CorporateFormationPage() {
               ))}
             </ul>
           </div>
+
           <div className="rounded-2xl border border-gray-100 bg-white p-6">
             <h3 className="font-semibold">Launch Checklist</h3>
             <p className="mt-2 text-sm text-gray-600">
@@ -197,7 +209,6 @@ export default function CorporateFormationPage() {
       <section id="packages" className="mt-16">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Packages</h2>
-          
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -235,9 +246,9 @@ export default function CorporateFormationPage() {
         <h2 className="text-2xl md:text-3xl font-semibold">How it works</h2>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
-            { step: "1", title: "Scoping Call", text: "We learn goals, investors, and timelines; recommend structure." },
+            { step: "1", title: "Discovery Call", text: "We learn goals, investors, and timelines; recommend structure." },
             { step: "2", title: "Docs & Filings", text: "We draft, review, and file what’s needed for a clean launch." },
-            { step: "3", title: "Handoff & Next Steps", text: "You get clean final docs, a compliance checklist, and support." },
+            { step: "3", title: "Handoff & Next Steps", text: "You get final docs, a compliance checklist, and clear next steps." },
           ].map((p) => (
             <div key={p.step} className="rounded-2xl border border-gray-100 bg-white p-6">
               <div className="text-sm text-gray-500">Step {p.step}</div>
@@ -265,12 +276,12 @@ export default function CorporateFormationPage() {
       <section className="mt-16 text-center">
         <h3 className="text-xl font-semibold">Ready to form or clean up your entity?</h3>
         <p className="mt-2 text-gray-600">We’ll scope a flat-fee plan and next steps in your first call.</p>
-        <div className="mt-4 flex gap-3 justify-center">
+        <div className="mt-4 flex gap-3 justify-center flex-wrap">
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Consultation
+            Book a Discovery Call
           </Link>
           <Link
             href="/services"
@@ -279,6 +290,8 @@ export default function CorporateFormationPage() {
             Back to Services
           </Link>
         </div>
+
+        <p className="mt-4 text-xs text-gray-500">Transactional counsel only. No litigation.</p>
       </section>
     </main>
   );

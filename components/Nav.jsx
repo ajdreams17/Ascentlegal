@@ -113,13 +113,12 @@ export default function Nav() {
             </Link>
           ))}
 
-          <Link
-            href="/contact"
-            onClick={() => setOpen(false)}
-            className="mt-3 rounded-lg bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white text-center shadow"
-          >
-            Book Consultation
-          </Link>
+       <Link
+  href="/contact"
+  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow hover:opacity-95 text-sm"
+>
+  Book a Discovery Call
+</Link>
         </nav>
       </aside>
     </header>

@@ -35,7 +35,7 @@ export default function HomePage() {
   {
     title: "Small Business Transactions",
     icon: FileText,
-    desc: "Drafting and negotiating service agreements, vendor contracts, partnerships, and key commercial terms.",
+    desc: "Drafting and negotiating service agreements, vendor contracts, partnerships, and key commercial contracts.",
     href: "/services/transactions",
   },
   {

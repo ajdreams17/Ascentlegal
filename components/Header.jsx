@@ -48,12 +48,12 @@ export default function Header() {
           <Link href="/services" className="px-3 py-2 hover:text-indigo-600">Services</Link>
           <Link href="/resources" className="px-3 py-2 hover:text-indigo-600">Resources</Link>
           <Link href="/contact" className="px-3 py-2 hover:text-indigo-600">Contact</Link>
-          <Link
-            href="/contact"
-            className="ml-3 rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white font-medium shadow hover:opacity-90"
-          >
-            Book Consultation
-          </Link>
+        <Link
+  href="/contact"
+  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow hover:opacity-95 text-sm"
+>
+  Book a Discovery Call
+</Link>
         </nav>
   {/* Mobile menu button */}
         <button

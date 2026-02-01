@@ -45,7 +45,7 @@ export default function HomePage() {
   <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
     <div>
       <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-        Entertainment & creator counsel for{" "}
+        Entertainment & creator counsel for {" "}
         <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
           deal-driven brands
         </span>

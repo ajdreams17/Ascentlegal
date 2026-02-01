@@ -58,14 +58,14 @@ export default function HomePage() {
     },
   ];
 
-  const commonDeals = [
-    "Brand deals + influencer agreements",
-    "UGC licensing + usage rights",
-    "Production + creative services agreements",
-    "Collabs + revenue splits",
-    "Exclusivity + category conflicts",
-    "Templates for repeatable deal flow",
-  ];
+const commonDeals = [
+  "Brand deals & influencer agreements (Entertainment)",
+  "UGC licensing & usage rights (IP)",
+  "Service Agreements & MSAs (Small Biz)",
+  "Collabs & revenue splits (Entertainment)",
+  "Trademark & Copyright strategy (IP)",
+  "Entity formation & founding docs (Small Biz)",
+];
 
   return (
     <>

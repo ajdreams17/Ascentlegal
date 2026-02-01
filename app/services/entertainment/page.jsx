@@ -1,137 +1,207 @@
-// app/services/entertainment/page.jsx
+// app/services/entertainment/page.tsx
 import Link from "next/link";
-import AgreementCard from "../../../components/AgreementCard";
-
 
 export const metadata = {
-  title: "Entertainment Law | Ascent Legal",
+  title: "Entertainment & Creator Counsel | Ascent Legal",
   description:
-    "Production, talent, music, and digital media contracts. Licensing, rights clearances, and brand partnerships for creators and companies.",
+    "Business-first entertainment counsel for creators, studios, agencies, and brands. Brand deals, influencer agreements, production contracts, and licensing support. Transactional counsel only (no litigation).",
 };
 
-const sectors = [
-  { title: "Film & TV", blurb: "Production counsel, option/purchase, talent and crew deals." },
-  { title: "Music & Publishing", blurb: "Split sheets, producer & feature agreements, catalog licenses." },
-  { title: "Digital & Social", blurb: "Creator/influencer sponsorships, platform and content licenses." },
-  { title: "Brands & Agencies", blurb: "Campaign MSAs, usage rights, SAG-AFTRA/union considerations." },
+const whoWeHelp = [
+  {
+    title: "Creators & Talent",
+    desc: "Brand deals, influencer agreements, licensing, and collaboration terms that protect your rights and revenue.",
+    bullets: ["Creators + Influencers", "Talent + On-camera", "Musicians + Artists"],
+  },
+  {
+    title: "Studios & Production Teams",
+    desc: "Production-ready contracts that keep work on schedule and reduce friction across stakeholders.",
+    bullets: ["Producers + Studios", "Editors + Crew", "Creative Services Teams"],
+  },
+  {
+    title: "Brands & Agencies",
+    desc: "Campaign contracts and usage rights structured for clarity, deliverables, and compliance (as applicable).",
+    bullets: ["Brands + Partnerships", "Agencies + Managers", "UGC + Paid Media Teams"],
+  },
 ];
 
 const agreements = [
-  { title: "Option & Purchase Agreements", blurb: "Chain of title, reversion terms, and clean rights transfer." },
-  { title: "Production Services & Location Agreements", blurb: "Scope, insurance, safety, and indemnity balanced." },
-  { title: "Talent, Crew & Appearance Releases", blurb: "Clear usage rights and image/likeness consent." },
-  { title: "Music Licenses & Sync/Master Use", blurb: "Split sheets, ownership, term & territory." },
-  { title: "Recording, Producer & Feature Artist Deals", blurb: "Work-for-hire vs. splits, credits, royalties." },
-  { title: "Distribution & Sales Agency Agreements", blurb: "MGs, recoupment, reporting & audit rights." },
-  { title: "Sponsorships, Endorsements & Brand Partnerships", blurb: "Usage rights, exclusivity, deliverables, approvals." },
+  "Brand deals + sponsorship agreements",
+  "Influencer/UGC agreements + usage rights",
+  "Content licensing agreements",
+  "Production agreements (crew, services, and deliverables)",
+  "Collaboration agreements + revenue splits",
+  "Talent agreements + release/consent terms (as applicable)",
+  "Agency + management agreements (review + negotiation support)",
 ];
 
+const process = [
+  { step: "1", title: "Discovery Call", text: "We confirm the deal type, goals, timelines, and risk priorities." },
+  {
+    step: "2",
+    title: "Review / Draft",
+    text: "You get redlines plus a plain-English summary of what matters and what to change.",
+  },
+  { step: "3", title: "Negotiate + Close", text: "We provide negotiation language and help finalize clean terms." },
+];
 
 const faqs = [
   {
-    q: "Can you review one contract or help end-to-end on a production?",
-    a: "Both. We handle single-document reviews on flat fees and also scope full production counsel with clear deliverables and timelines.",
+    q: "Do you review existing brand deals and influencer contracts?",
+    a: "Yes. We review and redline contracts, explain the risks in plain English, and provide negotiation language you can use.",
   },
   {
-    q: "Do you work with creators and companies?",
-    a: "Yes. We represent creators, production companies, brands, and agencies—so we understand both sides’ concerns and market terms.",
+    q: "Do you draft brand deal or licensing agreements from scratch?",
+    a: "Yes. We can draft custom agreements when you need a clean starting point or a repeatable template for future deals.",
   },
   {
-    q: "Flat fees or hourly?",
-    a: "Common agreements are flat-fee with quick turnaround. Complex productions are scoped in advance with milestones.",
+    q: "What’s your typical turnaround time?",
+    a: "Most contract reviews return within 1–3 business days depending on length and complexity. If you have a deadline, tell us up front and we’ll confirm timing.",
+  },
+  {
+    q: "Do you handle disputes or litigation?",
+    a: "No. We provide transactional counsel only (no litigation). We can support negotiation strategy and contract interpretation, but we do not appear in court.",
   },
 ];
 
 export default function EntertainmentPage() {
   return (
-    <main className="mx-auto max-w-7xl px-4 sm:px-6">
+    <main className="mx-auto max-w-7xl px-6 py-16">
       {/* Hero */}
-      <section className="pt-16 sm:pt-24">
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-          Entertainment <span className="text-indigo-500">Law</span>
+      <section>
+        <p className="text-sm font-medium text-gray-600">Services</p>
+
+        <h1 className="mt-2 text-4xl md:text-5xl font-bold">
+          Entertainment &{" "}
+          <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+            Creator Counsel
+          </span>
         </h1>
 
-        <p className="mt-4 text-gray-600 max-w-3xl">
-          Practical, production-ready contracts for film, TV, music, and digital media.
-          We move fast, protect your rights, and keep deals on schedule—so you can create with confidence.
+        <p className="mt-4 text-lg text-gray-600 max-w-3xl">
+          Business-first, plain-English support for creators, studios, agencies, and brands. We help you move faster on
+          brand deal contracts, influencer agreements, licensing, and production counsel. Transactional counsel only. No
+          litigation.
         </p>
 
-        {/* Primary actions */}
-        <div className="mt-6 flex flex-wrap items-center gap-3">
+        <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 via-blue-500 to-teal-400 px-4 sm:px-5 py-2.5 text-white font-medium shadow hover:opacity-95"
+            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Consultation
+            Book a Discovery Call
           </Link>
 
-        <Link
-            href="/resources"
-            className="rounded-xl border border-gray-200 bg-white px-4 sm:px-5 py-2.5 text-gray-700 hover:bg-gray-50"
+          <a
+            href="#agreements"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
           >
-            See agreements
+            See common deal types
+          </a>
+
+          <Link
+            href="/services/deal-desk-support"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
+          >
+            Deal Desk Support
           </Link>
         </div>
 
-        {/* Pills row */}
-        <div className="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-center">
-            Detail-first legal review process
-          </div>
-          <div className="rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-center">
-            Every contract tailored to you
-          </div>
-          <div className="rounded-2xl border border-gray-200 px-5 py-4 font-semibold text-center">
-            Direct access to your attorney
-          </div>
-        </div>
-      </section>
-
-      {/* Sectors */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Who we serve</h2>
-        <p className="mt-2 text-gray-600 max-w-3xl">
-          From independent productions and music teams to creators and brands—our contracts balance
-          creative flexibility with clear risk controls.
-        </p>
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {sectors.map((s) => (
-            <div
-              key={s.title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
-            >
-              <h3 className="font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{s.blurb}</p>
+        {/* Quick proof */}
+        <div className="mt-10 grid sm:grid-cols-3 gap-6">
+          {[
+            { label: "Deal-Ready Contracts", desc: "Clear terms that keep projects moving." },
+            { label: "Plain-English Strategy", desc: "Know exactly what matters and why." },
+            { label: "Built for Creators", desc: "Rights, usage, exclusivity, and payment—covered." },
+          ].map((item) => (
+            <div key={item.label} className="rounded-xl border border-gray-100 bg-white p-6 text-center">
+              <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+                {item.label}
+              </div>
+              <div className="mt-2 text-sm text-gray-600">{item.desc}</div>
             </div>
           ))}
         </div>
       </section>
 
-{/* Agreements */}
-<section id="agreements" className="mt-16">
-  <h2 className="text-2xl md:text-3xl font-semibold">Core agreements</h2>
+      {/* Who we help */}
+      <section className="mt-16">
+        <h2 className="text-2xl md:text-3xl font-semibold">Who we help</h2>
+        <div className="mt-6 grid md:grid-cols-3 gap-6">
+          {whoWeHelp.map((x) => (
+            <div key={x.title} className="rounded-2xl border border-gray-100 bg-white p-6">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400" />
+                <h3 className="text-lg font-semibold">{x.title}</h3>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">{x.desc}</p>
+              <ul className="mt-4 space-y-1 text-sm text-gray-700">
+                {x.bullets.map((b) => (
+                  <li key={b} className="flex gap-2">
+                    <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
 
-  <ul className="mt-6 space-y-3">
-    {agreements.map((item) => (
-      <AgreementCard
-        key={typeof item === "string" ? item : item.title}
-        title={typeof item === "string" ? item : item.title}
-        blurb={typeof item === "string" ? undefined : item.blurb}
-      />
-    ))}
-  </ul>
-</section>
+      {/* Agreements */}
+      <section id="agreements" className="mt-16 scroll-mt-24">
+        <div className="mb-3 flex items-end justify-between">
+          <h2 className="text-2xl md:text-3xl font-semibold">Common entertainment deal types</h2>
+        </div>
 
+        <p className="text-gray-600 max-w-3xl">
+          What you get: clean redlines, a plain-English risk summary, and negotiation language you can use.
+        </p>
+
+        <div className="mt-6 rounded-2xl border border-gray-100 bg-white p-6">
+          <ul className="grid sm:grid-cols-2 gap-3 text-sm text-gray-700">
+            {agreements.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Turnaround (conversion booster) */}
+      <section className="mt-16 rounded-2xl border border-gray-100 bg-gradient-to-r from-indigo-50 to-teal-50 p-8">
+        <div className="grid md:grid-cols-2 gap-6 items-center">
+          <div>
+            <h3 className="text-xl font-semibold">Typical turnaround</h3>
+            <p className="mt-2 text-sm text-gray-600">
+              Most reviews return within 1–3 business days. If you have a deadline, tell us up front and we’ll confirm
+              timing. Rush options may be available depending on scope.
+            </p>
+          </div>
+          <div className="flex gap-3 md:justify-end">
+            <Link
+              href="/contact"
+              className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+            >
+              Book a Discovery Call
+            </Link>
+            <Link
+              href="/services/trademark"
+              className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
+            >
+              Trademark Protection
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Process */}
       <section className="mt-16">
         <h2 className="text-2xl md:text-3xl font-semibold">Straightforward process</h2>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
-          {[
-            { step: "1", title: "Scope & timelines", text: "We define the deal, deliverables, and dates." },
-            { step: "2", title: "Draft or review", text: "We draft from proven templates or redline incoming terms." },
-            { step: "3", title: "Negotiate & close", text: "Market terms, clear rights, and clean signatures." },
-          ].map((p) => (
+          {process.map((p) => (
             <div key={p.step} className="rounded-2xl border border-gray-100 bg-white p-6">
               <div className="text-sm text-gray-500">Step {p.step}</div>
               <h3 className="mt-1 font-semibold">{p.title}</h3>
@@ -155,25 +225,17 @@ export default function EntertainmentPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="mt-16 text-center mb-20">
-        <h3 className="text-xl font-semibold">Ready to lock terms and protect your rights?</h3>
+      <section className="mt-16 text-center">
+        <h3 className="text-xl font-semibold">Have a deal on your desk?</h3>
         <p className="mt-2 text-gray-600">
-          Tell us your production or deal timeline—we’ll map the fastest path to signature.
+          Tell us what you’re working on—we’ll recommend the fastest path.
         </p>
-        <div className="mt-4 flex gap-3 justify-center">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
-          >
-            Book a Consultation
-          </Link>
-          <Link
-            href="/services"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            Back to Services
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+        >
+          Book a Discovery Call
+        </Link>
       </section>
     </main>
   );

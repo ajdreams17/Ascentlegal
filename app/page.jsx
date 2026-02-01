@@ -20,43 +20,43 @@ export const metadata = {
 export default function HomePage() {
   // 3 pillars + supporting
   const practiceAreas = [
-    {
-      title: "Entertainment & Creator Counsel",
-      icon: Film,
-      desc: "Brand deals, influencer agreements, production terms, and creator contracts—built for monetization.",
-      href: "/services/entertainment",
-    },
-    {
-      title: "Licensing & Intellectual Property",
-      icon: ShieldCheck,
-      desc: "Usage rights, licensing structures, and IP strategy (copyright + trademark support).",
-      href: "/services/licensing-ip",
-    },
-    {
-      title: "Small Business Transactions",
-      icon: FileText,
-      desc: "Drafting and negotiating MSAs, SOWs, vendor agreements, partnerships, and key commercial contracts.",
-      href: "/services/transactions",
-    },
-    {
-      title: "Marketing & Advertising Law",
-      icon: Briefcase,
-      desc: "Endorsement disclosures, claims substantiation, promotions, and campaign compliance guidance.",
-      href: "/services/marketing-advertising",
-    },
-    {
-      title: "Corporate & Formation",
-      icon: Building2,
-      desc: "Entity setup, operating agreements, and governance for founders and collaborators.",
-      href: "/services/corporate-formation",
-    },
-    {
-      title: "Creator-to-Founder Support",
-      icon: Users,
-      desc: "From first brand deal to your first hire—contracts, IP, and transactional counsel as your business evolves.",
-      href: "/services",
-    },
-  ];
+  {
+    title: "Entertainment & Creator Counsel",
+    icon: Film,
+    desc: "Brand deals, influencer agreements, production terms, and creator contracts—built for monetization.",
+    href: "/services/entertainment",
+  },
+  {
+    title: "Licensing & Intellectual Property",
+    icon: ShieldCheck,
+    desc: "Usage rights, licensing structures, and IP strategy (copyright + trademark support).",
+    href: "/services/licensing-ip",
+  },
+  {
+    title: "Small Business Transactions",
+    icon: FileText,
+    desc: "Drafting and negotiating MSAs, SOWs, vendor agreements, partnerships, and key commercial contracts.",
+    href: "/services/transactions",
+  },
+  {
+    title: "Marketing & Advertising Law",
+    icon: Briefcase,
+    desc: "Endorsement disclosures, claims substantiation, promotions, and campaign compliance guidance.",
+    href: "/services/marketing-advertising",
+  },
+  {
+    title: "Corporate & Formation",
+    icon: Building2,
+    desc: "Entity setup, operating agreements, and governance for founders and collaborators.",
+    href: "/services/corporate-formation",
+  },
+  {
+    title: "Deal Desk Support",
+    icon: Users,
+    desc: "On-call contract review, drafting, and negotiation support for repeat deals and fast-moving partnerships.",
+    href: "/services/deal-desk", // or "/services" until this page exists
+  },
+];
 
 const commonDeals = [
   "Brand deals & influencer agreements (Entertainment)",

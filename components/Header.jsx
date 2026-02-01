@@ -97,13 +97,12 @@ export default function Header() {
               <Link href="/services" onClick={() => setOpen(false)} className="py-2">Services</Link>
               <Link href="/resources" onClick={() => setOpen(false)} className="py-2">Resources</Link>
               <Link href="/contact" onClick={() => setOpen(false)} className="py-2">Contact</Link>
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="mt-3 rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white font-medium text-center"
-              >
-                Book Consultation
-              </Link>
+           <Link
+  href="/contact"
+  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow hover:opacity-95 text-sm"
+>
+  Book a Discovery Call
+</Link>
             </nav>
           </div>
         </div>

@@ -98,9 +98,9 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-3 gap-3 text-xs">
             {[
-              { label: "Search", icon: FileText },
-              { label: "USPTO Filing", icon: Stamp },
-              { label: "Monitoring", icon: ShieldCheck },
+               { label: "Usage Rights", icon: ShieldCheck },
+               { label: "Exclusivity", icon: Users },
+               { label: "Payment Terms", icon: FileText },           
             ].map(({ label, icon: Icon }) => (
               <div key={label} className="rounded-xl border border-gray-100 p-4 shadow-sm flex items-center gap-2">
                 <Icon className="h-4 w-4 text-indigo-500" />

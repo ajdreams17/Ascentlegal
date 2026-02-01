@@ -8,19 +8,21 @@ export const metadata = {
 
 const areas = [
   {
-    title: "Entertainment & Creator Counsel",
-    desc: "Drafting and negotiating brand deals, influencer agreements, production terms, and creator contracts.",
-    bullets: ["Brand + Sponsorship Deals", "Influencer/UGC Agreements", "Production + Media Agreements"],
-    href: "/services/entertainment",
-    cta: "Explore entertainment counsel",
-  },
-  {
-    title: "Trademark Protection",
-    desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
-    bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],
-    href: "/services/trademark",
-    cta: "Protect my brand",
-  },
+  title: "Entertainment & Creator Counsel",
+  desc: "Drafting and negotiating brand deals, influencer agreements, production terms, and creator contracts.",
+  bullets: ["Brand + Sponsorship Deals", "Influencer/UGC Agreements", "Production + Media Agreements"],
+  href: "/services/entertainment",
+  cta: "Explore entertainment counsel",
+  also: { label: "Copyright & Licensing", href: "/services/copyright" },
+},
+{
+  title: "Trademark Protection",
+  desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
+  bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],
+  href: "/services/trademark",
+  cta: "Protect my brand",
+  also: { label: "Copyright & Licensing", href: "/services/copyright" },
+},
   {
     title: "Contracts Drafting",
     desc: "Drafting, reviewing, and negotiating agreements that protect revenue, clarify terms, and reduce risk.",

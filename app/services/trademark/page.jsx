@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Trademark Protection | Ascent Legal",
   description:
-    "Name clearance, USPTO filing, and brand enforcement for founders and operators. Flat-fee options, fast turnarounds, business-first advice.",
+    "Name clearance, USPTO filing, and brand enforcement for creators and growing companies. Flat-fee options, fast turnarounds, business-first advice. Transactional counsel only (no litigation).",
 };
 
 const offerings = [
@@ -30,6 +30,25 @@ const offerings = [
   },
 ];
 
+const copyrightSupport = [
+  {
+    title: "Copyright Strategy + Registration",
+    desc: "We help you decide what to register, when it’s worth it, and how to protect your most valuable assets.",
+  },
+  {
+    title: "Licensing + Usage Rights",
+    desc: "Clear terms for how your content can be used, repurposed, edited, and distributed commercially.",
+  },
+  {
+    title: "Work-for-Hire + IP Assignment",
+    desc: "Contract language that ensures you actually own what your contractors and collaborators create.",
+  },
+  {
+    title: "DMCA + Platform Notices",
+    desc: "Practical support for notices and takedowns to help stop unauthorized copies (as applicable).",
+  },
+];
+
 const faqs = [
   {
     q: "Do I need a search before filing?",
@@ -42,6 +61,14 @@ const faqs = [
   {
     q: "Flat fees or hourly?",
     a: "Searches and standard filings are flat-fee. Responses and enforcement actions can be flat-fee or scoped upfront.",
+  },
+  {
+    q: "Do you help with copyright registration and licensing?",
+    a: "Yes. We support creators and brands with copyright strategy, registrations when appropriate, and licensing/usage terms that match how your content is used commercially.",
+  },
+  {
+    q: "Do you handle litigation?",
+    a: "No. We provide transactional counsel only (no litigation). We can support negotiation strategy and pre-suit resolution planning, but we do not appear in court.",
   },
 ];
 
@@ -56,61 +83,64 @@ export default function TrademarkPage() {
             Protection
           </span>
         </h1>
+
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
           Secure the name, logo, and brand assets your customers trust. We combine smart clearance,
           precise filing, and practical enforcement—so you can build with confidence.
         </p>
+
+        {/* Copyright bridge (keeps page trademark-first) */}
+        <p className="mt-3 text-sm text-gray-600 max-w-3xl">
+          Need copyright support too? We help creators and brands with copyright strategy, registrations, and licensing
+          alongside trademark protection.
+        </p>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Consultation
+            Book a Discovery Call
           </Link>
-          <Link
-            href="/ip"
+          <a
+            href="#copyright"
             className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
           >
-            Explore IP services
-          </Link>
+            Copyright support
+          </a>
         </div>
       </section>
 
       {/* Proof / Stats */}
       <div className="mt-10 grid sm:grid-cols-3 gap-6">
-  {/* 1) Keep your real metric */}
-  <div className="rounded-xl border border-gray-100 p-6 text-center">
-    <div className="text-3xl font-semibold text-indigo-600">300+</div>
-    <div className="mt-2 text-sm text-gray-600">Trademarks filed</div>
-  </div>
+        {/* 1) Keep your real metric */}
+        <div className="rounded-xl border border-gray-100 p-6 text-center bg-white">
+          <div className="text-3xl font-semibold text-indigo-600">300+</div>
+          <div className="mt-2 text-sm text-gray-600">Trademarks filed</div>
+        </div>
 
-  {/* 2) Replace “response time” */}
-  <div className="rounded-xl border border-gray-100 p-6 text-center">
-    <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-      Office actions & monitoring
-    </div>
-    <div className="mt-2 text-sm text-gray-600">
-      Response and ongoing watch services.
-    </div>
-  </div>
+        {/* 2) Replace “response time” */}
+        <div className="rounded-xl border border-gray-100 p-6 text-center bg-white">
+          <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+            Office actions & monitoring
+          </div>
+          <div className="mt-2 text-sm text-gray-600">Response and ongoing watch services.</div>
+        </div>
 
-  {/* 3) Replace “platforms covered” */}
-  <div className="rounded-xl border border-gray-100 p-6 text-center">
-    <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-      Marketplace support
-    </div>
-    <div className="mt-2 text-sm text-gray-600">
-      Amazon Brand Registry, Shopify, and social.
-    </div>
-  </div>
-</div>
+        {/* 3) Replace “platforms covered” */}
+        <div className="rounded-xl border border-gray-100 p-6 text-center bg-white">
+          <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+            Marketplace support
+          </div>
+          <div className="mt-2 text-sm text-gray-600">Amazon Brand Registry, Shopify, and social.</div>
+        </div>
+      </div>
 
       {/* Offerings */}
       <section className="mt-16">
         <h2 className="text-2xl md:text-3xl font-semibold">How we help</h2>
         <p className="mt-2 text-gray-600 max-w-3xl">
-          Choose a focused engagement or bundle end-to-end protection—from name clearance to
-          watch services and takedowns.
+          Choose a focused engagement or bundle end-to-end protection—from name clearance to watch services and takedowns.
         </p>
 
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -136,6 +166,40 @@ export default function TrademarkPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Copyright section (adds capability without diluting trademark) */}
+      <section id="copyright" className="mt-16 scroll-mt-24">
+        <h2 className="text-2xl md:text-3xl font-semibold">Copyright & content protection</h2>
+        <p className="mt-2 text-gray-600 max-w-3xl">
+          Trademarks protect your brand identity. Copyright protects creative works like videos, photos, written content,
+          designs, music, and more. We help you structure ownership and usage rights so your content can be monetized
+          safely.
+        </p>
+
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {copyrightSupport.map((x) => (
+            <div
+              key={x.title}
+              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
+            >
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400" />
+                <h3 className="text-lg font-semibold">{x.title}</h3>
+              </div>
+              <p className="mt-3 text-sm text-gray-600">{x.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6">
+          <Link
+            href="/contact"
+            className="text-sm font-medium text-indigo-600 hover:underline"
+          >
+            Ask about copyright support →
+          </Link>
         </div>
       </section>
 
@@ -174,20 +238,24 @@ export default function TrademarkPage() {
       <section className="mt-16 text-center">
         <h3 className="text-xl font-semibold">Ready to protect your brand?</h3>
         <p className="mt-2 text-gray-600">Tell us your goals—we’ll map the fastest path.</p>
-        <div className="mt-4 flex gap-3 justify-center">
+        <div className="mt-4 flex gap-3 justify-center flex-wrap">
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Consultation
+            Book a Discovery Call
           </Link>
           <Link
-            href="/ip"
+            href="/services/entertainment"
             className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
           >
-            See all IP services
+            Entertainment counsel
           </Link>
         </div>
+
+        <p className="mt-4 text-xs text-gray-500">
+          Transactional counsel only. No litigation.
+        </p>
       </section>
     </main>
   );

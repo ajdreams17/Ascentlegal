@@ -130,7 +130,7 @@ const commonDeals = [
                 href="/services/entertainment"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-indigo-700"
               >
-                Review my brand deal
+                Review my next deal
                 <span className="h-[2px] w-8 bg-teal-500/70 transition-all group-hover:w-14" />
               </Link>
             </div>

@@ -27,7 +27,7 @@ export default function AboutPage() {
       </h1>
 
       <p className="mt-6 text-lg text-gray-600">
-        Ascent Legal was founded in Los Angeles to make premium legal support more accessible—without sacrificing excellence.
+        Ascent Legal was founded in Souther California to make premium legal support more accessible—without sacrificing excellence.
         We provide business-first, plain-English counsel for creators, studios, and growing companies. Strategic guidance for
         brand deals, licensing, IP, and commercial contracts. Transactional counsel only. No litigation.
       </p>

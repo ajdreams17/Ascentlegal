@@ -42,13 +42,13 @@ const areas = [
     href: "/services/corporate-formation",
     cta: "Start formation",
   },
-  {
-    title: "Team & Contractor Docs",
-    desc: "Practical documents for contractors and teams that protect your IP and set clear expectations.",
-    bullets: ["Contractor + IP Assignment", "Offer Letters (as needed)", "Policies for Growing Teams"],
-    href: "/services/employment",
-    cta: "Set up team docs",
-  },
+{
+  title: "Team & Contractor Docs",
+  desc: "Practical documents for contractors and teams that protect your IP and set clear expectations.",
+  bullets: ["Contractor + IP Assignment", "Offer Letters (as needed)", "Policies for Growing Teams"],
+  href: "/services/team-contractor-docs",
+  cta: "Set up team docs",
+},
 ];
 
 const faqs = [

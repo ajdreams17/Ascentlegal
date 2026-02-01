@@ -120,11 +120,12 @@ const commonDeals = [
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
-                href="/contact"
-                className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
-              >
-                Book a Business-First Discovery Call
-              </Link>
+  href="/contact"
+  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
+>
+  Book a Business-First Discovery Call
+</Link>
+
 
               <Link
                 href="/services/entertainment"

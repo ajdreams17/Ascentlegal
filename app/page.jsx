@@ -53,7 +53,7 @@ export default function HomePage() {
   {
     title: "Deal Desk Support",
     icon: Users,
-    desc: "On-call contract review, drafting, and negotiation support for repeat deals and fast-moving partnerships.",
+    desc: "On-call contract review, drafting, and negotiation support for repeat deals and partnerships.",
     href: "/services/deal-desk", // or "/services" until this page exists
   },
 ];

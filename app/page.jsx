@@ -51,7 +51,7 @@ export default function HomePage() {
         </span>
       </h1>
       <p className="mt-6 text-lg text-gray-600 max-w-xl">
-       Practical, business-first legal guidance for entrepreneurs, creators, and entertainment businesses focused on contracts, trademarks, employment, and growth-stage risk.
+       Business-first, plain-English support for creators, studios, and growing companies. Strategic guidance for brand deals, licensing, IP, and commercial contracts. Transactional counsel only. No litigation.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">

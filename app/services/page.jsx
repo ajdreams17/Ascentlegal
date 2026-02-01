@@ -16,7 +16,7 @@ const areas = [
   },
   {
     title: "Trademark Protection",
-    desc: "Name clearance, USPTO filing, and protection strategy for your brand assets (and related IP support).",
+    desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
     bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],
     href: "/services/trademark",
     cta: "Protect my brand",
@@ -24,7 +24,7 @@ const areas = [
   {
     title: "Contracts Drafting",
     desc: "Drafting, reviewing, and negotiating agreements that protect revenue, clarify terms, and reduce risk.",
-    bullets: ["Service + Vendor Agreements", "Independent Contractor Agreements", "Partnership + Collaboration Terms"],
+    bullets: ["Service + Vendor Agreements", "Partnership + Collaboration Terms", "Statements of Work + Scopes"],
     href: "/services/contracts-drafting",
     cta: "Review my contract",
   },

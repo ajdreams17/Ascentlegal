@@ -23,25 +23,25 @@ export default function HomePage() {
   {
     title: "Entertainment & Creator Counsel",
     icon: Film,
-    desc: "Brand deals, influencer agreements, production terms, and creator contracts—built for monetization.",
+    desc: "Drafting and negotiating brand deals, influencer agreements, production terms, and creator contracts.",
     href: "/services/entertainment",
   },
   {
     title: "Licensing & Intellectual Property",
     icon: ShieldCheck,
-    desc: "Usage rights, licensing structures, and IP strategy (copyright + trademark support).",
+    desc: "Structuring usage rights, licensing terms, and IP strategy for copyrights and trademarks.",
     href: "/services/licensing-ip",
   },
   {
     title: "Small Business Transactions",
     icon: FileText,
-    desc: "Drafting and negotiating MSAs, SOWs, vendor agreements, partnerships, and key commercial contracts.",
+    desc: "Drafting and negotiating service agreements, vendor contracts, partnerships, and key commercial terms.",
     href: "/services/transactions",
   },
   {
     title: "Marketing & Advertising Law",
     icon: Briefcase,
-    desc: "Endorsement disclosures, claims substantiation, promotions, and campaign compliance guidance.",
+    desc: "Guidance on endorsement disclosures, claims substantiation, promotions, and campaign compliance.",
     href: "/services/marketing-advertising",
   },
   {

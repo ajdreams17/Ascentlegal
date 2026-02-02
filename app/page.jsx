@@ -19,45 +19,44 @@ export const metadata = {
 
 export default function HomePage() {
   // 3 pillars + supporting
-  const practiceAreas = [
+ const practiceAreas = [
   {
     title: "Entertainment & Creator Counsel",
     icon: Film,
-    desc: "Drafting and negotiating brand deals, influencer agreements, production terms, and creator contracts.",
+    desc: "Brand deals, influencer agreements, production terms, and creator contracts.",
     href: "/services/entertainment",
   },
   {
-    title: "Licensing & Intellectual Property",
+    title: "Trademark Protection",
     icon: ShieldCheck,
-    desc: "Structuring usage rights, licensing terms, and IP strategy for copyrights and trademarks.",
-    href: "/services/licensing-ip",
+    desc: "Search, USPTO filing, and practical brand protection strategy.",
+    href: "/services/trademark",
   },
   {
-    title: "Small Business Transactions",
-    icon: FileText,
-    desc: "Drafting and negotiating service agreements, vendor contracts, partnerships, and key commercial contracts.",
-    href: "/services/transactions",
-  },
-  {
-    title: "Marketing & Advertising Law",
+    title: "Copyright & Licensing",
     icon: Briefcase,
-    desc: "Guidance on endorsement disclosures, claims substantiation, promotions, and campaign compliance.",
-    href: "/services/marketing-advertising",
+    desc: "Copyright registrations and licensing terms that protect usage rights and revenue.",
+    href: "/services/copyright",
   },
   {
-    title: "Corporate & Formation",
-    icon: Building2,
-    desc: "Entity setup, operating agreements, and governance for founders and collaborators.",
-    href: "/services/corporate-formation",
+    title: "Contracts Drafting",
+    icon: FileText,
+    desc: "Drafting, reviewing, and negotiating commercial contracts in plain English.",
+    href: "/services/contracts-drafting",
   },
   {
     title: "Deal Desk Support",
     icon: Users,
-    desc: "On-call contract review, drafting, and negotiation support for repeat deals and partnerships.",
-    href: "/services/deal-desk", // or "/services" until this page exists
+    desc: "On-call review, redlines, templates, and negotiation support for repeat deals.",
+    href: "/services/deal-desk-support",
+  },
+  {
+    title: "Corporate & Formation",
+    icon: Building2,
+    desc: "Entity setup, operating agreements/bylaws, and founder documentation that scales.",
+    href: "/services/corporate-formation",
   },
 ];
-
 const commonDeals = [
   "Brand deals & influencer agreements (Entertainment)",
   "UGC licensing & usage rights (IP)",

@@ -1,11 +1,13 @@
 [build]
   command = "npm run build"
-  # publish is handled by @netlify/plugin-nextjs
+  # NOTE: Do NOT set publish when using @netlify/plugin-nextjs
 
 [functions]
   node_bundler = "esbuild"
 
-# --- Canonical domain & HTTPS (NON-WWW) ---
+# ------------------------------------------------------------
+# Canonical domain & HTTPS (NON-WWW)
+# ------------------------------------------------------------
 [[redirects]]
   from = "http://ascentlegal.io/*"
   to = "https://ascentlegal.io/:splat"
@@ -24,23 +26,50 @@
   status = 301
   force = true
 
-# --- Security headers (Best Practices) ---
+# ------------------------------------------------------------
+# Security headers (Lighthouse Best Practices boost)
+# ------------------------------------------------------------
 [[headers]]
   for = "/*"
   [headers.values]
+    # Enforce HTTPS
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Basic hardening
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Lock down powerful browser APIs
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# --- Cache static Next assets aggressively ---
+# ------------------------------------------------------------
+# Cache static Next assets aggressively
+# ------------------------------------------------------------
 [[headers]]
   for = "/_next/static/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# --- Cache common images (adjust if you change images frequently) ---
+# Optional: cache Next image optimizer responses (safe, modest)
+[[headers]]
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+# ------------------------------------------------------------
+# Cache common static assets (adjust if you change often)
+# ------------------------------------------------------------
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
 [[headers]]
   for = "/*.png"
   [headers.values]
@@ -61,10 +90,17 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
-# Next.js runtime (let Netlify use the current v5)
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# ------------------------------------------------------------
+# Plugins
+# ------------------------------------------------------------
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# Optional: Lighthouse plugin (fine to keep)
+# Keep if you want Netlify to run Lighthouse audits on deploy
 [[plugins]]
   package = "@netlify/plugin-lighthouse"

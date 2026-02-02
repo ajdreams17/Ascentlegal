@@ -13,6 +13,7 @@ export default function sitemap() {
     "/services/contracts-drafting",
     "/services/deal-desk-support",
     "/services/corporate-formation",
+    "/services/employment", // keep if this is your Team & Contractor Docs page
   ];
 
   return routes.map((path) => ({

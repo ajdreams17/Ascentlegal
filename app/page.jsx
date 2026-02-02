@@ -14,57 +14,57 @@ import TrustpilotBadge from "../components/TrustpilotBadge";
 export const metadata = {
   title: "Ascent Legal | Entertainment & IP Counsel for Deal-Driven Brands",
   description:
-    "Business-first entertainment and IP counsel for creators, studios, and growing companies—brand deals, licensing, and small business transactions. Transactional counsel only (no litigation).",
+    "Business-first entertainment and IP counsel for creators, studios, and growing companies. Brand deals, licensing, and small business transactions. Transactional counsel only (no litigation).",
 };
 
 export default function HomePage() {
-  // 3 pillars + supporting
- const practiceAreas = [
-  {
-    title: "Entertainment & Creator Counsel",
-    icon: Film,
-    desc: "Brand deals, influencer agreements, production terms, and creator contracts.",
-    href: "/services/entertainment",
-  },
-  {
-    title: "Trademark Protection",
-    icon: ShieldCheck,
-    desc: "Search, USPTO filing, and practical brand protection strategy.",
-    href: "/services/trademark",
-  },
-  {
-    title: "Copyright & Licensing",
-    icon: Briefcase,
-    desc: "Copyright registrations and licensing terms that protect usage rights and revenue.",
-    href: "/services/copyright",
-  },
-  {
-    title: "Contracts Drafting",
-    icon: FileText,
-    desc: "Drafting, reviewing, and negotiating commercial contracts in plain English.",
-    href: "/services/contracts-drafting",
-  },
-  {
-    title: "Deal Desk Support",
-    icon: Users,
-    desc: "On-call review, redlines, templates, and negotiation support for repeat deals.",
-    href: "/services/deal-desk-support",
-  },
-  {
-    title: "Corporate & Formation",
-    icon: Building2,
-    desc: "Entity setup, operating agreements/bylaws, and founder documentation that scales.",
-    href: "/services/corporate-formation",
-  },
-];
-const commonDeals = [
-  "Brand deals & influencer agreements (Entertainment)",
-  "UGC licensing & usage rights (IP)",
-  "Service Agreements & MSAs (Small Biz)",
-  "Collabs & revenue splits (Entertainment)",
-  "Trademark & Copyright strategy (IP)",
-  "Entity formation & founding docs (Small Biz)",
-];
+  const practiceAreas = [
+    {
+      title: "Entertainment & Creator Counsel",
+      icon: Film,
+      desc: "Brand deals, influencer agreements, production terms, and creator contracts.",
+      href: "/services/entertainment",
+    },
+    {
+      title: "Trademark Protection",
+      icon: ShieldCheck,
+      desc: "Search, USPTO filing, and practical brand protection strategy.",
+      href: "/services/trademark",
+    },
+    {
+      title: "Copyright & Licensing",
+      icon: Briefcase,
+      desc: "Copyright registrations and licensing terms that protect usage rights and revenue.",
+      href: "/services/copyright",
+    },
+    {
+      title: "Contracts Drafting",
+      icon: FileText,
+      desc: "Drafting, reviewing, and negotiating commercial contracts in plain English.",
+      href: "/services/contracts-drafting",
+    },
+    {
+      title: "Deal Desk Support",
+      icon: Users,
+      desc: "On-call review, redlines, templates, and negotiation support for repeat deals.",
+      href: "/services/deal-desk-support",
+    },
+    {
+      title: "Corporate & Formation",
+      icon: Building2,
+      desc: "Entity setup, operating agreements/bylaws, and founder documentation that scales.",
+      href: "/services/corporate-formation",
+    },
+  ];
+
+  const commonDeals = [
+    "Brand deals & influencer agreements (Entertainment)",
+    "UGC licensing & usage rights (IP)",
+    "Service Agreements & MSAs (Small Biz)",
+    "Collabs & revenue splits (Entertainment)",
+    "Trademark & Copyright strategy (IP)",
+    "Entity formation & founding docs (Small Biz)",
+  ];
 
   return (
     <>
@@ -109,7 +109,6 @@ const commonDeals = [
               .
             </h1>
 
-            {/* ✅ Option 1 subheader */}
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
               Business-first, plain-English support for creators, studios, and
               growing companies. Strategic guidance for brand deals, licensing,
@@ -119,12 +118,11 @@ const commonDeals = [
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
-  href="/contact"
-  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
->
-  Book a Business-First Discovery Call
-</Link>
-
+                href="/contact"
+                className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
+              >
+                Book a Discovery Call
+              </Link>
 
               <Link
                 href="/services/entertainment"
@@ -145,7 +143,7 @@ const commonDeals = [
               )}
             </ul>
 
-            {/* ✅ Trustpilot badge (same wrapper as your original code) */}
+            {/* Trustpilot badge */}
             <div className="mt-8 flex justify-start">
               <TrustpilotBadge />
             </div>
@@ -154,7 +152,6 @@ const commonDeals = [
           {/* Right showcase */}
           <div className="md:justify-self-end w-full">
             <div className="relative rounded-2xl border border-slate-200/60 p-6 shadow-sm bg-white">
-              {/* ✅ Gradient square badge */}
               <div className="absolute -top-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center">
                 <Film className="h-6 w-6 text-white" />
               </div>
@@ -195,9 +192,9 @@ const commonDeals = [
             <div className="mt-6 rounded-2xl border border-slate-200/60 bg-white p-6">
               <p className="text-sm text-slate-600">
                 <span className="font-semibold text-slate-900">Good to know:</span>{" "}
-                We focus on transactional counsel (no litigation). We can support
-                contract interpretation, negotiation strategy, and pre-suit
-                resolution planning, but we do not appear in court.
+                Transactional counsel only. We support contract interpretation,
+                negotiation strategy, and pre-suit resolution planning, but we do
+                not appear in court.
               </p>
             </div>
           </div>
@@ -243,7 +240,7 @@ const commonDeals = [
             Common deals we handle
           </h2>
           <p className="mt-4 text-slate-600 max-w-2xl">
-            If you monetize through partnerships, licensing, or contracts, we’ll help you protect the terms—and the rights.
+            If you monetize through partnerships, licensing, or contracts, we’ll help you protect the terms and the rights.
           </p>
 
           <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-700">
@@ -277,7 +274,7 @@ const commonDeals = [
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">2. Strategy + Redlines</h3>
               <p className="text-sm text-white/90">
-                We flag what matters—rights, payment, exclusivity, and key risk points.
+                We flag what matters: rights, payment, exclusivity, and key risk points.
               </p>
             </div>
 
@@ -297,7 +294,7 @@ const commonDeals = [
               Book a Discovery Call
             </Link>
             <div className="mt-3 text-xs text-white/80">
-              Transactional counsel only — no litigation.
+              Transactional counsel only. No litigation.
             </div>
           </div>
         </div>

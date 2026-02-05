@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Contracts Drafting | Ascent Legal",
   description:
-    "Drafting, reviewing, and negotiating commercial contracts for creators and growing companies. Plain-English redlines, clear terms, and deal-ready documents. Transactional counsel only (no litigation).",
+    "Drafting, reviewing, and negotiating commercial contracts for creators, brands, agencies, and growing companies. Plain-English redlines, clear terms, and deal-ready documents. Transactional counsel only (no litigation).",
 };
 
 const categories = [
@@ -19,7 +19,7 @@ const categories = [
   },
   {
     title: "Contractor + IP Protection",
-    desc: "Agreements that protect ownership, scope, and confidentiality when you hire contractors or collaborators.",
+    desc: "Agreements that protect scope, confidentiality, and ownership when you hire contractors or collaborators.",
     bullets: ["Contractor agreements", "IP assignment + confidentiality", "Work-for-hire language (as needed)"],
   },
   {
@@ -39,7 +39,7 @@ const deliverables = [
 const process = [
   { step: "1", title: "Discovery Call", text: "Confirm goals, timeline, and what success looks like for this deal." },
   { step: "2", title: "Draft / Review", text: "We draft or redline and provide a plain-English risk summary." },
-  { step: "3", title: "Close the Deal", text: "We support negotiation and deliver clean final documents for signature." },
+  { step: "3", title: "Finalize + Execute", text: "We support negotiation and deliver clean final documents for signature." },
 ];
 
 const faqs = [
@@ -80,6 +80,11 @@ export default function ContractsDraftingPage() {
           commercially practical, and aligned with your goals—so you can move fast without hidden risk.
         </p>
 
+        {/* Small positioning line to match your updated focus */}
+        <p className="mt-3 text-sm text-gray-600 max-w-3xl">
+          Ideal for creators, brands, studios, agencies, and growing companies—especially when timelines are tight and deliverables must be crystal clear.
+        </p>
+
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
@@ -102,6 +107,19 @@ export default function ContractsDraftingPage() {
             See common contract types
           </a>
         </div>
+
+        {/* Subtle internal links for SEO + cross-sell */}
+        <div className="mt-4 flex flex-wrap gap-4 text-sm">
+          <Link href="/services/trademark" className="text-indigo-600 hover:underline">
+            Trademark Protection →
+          </Link>
+          <Link href="/services/copyright" className="text-indigo-600 hover:underline">
+            Copyright & Licensing →
+          </Link>
+          <Link href="/services/team-contractor-docs" className="text-indigo-600 hover:underline">
+            Team & Contractor Docs →
+          </Link>
+        </div>
       </section>
 
       {/* Categories */}
@@ -111,7 +129,8 @@ export default function ContractsDraftingPage() {
           From one-off agreements to repeatable templates, we help you get to clear terms quickly.
         </p>
 
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* More readable on large screens */}
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {categories.map((c) => (
             <div
               key={c.title}
@@ -175,12 +194,14 @@ export default function ContractsDraftingPage() {
               tell us up front and we’ll confirm timing. Rush options may be available.
             </p>
           </div>
+
+          {/* CTA label consistency */}
           <div className="flex gap-3 md:justify-end">
             <Link
               href="/contact"
               className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
             >
-              Get a quote
+              Book a Discovery Call
             </Link>
             <Link
               href="/services/team-contractor-docs"

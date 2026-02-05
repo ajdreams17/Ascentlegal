@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Deal Desk Support | Ascent Legal",
   description:
-    "On-call contract review, drafting, and negotiation support for repeat deals and fast timelines. Transactional counsel only. No litigation.",
+    "On-call contract review, drafting, and negotiation support for creators, brands, studios, agencies, and growing companies with repeat deals and fast timelines. Transactional counsel only. No litigation.",
 };
 
 const whoItsFor = [
@@ -81,7 +81,14 @@ export default function DealDeskSupportPage() {
           Transactional counsel only. No litigation.
         </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        {/* Micro-proof to make the value "click" immediately */}
+        <div className="mt-5 rounded-2xl border border-gray-100 bg-white p-5 text-sm text-gray-700 max-w-3xl">
+          <span className="font-semibold text-gray-900">Built for fast deal flow:</span>{" "}
+          1–3 day turnarounds (typical), agency-friendly workflows, repeatable templates, and clean redlines you can send today.
+        </div>
+
+        <div className="mt-8 flex flex-wrap gap-3 items-center">
+          {/* Primary CTA (consistent label) */}
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
@@ -89,18 +96,26 @@ export default function DealDeskSupportPage() {
             Book a Discovery Call
           </Link>
 
-          <Link
-            href="/services/contracts-drafting"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            Explore Contracts Drafting
+          {/* Secondary actions as text links to keep CTA labels consistent */}
+          <Link href="/services/contracts-drafting" className="text-sm font-medium text-indigo-600 hover:underline">
+            Explore Contracts Drafting →
           </Link>
 
-          <Link
-            href="/services"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            View all services
+          <Link href="/services" className="text-sm font-medium text-indigo-600 hover:underline">
+            View all services →
+          </Link>
+        </div>
+
+        {/* Cross-sell / internal links */}
+        <div className="mt-4 flex flex-wrap gap-4 text-sm">
+          <Link href="/services/trademark" className="text-indigo-600 hover:underline">
+            Trademark Protection →
+          </Link>
+          <Link href="/services/copyright" className="text-indigo-600 hover:underline">
+            Copyright & Licensing →
+          </Link>
+          <Link href="/services/entertainment" className="text-indigo-600 hover:underline">
+            Brand Deals & Campaign Contracts →
           </Link>
         </div>
 
@@ -203,12 +218,14 @@ export default function DealDeskSupportPage() {
               Flat fees for common reviews and scoped estimates for complex deals. We confirm scope up front—no surprises.
             </p>
           </div>
+
+          {/* CTA consistency */}
           <div className="flex gap-3 md:justify-end">
             <Link
               href="/contact"
               className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
             >
-              Get a quote
+              Book a Discovery Call
             </Link>
             <Link
               href="/services/entertainment"

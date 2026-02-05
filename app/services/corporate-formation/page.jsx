@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Corporate & Formation | Ascent Legal",
   description:
-    "Choose the right entity and set a strong legal foundation—LLC/C-Corp/S-Corp, founder docs, governance, cap table, and compliance for growth.",
+    "Business-first entity formation and founder documentation for creators, brands, agencies, and growing companies—LLC/C-Corp/S-Corp, operating agreements/bylaws, founder alignment, and scalable governance.",
 };
 
 const packages = [
@@ -17,17 +17,21 @@ const packages = [
       "EIN guidance",
       "Registered Agent setup (or BYO)",
     ],
+    cta: "Start formation",
+    featured: false,
   },
   {
     name: "Founder Alignment",
     price: "Flat-fee",
-    bestFor: "Multi-founder startups",
+    bestFor: "Multi-founder teams",
     bullets: [
       "Operating Agreement / Bylaws",
       "Founder equity & IP assignment",
       "Board/Consent resolutions",
       "83(b) election guidance",
     ],
+    cta: "Align founders",
+    featured: true,
   },
   {
     name: "Launch & Scale",
@@ -39,6 +43,8 @@ const packages = [
       "Policy & compliance starter kit",
       "GC-style kickoff session",
     ],
+    cta: "Scope my project",
+    featured: false,
   },
 ];
 
@@ -49,11 +55,11 @@ const faqs = [
   },
   {
     q: "Can you help convert or clean up an existing entity?",
-    a: "Yes—conversions, domestications, or governance cleanups are common. We standardize core docs and fix gaps before fundraising or hiring.",
+    a: "Yes—conversions, domestications, or governance cleanups are common. We standardize core docs and fix gaps before fundraising, hiring, or scaling operations.",
   },
   {
     q: "Do you offer flat fees?",
-    a: "Yes—core formations and founder alignment documents are flat-fee. Complex items (multi-state, special share classes) are scoped in advance.",
+    a: "Yes—core formations and founder alignment documents are flat-fee. Complex items (multi-state filings, special share classes) are scoped in advance.",
   },
 ];
 
@@ -62,7 +68,9 @@ export default function CorporateFormationPage() {
     <main className="mx-auto max-w-7xl px-6 py-16">
       {/* Hero */}
       <section>
-        <h1 className="text-4xl md:text-5xl font-bold">
+        <p className="text-sm font-medium text-gray-600">Services</p>
+
+        <h1 className="mt-2 text-4xl md:text-5xl font-bold">
           Corporate &{" "}
           <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
             Formation
@@ -70,170 +78,198 @@ export default function CorporateFormationPage() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Choose the right entity, align founders, and set governance that scales. We make
-          formation decisions clear, filings accurate, and next steps actionable.
+          Choose the right entity, align founders, and set governance that scales. We make formation decisions clear,
+          filings accurate, and next steps actionable.
+        </p>
+
+        {/* Bridge to your broader audience */}
+        <p className="mt-3 text-sm text-gray-600 max-w-3xl">
+          Ideal for creators, brands, agencies, and growing companies that need clean structure before signing deals,
+          hiring contractors, or scaling operations.
         </p>
 
         {/* SEO support line (natural keywords) */}
-        <p className="mt-3 text-sm text-gray-600 max-w-3xl">
+        <p className="mt-2 text-sm text-gray-600 max-w-3xl">
           We support LLC formation, C-Corp formation, and founder documentation including operating agreements and bylaws.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
+            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             Start your formation
           </Link>
+
           <a
             href="#packages"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300
+            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             View packages
           </a>
+
+          <Link
+            href="/services/contracts-drafting"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300
+            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+          >
+            Contracts drafting
+          </Link>
         </div>
       </section>
 
-      {/* Roadmap Features */}
-      <section className="mt-10 space-y-6">
-        <div className="flex items-start gap-3">
-          <span className="text-indigo-600 text-lg">✔</span>
-          <p className="text-gray-800">
-            <strong>Roadmap that keeps you moving</strong>
-            <br />
-            Formation simplified with step-by-step guidance.
-          </p>
-        </div>
-        <div className="flex items-start gap-3">
-          <span className="text-indigo-600 text-lg">✔</span>
-          <p className="text-gray-800">
-            <strong>Packages built for your business</strong>
-            <br />
-            Legal and compliance basics covered with clear scope.
-          </p>
-        </div>
-        <div className="flex items-start gap-3">
-          <span className="text-indigo-600 text-lg">✔</span>
-          <p className="text-gray-800">
-            <strong>No hidden costs</strong>
-            <br />
-            Transparent pricing you can trust.
-          </p>
-        </div>
+      {/* Roadmap Features (semantic list) */}
+      <section className="mt-10">
+        <ul className="space-y-6">
+          {[
+            {
+              title: "Roadmap that keeps you moving",
+              text: "Formation simplified with step-by-step guidance.",
+            },
+            {
+              title: "Packages built for your business",
+              text: "Legal and compliance basics covered with clear scope.",
+            },
+            {
+              title: "No hidden costs",
+              text: "Transparent pricing you can trust.",
+            },
+          ].map((x) => (
+            <li key={x.title} className="flex items-start gap-3">
+              <span className="text-indigo-600 text-lg" aria-hidden="true">
+                ✔
+              </span>
+              <p className="text-gray-800">
+                <strong>{x.title}</strong>
+                <br />
+                {x.text}
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* What’s included */}
       <section id="overview" className="mt-16">
         <h2 className="text-2xl md:text-3xl font-semibold">What’s included</h2>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
-          <div className="rounded-2xl border border-gray-100 bg-white p-6">
-            <h3 className="font-semibold">Entity Strategy</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Clear guidance on LLC, C-Corp, or S-Corp based on taxes, ownership, investors, and hiring plans.
-            </p>
-            <ul className="mt-3 space-y-1 text-sm text-gray-600">
-              {[
+          {[
+            {
+              title: "Entity Strategy",
+              desc: "Clear guidance on LLC, C-Corp, or S-Corp based on taxes, ownership, investors, and hiring plans.",
+              items: [
                 "Name availability & jurisdiction choice",
                 "Equity structure & founder vesting overview",
                 "Tax & compliance considerations",
-              ].map((i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-gray-100 bg-white p-6">
-            <h3 className="font-semibold">Filings & Core Docs</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Done-right formation documents and initial governance so you’re operational from day one.
-            </p>
-            <ul className="mt-3 space-y-1 text-sm text-gray-600">
-              {[
+              ],
+            },
+            {
+              title: "Filings & Core Docs",
+              desc: "Done-right formation documents and initial governance so you’re operational from day one.",
+              items: [
                 "Articles/Certificate of Formation or Incorporation",
                 "Operating Agreement / Bylaws",
                 "EIN guidance & initial resolutions",
-              ].map((i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
+              ],
+            },
+            {
+              title: "Founder Alignment",
+              desc: "Align roles, equity, and IP so the team is set to build.",
+              items: ["IP assignment & confidentiality", "Founder equity & vesting terms", "Board/Member consents"],
+            },
+            {
+              title: "Launch Checklist",
+              desc: "Practical next steps so you’re compliant and ready to transact.",
+              items: ["Banking & bookkeeping setup", "Registered Agent & annual reports", "Foreign qualification (if needed)"],
+            },
+          ].map((card) => (
+            <div key={card.title} className="rounded-2xl border border-gray-100 bg-white p-6">
+              <h3 className="font-semibold">{card.title}</h3>
+              <p className="mt-2 text-sm text-gray-600">{card.desc}</p>
+              <ul className="mt-3 space-y-1 text-sm text-gray-600">
+                {card.items.map((i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" aria-hidden="true" />
+                    {i}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-          <div className="rounded-2xl border border-gray-100 bg-white p-6">
-            <h3 className="font-semibold">Founder Alignment</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Align roles, equity, and IP so the team is set to build.
-            </p>
-            <ul className="mt-3 space-y-1 text-sm text-gray-600">
-              {[
-                "IP assignment & confidentiality",
-                "Founder equity & vesting terms",
-                "Board/Member consents",
-              ].map((i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-gray-100 bg-white p-6">
-            <h3 className="font-semibold">Launch Checklist</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Practical next steps so you’re compliant and ready to transact.
-            </p>
-            <ul className="mt-3 space-y-1 text-sm text-gray-600">
-              {[
-                "Banking & bookkeeping setup",
-                "Registered Agent & annual reports",
-                "Foreign qualification (if needed)",
-              ].map((i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                  {i}
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Internal linking strip */}
+        <div className="mt-8 rounded-2xl border border-gray-100 bg-gray-50 p-6">
+          <p className="text-sm text-gray-700">
+            Common next step after formation:{" "}
+            <Link
+              href="/services/team-contractor-docs"
+              className="text-indigo-600 hover:underline font-medium
+              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30 rounded-md px-1"
+            >
+              contractor + IP assignment docs
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/services/deal-desk-support"
+              className="text-indigo-600 hover:underline font-medium
+              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30 rounded-md px-1"
+            >
+              deal desk support
+            </Link>{" "}
+            for recurring agreements.
+          </p>
         </div>
       </section>
 
       {/* Packages */}
-      <section id="packages" className="mt-16">
+      <section id="packages" className="mt-16 scroll-mt-24">
         <div className="mb-6 flex items-end justify-between">
           <h2 className="text-2xl md:text-3xl font-semibold">Packages</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
           {packages.map((p) => (
-            <div key={p.name} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <div className="text-sm text-gray-500">Package</div>
-              <h3 className="text-xl font-semibold">{p.name}</h3>
+            <div
+              key={p.name}
+              className={`rounded-2xl border bg-white p-6 ${
+                p.featured ? "border-indigo-200 ring-1 ring-indigo-100" : "border-gray-100"
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <div className="text-sm text-gray-500">Package</div>
+                {p.featured && (
+                  <span className="text-xs rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 px-2 py-1">
+                    Most popular
+                  </span>
+                )}
+              </div>
+
+              <h3 className="mt-1 text-xl font-semibold">{p.name}</h3>
               <div className="mt-1 text-xs text-gray-500">Best for: {p.bestFor}</div>
+
               <div className="mt-3 text-2xl font-bold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
                 {p.price}
               </div>
+
               <ul className="mt-4 space-y-1 text-sm text-gray-600">
                 {p.bullets.map((b) => (
                   <li key={b} className="flex gap-2">
-                    <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
+                    <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" aria-hidden="true" />
                     {b}
                   </li>
                 ))}
               </ul>
+
               <div className="mt-6">
                 <Link
                   href="/contact"
-                  className="w-full inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white text-center"
+                  className="w-full inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white text-center hover:opacity-90
+                  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
                 >
-                  Get started
+                  {p.cta}
                 </Link>
               </div>
             </div>
@@ -279,13 +315,15 @@ export default function CorporateFormationPage() {
         <div className="mt-4 flex gap-3 justify-center flex-wrap">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
+            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             Book a Discovery Call
           </Link>
           <Link
             href="/services"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300
+            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             Back to Services
           </Link>

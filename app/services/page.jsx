@@ -3,26 +3,26 @@ import Link from "next/link";
 export const metadata = {
   title: "Services | Ascent Legal",
   description:
-    "Business-first legal services for creators, studios, and growing companies—brand deals, trademarks, and commercial contracts. Transactional counsel only (no litigation).",
+    "Business-first legal services for creators, brands, studios, agencies, and growing companies—brand deals, trademarks, copyright/licensing, and commercial contracts. Transactional counsel only (no litigation).",
 };
 
 const areas = [
   {
-  title: "Entertainment & Creator Counsel",
-  desc: "Drafting and negotiating brand deals, influencer agreements, production terms, and creator contracts.",
-  bullets: ["Brand + Sponsorship Deals", "Influencer/UGC Agreements", "Production + Media Agreements"],
-  href: "/services/entertainment",
-  cta: "Explore entertainment counsel",
-  also: { label: "Copyright & Licensing", href: "/services/copyright" },
-},
-{
-  title: "Trademark Protection",
-  desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
-  bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],
-  href: "/services/trademark",
-  cta: "Protect my brand",
-  also: { label: "Copyright & Licensing", href: "/services/copyright" },
-},
+    title: "Brand Deals & Entertainment Counsel",
+    desc: "Drafting and negotiating sponsorships, influencer/UGC agreements, production terms, and creator/brand contracts.",
+    bullets: ["Brand + Sponsorship Deals", "Influencer/UGC Agreements", "Production + Media Agreements"],
+    href: "/services/entertainment",
+    cta: "Explore brand deals counsel",
+    also: { label: "Copyright & Licensing", href: "/services/copyright" },
+  },
+  {
+    title: "Trademark Protection",
+    desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
+    bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],
+    href: "/services/trademark",
+    cta: "Protect my brand",
+    // NOTE: removed "also" here to avoid forcing an odd pairing
+  },
   {
     title: "Contracts Drafting",
     desc: "Drafting, reviewing, and negotiating agreements that protect revenue, clarify terms, and reduce risk.",
@@ -44,13 +44,13 @@ const areas = [
     href: "/services/corporate-formation",
     cta: "Start formation",
   },
-{
-  title: "Team & Contractor Docs",
-  desc: "Practical documents for contractors and teams that protect your IP and set clear expectations.",
-  bullets: ["Contractor + IP Assignment", "Offer Letters (as needed)", "Policies for Growing Teams"],
-  href: "/services/team-contractor-docs",
-  cta: "Set up team docs",
-},
+  {
+    title: "Team & Contractor Docs",
+    desc: "Practical documents for contractors and teams that protect your IP and set clear expectations.",
+    bullets: ["Contractor + IP Assignment", "Offer Letters (as needed)", "Policies for Growing Teams"],
+    href: "/services/team-contractor-docs",
+    cta: "Set up team docs",
+  },
 ];
 
 const faqs = [
@@ -85,8 +85,9 @@ export default function ServicesPage() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Business-first, plain-English support for creators, studios, and growing companies. Strategic guidance for
-          brand deals, trademarks, and commercial contracts. Transactional counsel only. No litigation.
+          Business-first, plain-English support for creators, brands, studios, and agencies, plus commercial contracts for
+          growing companies. Strategic guidance for sponsorships, licensing, trademarks, copyright, and
+          revenue-protecting agreements. Transactional counsel only. No litigation.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -114,7 +115,7 @@ export default function ServicesPage() {
       {/* Quick proof */}
       <div className="mt-10 grid sm:grid-cols-3 gap-6">
         {[
-          { label: "Creator + Business Focus", desc: "Built for deals, IP, and growth." },
+          { label: "Deals + IP Focus", desc: "Built for partnerships, licensing, and protection." },
           { label: "Plain-English Guidance", desc: "Clear next steps without legalese." },
           { label: "Predictable Pricing", desc: "Transparent flat fees and scoped projects." },
         ].map((item) => (
@@ -155,17 +156,18 @@ export default function ServicesPage() {
                 ))}
               </ul>
 
-            <div className="mt-4 space-y-2">
-  <Link href={a.href} className="text-sm font-medium text-indigo-600 hover:underline">
-    {a.cta} →
-  </Link>
+              {/* Primary + optional secondary link */}
+              <div className="mt-4 space-y-2">
+                <Link href={a.href} className="text-sm font-medium text-indigo-600 hover:underline">
+                  {a.cta} →
+                </Link>
 
-  {a.also && (
-    <Link href={a.also.href} className="text-sm text-gray-600 hover:underline">
-      Also: {a.also.label} →
-    </Link>
-  )}
-</div>
+                {a.also && (
+                  <Link href={a.also.href} className="text-sm text-gray-600 hover:underline">
+                    Also: {a.also.label} →
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -175,7 +177,8 @@ export default function ServicesPage() {
       <section className="mt-16">
         <h2 className="text-2xl md:text-3xl font-semibold">Who we serve</h2>
         <p className="mt-2 text-gray-600 max-w-3xl">
-          Creators, studios, and growing companies who monetize through partnerships, content, and commercial contracts.
+          Creators, brands, studios, agencies, and growing companies who monetize through partnerships, content, and
+          commercial contracts.
         </p>
 
         <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-sm text-gray-700">

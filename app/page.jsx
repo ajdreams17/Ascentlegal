@@ -93,14 +93,13 @@ export default function HomePage() {
           {/* Left */}
           <div>
             {/* ✅ Tweaked headline to include brands/agencies explicitly */}
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-              Brand deals, IP, and{" "}
-              <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-                commercial transactions counsel
-              </span>{" "}
-              for creators, brands, and agencies.
-            </h1>
-
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
+  Brand deals, IP, and{" "}
+  <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+    commercial counsel
+  </span>{" "}
+  for modern businesses.
+</h1>
             {/* ✅ Tweaked subheader to broaden audience + add agency-friendly proof */}
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
               Business-first, plain-English support for creators, brands, studios, and agencies, plus commercial contracts

@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Entertainment & Creator Counsel | Ascent Legal",
+  title: "Brand Deals & Entertainment Counsel | Ascent Legal",
   description:
-    "Business-first entertainment counsel for creators, studios, agencies, and brands. Brand deals, influencer agreements, production contracts, and licensing support. Transactional counsel only (no litigation).",
+    "Business-first counsel for creators, brands, studios, and agencies. Brand deals, influencer/UGC agreements, production contracts, and licensing support. Transactional counsel only (no litigation).",
 };
 
 const whoWeHelp = [
@@ -28,7 +28,7 @@ const whoWeHelp = [
 const agreements = [
   "Brand deals + sponsorship agreements",
   "Influencer/UGC agreements + usage rights",
-  "Content licensing agreements",
+  "Content licensing + usage extensions",
   "Production agreements (crew, services, and deliverables)",
   "Collaboration agreements + revenue splits",
   "Talent agreements + release/consent terms (as applicable)",
@@ -72,14 +72,14 @@ export default function EntertainmentPage() {
         <p className="text-sm font-medium text-gray-600">Services</p>
 
         <h1 className="mt-2 text-4xl md:text-5xl font-bold">
-          Entertainment &{" "}
+          Brand Deals &{" "}
           <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            Creator Counsel
+            Entertainment Counsel
           </span>
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Business-first, plain-English support for creators, studios, agencies, and brands. We help you move faster on
+          Business-first, plain-English support for creators, brands, studios, and agencies. We help you move faster on
           brand deal contracts, influencer agreements, licensing, and production counsel. Transactional counsel only. No
           litigation.
         </p>
@@ -105,6 +105,13 @@ export default function EntertainmentPage() {
           >
             Deal Desk Support
           </Link>
+
+          <Link
+            href="/services/copyright"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
+          >
+            Copyright & Licensing
+          </Link>
         </div>
 
         {/* Quick proof */}
@@ -112,7 +119,7 @@ export default function EntertainmentPage() {
           {[
             { label: "Deal-Ready Contracts", desc: "Clear terms that keep projects moving." },
             { label: "Plain-English Strategy", desc: "Know exactly what matters and why." },
-            { label: "Built for Creators", desc: "Rights, usage, exclusivity, and payment—covered." },
+            { label: "Agency-Friendly Execution", desc: "Fast turnarounds, clean redlines, and reusable templates." },
           ].map((item) => (
             <div key={item.label} className="rounded-xl border border-gray-100 bg-white p-6 text-center">
               <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
@@ -151,7 +158,7 @@ export default function EntertainmentPage() {
       {/* Agreements */}
       <section id="agreements" className="mt-16 scroll-mt-24">
         <div className="mb-3 flex items-end justify-between">
-          <h2 className="text-2xl md:text-3xl font-semibold">Common entertainment deal types</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">Common deal types</h2>
         </div>
 
         <p className="text-gray-600 max-w-3xl">
@@ -227,9 +234,7 @@ export default function EntertainmentPage() {
       {/* Final CTA */}
       <section className="mt-16 text-center">
         <h3 className="text-xl font-semibold">Have a deal on your desk?</h3>
-        <p className="mt-2 text-gray-600">
-          Tell us what you’re working on—we’ll recommend the fastest path.
-        </p>
+        <p className="mt-2 text-gray-600">Tell us what you’re working on—we’ll recommend the fastest path.</p>
         <Link
           href="/contact"
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"

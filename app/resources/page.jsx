@@ -1,6 +1,6 @@
 // app/resources/page.jsx
 import Link from "next/link";
-import DownloadDisclaimer from "@/components/DownloadDisclaimer";
+import DownloadDisclaimer from "../../components/DownloadDisclaimer";
 
 export const metadata = {
   title: "Resources | Ascent Legal",
@@ -39,14 +39,13 @@ const guides = [
   {
     slug: "finding-right-trademark-copyright-lawyer",
     title: "Finding the Right Trademark & Copyright Lawyer Near You",
-    description:
-      "What to look for, where to search, and the exact questions to ask to protect your creative work.",
+    description: "What to look for, where to search, and the exact questions to ask to protect your creative work.",
     readTime: "7 min read",
     badge: "IP",
     topic: "copyright",
   },
 
-  // Coming soon
+  // Creator + transactional (add these posts when ready)
   {
     slug: "brand-deal-checklist",
     title: "Brand Deal Checklist for Creators",
@@ -74,19 +73,16 @@ const downloads = [
     title: "HR Compliance Audit Checklist (California)",
     desc: "One-page checklist to sanity-check hiring & onboarding. PDF.",
     href: "/download/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
-    type: "PDF",
   },
   {
     title: "Operating Agreement",
     desc: "Customizable operating agreement template for LLC owners.",
     href: "/operating_agreement.docx",
-    type: "DOCX",
   },
   {
     title: "Brand Deal Review Checklist (Creator Edition)",
     desc: "Quick checklist for deliverables, usage rights, exclusivity, payment, and approvals. PDF.",
     href: "/download/brand-deal-checklist.pdf",
-    type: "PDF",
     comingSoon: true,
   },
 ];
@@ -113,7 +109,7 @@ const faqs = [
 function GuideCard({ g }) {
   return (
     <article className="group rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow">
-      <div className="inline-flex items-center flex-wrap gap-2 text-xs text-indigo-600">
+      <div className="inline-flex flex-wrap items-center gap-2 text-xs text-indigo-600">
         <span className="rounded-full bg-indigo-50 px-2 py-1">{g.badge}</span>
         <span className="text-gray-400">•</span>
         <span className="text-gray-500">{g.readTime}</span>
@@ -125,22 +121,17 @@ function GuideCard({ g }) {
         )}
       </div>
 
-      <h3 className="mt-3 text-lg font-semibold">{g.title}</h3>
+      <h3 className="mt-3 text-lg font-semibold text-gray-900">{g.title}</h3>
       <p className="mt-2 text-sm text-gray-600">{g.description}</p>
 
       <div className="mt-4">
         {g.comingSoon ? (
-          <span
-            className="text-sm font-medium text-gray-500 inline-flex items-center"
-            aria-disabled="true"
-          >
-            Read soon →
-          </span>
+          <span className="text-sm font-medium text-gray-500">Read soon →</span>
         ) : (
           <Link
             href={`/resources/${g.slug}`}
-            className="text-sm font-medium text-indigo-600 hover:underline rounded-md px-1
-            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+            className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             Read more →
           </Link>
@@ -171,8 +162,8 @@ export default function ResourcesPage() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Practical, business-first content on trademarks, brand deals, commercial contracts, and formation.
-          No fluff. Just what you need to move fast and stay protected.
+          Practical, business-first content on trademarks, brand deals, commercial contracts, and formation. No fluff. Just
+          what you need to move fast and stay protected.
         </p>
 
         {/* Topic chips */}
@@ -182,7 +173,7 @@ export default function ResourcesPage() {
               key={t.label}
               href={t.href}
               className="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-700 hover:border-indigo-300
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             >
               {t.label}
             </a>
@@ -233,8 +224,8 @@ export default function ResourcesPage() {
           <div className="mt-6">
             <Link
               href="/services/copyright"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md px-1
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             >
               Explore Copyright & Licensing services →
             </Link>
@@ -258,8 +249,8 @@ export default function ResourcesPage() {
           <div className="mt-6">
             <Link
               href="/services/entertainment"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md px-1
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             >
               Explore Entertainment & Creator counsel →
             </Link>
@@ -283,8 +274,8 @@ export default function ResourcesPage() {
           <div className="mt-6">
             <Link
               href="/services/contracts-drafting"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md px-1
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             >
               Explore Contracts Drafting services →
             </Link>
@@ -302,8 +293,8 @@ export default function ResourcesPage() {
           <div className="mt-6">
             <Link
               href="/services/corporate-formation"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md px-1
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             >
               Explore Corporate & Formation services →
             </Link>
@@ -318,34 +309,19 @@ export default function ResourcesPage() {
 
         <div className="mt-6 grid sm:grid-cols-2 gap-6">
           {downloads.map((d) => (
-            <div
-              key={d.title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 flex items-start gap-4"
-            >
+            <div key={d.title} className="rounded-2xl border border-gray-100 bg-white p-6 flex items-start gap-4">
               <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400 shrink-0" />
               <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="font-semibold">{d.title}</h3>
-                  {d.type && (
-                    <span className="text-[11px] rounded-full border border-gray-200 bg-gray-50 px-2 py-0.5 text-gray-700">
-                      {d.type}
-                    </span>
-                  )}
-                </div>
-
+                <h3 className="font-semibold">{d.title}</h3>
                 <p className="mt-1 text-sm text-gray-600">{d.desc}</p>
 
                 {d.comingSoon ? (
-                  <span className="mt-3 inline-block text-sm font-medium text-gray-500" aria-disabled="true">
-                    Download soon →
-                  </span>
+                  <span className="mt-3 inline-block text-sm font-medium text-gray-500">Download soon →</span>
                 ) : (
                   <a
                     href={d.href}
-                    className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:underline rounded-md px-1
-                    focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:underline rounded-md
+                      focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
                   >
                     Download →
                   </a>
@@ -366,7 +342,6 @@ export default function ResourcesPage() {
             <p className="mt-2 text-sm text-gray-600">
               Monthly, no-spam roundups for creators and growing companies. Brand deals, IP, and contract tips you can use.
             </p>
-            <p className="mt-2 text-xs text-gray-500">Unsubscribe anytime.</p>
           </div>
 
           <form
@@ -384,7 +359,7 @@ export default function ResourcesPage() {
               autoComplete="given-name"
               placeholder="First name"
               className="h-11 rounded-md border border-gray-300 px-3
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             />
 
             <label htmlFor="email" className="sr-only">
@@ -398,13 +373,13 @@ export default function ResourcesPage() {
               autoComplete="email"
               placeholder="you@company.com"
               className="h-11 rounded-md border border-gray-300 px-3
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             />
 
             <button
               type="submit"
               className="h-11 rounded-md bg-indigo-600 px-5 text-white hover:bg-indigo-700
-              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
             >
               Subscribe
             </button>
@@ -432,7 +407,7 @@ export default function ResourcesPage() {
         <Link
           href="/contact"
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
-          focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
         >
           Book a Discovery Call
         </Link>

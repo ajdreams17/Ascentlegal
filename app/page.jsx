@@ -4,7 +4,7 @@ import { Check, Film, ShieldCheck, Briefcase, Building2, FileText, Users } from 
 import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
-  title: "Ascent Legal | Entertainment, IP & Commercial Transactions Counsel",
+  title: "Ascent Legal | Brand Deals, IP & Commercial Transactions Counsel",
   description:
     "Business-first entertainment and IP counsel for creators, brands, studios, and agencies—plus commercial contracts for growing companies. Brand deals, licensing, trademarks, copyright, and deal desk support. Transactional counsel only (no litigation).",
 };
@@ -92,18 +92,21 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div>
+            {/* ✅ Tweaked headline to include brands/agencies explicitly */}
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-              Entertainment, IP, and{" "}
+              Brand deals, IP, and{" "}
               <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
                 commercial transactions counsel
               </span>{" "}
-              for the creator economy.
+              for creators, brands, and agencies.
             </h1>
 
+            {/* ✅ Tweaked subheader to broaden audience + add agency-friendly proof */}
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              Business-first, plain-English support for creators, brands, studios, and agencies, plus
-              commercial contracts for growing companies. Strategic guidance for brand deals, licensing,
-              trademarks, copyright, and revenue-protecting agreements. Transactional counsel only. No litigation.
+              Business-first, plain-English support for creators, brands, studios, and agencies, plus commercial contracts
+              for growing companies. Strategic guidance for sponsorships, licensing, trademarks, copyright, and
+              revenue-protecting agreements. Agency-friendly workflows and fast turnarounds. Transactional counsel only. No
+              litigation.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -150,7 +153,7 @@ export default function HomePage() {
               <div className="space-y-3">
                 <div>
                   <p className="text-sm text-slate-500">Typical matter</p>
-                  <p className="font-medium text-slate-900">Brand Deal + Usage Rights</p>
+                  <p className="font-medium text-slate-900">Sponsorship + Usage Rights</p>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 text-xs text-slate-700">
@@ -183,8 +186,9 @@ export default function HomePage() {
 
             <div className="mt-6 rounded-2xl border border-slate-200/60 bg-white p-6">
               <p className="text-sm text-slate-600">
-                <span className="font-semibold text-slate-900">Note:</span> Transactional counsel only (no litigation).
-                We support contract interpretation, negotiation strategy, and pre-suit resolution planning, but we do not appear in court.
+                <span className="font-semibold text-slate-900">Note:</span> Transactional counsel only (no litigation). We
+                support contract interpretation, negotiation strategy, and pre-suit resolution planning, but we do not
+                appear in court.
               </p>
             </div>
           </div>
@@ -202,6 +206,12 @@ export default function HomePage() {
               We help you close deals faster, protect rights, and keep contracts clean—whether you’re running campaigns,
               licensing content, or scaling operations.
             </p>
+
+            {/* ✅ Small “agency-friendly” micro-proof strip */}
+            <div className="mt-5 rounded-2xl border border-slate-200/60 bg-white p-5 text-sm text-slate-700">
+              <span className="font-semibold text-slate-900">Agency-friendly support:</span>{" "}
+              fast turnarounds, repeatable templates, redlines you can send today, and Deal Desk support for repeat campaigns.
+            </div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

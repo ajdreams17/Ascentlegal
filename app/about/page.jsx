@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "About Us | Ascent Legal",
   description:
-    "Meet Ascent Legal—business-first counsel for creators, studios, and growing companies. Brand deals, licensing/IP, and commercial contracts. Transactional only (no litigation).",
+    "Meet Ascent Legal—business-first counsel for creators, brands, studios, agencies, and growing companies. Brand deals, licensing/IP, and commercial contracts. Transactional only (no litigation).",
 };
 
 const attorneys = [
@@ -27,9 +27,10 @@ export default function AboutPage() {
       </h1>
 
       <p className="mt-6 text-lg text-gray-600">
-        Ascent Legal was founded in Souther California to make premium legal support more accessible—without sacrificing excellence.
-        We provide business-first, plain-English counsel for creators, studios, and growing companies. Strategic guidance for
-        brand deals, licensing, IP, and commercial contracts. Transactional counsel only. No litigation.
+        Ascent Legal was founded in Southern California to make premium legal support more accessible—without sacrificing
+        excellence. We provide business-first, plain-English counsel for creators, brands, studios, and agencies, plus
+        commercial contracts for growing companies. Strategic guidance for brand deals, licensing, IP, and commercial
+        contracts. Transactional counsel only. No litigation.
       </p>
 
       {/* ===== Stats ===== */}
@@ -69,8 +70,8 @@ export default function AboutPage() {
             <li className="flex gap-2">
               <span className="mt-1 h-2 w-2 rounded-full bg-teal-500/80" />
               <span>
-                <span className="font-medium text-gray-800">Plain-English counsel:</span> what matters, what doesn’t,
-                and what to do next.
+                <span className="font-medium text-gray-800">Plain-English counsel:</span> what matters, what doesn’t, and
+                what to do next.
               </span>
             </li>
             <li className="flex gap-2">
@@ -93,7 +94,8 @@ export default function AboutPage() {
         <div className="rounded-2xl border border-gray-100 bg-white p-6">
           <h3 className="font-semibold">Who we serve</h3>
           <p className="text-gray-600 mt-2">
-            Creators, studios, and growing companies who monetize through deals, licensing, and commercial contracts.
+            Creators, brands, studios, and agencies, plus growing companies who monetize through deals, licensing, and
+            commercial contracts.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2 text-xs">
@@ -102,12 +104,11 @@ export default function AboutPage() {
               "Influencer/UGC agreements",
               "Licensing + usage rights",
               "Copyright + trademark strategy",
+              "Agency MSAs + SOWs",
+              "Paid usage + whitelisting",
               "Commercial contracts",
             ].map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-gray-700"
-              >
+              <span key={tag} className="rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-gray-700">
                 {tag}
               </span>
             ))}
@@ -146,8 +147,8 @@ export default function AboutPage() {
         <div className="mt-10 rounded-2xl border border-gray-100 bg-gradient-to-r from-indigo-50 to-teal-50 p-8">
           <h3 className="text-xl font-semibold text-gray-900">Have a deal on your desk?</h3>
           <p className="mt-2 text-sm text-gray-600 max-w-2xl">
-            If you’re navigating a brand partnership, licensing terms, or a key commercial contract, we’ll help you protect
-            the terms—and the rights—so you can move forward confidently.
+            If you’re navigating a brand partnership, licensing terms, or a key commercial contract, we’ll help you
+            protect the terms—and the rights—so you can move forward confidently.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
@@ -157,10 +158,10 @@ export default function AboutPage() {
               Book a Discovery Call
             </Link>
             <Link
-              href="/services/entertainment"
+              href="/services"
               className="rounded-xl border border-gray-200 bg-white px-5 py-3 text-gray-800 hover:border-gray-300 inline-block"
             >
-              Explore Entertainment Counsel
+              Explore Services
             </Link>
           </div>
         </div>

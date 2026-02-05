@@ -1,28 +1,20 @@
 // app/page.tsx (or app/page.jsx)
 import Link from "next/link";
-import {
-  Check,
-  Film,
-  ShieldCheck,
-  Briefcase,
-  Building2,
-  FileText,
-  Users,
-} from "lucide-react";
+import { Check, Film, ShieldCheck, Briefcase, Building2, FileText, Users } from "lucide-react";
 import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
-  title: "Ascent Legal | Entertainment & IP Counsel for Deal-Driven Brands",
+  title: "Ascent Legal | Entertainment, IP & Commercial Transactions Counsel",
   description:
-    "Business-first entertainment and IP counsel for creators, studios, and growing companies. Brand deals, licensing, and small business transactions. Transactional counsel only (no litigation).",
+    "Business-first entertainment and IP counsel for creators, brands, studios, and agencies—plus commercial contracts for growing companies. Brand deals, licensing, trademarks, copyright, and deal desk support. Transactional counsel only (no litigation).",
 };
 
 export default function HomePage() {
   const practiceAreas = [
     {
-      title: "Entertainment & Creator Counsel",
+      title: "Brand Deals & Influencer Campaigns",
       icon: Film,
-      desc: "Brand deals, influencer agreements, production terms, and creator contracts.",
+      desc: "Sponsorships, influencer/UGC agreements, production terms, and creator/brand contracts.",
       href: "/services/entertainment",
     },
     {
@@ -38,9 +30,9 @@ export default function HomePage() {
       href: "/services/copyright",
     },
     {
-      title: "Contracts Drafting",
+      title: "Commercial Contracts",
       icon: FileText,
-      desc: "Drafting, reviewing, and negotiating commercial contracts in plain English.",
+      desc: "MSAs, SOWs, vendor and partnership agreements written in plain English.",
       href: "/services/contracts-drafting",
     },
     {
@@ -58,12 +50,14 @@ export default function HomePage() {
   ];
 
   const commonDeals = [
-    "Brand deals & influencer agreements (Entertainment)",
-    "UGC licensing & usage rights (IP)",
-    "Service Agreements & MSAs (Small Biz)",
-    "Collabs & revenue splits (Entertainment)",
-    "Trademark & Copyright strategy (IP)",
-    "Entity formation & founding docs (Small Biz)",
+    "Brand deals, sponsorships, and influencer agreements",
+    "UGC licensing, paid usage, whitelisting, and term extensions",
+    "Agency services agreements, MSAs + SOWs (scope, deliverables, payment)",
+    "Production and media agreements",
+    "Trademark strategy + USPTO filings",
+    "Copyright registrations + licensing terms",
+    "Vendor, SaaS, and partnership agreements",
+    "Deal Desk templates for repeat campaigns and partnerships",
   ];
 
   return (
@@ -71,10 +65,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         {/* subtle wave background */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-15 pointer-events-none"
-        >
+        <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-15 pointer-events-none">
           <svg
             className="absolute inset-x-0 -top-28 h-[420px] w-[140%] -translate-x-[15%]"
             viewBox="0 0 1440 400"
@@ -102,31 +93,32 @@ export default function HomePage() {
           {/* Left */}
           <div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-              Entertainment & creator counsel{" "}
+              Entertainment, IP, and{" "}
               <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-                for deal-driven brands
-              </span>
-              .
+                commercial transactions counsel
+              </span>{" "}
+              for the creator economy.
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              Business-first, plain-English support for creators, studios, and
-              growing companies. Strategic guidance for brand deals, licensing,
-              IP, and commercial contracts. Transactional counsel only. No
-              litigation.
+              Business-first, plain-English support for creators, brands, studios, and agencies, plus
+              commercial contracts for growing companies. Strategic guidance for brand deals, licensing,
+              trademarks, copyright, and revenue-protecting agreements. Transactional counsel only. No litigation.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block"
+                className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
               >
                 Book a Discovery Call
               </Link>
 
               <Link
                 href="/services/entertainment"
-                className="group inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-indigo-700"
+                className="group inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-indigo-700
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30 rounded-md px-1"
               >
                 Review my next deal
                 <span className="h-[2px] w-8 bg-teal-500/70 transition-all group-hover:w-14" />
@@ -134,13 +126,11 @@ export default function HomePage() {
             </div>
 
             <ul className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm text-slate-600">
-              {["Deal-ready contracts", "Rights-first licensing", "Plain-English strategy"].map(
-                (item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-teal-700" /> {item}
-                  </li>
-                )
-              )}
+              {["Deal-ready contracts", "Rights-first licensing", "Plain-English strategy"].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <Check className="h-4 w-4 text-teal-700" aria-hidden="true" /> {item}
+                </li>
+              ))}
             </ul>
 
             {/* Trustpilot badge */}
@@ -152,27 +142,28 @@ export default function HomePage() {
           {/* Right showcase */}
           <div className="md:justify-self-end w-full">
             <div className="relative rounded-2xl border border-slate-200/60 p-6 shadow-sm bg-white">
+              {/* Gradient square badge */}
               <div className="absolute -top-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center">
-                <Film className="h-6 w-6 text-white" />
+                <Film className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
 
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm text-slate-500">Client matter</p>
-                  <p className="font-medium text-slate-900">Brand Deal Review</p>
+                  <p className="text-sm text-slate-500">Typical matter</p>
+                  <p className="font-medium text-slate-900">Brand Deal + Usage Rights</p>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 text-xs text-slate-700">
                   {[
                     { label: "Usage Rights", icon: ShieldCheck },
-                    { label: "Exclusivity", icon: Users },
-                    { label: "Payment Terms", icon: FileText },
+                    { label: "Scope/SOW", icon: FileText },
+                    { label: "Payment", icon: Users },
                   ].map(({ label, icon: Icon }) => (
                     <div
                       key={label}
                       className="rounded-xl border border-slate-200/60 p-4 shadow-sm flex items-center gap-2 bg-white"
                     >
-                      <Icon className="h-4 w-4 text-teal-700" />
+                      <Icon className="h-4 w-4 text-teal-700" aria-hidden="true" />
                       <span>{label}</span>
                     </div>
                   ))}
@@ -180,10 +171,11 @@ export default function HomePage() {
 
                 <div className="pt-2">
                   <Link
-                    href="/services/entertainment"
-                    className="text-sm font-medium text-slate-800 hover:text-indigo-700"
+                    href="/services"
+                    className="text-sm font-medium text-slate-800 hover:text-indigo-700
+                    focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30 rounded-md px-1"
                   >
-                    Explore Entertainment Counsel →
+                    Explore services →
                   </Link>
                 </div>
               </div>
@@ -191,10 +183,8 @@ export default function HomePage() {
 
             <div className="mt-6 rounded-2xl border border-slate-200/60 bg-white p-6">
               <p className="text-sm text-slate-600">
-                <span className="font-semibold text-slate-900">Good to know:</span>{" "}
-                Transactional counsel only. We support contract interpretation,
-                negotiation strategy, and pre-suit resolution planning, but we do
-                not appear in court.
+                <span className="font-semibold text-slate-900">Note:</span> Transactional counsel only (no litigation).
+                We support contract interpretation, negotiation strategy, and pre-suit resolution planning, but we do not appear in court.
               </p>
             </div>
           </div>
@@ -202,15 +192,16 @@ export default function HomePage() {
       </section>
 
       {/* PRACTICE AREAS */}
-      <section
-        id="practice"
-        className="scroll-mt-24 border-t border-slate-200/60 bg-slate-50"
-      >
+      <section id="practice" className="scroll-mt-24 border-t border-slate-200/60 bg-slate-50">
         <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-10 flex items-end justify-between">
+          <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-              How we help deal-driven brands
+              How we support creators, brands, agencies, and growing companies
             </h2>
+            <p className="mt-3 text-slate-600 max-w-3xl">
+              We help you close deals faster, protect rights, and keep contracts clean—whether you’re running campaigns,
+              licensing content, or scaling operations.
+            </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -218,11 +209,12 @@ export default function HomePage() {
               <Link
                 key={title}
                 href={href}
-                className="group rounded-2xl border border-slate-200/60 p-6 bg-white hover:shadow-sm transition-shadow"
+                className="group rounded-2xl border border-slate-200/60 p-6 bg-white hover:shadow-sm transition-shadow
+                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
               >
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center">
-                    <Icon className="h-5 w-5 text-white" />
+                    <Icon className="h-5 w-5 text-white" aria-hidden="true" />
                   </div>
                   <h3 className="font-semibold text-slate-900">{title}</h3>
                 </div>
@@ -237,18 +229,15 @@ export default function HomePage() {
       <section className="border-t border-slate-200/60 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Common deals we handle
+            Common matters we handle
           </h2>
           <p className="mt-4 text-slate-600 max-w-2xl">
-            If you monetize through partnerships, licensing, or contracts, we’ll help you protect the terms and the rights.
+            If you monetize through partnerships, licensing, or commercial contracts, we’ll help you protect the terms—and the rights.
           </p>
 
           <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-700">
             {commonDeals.map((item) => (
-              <li
-                key={item}
-                className="rounded-xl border border-slate-200/60 bg-slate-50 px-4 py-3"
-              >
+              <li key={item} className="rounded-xl border border-slate-200/60 bg-slate-50 px-4 py-3">
                 {item}
               </li>
             ))}
@@ -266,36 +255,29 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">1. Discovery Call</h3>
-              <p className="text-sm text-white/90">
-                We confirm fit, scope, and timelines (transactional only).
-              </p>
+              <p className="text-sm text-white/90">We confirm fit, scope, and timelines (transactional only).</p>
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">2. Strategy + Redlines</h3>
-              <p className="text-sm text-white/90">
-                We flag what matters: rights, payment, exclusivity, and key risk points.
-              </p>
+              <p className="text-sm text-white/90">We flag what matters: rights, scope, payment, and risk points.</p>
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">3. Finalize + Execute</h3>
-              <p className="text-sm text-white/90">
-                We get you to signature with clean language and clear next steps.
-              </p>
+              <p className="text-sm text-white/90">Clean language, clear next steps, and deal-ready documents.</p>
             </div>
           </div>
 
           <div className="text-center mt-12">
             <Link
               href="/contact"
-              className="px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg shadow hover:bg-slate-50 transition inline-block ring-1 ring-white/20 hover:ring-white/40"
+              className="px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg shadow hover:bg-slate-50 transition inline-block ring-1 ring-white/20 hover:ring-white/40
+              focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
             >
               Book a Discovery Call
             </Link>
-            <div className="mt-3 text-xs text-white/80">
-              Transactional counsel only. No litigation.
-            </div>
+            <div className="mt-3 text-xs text-white/80">Transactional counsel only. No litigation.</div>
           </div>
         </div>
       </section>

@@ -1,6 +1,14 @@
 // app/page.tsx (or app/page.jsx)
 import Link from "next/link";
-import { Check, Film, ShieldCheck, Briefcase, Building2, FileText, Users } from "lucide-react";
+import {
+  Check,
+  Film,
+  ShieldCheck,
+  Briefcase,
+  Building2,
+  FileText,
+  Users,
+} from "lucide-react";
 import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
@@ -65,7 +73,10 @@ export default function HomePage() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         {/* subtle wave background */}
-        <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-15 pointer-events-none">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 opacity-15 pointer-events-none"
+        >
           <svg
             className="absolute inset-x-0 -top-28 h-[420px] w-[140%] -translate-x-[15%]"
             viewBox="0 0 1440 400"
@@ -92,15 +103,14 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div>
-            {/* ✅ Tweaked headline to include brands/agencies explicitly */}
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-  Brand deals, IP, and{" "}
-  <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-    commercial counsel
-  </span>{" "}
-  for modern businesses.
-</h1>
-            {/* ✅ Tweaked subheader to broaden audience + add agency-friendly proof */}
+            <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
+              Brand deals, IP, and{" "}
+              <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
+                commercial counsel
+              </span>{" "}
+              for creators and growing companies.
+            </h1>
+
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
               Business-first, plain-English support for creators, brands, studios, and agencies, plus commercial contracts
               for growing companies. Strategic guidance for sponsorships, licensing, trademarks, copyright, and
@@ -117,12 +127,13 @@ export default function HomePage() {
                 Book a Discovery Call
               </Link>
 
+              {/* Broader than “Review my next deal” */}
               <Link
-                href="/services/entertainment"
+                href="/services"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-indigo-700
                 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30 rounded-md px-1"
               >
-                Review my next deal
+                See what we handle
                 <span className="h-[2px] w-8 bg-teal-500/70 transition-all group-hover:w-14" />
               </Link>
             </div>
@@ -144,7 +155,6 @@ export default function HomePage() {
           {/* Right showcase */}
           <div className="md:justify-self-end w-full">
             <div className="relative rounded-2xl border border-slate-200/60 p-6 shadow-sm bg-white">
-              {/* Gradient square badge */}
               <div className="absolute -top-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center">
                 <Film className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
@@ -152,7 +162,7 @@ export default function HomePage() {
               <div className="space-y-3">
                 <div>
                   <p className="text-sm text-slate-500">Typical matter</p>
-                  <p className="font-medium text-slate-900">Sponsorship + Usage Rights</p>
+                  <p className="font-medium text-slate-900">Campaign Contract + Usage Rights</p>
                 </div>
 
                 <div className="grid grid-cols-3 gap-3 text-xs text-slate-700">
@@ -195,7 +205,10 @@ export default function HomePage() {
       </section>
 
       {/* PRACTICE AREAS */}
-      <section id="practice" className="scroll-mt-24 border-t border-slate-200/60 bg-slate-50">
+      <section
+        id="practice"
+        className="scroll-mt-24 border-t border-slate-200/60 bg-slate-50"
+      >
         <div className="mx-auto max-w-7xl px-6 py-20">
           <div className="mb-10">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
@@ -206,7 +219,6 @@ export default function HomePage() {
               licensing content, or scaling operations.
             </p>
 
-            {/* ✅ Small “agency-friendly” micro-proof strip */}
             <div className="mt-5 rounded-2xl border border-slate-200/60 bg-white p-5 text-sm text-slate-700">
               <span className="font-semibold text-slate-900">Agency-friendly support:</span>{" "}
               fast turnarounds, repeatable templates, redlines you can send today, and Deal Desk support for repeat campaigns.
@@ -246,7 +258,10 @@ export default function HomePage() {
 
           <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-700">
             {commonDeals.map((item) => (
-              <li key={item} className="rounded-xl border border-slate-200/60 bg-slate-50 px-4 py-3">
+              <li
+                key={item}
+                className="rounded-xl border border-slate-200/60 bg-slate-50 px-4 py-3"
+              >
                 {item}
               </li>
             ))}
@@ -264,17 +279,23 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">1. Discovery Call</h3>
-              <p className="text-sm text-white/90">We confirm fit, scope, and timelines (transactional only).</p>
+              <p className="text-sm text-white/90">
+                We confirm fit, scope, and timelines (transactional only).
+              </p>
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">2. Strategy + Redlines</h3>
-              <p className="text-sm text-white/90">We flag what matters: rights, scope, payment, and risk points.</p>
+              <p className="text-sm text-white/90">
+                We flag what matters: rights, scope, payment, and risk points.
+              </p>
             </div>
 
             <div className="bg-white/10 p-6 rounded-xl shadow-lg ring-1 ring-white/10">
               <h3 className="text-xl font-semibold mb-2">3. Finalize + Execute</h3>
-              <p className="text-sm text-white/90">Clean language, clear next steps, and deal-ready documents.</p>
+              <p className="text-sm text-white/90">
+                Clean language, clear next steps, and deal-ready documents.
+              </p>
             </div>
           </div>
 
@@ -286,7 +307,9 @@ export default function HomePage() {
             >
               Book a Discovery Call
             </Link>
-            <div className="mt-3 text-xs text-white/80">Transactional counsel only. No litigation.</div>
+            <div className="mt-3 text-xs text-white/80">
+              Transactional counsel only. No litigation.
+            </div>
           </div>
         </div>
       </section>

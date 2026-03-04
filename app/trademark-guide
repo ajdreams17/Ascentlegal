@@ -441,6 +441,50 @@
     to   { opacity:1; transform:translateY(0); }
   }
 
+
+  /* ── KIT FORM BRAND OVERRIDES ── */
+  .formkit-form[data-uid="bf6a2c6b96"] .formkit-input {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 14px !important;
+    padding: 14px 18px !important;
+    border-radius: 3px !important;
+  }
+  .kit-form-wrapper .formkit-form[data-uid="bf6a2c6b96"] .formkit-input {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.15) !important;
+    color: white !important;
+  }
+  .kit-form-wrapper .formkit-form[data-uid="bf6a2c6b96"] .formkit-input::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+    opacity: 1 !important;
+  }
+  .formkit-form[data-uid="bf6a2c6b96"] .formkit-submit {
+    background-color: #e8722a !important;
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    border-radius: 3px !important;
+    width: 100% !important;
+    transition: background-color 0.2s !important;
+  }
+  .formkit-form[data-uid="bf6a2c6b96"] .formkit-submit:hover {
+    background-color: #f08c4a !important;
+  }
+  .formkit-form[data-uid="bf6a2c6b96"] .formkit-submit > span {
+    padding: 14px 24px !important;
+  }
+  .formkit-powered-by-convertkit-container {
+    justify-content: center !important;
+    opacity: 0.4 !important;
+  }
+  /* bottom CTA form — light bg inputs */
+  .cta-kit-wrap .formkit-form[data-uid="bf6a2c6b96"] .formkit-input {
+    background: white !important;
+    border-color: #e2e8f0 !important;
+    color: #0f1623 !important;
+  }
   /* ── RESPONSIVE ── */
   @media (max-width:900px) {
     nav { padding:14px 24px; }
@@ -506,22 +550,8 @@
       <div class="kit-form-wrapper">
         <p>Get instant access — it's free</p>
 
-        <!-- ============================================
-             PASTE YOUR KIT EMBED CODE HERE
-             Replace everything between these comments
-             with the script tag from Kit → Form → Embed
-             ============================================ -->
-        <div id="kit-form-placeholder" style="text-align:center;padding:10px 0 4px;">
-          <input type="text"  placeholder="First name"       style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:white;font-family:Outfit,sans-serif;font-size:14px;padding:14px 18px;border-radius:3px;margin-bottom:10px;outline:none;display:block;" />
-          <input type="email" placeholder="Email address"    style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:white;font-family:Outfit,sans-serif;font-size:14px;padding:14px 18px;border-radius:3px;margin-bottom:10px;outline:none;display:block;" />
-          <button style="width:100%;background:#e8722a;color:#0f1623;font-family:Outfit,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;padding:16px;border-radius:3px;cursor:pointer;">
-            Send Me the Free Guide →
-          </button>
-          <p style="font-size:10px;color:rgba(255,255,255,.25);margin-top:10px;text-transform:none;letter-spacing:0;">
-            ⚠️ Replace this placeholder with your Kit embed code
-          </p>
-        </div>
-        <!-- ============================================ -->
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9158655/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9158655" data-uid="bf6a2c6b96" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(232, 114, 42); border-radius: 4px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Get the Free Guide →</span></button></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a></div></div></form>
 
       </div>
       <div class="form-trust">
@@ -667,16 +697,8 @@
   <p class="cta-sub">Get the guide and know exactly what to avoid — before you file, or before it's too late to fix.</p>
   <div class="cta-kit-wrap">
 
-    <!-- ============================================
-         PASTE YOUR SECOND KIT EMBED CODE HERE
-         (same form, second instance for bottom CTA)
-         ============================================ -->
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <input type="email" placeholder="Your email address" style="flex:1;min-width:200px;background:white;border:1.5px solid #e2e8f0;color:#0f1623;font-family:Outfit,sans-serif;font-size:14px;padding:15px 18px;border-radius:3px;outline:none;" />
-      <button style="background:#e8722a;color:#0f1623;font-family:Outfit,sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:none;padding:15px 26px;border-radius:3px;cursor:pointer;white-space:nowrap;">Get Free Access</button>
-    </div>
-    <p style="font-size:10px;color:var(--muted);margin-top:10px;">⚠️ Replace with Kit embed code</p>
-    <!-- ============================================ -->
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9158655/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9158655" data-uid="bf6a2c6b96" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="clean"><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="false" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(232, 114, 42); border-radius: 4px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span class="">Get the Free Guide →</span></button></div><div class="formkit-powered-by-convertkit-container"><a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" class="formkit-powered-by-convertkit" data-variant="dark" target="_blank" rel="nofollow">Built with Kit</a></div></div></form>
 
   </div>
 </section>

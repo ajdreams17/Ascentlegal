@@ -116,7 +116,7 @@ export default function RootLayout({ children }) {
             </Script>
           </>
         )}
-
+<StickyBanner />
         <Header />
         {children}
         <Footer />

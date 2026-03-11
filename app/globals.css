@@ -7,3 +7,84 @@
   max-width: 65ch;
   line-height: 1.75;
 }
+.al-banner {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  background: #1a2438;
+  border-bottom: 2px solid #e8722a;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: 'Outfit', sans-serif;
+}
+.al-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+.al-banner-tag {
+  background: rgba(232,114,42,0.15);
+  border: 1px solid rgba(232,114,42,0.3);
+  border-radius: 2px;
+  padding: 3px 10px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #e8722a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.al-banner-text {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,.8);
+  line-height: 1.4;
+}
+.al-banner-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+.al-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8722a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.al-banner-cta:hover { background: #f08c4a; }
+.al-banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: rgba(255,255,255,.3);
+  font-size: 20px;
+  padding: 4px 6px;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.al-banner-close:hover { color: rgba(255,255,255,.7); }
+@media (max-width: 640px) {
+  .al-banner { padding: 10px 16px; gap: 10px; }
+  .al-banner-tag { display: none; }
+  .al-banner-text { font-size: 12px; }
+  .al-banner-cta { font-size: 10px; padding: 9px 14px; }
+}

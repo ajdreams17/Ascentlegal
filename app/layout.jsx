@@ -2,7 +2,6 @@
 import "./globals.css";
 import Script from "next/script";
 import { Suspense } from "react";
-import StickyBanner from "../components/StickyBanner";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GA from "../components/GA";
@@ -116,7 +115,7 @@ export default function RootLayout({ children }) {
             </Script>
           </>
         )}
-<StickyBanner />
+
         <Header />
         {children}
         <Footer />

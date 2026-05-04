@@ -445,32 +445,6 @@ export default function TrademarkPage() {
         </div>
       </section>
 
-      {/* ──────── Testimonials ──────── */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">What our clients say.</h2>
-        <div className="mt-8 grid md:grid-cols-3 gap-6">
-          {testimonials.map((t, i) => (
-            <figure
-              key={i}
-              className="rounded-2xl border border-gray-100 bg-white p-6 flex flex-col"
-            >
-              <div className="text-4xl leading-none bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent font-serif">
-                &ldquo;
-              </div>
-              <blockquote className="mt-2 text-gray-800 flex-1">{t.quote}</blockquote>
-              <figcaption className="mt-4 text-sm">
-                <div className="font-semibold text-gray-900">{t.name}</div>
-                <div className="text-gray-500">{t.role}</div>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        {/* Internal note — remove before launch */}
-        <p className="mt-4 text-xs text-gray-400 italic">
-          (Realistic placeholders — replace with real client quotes from Google reviews this week.)
-        </p>
-      </section>
-
       {/* ──────── Final CTA ──────── */}
       <section className="mt-16 text-center">
         <h3 className="text-xl md:text-2xl font-semibold">Ready to protect your brand?</h3>

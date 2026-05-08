@@ -1396,6 +1396,8 @@
 
   // ----------- Init -----------
   loadDraft();
+  // Sync .active class to the (possibly restored) step index
+  stepEls.forEach((el, i) => el.classList.toggle('active', i === state.stepIndex));
   refreshConditionals();
   updateChrome();
 })();

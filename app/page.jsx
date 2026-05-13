@@ -1,5 +1,6 @@
 // app/page.tsx (or app/page.jsx)
 import Link from "next/link";
+import FounderSection from "../components/FounderSection";
 import {
   Check,
   Film,

@@ -14,6 +14,7 @@ const founders = [
     name: "April",
     title: "Co-Founder · Entertainment & Contracts",
     photo: "/attorneys/April_Paredes.jpg",
+    objectPosition: "top",
     icon: Scale,
     quote:
       "I come from entertainment and media — I've always lived in the world creators operate in. I've seen too many creators sign deals they didn't fully understand, losing rights to content they built from scratch. That's what this firm was built to prevent. I'm here to make sure every deal you sign actually works for you.",
@@ -27,6 +28,7 @@ const founders = [
     name: "Anthony",
     title: "Co-Founder · Trademark & Business Formation",
     photo: "/attorneys/Anthony_Paredes.png",
+    objectPosition: "top",
     icon: TrendingUp,
     quote:
       "My background is in marketing and business — so I understand how much your brand is actually worth. I became a lawyer because I wanted to use legal knowledge the way I used to use marketing: as a tool to help people grow. Whether you're an individual creator or a growing company, I'm focused on making sure your business is built to last.",
@@ -56,18 +58,19 @@ export default function FounderSection() {
 
         {/* Founder cards */}
         <div className="grid sm:grid-cols-2 gap-6 mb-6">
-          {founders.map(({ name, title, photo, icon: Icon, quote, focus }) => (
+          {founders.map(({ name, title, photo, objectPosition, icon: Icon, quote, focus }) => (
             <div
               key={name}
               className="rounded-2xl border border-slate-200/60 bg-white overflow-hidden"
             >
               {/* Photo */}
-              <div className="relative w-full aspect-[3/2] bg-slate-100">
+              <div className="relative w-full aspect-[4/3] bg-slate-100">
                 <Image
                   src={photo}
                   alt={`${name} — ${title}`}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover"
+                  style={{ objectPosition }}
                 />
                 {/* Icon badge — matches practice area card style */}
                 <div className="absolute top-4 left-4 h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center shadow-md">

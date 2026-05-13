@@ -62,12 +62,12 @@ export default function FounderSection() {
               className="rounded-2xl border border-slate-200/60 bg-white overflow-hidden"
             >
               {/* Photo */}
-              <div className="relative w-full aspect-[4/3] bg-slate-100">
+              <div className="relative w-full aspect-[3/2] bg-slate-100">
                 <Image
                   src={photo}
                   alt={`${name} — ${title}`}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-center"
                 />
                 {/* Icon badge — matches practice area card style */}
                 <div className="absolute top-4 left-4 h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center shadow-md">

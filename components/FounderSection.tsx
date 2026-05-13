@@ -13,7 +13,7 @@ const founders = [
   {
     name: "April",
     title: "Co-Founder · Entertainment & Contracts",
-    photo: "/images/april.jpg",
+    photo: "/attorneys/April_Paredes.jpg",
     icon: Scale,
     quote:
       "I come from entertainment and media — I've always lived in the world creators operate in. I've seen too many creators sign deals they didn't fully understand, losing rights to content they built from scratch. That's what this firm was built to prevent. I'm here to make sure every deal you sign actually works for you.",
@@ -26,7 +26,7 @@ const founders = [
   {
     name: "Anthony",
     title: "Co-Founder · Trademark & Business Formation",
-    photo: "/images/anthony.jpg",
+    photo: "/attorneys/Anthony_Paredes.png",
     icon: TrendingUp,
     quote:
       "My background is in marketing and business — so I understand how much your brand is actually worth. I became a lawyer because I wanted to use legal knowledge the way I used to use marketing: as a tool to help people grow. Whether you're an individual creator or a growing company, I'm focused on making sure your business is built to last.",

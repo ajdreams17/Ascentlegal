@@ -28,7 +28,7 @@ const founders = [
     name: "Anthony",
     title: "Co-Founder · Trademark & Business Formation",
     photo: "/attorneys/Anthony_Paredes.png",
-    objectPosition: "top",
+    objectPosition: "center 15%",
     icon: TrendingUp,
     quote:
       "My background is in marketing and business — so I understand how much your brand is actually worth. I became a lawyer because I wanted to use legal knowledge the way I used to use marketing: as a tool to help people grow. Whether you're an individual creator or a growing company, I'm focused on making sure your business is built to last.",

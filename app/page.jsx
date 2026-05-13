@@ -269,7 +269,8 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
-
+<FounderSection />
+      
       {/* CTA STRIP */}
       <section className="py-20 bg-gradient-to-r from-indigo-500 to-teal-400 text-white">
         <div className="max-w-6xl mx-auto px-6">

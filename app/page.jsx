@@ -1,4 +1,4 @@
-// app/page.tsx (or app/page.jsx)
+// app/page.tsx
 import Link from "next/link";
 import FounderSection from "../components/FounderSection";
 import {
@@ -9,6 +9,7 @@ import {
   Building2,
   FileText,
   Users,
+  Clapperboard,
 } from "lucide-react";
 import TrustpilotBadge from "../components/TrustpilotBadge";
 
@@ -58,15 +59,22 @@ export default function HomePage() {
     },
   ];
 
-  const commonDeals = [
-    "Brand deals, sponsorships, and influencer agreements",
-    "UGC licensing, paid usage, whitelisting, and term extensions",
-    "Agency services agreements, MSAs + SOWs (scope, deliverables, payment)",
-    "Production and media agreements",
-    "Trademark strategy + USPTO filings",
-    "Copyright registrations + licensing terms",
-    "Vendor, SaaS, and partnership agreements",
-    "Deal Desk templates for repeat campaigns and partnerships",
+  const whoWeServe = [
+    {
+      icon: Film,
+      label: "Content Creators",
+      desc: "You're building a brand, landing deals, and creating content that has real value. We make sure your contracts protect your rights, your deals pay you fairly, and your brand is legally yours.",
+    },
+    {
+      icon: Clapperboard,
+      label: "Production Companies",
+      desc: "You're managing talent, productions, and licensing across multiple projects. We handle the legal infrastructure so your deals close clean and your content stays protected.",
+    },
+    {
+      icon: Building2,
+      label: "Growing Businesses",
+      desc: "You're scaling fast and need legal that keeps up. We handle your contracts, protect your brand, and make sure your business structure is built for where you're going.",
+    },
   ];
 
   return (
@@ -112,10 +120,10 @@ export default function HomePage() {
               for creators and growing companies.
             </h1>
 
-         <p className="mt-6 text-lg text-slate-600 max-w-xl">
-  We help creators and growing companies say yes to more opportunities with the right legal foundation behind them.
-  Brand deals, trademarks, licensing, and commercial contracts. Transactional counsel only. No litigation.
-</p>
+            <p className="mt-6 text-lg text-slate-600 max-w-xl">
+              We help creators and growing companies say yes to more opportunities with the right legal foundation behind them.
+              Brand deals, trademarks, licensing, and commercial contracts. Transactional counsel only. No litigation.
+            </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
@@ -126,13 +134,12 @@ export default function HomePage() {
                 Book a Discovery Call
               </Link>
 
-              {/* Broader than “Review my next deal” */}
               <Link
                 href="/services"
                 className="group inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-indigo-700
                 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30 rounded-md px-1"
               >
-                See what we handle
+                Explore services
                 <span className="h-[2px] w-8 bg-teal-500/70 transition-all group-hover:w-14" />
               </Link>
             </div>
@@ -214,7 +221,7 @@ export default function HomePage() {
               How we support creators, brands, agencies, and growing companies
             </h2>
             <p className="mt-3 text-slate-600 max-w-3xl">
-              We help you close deals faster, protect rights, and keep contracts clean—whether you’re running campaigns,
+              We help you close deals faster, protect rights, and keep contracts clean—whether you're running campaigns,
               licensing content, or scaling operations.
             </p>
 
@@ -245,35 +252,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* COMMON DEALS */}
+      {/* WHO WE WORK WITH */}
       <section className="border-t border-slate-200/60 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-20">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
-            Common matters we handle
+            Who we work with
           </h2>
           <p className="mt-4 text-slate-600 max-w-2xl">
-            If you monetize through partnerships, licensing, or commercial contracts, we’ll help you protect the terms—and the rights.
+            We built Ascent Legal for people who are serious about growing. If you recognize yourself here, you're in the right place.
           </p>
 
-          <ul className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm text-slate-700">
-            {commonDeals.map((item) => (
-              <li
-                key={item}
-                className="rounded-xl border border-slate-200/60 bg-slate-50 px-4 py-3"
+          <div className="mt-10 grid sm:grid-cols-3 gap-6">
+            {whoWeServe.map(({ icon: Icon, label, desc }) => (
+              <div
+                key={label}
+                className="rounded-2xl border border-slate-200/60 bg-slate-50 p-6"
               >
-                {item}
-              </li>
+                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center mb-4">
+                  <Icon className="h-5 w-5 text-white" aria-hidden="true" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">{label}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{desc}</p>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
-<FounderSection />
-      
+
+      <FounderSection />
+
       {/* CTA STRIP */}
       <section className="py-20 bg-gradient-to-r from-indigo-500 to-teal-400 text-white">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            A clear path from “opportunity” to signed agreement
+            From opportunity to signed agreement
           </h2>
 
           <div className="grid md:grid-cols-3 gap-8">

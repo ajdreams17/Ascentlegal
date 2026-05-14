@@ -112,12 +112,10 @@ export default function HomePage() {
               for creators and growing companies.
             </h1>
 
-            <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              Business-first, plain-English support for creators, brands, studios, and agencies, plus commercial contracts
-              for growing companies. Strategic guidance for sponsorships, licensing, trademarks, copyright, and
-              revenue-protecting agreements. Agency-friendly workflows and fast turnarounds. Transactional counsel only. No
-              litigation.
-            </p>
+         <p className="mt-6 text-lg text-slate-600 max-w-xl">
+  We help creators and growing companies say yes to more opportunities with the right legal foundation behind them.
+  Brand deals, trademarks, licensing, and commercial contracts. Transactional counsel only. No litigation.
+</p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link

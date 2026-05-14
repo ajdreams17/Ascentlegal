@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FaInstagram, FaYelp, FaLinkedin, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaTiktok, FaLinkedin, FaFacebook } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -19,18 +19,16 @@ export default function Footer() {
               priority
             />
           </Link>
-
           <p className="mt-4 text-gray-600">
-            We combine integrity, excellence, and personalized legal strategy to
-            safeguard your intellectual property, contracts, and business growth.
+            Legal built for your ascent — we help creators and growing businesses
+            protect what they build and scale with confidence.
           </p>
-
           <div className="flex gap-4 mt-5 text-xl text-gray-500">
             <a href="https://www.instagram.com/ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram className="hover:text-indigo-600" />
             </a>
-            <a href="https://www.yelp.com/biz/ascent-legal-long-beach" target="_blank" rel="noopener noreferrer" aria-label="Yelp">
-              <FaYelp className="hover:text-indigo-600" />
+            <a href="https://www.tiktok.com/@ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <FaTiktok className="hover:text-indigo-600" />
             </a>
             <a href="https://www.linkedin.com/company/ascent-legal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FaLinkedin className="hover:text-indigo-600" />

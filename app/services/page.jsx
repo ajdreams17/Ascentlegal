@@ -40,7 +40,7 @@ const areas = [
   {
     title: "Corporate & Formation",
     desc: "Entity setup, founder alignment, and governance that supports growth and protects ownership.",
-    bullets: ["LLC/C-Corp/S-Corp", "Operating/Shareholder Agreements", "Bylaws & Resolutions"],
+    bullets: ["LLC & Corporation Formation", "Operating/Shareholder Agreements", "Bylaws & Resolutions"],
     href: "/services/corporate-formation",
     cta: "Start formation",
   },
@@ -95,7 +95,7 @@ export default function ServicesPage() {
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Discovery Call
+            Request a Consultation
           </Link>
           <Link
             href="/services/deal-desk-support"
@@ -263,7 +263,7 @@ export default function ServicesPage() {
           href="/contact"
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
         >
-          Book a Discovery Call
+          Request a Consultation
         </Link>
       </section>
     </main>

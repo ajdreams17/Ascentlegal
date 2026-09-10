@@ -45,8 +45,8 @@ export default function AboutPage() {
           <p className="text-gray-600">Years experience</p>
         </div>
         <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">300+</h2>
-          <p className="text-gray-600">Clients served</p>
+          <h2 className="text-2xl font-bold text-indigo-600">Business-first</h2>
+          <p className="text-gray-600">Legal counsel</p>
         </div>
         <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
           <h2 className="text-2xl font-bold text-indigo-600">&lt;4h</h2>

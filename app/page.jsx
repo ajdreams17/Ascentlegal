@@ -11,7 +11,6 @@ import {
   Users,
   Clapperboard,
 } from "lucide-react";
-import TrustpilotBadge from "../components/TrustpilotBadge";
 
 export const metadata = {
   title: "Ascent Legal | Brand Deals, IP & Commercial Transactions Counsel",
@@ -113,16 +112,16 @@ export default function HomePage() {
           {/* Left */}
           <div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-slate-900">
-              Brand deals, IP, and{" "}
+              Legal counsel for{" "}
               <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-                commercial counsel
+                creators, production companies,
               </span>{" "}
-              for creators and growing companies.
+              and brands building valuable businesses.
             </h1>
 
             <p className="mt-6 text-lg text-slate-600 max-w-xl">
-              We help creators and growing companies say yes to more opportunities with the right legal foundation behind them.
-              Brand deals, trademarks, licensing, and commercial contracts. Transactional counsel only. No litigation.
+              We negotiate brand deals, protect intellectual property, and build the contracts and
+              business structures behind your growth.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -131,7 +130,7 @@ export default function HomePage() {
                 className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow-lg hover:opacity-90 inline-block
                 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
               >
-                Book a Discovery Call
+                Request a Consultation
               </Link>
 
               <Link
@@ -152,30 +151,26 @@ export default function HomePage() {
               ))}
             </ul>
 
-            {/* Trustpilot badge */}
-            <div className="mt-8 flex justify-start">
-              <TrustpilotBadge />
-            </div>
           </div>
 
-          {/* Right showcase */}
+          {/* Right credibility panel */}
           <div className="md:justify-self-end w-full">
-            <div className="relative rounded-2xl border border-slate-200/60 p-6 shadow-sm bg-white">
+            <div className="relative rounded-2xl border border-slate-200/60 p-8 shadow-sm bg-white">
               <div className="absolute -top-6 -left-6 h-12 w-12 rounded-xl bg-gradient-to-br from-indigo-600 to-teal-500 flex items-center justify-center">
                 <Film className="h-6 w-6 text-white" aria-hidden="true" />
               </div>
 
               <div className="space-y-3">
                 <div>
-                  <p className="text-sm text-slate-500">Typical matter</p>
-                  <p className="font-medium text-slate-900">Campaign Contract + Usage Rights</p>
+                  <p className="text-sm font-medium text-indigo-600">Entertainment-industry experience</p>
+                  <p className="mt-1 text-xl font-semibold text-slate-900">Sophisticated counsel. Practical guidance.</p>
                 </div>
 
-                <div className="grid grid-cols-3 gap-3 text-xs text-slate-700">
+                <div className="grid gap-3 text-sm text-slate-700">
                   {[
-                    { label: "Usage Rights", icon: ShieldCheck },
-                    { label: "Scope/SOW", icon: FileText },
-                    { label: "Payment", icon: Users },
+                    { label: "Former Am Law 100 entertainment counsel", icon: Briefcase },
+                    { label: "Brand deals, production agreements, licensing, and IP", icon: Film },
+                    { label: "Flat-fee options for defined matters", icon: FileText },
                   ].map(({ label, icon: Icon }) => (
                     <div
                       key={label}
@@ -187,7 +182,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-3">
                   <Link
                     href="/services"
                     className="text-sm font-medium text-slate-800 hover:text-indigo-700
@@ -199,13 +194,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-slate-200/60 bg-white p-6">
-              <p className="text-sm text-slate-600">
-                <span className="font-semibold text-slate-900">Note:</span> Transactional counsel only (no litigation). We
-                support contract interpretation, negotiation strategy, and pre-suit resolution planning, but we do not
-                appear in court.
-              </p>
-            </div>
+            <p className="mt-4 text-xs text-slate-500 text-center">Transactional legal services only.</p>
           </div>
         </div>
       </section>
@@ -317,11 +306,8 @@ export default function HomePage() {
               className="px-6 py-3 bg-white text-slate-900 font-semibold rounded-lg shadow hover:bg-slate-50 transition inline-block ring-1 ring-white/20 hover:ring-white/40
               focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
             >
-              Book a Discovery Call
+              Request a Consultation
             </Link>
-            <div className="mt-3 text-xs text-white/80">
-              Transactional counsel only. No litigation.
-            </div>
           </div>
         </div>
       </section>

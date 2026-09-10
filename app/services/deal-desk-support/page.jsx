@@ -93,7 +93,7 @@ export default function DealDeskSupportPage() {
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Discovery Call
+            Request a Consultation
           </Link>
 
           {/* Secondary actions as text links to keep CTA labels consistent */}
@@ -225,7 +225,7 @@ export default function DealDeskSupportPage() {
               href="/contact"
               className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
             >
-              Book a Discovery Call
+              Request a Consultation
             </Link>
             <Link
               href="/services/entertainment"
@@ -258,7 +258,7 @@ export default function DealDeskSupportPage() {
           href="/contact"
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
         >
-          Book a Discovery Call
+          Request a Consultation
         </Link>
       </section>
     </main>

@@ -12,8 +12,6 @@ const topicChips = [
   { label: "Trademarks", href: "#trademarks" },
   { label: "Copyright + Licensing", href: "#copyright" },
   { label: "Brand Deals", href: "#brand-deals" },
-  { label: "Commercial Contracts", href: "#contracts" },
-  { label: "Formation", href: "#formation" },
 ];
 
 const guides = [
@@ -59,27 +57,6 @@ const guides = [
       "https://www.virtualonlineeditions.com/article/Creator+Economy+Legal+Risks/5132319/862733/article.html",
   },
 
-  // Creator + transactional (add these posts when ready)
-  {
-    slug: "brand-deal-checklist",
-    title: "Brand Deal Checklist for Creators",
-    description:
-      "A plain-English checklist to review deliverables, usage rights, exclusivity, payment, and termination before you sign.",
-    readTime: "6 min read",
-    badge: "Brand Deals",
-    topic: "brand-deals",
-    comingSoon: true,
-  },
-  {
-    slug: "msa-vs-sow",
-    title: "MSA vs SOW: The Contract Pair That Speeds Up Sales",
-    description:
-      "How to separate master terms from project scopes so deals close faster and repeat work is easier to sign.",
-    readTime: "5 min read",
-    badge: "Contracts",
-    topic: "contracts",
-    comingSoon: true,
-  },
 ];
 
 // TODO: confirm exact titles from YouTube before publishing
@@ -109,20 +86,9 @@ const pressMentions = [
 
 const downloads = [
   {
-    title: "HR Compliance Audit Checklist (California)",
-    desc: "One-page checklist to sanity-check hiring & onboarding. PDF.",
-    href: "/download/HR-Compliance-Audit-Checklist-California-Employers-Fill-1 (1).pdf",
-  },
-  {
     title: "Operating Agreement",
     desc: "Customizable operating agreement template for LLC owners.",
     href: "/operating_agreement.docx",
-  },
-  {
-    title: "Brand Deal Review Checklist (Creator Edition)",
-    desc: "Quick checklist for deliverables, usage rights, exclusivity, payment, and approvals. PDF.",
-    href: "/download/brand-deal-checklist.pdf",
-    comingSoon: true,
   },
 ];
 
@@ -358,49 +324,6 @@ export default function ResourcesPage() {
           </div>
         </div>
 
-        <div id="contracts" className="scroll-mt-24">
-          <div className="mb-6 flex items-end justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Commercial Contracts</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {byTopic.contracts.length ? (
-              byTopic.contracts.map((g) => <GuideCard key={g.slug} g={g} />)
-            ) : (
-              <div className="rounded-2xl border border-gray-100 bg-white p-6 text-sm text-gray-600">
-                Commercial contract guides are coming soon.
-              </div>
-            )}
-          </div>
-
-          <div className="mt-6">
-            <Link
-              href="/services/contracts-drafting"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
-                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-            >
-              Explore Contracts Drafting services →
-            </Link>
-          </div>
-        </div>
-
-        <div id="formation" className="scroll-mt-24">
-          <div className="mb-6 flex items-end justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Formation</h2>
-          </div>
-          <div className="rounded-2xl border border-gray-100 bg-white p-6 text-sm text-gray-600">
-            Formation guides are coming soon.
-          </div>
-
-          <div className="mt-6">
-            <Link
-              href="/services/corporate-formation"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
-                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-            >
-              Explore Corporate & Formation services →
-            </Link>
-          </div>
-        </div>
       </section>
 
       {/* Downloads */}
@@ -416,17 +339,13 @@ export default function ResourcesPage() {
                 <h3 className="font-semibold">{d.title}</h3>
                 <p className="mt-1 text-sm text-gray-600">{d.desc}</p>
 
-                {d.comingSoon ? (
-                  <span className="mt-3 inline-block text-sm font-medium text-gray-500">Download soon →</span>
-                ) : (
-                  <a
+                <a
                     href={d.href}
                     className="mt-3 inline-block text-sm font-medium text-indigo-600 hover:underline rounded-md
                       focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
                   >
                     Download →
-                  </a>
-                )}
+                </a>
               </div>
             </div>
           ))}
@@ -510,7 +429,7 @@ export default function ResourcesPage() {
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
             focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
         >
-          Book a Discovery Call
+          Request a Consultation
         </Link>
 
         <p className="mt-4 text-xs text-gray-500">Transactional counsel only. No litigation.</p>

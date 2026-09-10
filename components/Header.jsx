@@ -52,7 +52,7 @@ export default function Header() {
   href="/contact"
   className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow hover:opacity-95 text-sm"
 >
-  Book a Discovery Call
+  Request a Consultation
 </Link>
         </nav>
   {/* Mobile menu button */}
@@ -101,7 +101,7 @@ export default function Header() {
   href="/contact"
   className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow hover:opacity-95 text-sm"
 >
-  Book a Discovery Call
+  Request a Consultation
 </Link>
             </nav>
           </div>
@@ -110,5 +110,4 @@ export default function Header() {
     </header>
   );
 }
-
 

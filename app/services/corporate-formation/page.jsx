@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Corporate & Formation | Ascent Legal",
   description:
-    "Business-first entity formation and founder documentation for creators, brands, agencies, and growing companies—LLC/C-Corp/S-Corp, operating agreements/bylaws, founder alignment, and scalable governance.",
+    "Business-first entity formation and founder documentation for creators, brands, agencies, and growing companies—LLCs, corporations, operating agreements/bylaws, founder alignment, and scalable governance.",
 };
 
 const packages = [
@@ -12,7 +12,7 @@ const packages = [
     price: "Flat-fee",
     bestFor: "Solo founders and first entities",
     bullets: [
-      "Entity selection consult (LLC / C-Corp / S-Corp)",
+      "Entity selection consult (LLC or corporation)",
       "Articles/Certificate of Formation",
       "EIN guidance",
       "Registered Agent setup (or BYO)",
@@ -158,7 +158,7 @@ export default function CorporateFormationPage() {
           {[
             {
               title: "Entity Strategy",
-              desc: "Clear guidance on LLC, C-Corp, or S-Corp based on taxes, ownership, investors, and hiring plans.",
+              desc: "Clear guidance on LLC or corporation formation, including potential S-corporation tax treatment in coordination with your tax adviser.",
               items: [
                 "Name availability & jurisdiction choice",
                 "Equity structure & founder vesting overview",
@@ -318,7 +318,7 @@ export default function CorporateFormationPage() {
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
             focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
-            Book a Discovery Call
+            Request a Consultation
           </Link>
           <Link
             href="/services"

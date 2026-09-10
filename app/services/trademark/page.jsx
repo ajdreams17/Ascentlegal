@@ -13,9 +13,9 @@ export const metadata = {
 const CONSULT_HREF = "/contact"; // swap to your Calendly URL when ready
 
 const trustBar = [
-  "50+ Trademarks Filed",
-  "Entertainment & IP Specialists",
-  "Flat-Fee Only",
+  "Trademark & IP Focus",
+  "Entertainment-Savvy Counsel",
+  "Transparent Pricing",
   "Based in LA",
   "Free Consult",
 ];
@@ -72,7 +72,7 @@ const packages = [
       "Class and goods/services description strategy",
       "Response to non-substantive Office Actions",
       "Updates at every stage",
-      "Estimated timeline: 12–18 months",
+      "Timeline varies based on USPTO review and application type",
     ],
     fineprint: "USPTO filing fee: $350/class — billed separately, paid directly to USPTO.",
     featured: true,
@@ -127,9 +127,9 @@ const officeAction = {
 
 const timeline = [
   { when: "Month 1", what: "You book a consult → we run your search → we file your application." },
-  { when: "Months 2–3", what: "USPTO reviews your application (examining attorney assigned)." },
-  { when: "Months 4–6", what: "Application published for opposition — 30-day window for third parties to object." },
-  { when: "Months 12–18", what: "Registration certificate issued (if no opposition)." },
+  { when: "About months 4–6", what: "USPTO typically conducts its initial review. Timing changes with agency workload." },
+  { when: "After approval", what: "Application is generally published for a 30-day opposition period." },
+  { when: "Final stage", what: "Registration may issue if requirements are satisfied and no opposition is sustained." },
   { when: "Year 5–6", what: "First maintenance filing due (Section 8 & 15 declarations)." },
   { when: "Year 10", what: "Renewal due — every 10 years after that." },
 ];
@@ -137,7 +137,7 @@ const timeline = [
 const faqs = [
   {
     q: "How long does a trademark take?",
-    a: "Currently 12–18 months from filing to registration with the USPTO. The process has multiple stages — we walk you through each one and send updates throughout.",
+    a: "Timing varies. Current USPTO data indicates that many applications receive an initial review in approximately four to six months, but the total timeline depends on Office Actions, opposition, and intent-to-use requirements. We keep you updated throughout the process.",
   },
   {
     q: "What's the difference between ™ and ®?",
@@ -308,11 +308,11 @@ export default function TrademarkPage() {
         </div>
       </section>
 
-      {/* ──────── Guarantee ──────── */}
+      {/* ──────── Refiling commitment ──────── */}
       <section className="mt-16">
         <div className="rounded-2xl border border-gray-100 bg-gradient-to-br from-indigo-500 to-teal-400 p-8 md:p-10 text-white">
           <div className="inline-block rounded-full border border-white/40 px-3 py-1 text-xs uppercase tracking-widest font-semibold">
-            The Ascent Guarantee
+            Our Refiling Commitment
           </div>
           <h2 className="mt-4 text-2xl md:text-3xl font-semibold">We stand behind our work.</h2>
           <p className="mt-4 max-w-3xl text-white/90">
@@ -323,8 +323,11 @@ export default function TrademarkPage() {
           <p className="mt-3 max-w-3xl text-white/90">
             We've built our practice around getting it right the first time. Our search process is
             thorough, our applications are crafted carefully, and we don't cut corners. This
-            guarantee exists because we're confident in our work — and because you deserve that
-            confidence too.
+            commitment reflects the care we put into each filing.
+          </p>
+          <p className="mt-3 max-w-3xl text-sm text-white/80">
+            This commitment does not guarantee registration or any particular outcome. USPTO filing
+            fees and other government fees are not included.
           </p>
         </div>
       </section>
@@ -461,7 +464,7 @@ export default function TrademarkPage() {
           </Link>
         </div>
         <p className="mt-4 text-xs text-gray-500 uppercase tracking-wider">
-          Flat fees only · Entertainment &amp; IP specialists · Based in Los Angeles
+          Transparent fees · Entertainment and IP focused · Based in Los Angeles
         </p>
         <p className="mt-2 text-xs text-gray-500">
           Transactional counsel only. No litigation.

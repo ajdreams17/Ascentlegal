@@ -80,7 +80,7 @@ export default function CopyrightPage() {
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Discovery Call
+            Request a Consultation
           </Link>
 
           <Link
@@ -202,7 +202,7 @@ export default function CopyrightPage() {
           href="/contact"
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
         >
-          Book a Discovery Call
+          Request a Consultation
         </Link>
 
         <p className="mt-4 text-xs text-gray-500">Transactional counsel only. No litigation.</p>

@@ -11,7 +11,7 @@ import { Scale, TrendingUp } from "lucide-react";
 
 const founders = [
   {
-    name: "April",
+    name: "April Paredes",
     title: "Co-Founder · Entertainment & Contracts",
     photo: "/attorneys/April_Paredes.jpg",
     objectPosition: "top",
@@ -25,7 +25,7 @@ const founders = [
     ],
   },
   {
-    name: "Anthony",
+    name: "Anthony Paredes",
     title: "Co-Founder · Trademark & Business Formation",
     photo: "/attorneys/Anthony_Paredes.png",
     objectPosition: "center 15%",

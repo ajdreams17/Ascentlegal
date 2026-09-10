@@ -100,8 +100,8 @@ export default function IPPage() {
      <div className="mt-10 grid sm:grid-cols-3 gap-6">
   {/* 1) Keep your real metric */}
   <div className="rounded-xl border border-gray-100 p-6 text-center">
-    <div className="text-3xl font-semibold text-indigo-600">300+</div>
-    <div className="mt-2 text-sm text-gray-600">Trademarks filed</div>
+    <div className="text-3xl font-semibold text-indigo-600">Federal</div>
+    <div className="mt-2 text-sm text-gray-600">Trademark filings</div>
   </div>
 
   {/* 2) Replace “response time” */}

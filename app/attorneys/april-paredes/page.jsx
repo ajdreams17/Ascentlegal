@@ -76,7 +76,7 @@ export default function AprilParedesPage() {
           U.S. entertainment market.
         </p>
         <p>
-          April holds a JD from Georgetown Law and a Master's in Communication Management from USC. Her
+          April holds a JD from Georgetown Law and an M.S. in Communication Management from USC. Her
           background bridges legal expertise and media industry knowledge in a way that is rare — and
           exactly what creators and production companies need in their corner.
         </p>
@@ -110,7 +110,7 @@ export default function AprilParedesPage() {
         <ul className="space-y-2 text-sm text-gray-700">
           {[
             "JD, Georgetown University Law Center",
-            "MA, Communication Management, University of Southern California",
+            "M.S., Communication Management, University of Southern California",
             "Former Associate, Sheppard Mullin Richter & Hampton LLP",
             "Entertainment, Media & Technology Practice Group",
           ].map((item) => (
@@ -137,7 +137,7 @@ export default function AprilParedesPage() {
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90 inline-block"
           >
-            Book a Discovery Call
+            Request a Consultation
           </Link>
           <Link
             href="/services"

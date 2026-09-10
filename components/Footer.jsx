@@ -11,13 +11,13 @@ export default function Footer() {
         <div className="mx-auto max-w-7xl px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="text-xl font-bold text-slate-900">Ready to protect what you're building?</h3>
-            <p className="mt-1 text-slate-600 text-sm">Book a discovery call and let's talk about your next move.</p>
+            <p className="mt-1 text-slate-600 text-sm">Request a consultation and tell us about your next move.</p>
           </div>
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-6 py-3 text-white font-semibold shadow-lg hover:opacity-90 whitespace-nowrap focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
-            Book a Discovery Call
+            Request a Consultation
           </Link>
         </div>
       </div>

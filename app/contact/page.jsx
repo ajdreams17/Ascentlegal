@@ -107,7 +107,11 @@ export default function ContactPage() {
   </div>
 
   <p className="mt-3 text-xs text-gray-500">
-    By submitting, you agree to our{" "}
+    Contacting Ascent Legal or submitting this form does not create an attorney-client relationship.
+    Do not send confidential or time-sensitive information. We do not represent you unless and until
+    we confirm that no conflict prevents the representation and both you and the firm sign a written
+    engagement agreement. Submitting this form does not guarantee a response. By submitting, you
+    agree to our{" "}
     <a href="/privacy" className="underline hover:text-indigo-600">
       privacy policy
     </a>.

@@ -2,90 +2,123 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "About Us | Ascent Legal",
+  title: "Attorneys | Ascent Legal",
   description:
-    "Meet the Ascent Legal team—business and IP attorneys helping founders and creators grow with confidence.",
+    "Meet April Paredes and Anthony Paredes, the attorneys behind Ascent Legal's entertainment, contracts, trademark, IP, and business formation practice.",
 };
 
 const attorneys = [
-  { 
-    name: "John Doe", 
-    role: "Founding Attorney – Business & IP Law", 
-    slug: "john-doe",
-    image: "/attorneys/john-doe.jpg"  // make sure this file exists in /public/attorneys/
+  {
+    name: "April Paredes",
+    role: "Co-Founder · Entertainment & Contracts",
+    slug: "april-paredes",
+    photo: "/attorneys/April_Paredes.jpg",
+    objectPosition: "top",
+    background: "Entertainment & Media",
+    credentials: [
+      "JD, Georgetown University Law Center",
+      "M.S., Communication Management, University of Southern California",
+      "Former Associate, Sheppard Mullin Richter & Hampton LLP",
+    ],
+    bio:
+      "April is a business and entertainment attorney with deep roots in the creator economy and media industry. She advises content creators, production companies, brands, and growing businesses on brand deals, production and media agreements, licensing, copyright, rights acquisition, and commercial contracts.",
+    focus: [
+      "Brand deals & influencer agreements",
+      "Content licensing & usage rights",
+      "Copyright registration & protection",
+      "Production & media agreements",
+      "Rights acquisition & brand collaborations",
+      "Startup formation & lifecycle counsel",
+    ],
   },
-  { 
-    name: "Jane Smith", 
-    role: "Attorney – Contracts & Employment Law", 
-    slug: "jane-smith",
-    image: "/attorneys/april_paredes.jpg" // headshot for April
+  {
+    name: "Anthony Paredes",
+    role: "Co-Founder · Trademark & Business Formation",
+    slug: "Anthony-Paredes",
+    photo: "/attorneys/Anthony_Paredes.png",
+    objectPosition: "center 15%",
+    background: "Marketing & Business",
+    credentials: [
+      "JD, Chapman University, Fowler School of Law",
+      "LLM, Loyola Law School",
+      "Background in marketing and business",
+    ],
+    bio:
+      "Anthony brings a marketing and business background to trademark strategy, intellectual property, and business formation. He helps creators and growing companies protect brand names and creative assets, structure entities, and build the legal foundation needed to scale with confidence.",
+    focus: [
+      "Trademark strategy & USPTO filings",
+      "Trademark clearance & portfolio management",
+      "Business formation & entity structure",
+      "Operating agreements & founder documentation",
+      "IP protection & brand strategy",
+    ],
   },
 ];
 
-export default function AboutPage() {
+export default function AttorneysPage() {
   return (
-    <main className="mx-auto max-w-5xl px-6 py-16">
-      {/* ===== Hero ===== */}
-      <h1 className="text-4xl md:text-5xl font-bold">
-        About{" "}
-        <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-          Ascent Legal
-        </span>
-      </h1>
-
-      <p className="mt-6 text-lg text-gray-600">
-        Use this section to introduce the firm—mission, values, and what makes your counsel
-        practical and business-first.
-      </p>
-
-      {/* ===== Stats ===== */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">15+</h2>
-          <p className="text-gray-600">Years experience</p>
+    <main>
+      <section className="border-b border-[#0e2a47]/10 bg-[#f7f6f3]">
+        <div className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b86a2e]">Ascent Legal</p>
+          <h1 className="mt-4 max-w-3xl font-serif text-5xl leading-[1.05] text-[#0e2a47] md:text-6xl">Meet the attorneys.</h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#465c70]">
+            Two complementary practices, one shared approach: sophisticated legal counsel that is practical,
+            responsive, and focused on helping clients protect what they are building.
+          </p>
         </div>
-        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">Business-first</h2>
-          <p className="text-gray-600">Legal counsel</p>
-        </div>
-        <div className="rounded-2xl border border-gray-100 bg-white p-6 text-center">
-          <h2 className="text-2xl font-bold text-indigo-600">&lt;4h</h2>
-          <p className="text-gray-600">Avg. response</p>
-        </div>
-      </div>
+      </section>
 
-      {/* ===== Meet Our Attorneys ===== */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Meet Our Attorneys</h2>
-        <p className="mt-2 text-gray-600">
-          Business-first counsel from experienced attorneys who protect your brand and help you grow.
-        </p>
+      <section className="bg-[#fbfaf7]">
+        <div className="mx-auto max-w-6xl space-y-10 px-6 py-16 md:py-20">
+          {attorneys.map((attorney, index) => (
+            <article key={attorney.slug} className="overflow-hidden border border-[#0e2a47]/12 bg-white shadow-sm">
+              <div className={`grid lg:grid-cols-2 ${index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                <div className="relative min-h-[420px] bg-[#e7e3dd] lg:min-h-[560px]">
+                  <Image
+                    src={attorney.photo}
+                    alt={attorney.name}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: attorney.objectPosition }}
+                  />
+                </div>
 
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {attorneys.map((a) => (
-            <Link
-              key={a.slug}
-              href={`/attorneys/${a.slug}`}
-              className="group rounded-2xl border border-gray-100 bg-white p-6 shadow-sm hover:shadow transition"
-            >
-              {/* Headshot */}
-              <div className="w-24 h-24 mb-4">
-                <Image
-                  src={a.image}
-                  alt={a.name}
-                  width={96}
-                  height={96}
-                  className="rounded-full object-cover"
-                />
+                <div className="p-8 md:p-10 lg:p-12">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#b86a2e]">{attorney.background}</p>
+                  <h2 className="mt-3 font-serif text-4xl text-[#0e2a47]">{attorney.name}</h2>
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-[#6b7e90]">{attorney.role}</p>
+
+                  <p className="mt-6 leading-7 text-[#465c70]">{attorney.bio}</p>
+
+                  <div className="mt-7 border-t border-[#0e2a47]/10 pt-6">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#0e2a47]">Practice focus</h3>
+                    <ul className="mt-4 grid gap-2 text-sm text-[#465c70] sm:grid-cols-2">
+                      {attorney.focus.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-[#b86a2e]" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="mt-7 border-t border-[#0e2a47]/10 pt-6">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#0e2a47]">Credentials</h3>
+                    <ul className="mt-4 space-y-2 text-sm text-[#465c70]">
+                      {attorney.credentials.map((item) => <li key={item}>{item}</li>)}
+                    </ul>
+                  </div>
+
+                  <Link
+                    href={`/attorneys/${attorney.slug}`}
+                    className="mt-8 inline-flex items-center border border-[#0e2a47] px-5 py-3 text-xs font-bold uppercase tracking-[0.16em] text-[#0e2a47] transition hover:bg-[#0e2a47] hover:text-white"
+                  >
+                    Read full profile →
+                  </Link>
+                </div>
               </div>
-
-              {/* Info */}
-              <h3 className="text-lg font-semibold">{a.name}</h3>
-              <p className="text-sm text-gray-600">{a.role}</p>
-              <span className="mt-2 inline-block text-sm text-indigo-600 group-hover:underline">
-                View Profile →
-              </span>
-            </Link>
+            </article>
           ))}
         </div>
       </section>

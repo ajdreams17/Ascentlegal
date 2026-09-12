@@ -1,292 +1,255 @@
 import Link from "next/link";
-import FounderSection from "../components/FounderSection";
-import {
-  ArrowRight,
-  Film,
-  Copyright,
-  FileText,
-  Building2,
-} from "lucide-react";
-
-export const metadata = {
-  title: "Ascent Legal | Entertainment, IP & Business Counsel",
-  description:
-    "Sophisticated, business-first legal counsel for creators, production companies, brands, and growing businesses.",
-};
+import FounderSection from "@/components/FounderSection";
 
 const practices = [
   {
     title: "Entertainment & Brand Deals",
-    desc: "Creator agreements, sponsorships, talent and production deals, licensing, and brand collaborations.",
+    description:
+      "Contracts, talent deals, sponsorships, production, licensing, and more.",
     href: "/services/entertainment",
-    icon: Film,
+    icon: "◇",
   },
   {
     title: "Intellectual Property",
-    desc: "Trademark strategy, copyright protection, licensing, usage rights, and practical brand protection.",
+    description:
+      "Trademarks, copyrights, licensing, IP strategy, and brand protection.",
     href: "/ip",
-    icon: Copyright,
+    icon: "△",
   },
   {
     title: "Business & Contracts",
-    desc: "Commercial agreements, deal review, redlines, negotiations, and practical contract strategy.",
+    description:
+      "Commercial agreements, consulting agreements, vendor contracts, and more.",
     href: "/services/contracts-drafting",
-    icon: FileText,
+    icon: "□",
   },
   {
     title: "Corporate & Formation",
-    desc: "Entity formation, operating agreements, governance, founder documents, and business infrastructure.",
+    description:
+      "Entity formation, governance, business structure, and ongoing counsel.",
     href: "/services/corporate-formation",
-    icon: Building2,
+    icon: "○",
   },
 ];
 
 export default function HomePage() {
   return (
-    <main className="bg-[#f7f6f3] text-[#0e2a47]">
+    <main className="overflow-hidden bg-[#F7F6F3] text-[#0E2A47]">
 
       {/* HERO */}
-      <section className="overflow-hidden border-b border-[#0e2a47]/10 bg-[#f7f6f3]">
-        <div className="mx-auto grid min-h-[680px] max-w-[1440px] lg:grid-cols-[.9fr_1.1fr]">
+      <section className="grid min-h-[720px] lg:grid-cols-2">
+        <div className="flex items-center bg-[#F7F6F3] px-6 py-20 sm:px-10 lg:px-16 xl:px-24">
+          <div className="mx-auto w-full max-w-2xl lg:mx-0">
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+              Creators / Brands / Businesses
+            </p>
 
-          {/* HERO COPY */}
-          <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 xl:px-20">
-            <div className="max-w-[620px]">
+            <h1 className="max-w-xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] text-[#0E2A47] sm:text-6xl lg:text-7xl">
+              Legal counsel for what&apos;s{" "}
+              <span className="italic text-[#B86A2E]">next.</span>
+            </h1>
 
-              <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#b86a2e]">
-                Creators / Brands / Businesses
-              </p>
+            <p className="mt-8 max-w-xl text-lg leading-8 text-[#5F7386]">
+              Sophisticated legal counsel with practical, business-first advice
+              — built for creators, production companies, brands, and growing
+              businesses.
+            </p>
 
-              <h1 className="mt-7 font-serif text-5xl leading-[.98] tracking-[-.04em] text-[#0e2a47] sm:text-6xl xl:text-7xl">
-                Legal counsel for{" "}
-                <span className="italic text-[#b86a2e]">
-                  what&apos;s next.
-                </span>
-              </h1>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center bg-[#B86A2E] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-[#9F5925]"
+              >
+                Work With Us
+                <span className="ml-3">→</span>
+              </Link>
 
-              <p className="mt-8 max-w-xl text-lg leading-8 text-[#53687a]">
-                Sophisticated legal counsel with practical, business-first
-                advice — built for creators, production companies, brands,
-                and growing businesses.
-              </p>
-
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-3 bg-[#b86a2e] px-7 py-4 text-xs font-bold uppercase tracking-[.16em] text-white transition hover:bg-[#9f5724]"
-                >
-                  Work with us
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-
-                <Link
-                  href="/services"
-                  className="inline-flex items-center border border-[#0e2a47]/30 px-7 py-4 text-xs font-bold uppercase tracking-[.16em] text-[#0e2a47] transition hover:bg-white"
-                >
-                  Explore services
-                </Link>
-              </div>
+              <Link
+                href="/services"
+                className="inline-flex items-center border border-[#0E2A47]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
+              >
+                Explore Services
+              </Link>
             </div>
           </div>
+        </div>
 
-          {/* LOS ANGELES HERO VISUAL */}
-          <div
-            className="relative min-h-[480px] overflow-hidden bg-cover bg-center lg:min-h-full"
-            style={{
-              backgroundImage:
-                "linear-gradient(to top, rgba(14,42,71,.55), rgba(14,42,71,.05)), url('/images/ascent-la.jpg')",
-            }}
-          >
-            {/* Fallback visual if photo has not been uploaded yet */}
-            <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#d8c4b1_0%,#f1e5d9_30%,#b07d59_31%,#d3a681_58%,#77604d_59%,#a17a5d_100%)]" />
+        <div
+          className="relative min-h-[520px] bg-cover bg-center lg:min-h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(9,31,52,0.12), rgba(9,31,52,0.32)), url('/ascent-la.jpg')",
+          }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-[#091F34]/55 via-transparent to-transparent" />
 
-            <div className="absolute bottom-12 left-10 border-l-2 border-[#dba06d] pl-5 text-white lg:left-14">
-              <p className="font-serif text-3xl leading-tight">
-                Higher Perspective.
-                <br />
-                Stronger Outcomes.
-              </p>
+          <div className="absolute bottom-10 left-8 right-8 sm:bottom-14 sm:left-12">
+            <p className="max-w-md font-serif text-3xl italic leading-tight text-white sm:text-4xl">
+              Higher Perspective.
+              <br />
+              Stronger Outcomes.
+            </p>
 
-              <p className="mt-3 text-xs uppercase tracking-[.18em] text-white/80">
-                Ascent Legal
-              </p>
-            </div>
+            <div className="mt-5 h-[2px] w-20 bg-[#C97832]" />
+
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.28em] text-white/80">
+              Ascent Legal
+            </p>
           </div>
         </div>
       </section>
 
       {/* PRACTICE AREAS */}
-      <section id="practice" className="bg-[#fbfaf7]">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-
-          <div className="flex flex-col justify-between gap-6 border-b border-[#0e2a47]/15 pb-9 md:flex-row md:items-end">
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#b86a2e]">
-                What we do
-              </p>
-
-              <h2 className="mt-3 font-serif text-4xl tracking-[-.03em] text-[#0e2a47] md:text-5xl">
-                Counsel built around the deal.
-              </h2>
-            </div>
-
-            <Link
-              href="/services"
-              className="text-xs font-bold uppercase tracking-[.16em] text-[#b86a2e]"
-            >
-              View all services →
-            </Link>
+      <section className="border-y border-[#0E2A47]/10 bg-[#FBFAF7]">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <div className="mb-12">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+              What We Do
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4">
-            {practices.map(
-              ({ title, desc, href, icon: Icon }, index) => (
+          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+            {practices.map((practice, index) => (
+              <div
+                key={practice.title}
+                className={`flex flex-col ${
+                  index !== 0 ? "lg:border-l lg:border-[#0E2A47]/10 lg:pl-8" : ""
+                } ${index !== practices.length - 1 ? "lg:pr-8" : ""}`}
+              >
+                <div className="mb-7 flex h-12 w-12 items-center justify-center border border-[#B86A2E]/50 font-serif text-2xl text-[#B86A2E]">
+                  {practice.icon}
+                </div>
+
+                <h2 className="font-serif text-2xl leading-tight text-[#0E2A47]">
+                  {practice.title}
+                </h2>
+
+                <p className="mt-4 flex-1 text-sm leading-7 text-[#5F7386]">
+                  {practice.description}
+                </p>
+
                 <Link
-                  key={title}
-                  href={href}
-                  className={`group py-9 lg:px-7 ${
-                    index > 0
-                      ? "border-t border-[#0e2a47]/10 md:border-t-0 lg:border-l"
-                      : ""
-                  }`}
+                  href={practice.href}
+                  className="mt-7 inline-flex items-center text-xs font-bold uppercase tracking-[0.2em] text-[#B86A2E]"
                 >
-                  <Icon className="h-6 w-6 stroke-[1.35] text-[#b86a2e]" />
-
-                  <h3 className="mt-7 font-serif text-2xl leading-tight text-[#0e2a47]">
-                    {title}
-                  </h3>
-
-                  <p className="mt-4 text-sm leading-6 text-[#5b6e7e]">
-                    {desc}
-                  </p>
-
-                  <span className="mt-7 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[.15em] text-[#0e2a47] transition group-hover:text-[#b86a2e]">
-                    Learn more
-                    <ArrowRight className="h-3.5 w-3.5" />
-                  </span>
+                  Learn More <span className="ml-2">→</span>
                 </Link>
-              )
-            )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ABOUT ASCENT */}
-      <section className="overflow-hidden bg-[#0e2a47] text-white">
-        <div className="mx-auto grid max-w-[1440px] lg:grid-cols-2">
+      {/* ABOUT */}
+      <section className="bg-[#0E2A47] text-white">
+        <div className="grid lg:grid-cols-2">
+          <div className="relative min-h-[430px] overflow-hidden bg-[#091F34] lg:min-h-[590px]">
+            <div className="absolute -left-20 top-20 h-80 w-80 rotate-45 border border-[#B86A2E]/30" />
+            <div className="absolute left-28 top-8 h-96 w-96 rotate-45 border border-white/10" />
+            <div className="absolute bottom-[-90px] right-[-50px] h-80 w-80 rotate-45 bg-[#B86A2E]/10" />
 
-          {/* ABSTRACT / CALIFORNIA VISUAL */}
-          <div className="relative min-h-[440px] overflow-hidden bg-[#102f4e] lg:min-h-[600px]">
-            <div className="absolute inset-0 bg-[linear-gradient(145deg,#203d56_0%,#31516b_38%,#b86a2e_39%,#76543e_55%,#17334d_56%,#0e2a47_100%)] opacity-80" />
-
-            <div className="absolute left-[16%] top-[15%] h-[62%] w-[62%] rotate-12 border-[28px] border-white/10" />
-
-            <div className="absolute bottom-10 left-10 right-10 border-t border-white/30 pt-5 text-xs uppercase tracking-[.22em] text-white/70">
-              Entertainment · Intellectual Property · Business
+            <div className="absolute bottom-12 left-8 right-8 sm:left-12">
+              <div className="h-[2px] w-16 bg-[#B86A2E]" />
+              <p className="mt-5 max-w-sm font-serif text-2xl italic leading-relaxed text-white/85">
+                Modern counsel for creative and entrepreneurial businesses.
+              </p>
             </div>
           </div>
 
-          {/* ABOUT COPY */}
-          <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 xl:px-20">
-            <div className="max-w-[580px]">
-
-              <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#dba06d]">
+          <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 xl:px-24">
+            <div className="max-w-xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#C97832]">
                 About Ascent Legal
               </p>
 
-              <h2 className="mt-6 font-serif text-5xl leading-[1.03] tracking-[-.035em] text-white md:text-6xl">
-                Strategic.
+              <h2 className="mt-6 font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-5xl">
+                Strategic. Practical.
                 <br />
-                Practical.
-                <br />
-                <span className="italic text-[#dba06d]">
-                  Built for the real world.
-                </span>
+                Built for the real world.
               </h2>
 
-              <p className="mt-8 text-base leading-8 text-white/75">
-                We combine sophisticated legal analysis with a practical
-                understanding of how creative and growing businesses
-                actually operate.
+              <p className="mt-7 text-base leading-8 text-white/70">
+                Ascent Legal provides modern, business-minded legal counsel to
+                creators, companies, brands, and entrepreneurs navigating
+                contracts, intellectual property, entertainment, and business
+                growth.
               </p>
 
-              <p className="mt-4 text-base leading-8 text-white/75">
-                Our job is to identify what matters, protect your leverage,
-                and help you move forward with clarity.
+              <p className="mt-5 text-base leading-8 text-white/70">
+                We focus on practical advice, clear communication, and legal
+                strategy that supports the business behind the deal.
               </p>
 
               <Link
                 href="/about"
-                className="mt-9 inline-flex items-center gap-3 border-b border-[#dba06d] pb-2 text-xs font-bold uppercase tracking-[.16em] text-white"
+                className="mt-9 inline-flex border border-[#C97832] px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[#C97832] transition hover:bg-[#C97832] hover:text-white"
               >
-                Our approach
-                <ArrowRight className="h-4 w-4 text-[#dba06d]" />
+                Our Approach <span className="ml-3">→</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* REAL APRIL + ANTHONY SECTION */}
+      {/* REAL ATTORNEY SECTION */}
       <FounderSection />
 
-      {/* CLIENT TYPES */}
-      <section className="border-y border-[#0e2a47]/10 bg-white">
-        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-          <p className="text-center text-[10px] font-bold uppercase tracking-[.28em] text-[#6b7e90]">
-            Counsel for creators, companies and innovators
+      {/* WHO WE SERVE */}
+      <section className="border-y border-[#0E2A47]/10 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-12">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7A8794]">
+            Trusted counsel for creators, companies and innovators
           </p>
 
-          <div className="mt-8 grid grid-cols-2 gap-5 text-center font-serif text-xl text-[#0e2a47] md:grid-cols-4 md:text-2xl">
-            <div>Creators</div>
-            <div>Producers</div>
-            <div>Brands</div>
-            <div>Growing Companies</div>
+          <div className="mt-9 grid grid-cols-2 gap-7 text-center md:grid-cols-4">
+            {["Creators", "Producers", "Brands", "Growing Companies"].map(
+              (item) => (
+                <div
+                  key={item}
+                  className="font-serif text-xl tracking-wide text-[#0E2A47] sm:text-2xl"
+                >
+                  {item}
+                </div>
+              )
+            )}
           </div>
         </div>
       </section>
 
-      {/* CALIFORNIA / SAND CLOSING CTA */}
+      {/* CALIFORNIA / BEACH CTA */}
       <section
-        className="relative overflow-hidden bg-cover bg-center text-white"
+        className="relative flex min-h-[500px] items-center justify-center bg-cover bg-center px-6 py-24 text-center"
         style={{
           backgroundImage:
-            "linear-gradient(105deg, rgba(14,42,71,.82), rgba(14,42,71,.58), rgba(184,106,46,.30)), url('/images/ascent-sand.jpg')",
+            "linear-gradient(rgba(9,31,52,0.48), rgba(9,31,52,0.62)), url('/ascent-sand.jpg')",
         }}
       >
-        {/* fallback if image not uploaded yet */}
-        <div className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,#0e2a47_0%,#39566d_45%,#a16f50_75%,#d7b28f_100%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#091F34]/45 via-transparent to-[#091F34]/15" />
 
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-3xl">
+        <div className="relative z-10 mx-auto max-w-3xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#E0A06D]">
+            Let&apos;s Build What&apos;s Next
+          </p>
 
-            <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#f0bd8d]">
-              Let&apos;s build what&apos;s next
-            </p>
+          <h2 className="mt-6 font-serif text-5xl leading-tight tracking-[-0.03em] text-white sm:text-6xl">
+            Legal built for
+            <br />
+            <span className="italic">your ascent.</span>
+          </h2>
 
-            <h2 className="mt-5 font-serif text-5xl leading-[1.02] tracking-[-.035em] text-white md:text-6xl">
-              Legal built for{" "}
-              <span className="italic text-[#f0bd8d]">
-                your ascent.
-              </span>
-            </h2>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-white/80">
+            Strategic legal counsel for the deals, ideas, brands, and
+            businesses you&apos;re building next.
+          </p>
 
-            <p className="mt-6 max-w-xl text-base leading-7 text-white/80">
-              Tell us what you&apos;re building, negotiating, or protecting.
-              We&apos;ll help you identify the right legal next step.
-            </p>
-
-            <Link
-              href="/contact"
-              className="mt-9 inline-flex items-center gap-3 bg-[#b86a2e] px-7 py-4 text-xs font-bold uppercase tracking-[.16em] text-white transition hover:bg-[#c97832]"
-            >
-              Schedule a consultation
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="mt-9 inline-flex border border-[#D9894C] px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#B86A2E]"
+          >
+            Schedule a Consultation <span className="ml-3">→</span>
+          </Link>
         </div>
       </section>
-
     </main>
   );
 }

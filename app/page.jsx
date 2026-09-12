@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FounderSection from "@/components/FounderSection";
+import FounderSection from "../components/FounderSection";
 
 const practices = [
   {

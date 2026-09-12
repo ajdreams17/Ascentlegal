@@ -189,7 +189,7 @@ export default function TermsPage() {
           <div>Ascent Legal A.P.L.C</div>
           <div>3780 Kilroy Airport Way, Suite 200</div>
           <div>Long Beach, CA 90806</div>
-          <div>Phone: (562) 481-4168</div>
+          <div>Phone: (714) 203-3535</div>
           <div>
             Email: <a href="mailto:info@ascentlegal.io">info@ascentlegal.io</a>
           </div>

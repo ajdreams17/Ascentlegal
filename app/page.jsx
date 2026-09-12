@@ -1,234 +1,292 @@
 import Link from "next/link";
+import FounderSection from "../components/FounderSection";
 import {
   ArrowRight,
-  BriefcaseBusiness,
-  Building2,
-  Check,
-  Clapperboard,
+  Film,
   Copyright,
   FileText,
-  Film,
-  ShieldCheck,
-  Users,
+  Building2,
 } from "lucide-react";
-import FounderSection from "../components/FounderSection";
 
 export const metadata = {
   title: "Ascent Legal | Entertainment, IP & Business Counsel",
   description:
-    "Business-first entertainment, intellectual property, contracts, and corporate counsel for creators, production companies, brands, agencies, and growing businesses. Transactional counsel only.",
+    "Sophisticated, business-first legal counsel for creators, production companies, brands, and growing businesses.",
 };
 
-const services = [
+const practices = [
   {
-    title: "Brand Deals & Entertainment",
-    desc: "Influencer agreements, sponsorships, talent deals, production agreements, and creator-brand partnerships.",
+    title: "Entertainment & Brand Deals",
+    desc: "Creator agreements, sponsorships, talent and production deals, licensing, and brand collaborations.",
     href: "/services/entertainment",
     icon: Film,
   },
   {
-    title: "Trademark Protection",
-    desc: "Clearance, USPTO filings, portfolio strategy, and practical protection for the brand you are building.",
-    href: "/services/trademark",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Copyright & Licensing",
-    desc: "Ownership, registrations, licensing, usage rights, work-for-hire, and content protection.",
-    href: "/services/copyright",
+    title: "Intellectual Property",
+    desc: "Trademark strategy, copyright protection, licensing, usage rights, and practical brand protection.",
+    href: "/ip",
     icon: Copyright,
   },
   {
-    title: "Commercial Contracts",
-    desc: "MSAs, SOWs, vendor agreements, partnerships, consulting agreements, and business contracts.",
+    title: "Business & Contracts",
+    desc: "Commercial agreements, deal review, redlines, negotiations, and practical contract strategy.",
     href: "/services/contracts-drafting",
     icon: FileText,
   },
   {
-    title: "Deal Desk Support",
-    desc: "Ongoing contract review, redlines, repeatable templates, and negotiation support for fast-moving teams.",
-    href: "/services/deal-desk-support",
-    icon: Users,
-  },
-  {
     title: "Corporate & Formation",
-    desc: "Entity formation, operating agreements, governance, founder documents, and legal infrastructure that scales.",
+    desc: "Entity formation, operating agreements, governance, founder documents, and business infrastructure.",
     href: "/services/corporate-formation",
     icon: Building2,
   },
 ];
 
-const audiences = [
-  {
-    title: "Creators & Talent",
-    desc: "You are building a brand and signing real deals. We help protect your content, compensation, exclusivity, usage rights, and ownership.",
-    icon: Clapperboard,
-  },
-  {
-    title: "Production Companies",
-    desc: "We support the contracts behind productions, talent, rights acquisition, licensing, and the business relationships that keep projects moving.",
-    icon: Film,
-  },
-  {
-    title: "Brands, Agencies & Businesses",
-    desc: "We help growing teams move faster with clean contracts, protected IP, smart entity structure, and practical legal strategy.",
-    icon: BriefcaseBusiness,
-  },
-];
-
 export default function HomePage() {
   return (
-    <main className="bg-[#fbfaf7] text-[#0e2a47]">
+    <main className="bg-[#f7f6f3] text-[#0e2a47]">
+
       {/* HERO */}
-      <section className="border-b border-[#0e2a47]/10 bg-[#f7f6f3]">
-        <div className="mx-auto grid max-w-7xl gap-14 px-6 py-20 lg:grid-cols-[1.08fr_.92fr] lg:items-center lg:px-8 lg:py-28">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b86a2e]">
-              Entertainment · IP · Contracts · Corporate
-            </p>
-            <h1 className="mt-5 max-w-3xl font-serif text-5xl leading-[1.02] tracking-[-0.03em] text-[#0e2a47] sm:text-6xl lg:text-7xl">
-              Legal counsel for creators, brands and businesses <span className="italic text-[#b86a2e]">on the rise.</span>
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#465c70]">
-              We negotiate deals, protect intellectual property, and build the contracts and business structures behind your growth — with sophisticated counsel and practical, plain-English advice.
-            </p>
+      <section className="overflow-hidden border-b border-[#0e2a47]/10 bg-[#f7f6f3]">
+        <div className="mx-auto grid min-h-[680px] max-w-[1440px] lg:grid-cols-[.9fr_1.1fr]">
 
-            <div className="mt-9 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#b86a2e] px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#9f5724]"
-              >
-                Request a consultation <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 border border-[#0e2a47]/30 bg-transparent px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#0e2a47] transition hover:bg-white"
-              >
-                Explore services
-              </Link>
-            </div>
+          {/* HERO COPY */}
+          <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 xl:px-20">
+            <div className="max-w-[620px]">
 
-            <div className="mt-9 grid gap-3 text-sm text-[#465c70] sm:grid-cols-3">
-              {["Deal-focused strategy", "Rights-first drafting", "Plain-English guidance"].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-[#b86a2e]" />
-                  <span>{item}</span>
-                </div>
-              ))}
+              <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#b86a2e]">
+                Creators / Brands / Businesses
+              </p>
+
+              <h1 className="mt-7 font-serif text-5xl leading-[.98] tracking-[-.04em] text-[#0e2a47] sm:text-6xl xl:text-7xl">
+                Legal counsel for{" "}
+                <span className="italic text-[#b86a2e]">
+                  what&apos;s next.
+                </span>
+              </h1>
+
+              <p className="mt-8 max-w-xl text-lg leading-8 text-[#53687a]">
+                Sophisticated legal counsel with practical, business-first
+                advice — built for creators, production companies, brands,
+                and growing businesses.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-3 bg-[#b86a2e] px-7 py-4 text-xs font-bold uppercase tracking-[.16em] text-white transition hover:bg-[#9f5724]"
+                >
+                  Work with us
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+
+                <Link
+                  href="/services"
+                  className="inline-flex items-center border border-[#0e2a47]/30 px-7 py-4 text-xs font-bold uppercase tracking-[.16em] text-[#0e2a47] transition hover:bg-white"
+                >
+                  Explore services
+                </Link>
+              </div>
             </div>
           </div>
 
-          <aside className="relative border border-[#0e2a47]/12 bg-white p-8 shadow-[0_24px_70px_rgba(14,42,71,.10)] md:p-10">
-            <div className="absolute left-0 top-0 h-1 w-24 bg-[#b86a2e]" />
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#b86a2e]">Why Ascent Legal</p>
-            <h2 className="mt-4 font-serif text-3xl leading-tight text-[#0e2a47]">Sophisticated counsel without the big-firm distance.</h2>
-            <div className="mt-7 space-y-5 text-sm leading-6 text-[#465c70]">
-              <div className="border-b border-[#0e2a47]/10 pb-5">
-                <p className="font-semibold text-[#0e2a47]">Entertainment-industry experience</p>
-                <p className="mt-1">Counsel informed by experience with entertainment, media, creators, production, licensing, and brand collaborations.</p>
-              </div>
-              <div className="border-b border-[#0e2a47]/10 pb-5">
-                <p className="font-semibold text-[#0e2a47]">Business-minded legal strategy</p>
-                <p className="mt-1">We focus on what matters commercially: rights, payment, scope, ownership, leverage, and the next move.</p>
-              </div>
-              <div>
-                <p className="font-semibold text-[#0e2a47]">Built for growing clients</p>
-                <p className="mt-1">Creators, production companies, agencies, brands, founders, and growing businesses that need legal support that can keep up.</p>
-              </div>
+          {/* LOS ANGELES HERO VISUAL */}
+          <div
+            className="relative min-h-[480px] overflow-hidden bg-cover bg-center lg:min-h-full"
+            style={{
+              backgroundImage:
+                "linear-gradient(to top, rgba(14,42,71,.55), rgba(14,42,71,.05)), url('/images/ascent-la.jpg')",
+            }}
+          >
+            {/* Fallback visual if photo has not been uploaded yet */}
+            <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,#d8c4b1_0%,#f1e5d9_30%,#b07d59_31%,#d3a681_58%,#77604d_59%,#a17a5d_100%)]" />
+
+            <div className="absolute bottom-12 left-10 border-l-2 border-[#dba06d] pl-5 text-white lg:left-14">
+              <p className="font-serif text-3xl leading-tight">
+                Higher Perspective.
+                <br />
+                Stronger Outcomes.
+              </p>
+
+              <p className="mt-3 text-xs uppercase tracking-[.18em] text-white/80">
+                Ascent Legal
+              </p>
             </div>
-            <p className="mt-7 text-xs text-[#6b7e90]">Transactional legal services only. No litigation.</p>
-          </aside>
+          </div>
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* PRACTICE AREAS */}
       <section id="practice" className="bg-[#fbfaf7]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b86a2e]">What we do</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-[#0e2a47] sm:text-5xl">Legal support built around the deals and assets that drive your business.</h2>
-            <p className="mt-5 text-base leading-7 text-[#465c70]">From a first brand deal to repeat campaigns, licensing, trademark protection, commercial agreements, and entity structure, we help clients move forward with cleaner documents and better information.</p>
-          </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden border border-[#0e2a47]/12 bg-[#0e2a47]/12 md:grid-cols-2 lg:grid-cols-3">
-            {services.map(({ title, desc, href, icon: Icon }) => (
-              <Link key={title} href={href} className="group bg-white p-7 transition hover:bg-[#f7f6f3]">
-                <Icon className="h-7 w-7 stroke-[1.5] text-[#b86a2e]" />
-                <h3 className="mt-5 font-serif text-2xl text-[#0e2a47]">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-[#465c70]">{desc}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-[#b86a2e]">
-                  Learn more <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* WHO WE SERVE */}
-      <section className="border-y border-[#0e2a47]/10 bg-[#f7f6f3]">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">
+          <div className="flex flex-col justify-between gap-6 border-b border-[#0e2a47]/15 pb-9 md:flex-row md:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b86a2e]">Who we work with</p>
-              <h2 className="mt-4 font-serif text-4xl leading-tight text-[#0e2a47] sm:text-5xl">For clients building something with real value.</h2>
-              <p className="mt-5 text-base leading-7 text-[#465c70]">Ascent Legal was built for creative and entrepreneurial clients who want legal advice that understands both the opportunity and the risk.</p>
+              <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#b86a2e]">
+                What we do
+              </p>
+
+              <h2 className="mt-3 font-serif text-4xl tracking-[-.03em] text-[#0e2a47] md:text-5xl">
+                Counsel built around the deal.
+              </h2>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              {audiences.map(({ title, desc, icon: Icon }) => (
-                <div key={title} className="border-t-2 border-[#b86a2e] bg-white p-6 shadow-sm">
-                  <Icon className="h-7 w-7 text-[#0e2a47]" />
-                  <h3 className="mt-5 font-serif text-2xl text-[#0e2a47]">{title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-[#465c70]">{desc}</p>
-                </div>
-              ))}
+            <Link
+              href="/services"
+              className="text-xs font-bold uppercase tracking-[.16em] text-[#b86a2e]"
+            >
+              View all services →
+            </Link>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4">
+            {practices.map(
+              ({ title, desc, href, icon: Icon }, index) => (
+                <Link
+                  key={title}
+                  href={href}
+                  className={`group py-9 lg:px-7 ${
+                    index > 0
+                      ? "border-t border-[#0e2a47]/10 md:border-t-0 lg:border-l"
+                      : ""
+                  }`}
+                >
+                  <Icon className="h-6 w-6 stroke-[1.35] text-[#b86a2e]" />
+
+                  <h3 className="mt-7 font-serif text-2xl leading-tight text-[#0e2a47]">
+                    {title}
+                  </h3>
+
+                  <p className="mt-4 text-sm leading-6 text-[#5b6e7e]">
+                    {desc}
+                  </p>
+
+                  <span className="mt-7 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[.15em] text-[#0e2a47] transition group-hover:text-[#b86a2e]">
+                    Learn more
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </Link>
+              )
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT ASCENT */}
+      <section className="overflow-hidden bg-[#0e2a47] text-white">
+        <div className="mx-auto grid max-w-[1440px] lg:grid-cols-2">
+
+          {/* ABSTRACT / CALIFORNIA VISUAL */}
+          <div className="relative min-h-[440px] overflow-hidden bg-[#102f4e] lg:min-h-[600px]">
+            <div className="absolute inset-0 bg-[linear-gradient(145deg,#203d56_0%,#31516b_38%,#b86a2e_39%,#76543e_55%,#17334d_56%,#0e2a47_100%)] opacity-80" />
+
+            <div className="absolute left-[16%] top-[15%] h-[62%] w-[62%] rotate-12 border-[28px] border-white/10" />
+
+            <div className="absolute bottom-10 left-10 right-10 border-t border-white/30 pt-5 text-xs uppercase tracking-[.22em] text-white/70">
+              Entertainment · Intellectual Property · Business
+            </div>
+          </div>
+
+          {/* ABOUT COPY */}
+          <div className="flex items-center px-6 py-20 sm:px-10 lg:px-16 xl:px-20">
+            <div className="max-w-[580px]">
+
+              <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#dba06d]">
+                About Ascent Legal
+              </p>
+
+              <h2 className="mt-6 font-serif text-5xl leading-[1.03] tracking-[-.035em] text-white md:text-6xl">
+                Strategic.
+                <br />
+                Practical.
+                <br />
+                <span className="italic text-[#dba06d]">
+                  Built for the real world.
+                </span>
+              </h2>
+
+              <p className="mt-8 text-base leading-8 text-white/75">
+                We combine sophisticated legal analysis with a practical
+                understanding of how creative and growing businesses
+                actually operate.
+              </p>
+
+              <p className="mt-4 text-base leading-8 text-white/75">
+                Our job is to identify what matters, protect your leverage,
+                and help you move forward with clarity.
+              </p>
+
+              <Link
+                href="/about"
+                className="mt-9 inline-flex items-center gap-3 border-b border-[#dba06d] pb-2 text-xs font-bold uppercase tracking-[.16em] text-white"
+              >
+                Our approach
+                <ArrowRight className="h-4 w-4 text-[#dba06d]" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ATTORNEYS */}
+      {/* REAL APRIL + ANTHONY SECTION */}
       <FounderSection />
 
-      {/* PROCESS */}
-      <section className="bg-[#0e2a47] text-white">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+      {/* CLIENT TYPES */}
+      <section className="border-y border-[#0e2a47]/10 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+          <p className="text-center text-[10px] font-bold uppercase tracking-[.28em] text-[#6b7e90]">
+            Counsel for creators, companies and innovators
+          </p>
+
+          <div className="mt-8 grid grid-cols-2 gap-5 text-center font-serif text-xl text-[#0e2a47] md:grid-cols-4 md:text-2xl">
+            <div>Creators</div>
+            <div>Producers</div>
+            <div>Brands</div>
+            <div>Growing Companies</div>
+          </div>
+        </div>
+      </section>
+
+      {/* CALIFORNIA / SAND CLOSING CTA */}
+      <section
+        className="relative overflow-hidden bg-cover bg-center text-white"
+        style={{
+          backgroundImage:
+            "linear-gradient(105deg, rgba(14,42,71,.82), rgba(14,42,71,.58), rgba(184,106,46,.30)), url('/images/ascent-sand.jpg')",
+        }}
+      >
+        {/* fallback if image not uploaded yet */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(105deg,#0e2a47_0%,#39566d_45%,#a16f50_75%,#d7b28f_100%)]" />
+
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#dba06d]">How we work</p>
-            <h2 className="mt-4 font-serif text-4xl leading-tight text-white sm:text-5xl">Clear advice from opportunity to signed agreement.</h2>
-          </div>
 
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {[
-              ["01", "Understand the deal", "We confirm the business goal, timeline, leverage, and the issues that actually matter."],
-              ["02", "Protect the important points", "We review, draft, or negotiate around rights, payment, scope, ownership, exclusivity, liability, and exit terms."],
-              ["03", "Get you to execution", "You leave with clear language, practical next steps, and documents that support the deal you intended to make."],
-            ].map(([number, title, desc]) => (
-              <div key={number} className="border-t border-white/25 pt-6">
-                <p className="font-serif text-3xl text-[#dba06d]">{number}</p>
-                <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/75">{desc}</p>
-              </div>
-            ))}
+            <p className="text-[11px] font-bold uppercase tracking-[.30em] text-[#f0bd8d]">
+              Let&apos;s build what&apos;s next
+            </p>
+
+            <h2 className="mt-5 font-serif text-5xl leading-[1.02] tracking-[-.035em] text-white md:text-6xl">
+              Legal built for{" "}
+              <span className="italic text-[#f0bd8d]">
+                your ascent.
+              </span>
+            </h2>
+
+            <p className="mt-6 max-w-xl text-base leading-7 text-white/80">
+              Tell us what you&apos;re building, negotiating, or protecting.
+              We&apos;ll help you identify the right legal next step.
+            </p>
+
+            <Link
+              href="/contact"
+              className="mt-9 inline-flex items-center gap-3 bg-[#b86a2e] px-7 py-4 text-xs font-bold uppercase tracking-[.16em] text-white transition hover:bg-[#c97832]"
+            >
+              Schedule a consultation
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#f7f6f3] px-6 py-20 text-center">
-        <div className="mx-auto max-w-3xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#b86a2e]">Legal built for your ascent</p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight text-[#0e2a47] sm:text-5xl">Have a deal, brand, or business you are ready to protect?</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-[#465c70]">Tell us what you are working on. We will help you determine the right legal next step.</p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-flex items-center gap-2 bg-[#b86a2e] px-7 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:bg-[#9f5724]"
-          >
-            Request a consultation <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

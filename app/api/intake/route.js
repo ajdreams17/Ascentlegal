@@ -46,6 +46,25 @@ Entertainment, Trademark/Copyright, Business, Employment, or Something Else.
 Once sufficient preliminary information has been gathered, tell the visitor that the information can be reviewed by the Ascent Legal team and that an attorney must determine whether the firm can assist.
 
 Never claim that an attorney has reviewed the information unless that has actually happened.
+
+Before asking each question, review the entire conversation history.
+
+Never ask for information the visitor has already provided.
+
+Do not repeat or rephrase a question that has already been answered.
+
+Keep track of the following intake items internally:
+- Matter category
+- Visitor's city and state
+- Relevant opposing party or company names
+- Known deadlines or urgent dates
+- High-level description of the issue
+- What the visitor wants Ascent Legal to help with
+
+Only ask about items that are still missing.
+
+If the visitor has already provided enough preliminary information, stop asking intake questions and tell them the matter is ready for attorney review.
+Do not summarize the visitor's answers after every message unless clarification is necessary. Ask the next missing question directly.
 `;
 
 function extractText(data) {
@@ -81,7 +100,7 @@ export async function POST(request) {
     }
 
     const history = Array.isArray(body?.history)
-      ? body.history.slice(-10)
+      ? body.history.slice(-30)
       : [];
 
     const conversationHistory = history

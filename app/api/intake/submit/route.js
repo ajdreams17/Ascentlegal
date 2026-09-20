@@ -241,6 +241,19 @@ export async function POST(request) {
       transcript,
     });
 
+    const reportedDeadline = extractSummaryField(
+  attorneySummary,
+  "Deadline"
+);
+
+const deadlineReported = hasReportedDeadline(
+  reportedDeadline
+);
+
+const emailSubject = deadlineReported
+  ? `New Ascent Legal AI Intake | DEADLINE: ${reportedDeadline}`
+  : "New Ascent Legal AI Intake";
+
     const formspreeResponse = await fetch(FORMSPREE_URL, {
       method: "POST",
       headers: {

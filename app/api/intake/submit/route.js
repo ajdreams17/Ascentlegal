@@ -33,7 +33,7 @@ async function createAttorneySummary({
       `Email: ${email}`,
       `Phone: ${phone || "Not provided"}`,
       "",
-      "See full intake transcript below.",
+      "Automated summary unavailable. See full intake transcript below.",
     ].join("\n");
   }
 
@@ -50,10 +50,11 @@ async function createAttorneySummary({
           model: "gpt-5.6-luna",
           store: false,
           max_output_tokens: 500,
+
           instructions: `
 You are preparing a short internal intake summary for attorneys at Ascent Legal A.P.L.C.
 
-Use ONLY the information provided in the intake transcript and contact information.
+Use ONLY the information expressly provided in the intake transcript and contact information.
 
 Do not:
 - Give legal advice.
@@ -62,10 +63,24 @@ Do not:
 - Estimate damages.
 - Invent facts.
 - Infer facts that are not reasonably clear from the transcript.
+- Make legal conclusions.
+- Characterize a matter as strong, weak, valid, invalid, actionable, or non-actionable.
 
 If information is missing, write "Not provided."
 
-Return a concise attorney-facing summary using exactly this general format:
+Do not infer whether an agreement has been signed, executed, negotiated, accepted, rejected, or completed unless the transcript expressly says so.
+
+If the prospective client says they have a contract or agreement but does not state whether it has been signed, write:
+"Contract received; signature status not provided."
+
+Do not infer deadlines.
+
+If the prospective client says there is no known deadline, write:
+"None reported."
+
+Do not infer a legal relationship, legal status, claim, or conclusion that the prospective client did not expressly provide.
+
+Return a concise attorney-facing summary using exactly this format:
 
 Matter:
 Potential Client:
@@ -76,20 +91,39 @@ Requested Help:
 Deadline:
 Key Facts:
 
-Keep Key Facts to no more than 3 short sentences.
+Keep each field short.
 
-For trademark matters, identify the proposed mark and proposed owner when available.
+Keep Key Facts to no more than 2 short sentences.
 
-For employment matters, identify the employer and high-level workplace issue when available.
+Do not repeat information unnecessarily.
 
-For entertainment matters, identify the type of agreement or transaction and relevant counterparty when available.
+For entertainment matters:
+- Identify the type of agreement or transaction.
+- Identify the relevant counterparty when available.
+- Identify whether a contract or proposal has been received when expressly stated.
 
-For business matters, identify the entity or transaction involved when available.
+For trademark matters:
+- Identify the proposed mark when available.
+- Identify the proposed owner or applicant when available.
+- Identify the general goods or services when available.
+- Identify use status only if expressly stated.
 
-For copyright matters, identify the type of work and nature of the request when available.
+For copyright matters:
+- Identify the type of work involved.
+- Identify whether the issue concerns registration, licensing, ownership, assignment, infringement, or another issue when available.
+
+For business matters:
+- Identify the entity, agreement, or transaction involved when available.
+- Identify relevant founders, partners, investors, vendors, or counterparties when expressly stated.
+
+For employment matters:
+- Identify the employer.
+- Identify the high-level workplace issue.
+- Identify employment status and termination or event date only if expressly stated.
 
 Do not include disclaimers in this internal summary.
           `,
+
           input: `
 CONTACT INFORMATION
 
@@ -108,7 +142,9 @@ ${transcript}
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error("Summary request failed.");
+      throw new Error(
+        data?.error?.message || "Summary request failed."
+      );
     }
 
     const summary = extractText(data);
@@ -205,6 +241,16 @@ export async function POST(request) {
     });
 
     if (!formspreeResponse.ok) {
+      const formspreeData = await formspreeResponse
+        .json()
+        .catch(() => null);
+
+      console.error(
+        "Formspree submission failed:",
+        formspreeResponse.status,
+        formspreeData || "No JSON response"
+      );
+
       return Response.json(
         {
           error:

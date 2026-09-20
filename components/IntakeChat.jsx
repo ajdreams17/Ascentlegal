@@ -42,6 +42,9 @@ export default function IntakeChat() {
   });
 
   const messagesEndRef = useRef(null);
+  const intakeOpenedRef = useRef(false);
+const intakeStartedRef = useRef(false);
+const contactReachedRef = useRef(false);
 
   useEffect(() => {
     if (open) {

@@ -46,6 +46,8 @@ function cleanDeadlineForSubject(deadline) {
   return String(deadline || "")
     .replace(/^signing deadline:\s*/i, "")
     .replace(/^deadline:\s*/i, "")
+    .replace(/^file by\s*/i, "")
+    .replace(/\.$/, "")
     .trim();
 }
 

@@ -31,7 +31,10 @@ function extractSummaryField(summary, fieldName) {
 function hasReportedDeadline(deadline) {
   if (!deadline) return false;
 
-  const normalized = deadline.toLowerCase();
+  const normalized = deadline
+    .toLowerCase()
+    .replace(/[.,;:!?]+$/, "")
+    .trim();
 
   return ![
     "none",

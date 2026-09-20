@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GA from "../components/GA";
+import IntakeChat from "../components/IntakeChat";
 
 export const metadata = {
   metadataBase: new URL("https://ascentlegal.io"),
@@ -119,7 +120,8 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
-
+        <IntakeChat />
+        
         {GA_ID && (
           <Suspense fallback={null}>
             <GA />

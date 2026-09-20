@@ -88,9 +88,14 @@ const contactReachedRef = useRef(false);
         throw new Error(data?.error || "Unable to process intake.");
       }
 
-      if (data.readyForSubmission) {
-        setReadyForSubmission(true);
-      }
+     if (data.readyForSubmission) {
+  setReadyForSubmission(true);
+
+  if (!contactReachedRef.current) {
+    trackIntakeEvent("intake_contact_reached");
+    contactReachedRef.current = true;
+  }
+}
 
       setMessages((current) => [
         ...current,

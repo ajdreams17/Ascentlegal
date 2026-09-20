@@ -267,6 +267,9 @@ const emailSubject = deadlineReported
         name,
         email,
         phone: phone || "Not provided",
+        deadline_reported: deadlineReported
+  ? reportedDeadline
+  : "None reported",
 
         attorney_summary: attorneySummary,
 

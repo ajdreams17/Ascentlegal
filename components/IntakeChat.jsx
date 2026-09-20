@@ -47,10 +47,10 @@ const intakeStartedRef = useRef(false);
 const contactReachedRef = useRef(false);
 
   useEffect(() => {
-    if (open) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [messages, loading, open]);
+  if (open && (messages.length > 1 || loading)) {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }
+}, [messages, loading, open]);
 
   async function sendMessage(customMessage) {
     const text = (customMessage ?? message).trim();

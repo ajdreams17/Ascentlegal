@@ -86,14 +86,56 @@ export default function PrivacyPolicyPage() {
           rights; and (iv) with your consent or direction.
         </p>
 
-        <h2>7) Cookies &amp; Analytics</h2>
+        <h2>7) AI-Assisted Preliminary Intake</h2>
+
+<p>
+  Ascent Legal may use artificial intelligence and other automated technology
+  to assist with preliminary website intake. These tools are used only to
+  collect and organize limited information submitted by prospective clients
+  and to help our legal team review inquiries.
+</p>
+
+<p>
+  The AI-assisted intake tool is not a lawyer, does not provide legal advice,
+  does not evaluate the merits or value of a matter, and does not determine
+  whether Ascent Legal will accept a representation. All legal judgments,
+  conflict determinations, and decisions regarding representation are made by
+  attorneys.
+</p>
+
+<p>
+  Information submitted through the AI-assisted intake tool may be processed
+  by third-party technology service providers that support the operation,
+  hosting, transmission, security, or analysis of the intake system. We seek
+  to use service providers and settings designed to provide reasonable
+  confidentiality, security, and data-protection safeguards.
+</p>
+
+<p>
+  Because no attorney-client relationship is created by using the website or
+  intake tool, users should provide only the information reasonably necessary
+  for preliminary review and should not submit Social Security numbers,
+  financial account information, passwords, medical records, or other highly
+  sensitive or unnecessary confidential information.
+</p>
+
+<p>
+  Information submitted by a prospective client may be subject to legal and
+  professional obligations applicable to prospective-client communications.
+  Submission of information does not mean that Ascent Legal has agreed to
+  represent you, and no attorney-client relationship is formed unless and
+  until the firm confirms the representation and the parties enter into a
+  written engagement agreement.
+</p>
+
+        <h2>8) Cookies &amp; Analytics</h2>
         <p>
           We use cookies and similar technologies to operate the site and understand usage. You can
           adjust your browser settings to refuse cookies or show a consent banner where applicable.
           Disabling cookies may affect site functionality.
         </p>
 
-        <h2>8) “Do Not Sell or Share” (CCPA/CPRA)</h2>
+        <h2>9) “Do Not Sell or Share” (CCPA/CPRA)</h2>
         <p>
           We do not sell personal information for money. To the extent analytics or ad-tech could be
           considered “sharing” under California law, you may opt out by adjusting cookie preferences
@@ -101,7 +143,7 @@ export default function PrivacyPolicyPage() {
           below.
         </p>
 
-        <h2>9) Your Privacy Rights</h2>
+        <h2>10) Your Privacy Rights</h2>
         <p><strong>California (CCPA/CPRA):</strong> You may have the right to request access, correction, deletion,
           portability, and to opt out of certain sharing. We will not discriminate against you for
           exercising your rights.</p>
@@ -115,45 +157,45 @@ export default function PrivacyPolicyPage() {
           with legal or ethical duties (e.g., confidentiality).
         </p>
 
-        <h2>10) Data Retention</h2>
+        <h2>11) Data Retention</h2>
         <p>
           We retain information for as long as needed to provide Services, comply with legal and
           ethical obligations (including professional responsibility and record-keeping rules),
           resolve disputes, and enforce agreements.
         </p>
 
-        <h2>11) Security</h2>
+        <h2>12) Security</h2>
         <p>
           We use commercially reasonable administrative, technical, and physical safeguards designed
           to protect information. No method of transmission or storage is 100% secure.
         </p>
 
-        <h2>12) Children’s Privacy</h2>
+        <h2>13) Children’s Privacy</h2>
         <p>
           Our Services are not directed to children under 13 (or 16 where applicable), and we do not
           knowingly collect their information.
         </p>
 
-        <h2>13) International Transfers</h2>
+        <h2>14) International Transfers</h2>
         <p>
           If you access the site from outside the United States, you understand your information may
           be processed in the U.S., which may have different data protection laws than your
           jurisdiction.
         </p>
 
-        <h2>14) Third-Party Links</h2>
+        <h2>15) Third-Party Links</h2>
         <p>
           Our site may link to third-party sites. We are not responsible for their content or
           privacy practices. Review their policies before providing information.
         </p>
 
-        <h2>15) Changes to This Policy</h2>
+        <h2>16) Changes to This Policy</h2>
         <p>
           We may update this Policy from time to time. Changes are effective when posted with an
           updated effective date at the top of this page.
         </p>
 
-        <h2>16) Contact Us</h2>
+        <h2>17) Contact Us</h2>
         <address className="not-italic">
           <div>Ascent Legal A.P.L.C</div>
           <div>3780 Kilroy Airport Way, Suite 200</div>

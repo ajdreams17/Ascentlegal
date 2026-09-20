@@ -183,7 +183,14 @@ const contactReachedRef = useRef(false);
       {!open && (
         <button
           type="button"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+  setOpen(true);
+
+  if (!intakeOpenedRef.current) {
+    trackIntakeEvent("intake_opened");
+    intakeOpenedRef.current = true;
+  }
+}}
           className="fixed bottom-6 right-6 z-[1000] flex items-center gap-3 rounded-full bg-[#0E2A47] px-5 py-4 text-sm font-semibold text-white shadow-xl transition hover:bg-[#091F34]"
           aria-label="Open Ascent Legal intake assistant"
         >

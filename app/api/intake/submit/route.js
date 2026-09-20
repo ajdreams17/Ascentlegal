@@ -261,7 +261,7 @@ const emailSubject = deadlineReported
         Accept: "application/json",
       },
       body: JSON.stringify({
-        _subject: "New Ascent Legal AI Intake",
+        _subject: emailSubject,
         _replyto: email,
 
         name,

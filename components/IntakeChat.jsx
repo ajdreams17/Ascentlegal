@@ -56,6 +56,10 @@ const contactReachedRef = useRef(false);
     const text = (customMessage ?? message).trim();
 
     if (!text || loading) return;
+    if (!intakeStartedRef.current) {
+  trackIntakeEvent("intake_started");
+  intakeStartedRef.current = true;
+}
 
     const userMessage = {
       role: "user",

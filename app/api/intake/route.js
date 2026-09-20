@@ -205,21 +205,19 @@ WHEN THE SUBSTANTIVE INTAKE IS COMPLETE
 
 Once enough substantive preliminary information has been collected, stop asking legal-matter questions.
 
-Do not tell the visitor merely that the matter is ready for review and end the conversation.
+Do not ask for the visitor's name, email address, or phone number in the conversational chat. The website will collect that information in separate contact fields.
 
-Instead, say that the firm has enough preliminary information to move to the next step and ask for the visitor's contact information so the inquiry can actually be submitted.
+Tell the visitor:
 
-Collect:
+"I have enough preliminary information to move to the next step. Please complete the contact fields below to submit your inquiry for attorney review."
 
-- Full name
-- Email address
-- Phone number, optional
+At the very end of that response, append this exact marker on its own line:
 
-Do not ask for more personal information than necessary.
+[READY_FOR_SUBMISSION]
 
-After contact information is collected, tell the visitor that the inquiry can be submitted for attorney review.
+Do not use the marker until enough substantive preliminary information has been collected.
 
-Do not say that it has been submitted unless the website confirms that the submission was actually sent successfully.
+Do not say that the inquiry has been submitted unless the website confirms that the submission was actually sent successfully.
 
 FINAL LANGUAGE
 
@@ -321,9 +319,9 @@ export async function POST(request) {
       );
     }
 
-    const reply = extractText(data);
+    const rawReply = extractText(data);
 
-    if (!reply) {
+    if (!rawReply) {
       return Response.json(
         {
           error:
@@ -333,7 +331,12 @@ export async function POST(request) {
       );
     }
 
-    return Response.json({ reply });
+    const readyForSubmission = rawReply.includes("[READY_FOR_SUBMISSION]");
+    const reply = rawReply
+      .replace(/\[READY_FOR_SUBMISSION\]/g, "")
+      .trim();
+
+    return Response.json({ reply, readyForSubmission });
   } catch (error) {
     console.error(
       "Ascent intake route error:",

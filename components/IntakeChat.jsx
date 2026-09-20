@@ -11,7 +11,8 @@ const INITIAL_MESSAGE = {
 
 const PRACTICE_AREAS = [
   "Entertainment",
-  "Trademark / Copyright",
+  "Trademark",
+  "Copyright / Licensing",
   "Business",
   "Employment",
   "Something Else",

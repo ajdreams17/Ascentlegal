@@ -123,6 +123,8 @@ const contactReachedRef = useRef(false);
 
     if (!contact.name.trim() || !contact.email.trim() || submitting) return;
 
+   trackIntakeEvent("intake_submitted");
+    
     setSubmitting(true);
     setSubmissionError("");
 

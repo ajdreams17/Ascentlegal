@@ -6,7 +6,7 @@ import Link from "next/link";
 const INITIAL_MESSAGE = {
   role: "assistant",
   content:
-    "Hi, I’m Ascent Legal’s virtual intake assistant. I can collect preliminary information for our team. Using this chat does not create an attorney-client relationship, and the firm has not agreed to represent you.\n\nPlease do not send Social Security numbers, financial account information, passwords, medical records, or other highly sensitive information.\n\nWhat can we help you with?",
+    "Hi, I’m Ascent Legal’s AI-assisted virtual intake assistant. I can collect limited preliminary information for our team. I am not a lawyer and cannot provide legal advice. Using this chat does not create an attorney-client relationship, and the firm has not agreed to represent you.\n\nPlease do not send Social Security numbers, financial account information, passwords, medical records, or other highly sensitive or unnecessary confidential information.\n\nInformation you provide through this intake may be processed by technology service providers used by Ascent Legal to operate and review the intake process.\n\nWhat can we help you with?",
 };
 
 const PRACTICE_AREAS = [

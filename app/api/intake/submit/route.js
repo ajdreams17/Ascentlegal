@@ -122,6 +122,10 @@ For employment matters:
 - Identify employment status and termination or event date only if expressly stated.
 
 Do not include disclaimers in this internal summary.
+
+Do not add generic characterizations such as "brand-related entertainment matter" when the matter type and counterparty are already identified.
+
+Key Facts should contain only concrete facts that materially assist attorney review.
           `,
 
           input: `

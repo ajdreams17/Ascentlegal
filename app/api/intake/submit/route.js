@@ -233,7 +233,10 @@ Do not add generic characterizations such as:
 Do not repeat the Matter, Location, Deadline, or Requested Help fields unless necessary to make the key facts understandable.
 
 Do not include disclaimers in this internal summary.
+          `,
+
           input: `
+          
 CONTACT INFORMATION
 
 Name: ${name}

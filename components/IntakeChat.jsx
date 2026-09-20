@@ -18,6 +18,14 @@ const PRACTICE_AREAS = [
   "Something Else",
 ];
 
+function trackIntakeEvent(eventName) {
+  if (typeof window === "undefined") return;
+
+  window.gtag?.("event", eventName, {
+    feature: "ai_intake",
+  });
+}
+
 export default function IntakeChat() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);

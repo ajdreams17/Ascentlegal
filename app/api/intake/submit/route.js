@@ -42,6 +42,13 @@ function hasReportedDeadline(deadline) {
   ].includes(normalized);
 }
 
+function cleanDeadlineForSubject(deadline) {
+  return String(deadline || "")
+    .replace(/^signing deadline:\s*/i, "")
+    .replace(/^deadline:\s*/i, "")
+    .trim();
+}
+
 async function createAttorneySummary({
   name,
   email,
@@ -326,9 +333,10 @@ export async function POST(request) {
 const deadlineReported = hasReportedDeadline(
   reportedDeadline
 );
+const subjectDeadline = cleanDeadlineForSubject(reportedDeadline);
 
 const emailSubject = deadlineReported
-  ? `New Ascent Legal AI Intake | DEADLINE: ${reportedDeadline}`
+  ? `New Ascent Legal AI Intake | DEADLINE: ${subjectDeadline}`
   : "New Ascent Legal AI Intake";
 
     const formspreeResponse = await fetch(FORMSPREE_URL, {

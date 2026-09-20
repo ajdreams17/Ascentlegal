@@ -11,6 +11,27 @@ function isValidEmail(email) {
 function extractText(data) {
   if (!Array.isArray(data?.output)) return "";
 
+function extractSummaryField(summary, fieldName) {
+  const pattern = new RegExp(`^${fieldName}:\\s*(.+)$`, "mi");
+  const match = String(summary || "").match(pattern);
+
+  return match?.[1]?.trim() || "";
+}
+
+function hasReportedDeadline(deadline) {
+  if (!deadline) return false;
+
+  const normalized = deadline.toLowerCase();
+
+  return ![
+    "none",
+    "none reported",
+    "not provided",
+    "no",
+    "no known deadline",
+  ].includes(normalized);
+}
+
   return data.output
     .flatMap((item) =>
       Array.isArray(item?.content) ? item.content : []

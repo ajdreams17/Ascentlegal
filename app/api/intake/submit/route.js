@@ -8,8 +8,18 @@ function isValidEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
-function extractText(data) {
+ function extractText(data) {
   if (!Array.isArray(data?.output)) return "";
+
+  return data.output
+    .flatMap((item) =>
+      Array.isArray(item?.content) ? item.content : []
+    )
+    .filter((part) => part?.type === "output_text")
+    .map((part) => part?.text || "")
+    .join("\n")
+    .trim();
+}
 
 function extractSummaryField(summary, fieldName) {
   const pattern = new RegExp(`^${fieldName}:\\s*(.+)$`, "mi");
@@ -30,16 +40,6 @@ function hasReportedDeadline(deadline) {
     "no",
     "no known deadline",
   ].includes(normalized);
-}
-
-  return data.output
-    .flatMap((item) =>
-      Array.isArray(item?.content) ? item.content : []
-    )
-    .filter((part) => part?.type === "output_text")
-    .map((part) => part?.text || "")
-    .join("\n")
-    .trim();
 }
 
 async function createAttorneySummary({

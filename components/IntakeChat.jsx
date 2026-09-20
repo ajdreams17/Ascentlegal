@@ -423,10 +423,12 @@ export default function IntakeChat() {
               </Link>
             </div>
 
-            <p className="mt-3 text-[10px] leading-4 text-[#5F7386]">
-              Do not use this chat for emergencies or to protect a legal
-              deadline. Information submitted is subject to attorney review.
-            </p>
+           <p className="mt-3 text-[10px] leading-4 text-[#5F7386]">
+  This AI-assisted tool is for preliminary intake only and does not provide
+  legal advice. Do not use this chat for emergencies or to protect a legal
+  deadline. Please provide only information reasonably necessary for
+  preliminary review.
+</p>
           </form>
         </div>
       )}

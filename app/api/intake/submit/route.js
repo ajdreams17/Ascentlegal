@@ -118,6 +118,27 @@ Keep Key Facts to no more than 2 short sentences.
 
 Do not repeat information unnecessarily.
 
+MATTER FIELD
+
+For the Matter field, include both the broad practice area and the specific matter type when both are known.
+
+Examples:
+
+Entertainment – Creator Agreement
+Entertainment – Writer Agreement
+Entertainment – Brand Deal
+Trademark – Registration
+Trademark – Clearance
+Trademark – Dispute
+Copyright – Registration
+Copyright – Licensing
+Business – LLC Formation
+Business – Operating Agreement
+Employment – Termination
+Employment – Wage and Hour
+
+Do not use a more specific description than the transcript supports.
+
 For entertainment matters:
 - Identify the type of agreement or transaction.
 - Identify the relevant counterparty when available.

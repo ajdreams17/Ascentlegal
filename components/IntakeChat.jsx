@@ -23,6 +23,15 @@ export default function IntakeChat() {
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [readyForSubmission, setReadyForSubmission] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submissionError, setSubmissionError] = useState("");
+  const [contact, setContact] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
 
   const messagesEndRef = useRef(null);
 
@@ -64,6 +73,10 @@ export default function IntakeChat() {
         throw new Error(data?.error || "Unable to process intake.");
       }
 
+      if (data.readyForSubmission) {
+        setReadyForSubmission(true);
+      }
+
       setMessages((current) => [
         ...current,
         {
@@ -85,6 +98,55 @@ export default function IntakeChat() {
     }
   }
 
+  async function submitIntake(event) {
+    event.preventDefault();
+
+    if (!contact.name.trim() || !contact.email.trim() || submitting) return;
+
+    setSubmitting(true);
+    setSubmissionError("");
+
+    try {
+      const response = await fetch("/api/intake/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: contact.name,
+          email: contact.email,
+          phone: contact.phone,
+          messages,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.error || "Unable to submit intake.");
+      }
+
+      setSubmitted(true);
+      setReadyForSubmission(false);
+
+      setMessages((current) => [
+        ...current,
+        {
+          role: "assistant",
+          content:
+            "Thank you. Your inquiry has been submitted to Ascent Legal for attorney review. Submission does not create an attorney-client relationship, and the firm has not agreed to represent you. An attorney must review the matter and determine whether the firm can assist. If you have an urgent deadline, do not rely on this submission to protect it.",
+        },
+      ]);
+    } catch (error) {
+      setSubmissionError(
+        error?.message ||
+          "We could not submit your inquiry. Please use the Contact the firm link."
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     sendMessage();
@@ -93,6 +155,15 @@ export default function IntakeChat() {
   function resetChat() {
     setMessages([INITIAL_MESSAGE]);
     setMessage("");
+    setReadyForSubmission(false);
+    setSubmitted(false);
+    setSubmitting(false);
+    setSubmissionError("");
+    setContact({
+      name: "",
+      email: "",
+      phone: "",
+    });
   }
 
   return (
@@ -192,6 +263,94 @@ export default function IntakeChat() {
               </div>
             )}
 
+            {readyForSubmission && !submitted && (
+              <form
+                onSubmit={submitIntake}
+                className="rounded-2xl border border-[#B86A2E]/30 bg-white p-4"
+              >
+                <p className="font-serif text-lg text-[#0E2A47]">
+                  Submit for Attorney Review
+                </p>
+
+                <p className="mt-1 text-xs leading-5 text-[#5F7386]">
+                  Please provide your contact information so Ascent Legal can
+                  receive this inquiry. Phone number is optional.
+                </p>
+
+                <div className="mt-4 grid gap-3">
+                  <input
+                    type="text"
+                    value={contact.name}
+                    onChange={(event) =>
+                      setContact((current) => ({
+                        ...current,
+                        name: event.target.value,
+                      }))
+                    }
+                    placeholder="Full name"
+                    autoComplete="name"
+                    required
+                    className="rounded-xl border border-[#0E2A47]/15 px-3 py-3 text-sm text-[#0E2A47] outline-none focus:border-[#B86A2E]"
+                  />
+
+                  <input
+                    type="email"
+                    value={contact.email}
+                    onChange={(event) =>
+                      setContact((current) => ({
+                        ...current,
+                        email: event.target.value,
+                      }))
+                    }
+                    placeholder="Email address"
+                    autoComplete="email"
+                    required
+                    className="rounded-xl border border-[#0E2A47]/15 px-3 py-3 text-sm text-[#0E2A47] outline-none focus:border-[#B86A2E]"
+                  />
+
+                  <input
+                    type="tel"
+                    value={contact.phone}
+                    onChange={(event) =>
+                      setContact((current) => ({
+                        ...current,
+                        phone: event.target.value,
+                      }))
+                    }
+                    placeholder="Phone number (optional)"
+                    autoComplete="tel"
+                    className="rounded-xl border border-[#0E2A47]/15 px-3 py-3 text-sm text-[#0E2A47] outline-none focus:border-[#B86A2E]"
+                  />
+
+                  {submissionError && (
+                    <p className="text-xs leading-5 text-red-700">
+                      {submissionError}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={
+                      submitting ||
+                      !contact.name.trim() ||
+                      !contact.email.trim()
+                    }
+                    className="rounded-xl bg-[#B86A2E] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#9F5925] disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {submitting
+                      ? "Submitting..."
+                      : "Submit for Attorney Review"}
+                  </button>
+                </div>
+
+                <p className="mt-3 text-[10px] leading-4 text-[#5F7386]">
+                  Submitting this inquiry does not create an attorney-client
+                  relationship and does not mean Ascent Legal has agreed to
+                  represent you.
+                </p>
+              </form>
+            )}
+
             {loading && (
               <div className="flex justify-start">
                 <div className="rounded-2xl rounded-bl-sm border border-[#0E2A47]/10 bg-white px-4 py-3 text-sm text-[#5F7386]">
@@ -212,9 +371,15 @@ export default function IntakeChat() {
               <textarea
                 value={message}
                 onChange={(event) => setMessage(event.target.value)}
-                placeholder="Type your response..."
+                placeholder={
+                  submitted
+                    ? "Inquiry submitted."
+                    : readyForSubmission
+                      ? "Complete the contact form above to submit."
+                      : "Type your response..."
+                }
                 rows={2}
-                disabled={loading}
+                disabled={loading || readyForSubmission || submitted}
                 className="min-h-[52px] flex-1 resize-none rounded-xl border border-[#0E2A47]/15 px-3 py-3 text-sm text-[#0E2A47] outline-none transition placeholder:text-[#5F7386]/70 focus:border-[#B86A2E]"
                 onKeyDown={(event) => {
                   if (
@@ -229,7 +394,12 @@ export default function IntakeChat() {
 
               <button
                 type="submit"
-                disabled={loading || !message.trim()}
+                disabled={
+                  loading ||
+                  readyForSubmission ||
+                  submitted ||
+                  !message.trim()
+                }
                 className="self-end rounded-xl bg-[#B86A2E] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#9F5925] disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Send

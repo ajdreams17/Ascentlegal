@@ -93,7 +93,7 @@ export default function ServicesPage() {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
           >
             Tell Us About Your Matter
           </Link>
@@ -228,7 +228,7 @@ export default function ServicesPage() {
           <div className="flex gap-3 md:justify-end">
             <Link
               href="/contact"
-              className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+              className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
             >
               Get a quote
             </Link>
@@ -261,7 +261,7 @@ export default function ServicesPage() {
         <p className="mt-2 text-gray-600">Tell us what you’re working on—we’ll recommend the fastest path.</p>
         <Link
           href="/contact"
-          className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+          className="mt-4 inline-block rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
         >
           Tell Us About Your Matter
         </Link>

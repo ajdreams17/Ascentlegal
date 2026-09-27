@@ -59,7 +59,7 @@ export default function HomePage() {
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center bg-[#B86A2E] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-[#9F5925]"
+                className="inline-flex items-center bg-[#0E2A47] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#B86A2E]"
               >
                 Work With Us
                 <span className="ml-3">→</span>

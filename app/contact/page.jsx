@@ -99,7 +99,7 @@ export default function ContactPage() {
     <div>
       <button
         type="submit"
-        className="w-full rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-3 text-white"
+        className="w-full rounded-xl bg-[#0E2A47] px-4 py-3 text-white transition-colors hover:bg-[#B86A2E]"
       >
         Send message
       </button>

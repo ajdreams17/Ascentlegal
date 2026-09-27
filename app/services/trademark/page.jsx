@@ -214,7 +214,7 @@ export default function TrademarkPage() {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href={CONSULT_HREF}
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
           >
             Book a Free 15-Min Consult →
           </Link>
@@ -263,7 +263,7 @@ export default function TrademarkPage() {
         <div className="mt-6">
           <Link
             href={CONSULT_HREF}
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90 inline-block"
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E] inline-block"
           >
             Start with a Free Consult →
           </Link>
@@ -301,7 +301,7 @@ export default function TrademarkPage() {
         <div className="mt-8">
           <Link
             href={CONSULT_HREF}
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90 inline-block"
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E] inline-block"
           >
             Book a Free Consult to Get Started →
           </Link>
@@ -373,7 +373,7 @@ export default function TrademarkPage() {
               <div className="mt-6">
                 <Link
                   href={CONSULT_HREF}
-                  className="inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2.5 text-sm text-white shadow hover:opacity-90"
+                  className="inline-block rounded-xl bg-[#0E2A47] px-4 py-2.5 text-sm text-white shadow hover:bg-[#B86A2E]"
                 >
                   Book a Free Consult →
                 </Link>
@@ -458,7 +458,7 @@ export default function TrademarkPage() {
         <div className="mt-6 flex gap-3 justify-center flex-wrap">
           <Link
             href={CONSULT_HREF}
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
           >
             Book Your Free 15-Min Consult →
           </Link>

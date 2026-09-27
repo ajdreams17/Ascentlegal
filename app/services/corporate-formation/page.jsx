@@ -96,7 +96,7 @@ export default function CorporateFormationPage() {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]
             focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             Start your formation
@@ -266,7 +266,7 @@ export default function CorporateFormationPage() {
               <div className="mt-6">
                 <Link
                   href="/contact"
-                  className="w-full inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white text-center hover:opacity-90
+                  className="w-full inline-block rounded-xl bg-[#0E2A47] px-4 py-2 text-white text-center hover:bg-[#B86A2E]
                   focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
                 >
                   {p.cta}
@@ -315,7 +315,7 @@ export default function CorporateFormationPage() {
         <div className="mt-4 flex gap-3 justify-center flex-wrap">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]
             focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
           >
             Tell Us About Your Matter

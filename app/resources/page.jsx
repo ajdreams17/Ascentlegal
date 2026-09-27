@@ -426,7 +426,7 @@ export default function ResourcesPage() {
         <p className="mt-2 text-gray-600">We’ll respond within one business day.</p>
         <Link
           href="/contact"
-          className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90
+          className="mt-4 inline-block rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]
             focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
         >
           Tell Us About Your Matter

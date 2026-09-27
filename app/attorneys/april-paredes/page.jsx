@@ -135,7 +135,7 @@ export default function AprilParedesPage() {
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90 inline-block"
+            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E] inline-block"
           >
             Tell Us About Your Matter
           </Link>

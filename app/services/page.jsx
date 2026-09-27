@@ -95,7 +95,7 @@ export default function ServicesPage() {
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Request a Consultation
+            Tell Us About Your Matter
           </Link>
           <Link
             href="/services/deal-desk-support"
@@ -263,7 +263,7 @@ export default function ServicesPage() {
           href="/contact"
           className="mt-4 inline-block rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
         >
-          Request a Consultation
+          Tell Us About Your Matter
         </Link>
       </section>
     </main>

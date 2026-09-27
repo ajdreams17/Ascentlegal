@@ -4,7 +4,7 @@ import TrustpilotBadge from "../../components/TrustpilotBadge";
 export const metadata = {
   title: "Contact | Ascent Legal",
   description:
-    "Tell us about your matter and we'll get back within one business day.",
+    "Tell us briefly about your matter. We aim to respond within one business day.",
 };
 
 export default function ContactPage() {
@@ -12,9 +12,9 @@ export default function ContactPage() {
     <section className="mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-12">
       {/* Left column: heading + tagline + bullets */}
       <div>
-        <h1 className="text-4xl md:text-5xl font-bold">Let&apos;s talk</h1>
+        <h1 className="text-4xl md:text-5xl font-bold">Tell us about your matter</h1>
         <p className="mt-4 text-gray-600">
-          Tell us about your matter and we&apos;ll get back within one business day.
+          Share a brief description of what you need. We aim to respond within one business day.
         </p>
 
         <div className="mt-8 space-y-4 text-sm text-gray-600">

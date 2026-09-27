@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Intellectual Property Protection | Ascent Legal",
+  title: "Intellectual Property Registration & Maintenance | Ascent Legal",
   description:
-    "Brand and content protection for founders and operators—trademarks, copyright, licensing, monitoring, and practical enforcement.",
+    "Trademark clearance, registration, maintenance, copyright registration, and licensing for creators and businesses.",
 };
 
 const services = [
@@ -22,16 +22,16 @@ const services = [
     cta: "File now",
   },
   {
-    title: "Brand Monitoring & Enforcement",
-    desc: "Continuous watch services and practical takedowns across marketplaces and social platforms.",
-    items: ["Watch notices", "Marketplace takedowns", "Platform removals"],
+    title: "Trademark Maintenance & Portfolio Management",
+    desc: "Keep registrations current with maintenance and renewal filings, ownership updates, and portfolio reviews as your business changes.",
+    items: ["Maintenance filings", "Renewals and deadlines", "Portfolio reviews"],
     href: "/contact",
-    cta: "Set up monitoring",
+    cta: "Discuss maintenance",
   },
   {
-    title: "Copyright Registration & DMCA",
-    desc: "Register original works and remove unauthorized copies with fast, platform-compliant notices.",
-    items: ["Copyright filings", "DMCA notices", "Portfolio strategy"],
+    title: "Copyright Registration",
+    desc: "Identify works for registration, prepare applications, and organize records of your creative assets.",
+    items: ["Copyright applications", "Work identification", "Portfolio records"],
     href: "/contact",
     cta: "Protect content",
   },
@@ -54,12 +54,12 @@ const faqs = [
     a: "As soon as you have a distinctive name and intend to use it in commerce. Early filing preserves priority and avoids expensive rebrands.",
   },
   {
-    q: "Can you take down copycats on marketplaces/social?",
-    a: "Yes. We prepare evidence packages and submit platform-specific takedowns (Amazon, Etsy, eBay, Instagram, TikTok, YouTube) under trademark/copyright policies.",
+    q: "What happens after my trademark registers?",
+    a: "A registration requires periodic maintenance filings to remain active. We can help track the deadlines, prepare filings, and review your portfolio as your business evolves.",
   },
   {
     q: "Do you work on flat fees?",
-    a: "Most filings and common enforcement actions are flat-fee. Complex matters are scoped up front so there are no surprises.",
+    a: "Many registration and maintenance matters can be scoped on a flat-fee basis. We confirm the scope and fees for your matter before work begins.",
   },
 ];
 
@@ -71,13 +71,13 @@ export default function IPPage() {
         <h1 className="text-4xl md:text-5xl font-bold">
           Intellectual Property{" "}
           <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            Protection
+            Registration &amp; Maintenance
           </span>
         </h1>
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          We help founders and creators lock down brand and content rights—trademarks, copyright,
-          licensing, monitoring, and practical enforcement. Clear scopes, fast turnaround, and
-          business-first advice.
+          We help creators and businesses register and maintain the trademarks and copyrights behind
+          their work. Our services include trademark clearance and applications, responses to USPTO
+          office actions, maintenance and renewal filings, copyright registration, and licensing.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -85,7 +85,7 @@ export default function IPPage() {
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Consultation
+            Tell Us About Your Matter
           </Link>
           <a
             href="#services"
@@ -96,7 +96,7 @@ export default function IPPage() {
         </div>
       </section>
 
-      {/* Quick stats */}
+      {/* Service highlights */}
      <div className="mt-10 grid sm:grid-cols-3 gap-6">
   {/* 1) Keep your real metric */}
   <div className="rounded-xl border border-gray-100 p-6 text-center">
@@ -104,23 +104,23 @@ export default function IPPage() {
     <div className="mt-2 text-sm text-gray-600">Trademark filings</div>
   </div>
 
-  {/* 2) Replace “response time” */}
+  {/* 2) Ongoing trademark work */}
   <div className="rounded-xl border border-gray-100 p-6 text-center">
     <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-      Office actions & monitoring
+      Office actions & maintenance
     </div>
     <div className="mt-2 text-sm text-gray-600">
-      Response and ongoing watch services.
+      Application responses and renewal filings.
     </div>
   </div>
 
-  {/* 3) Replace “platforms covered” */}
+  {/* 3) Copyright work */}
   <div className="rounded-xl border border-gray-100 p-6 text-center">
     <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-      Marketplace support
+      Copyright registration
     </div>
     <div className="mt-2 text-sm text-gray-600">
-      Amazon Brand Registry, Shopify, and social.
+      Applications for original creative works.
     </div>
   </div>
 </div>
@@ -164,9 +164,9 @@ export default function IPPage() {
         <h2 className="text-2xl md:text-3xl font-semibold">A simple, proactive process</h2>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
-            { step: "1", title: "Assess & Plan", text: "We audit your brand/content footprint and map risk & priority." },
-            { step: "2", title: "File & Secure", text: "We lock in registrations and set up monitoring where it matters most." },
-            { step: "3", title: "Enforce & Scale", text: "We remove infringers fast and keep your assets working for you." },
+            { step: "1", title: "Assess & Plan", text: "We review your brand or creative portfolio and identify filing priorities." },
+            { step: "2", title: "Prepare & File", text: "We prepare applications or maintenance filings based on your needs." },
+            { step: "3", title: "Maintain & Grow", text: "We help track filing deadlines and assess new names, products, or works for protection." },
           ].map((p) => (
             <div key={p.step} className="rounded-2xl border border-gray-100 bg-white p-6">
               <div className="text-sm text-gray-500">Step {p.step}</div>
@@ -193,19 +193,19 @@ export default function IPPage() {
       {/* CTA */}
       <section className="mt-16 text-center">
         <h3 className="text-xl font-semibold">Ready to protect your brand and content?</h3>
-        <p className="mt-2 text-gray-600">We’ll respond within one business day.</p>
+        <p className="mt-2 text-gray-600">Tell us briefly what you need. We aim to respond within one business day.</p>
         <div className="mt-4 flex gap-3 justify-center">
           <Link
             href="/contact"
             className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-5 py-3 text-white shadow hover:opacity-90"
           >
-            Book a Consultation
+            Tell Us About Your Matter
           </Link>
           <Link
             href="/contact"
             className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
           >
-            Learn about trademark filing
+            Ask About Trademark Filing
           </Link>
         </div>
       </section>

@@ -54,9 +54,9 @@ export default function Nav() {
           ))}
           <Link
             href="/contact"
-            className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow"
+            className="rounded-xl bg-[#0E2A47] px-4 py-2 text-white transition-colors hover:bg-[#B86A2E] shadow"
           >
-            Request a Consultation
+            Tell Us About Your Matter
           </Link>
         </nav>
 
@@ -115,9 +115,9 @@ export default function Nav() {
 
        <Link
   href="/contact"
-  className="rounded-xl bg-gradient-to-r from-indigo-500 to-teal-400 px-4 py-2 text-white shadow hover:opacity-95 text-sm"
+  className="rounded-xl bg-[#0E2A47] px-4 py-2 text-white shadow hover:bg-[#B86A2E] text-sm"
 >
-  Request a Consultation
+  Tell Us About Your Matter
 </Link>
         </nav>
       </aside>

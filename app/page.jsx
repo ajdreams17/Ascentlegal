@@ -50,15 +50,16 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-[#5F7386]">
-              Sophisticated legal counsel with practical, business-first advice
-              — built for creators, production companies, brands, and growing
-              businesses.
+              Entertainment, IP, and business counsel for creators and growing
+              companies. We review and negotiate brand deals, production
+              agreements, and business contracts, and help clients register
+              and maintain their trademarks and copyrights.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center bg-[#B86A2E] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-[#9F5925]"
+                className="inline-flex items-center bg-[#0E2A47] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#B86A2E]"
               >
                 Work With Us
                 <span className="ml-3">→</span>
@@ -246,7 +247,7 @@ export default function HomePage() {
             href="/contact"
             className="mt-9 inline-flex border border-[#D9894C] px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#B86A2E]"
           >
-            Schedule a Consultation <span className="ml-3">→</span>
+            Tell Us About Your Matter <span className="ml-3">→</span>
           </Link>
         </div>
       </section>

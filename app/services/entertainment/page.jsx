@@ -100,6 +100,13 @@ export default function EntertainmentPage() {
           </a>
 
           <Link
+            href="/services/creator-contract-review"
+            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
+          >
+            Creator Contract Review
+          </Link>
+
+          <Link
             href="/services/deal-desk-support"
             className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
           >

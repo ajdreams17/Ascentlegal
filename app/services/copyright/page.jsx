@@ -1,211 +1,293 @@
 import Link from "next/link";
+import StartIntakeButton from "../../../components/StartIntakeButton";
 
 export const metadata = {
-  title: "Copyright & Licensing | Ascent Legal",
+  title: "Copyright Registration & Licensing | Ascent Legal",
   description:
-    "Business-first copyright and licensing counsel for creators, studios, and growing companies. Ownership strategy, registrations, work-for-hire, and usage rights. Transactional counsel only (no litigation).",
+    "Copyright registration, ownership, work-for-hire, and licensing counsel for creators, studios, brands, and growing businesses. Transactional counsel only.",
+  alternates: {
+    canonical: "/services/copyright",
+  },
 };
 
-const pillars = [
+const services = [
   {
-    title: "Copyright Strategy + Registration",
-    desc: "We help you decide what to register, what to prioritize, and how to protect key assets as your content library grows.",
-    bullets: ["Registration strategy (what/when)", "Filing support (as needed)", "Content catalog planning"],
+    title: "Copyright Registration",
+    text: "Identify the works worth registering, organize the filing strategy, and prepare applications for eligible creative assets.",
   },
   {
-    title: "Licensing + Usage Rights",
-    desc: "Clear terms for how content can be used, edited, repurposed, and distributed commercially.",
-    bullets: ["Scope + term + territory", "Media/channel usage rights", "Exclusivity, buyouts + renewals"],
+    title: "Ownership Strategy",
+    text: "Clarify who owns the work when creators, collaborators, contractors, editors, designers, or production teams contribute.",
   },
   {
-    title: "Ownership + Work-for-Hire",
-    desc: "Contract language that keeps ownership clean when collaborators, editors, designers, or contractors touch the work.",
-    bullets: ["Work-for-hire clauses", "IP assignment + confidentiality", "Collaboration + split terms"],
+    title: "Licensing & Usage Rights",
+    text: "Structure clear rights around term, territory, media, exclusivity, edits, sublicensing, renewals, and commercial use.",
   },
   {
-    title: "Platform Notice Support",
-    desc: "Practical support for platform notice workflows and documentation to address unauthorized copies (as applicable).",
-    bullets: ["Notice workflow guidance", "Documentation + evidence support", "Repeat-issue prevention steps"],
+    title: "Work-for-Hire & Assignments",
+    text: "Draft and review agreements designed to document ownership and transfer rights where appropriate.",
+  },
+  {
+    title: "Content Libraries & Portfolios",
+    text: "Help creators and businesses organize copyright assets so registrations and licensing decisions are easier to manage over time.",
+  },
+  {
+    title: "Deal Support",
+    text: "Review copyright and licensing provisions inside brand deals, production agreements, collaborations, and other commercial contracts.",
   },
 ];
 
-const whoItsFor = [
-  "Creators, influencers, and talent",
-  "Studios and production teams",
-  "Brands commissioning content",
-  "Agencies managing campaigns",
-  "Founders building content-driven brands",
+const works = [
+  "Photography",
+  "Video content",
+  "Written works",
+  "Marketing and website content",
+  "Artwork and graphic designs",
+  "Music and audiovisual works",
+  "Digital content libraries",
+  "Other eligible original works",
+];
+
+const process = [
+  {
+    step: "01",
+    title: "Identify the work",
+    text: "Tell us what you created, when it was created or published, who contributed, and how you plan to use it.",
+  },
+  {
+    step: "02",
+    title: "Confirm ownership",
+    text: "We identify ownership questions, collaboration issues, or agreements that may affect the filing or licensing strategy.",
+  },
+  {
+    step: "03",
+    title: "Prepare the filing",
+    text: "We organize the application information and submit the registration based on the agreed scope.",
+  },
+  {
+    step: "04",
+    title: "Use the rights strategically",
+    text: "We help structure licensing, assignments, or related commercial terms as the work is monetized.",
+  },
 ];
 
 const faqs = [
   {
-    q: "Do I need to register copyright to be protected?",
-    a: "Copyright generally exists upon creation, but registration can provide important legal benefits depending on your goals and timing. We’ll help you decide when registration is worth it.",
+    q: "Do I automatically have copyright protection when I create something?",
+    a: "Copyright protection generally arises when an original work is fixed in a tangible medium, but registration can provide important legal and practical benefits. We help evaluate whether and when registration makes sense for the work.",
   },
   {
-    q: "Can you help with licensing terms and usage rights?",
-    a: "Yes. We structure licensing terms around scope, duration, territory, media, exclusivity, and compensation so usage is clear and commercially workable.",
+    q: "What kinds of works can you help register?",
+    a: "Depending on the work and filing requirements, we can assist with registrations involving photography, written content, audiovisual works, artwork, website and marketing content, and other eligible creative works.",
   },
   {
-    q: "What if multiple collaborators created the work?",
-    a: "We can help clarify ownership and structure collaboration terms (including assignments and split terms) so your rights are clean for monetization and future deals.",
+    q: "What if multiple people helped create the work?",
+    a: "That can affect ownership and filing strategy. We review the relevant facts and agreements to determine whether assignments, work-for-hire language, collaboration terms, or other documentation should be addressed.",
   },
   {
-    q: "Do you handle litigation or lawsuits?",
-    a: "No. Transactional counsel only. We help with contracts, rights structure, and business-first strategy, but we do not appear in court.",
+    q: "Can you help license my content to a brand or company?",
+    a: "Yes. We can structure licensing terms covering scope, duration, territory, media, exclusivity, compensation, edits, sublicensing, renewals, and related usage rights.",
+  },
+  {
+    q: "Can you review work-for-hire language?",
+    a: "Yes. We review and draft work-for-hire and assignment provisions for qualifying transactional matters and explain how the language affects ownership.",
+  },
+  {
+    q: "Do you handle copyright lawsuits or infringement litigation?",
+    a: "No. Ascent Legal provides transactional copyright and licensing services through this practice area and does not handle litigation.",
+  },
+  {
+    q: "Does submitting an intake mean the firm represents me?",
+    a: "No. An inquiry does not create an attorney-client relationship. Representation begins only after conflict clearance and a signed engagement agreement.",
   },
 ];
 
 export default function CopyrightPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-16">
-      {/* Hero */}
-      <section>
-        <p className="text-sm font-medium text-gray-600">Services</p>
+    <main className="bg-[#F7F6F3] text-[#0E2A47]">
+      <section className="border-b border-[#0E2A47]/10">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[1.08fr_.92fr] lg:px-12 lg:py-24">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+              Copyright Registration & Licensing
+            </p>
 
-        <h1 className="mt-2 text-4xl md:text-5xl font-bold">
-          Copyright{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            & Licensing
-          </span>
-        </h1>
+            <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+              Protect the work. Clarify the rights.
+            </h1>
 
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Business-first, plain-English support for creators, studios, and growing companies. We help you protect
-          creative assets, structure ownership, and set clear usage rights for commercial deals.
-        </p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5F7386]">
+              Copyright registration, ownership, and licensing support for
+              creators, studios, brands, and growing businesses. We help make
+              sure valuable creative assets are documented, protected, and
+              commercially usable.
+            </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-          >
-            Tell Us About Your Matter
-          </Link>
+            <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-[#7A8794]">
+              Transactional counsel only. No litigation.
+            </p>
 
-          <Link
-            href="/services/entertainment"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            Entertainment Counsel
-          </Link>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <StartIntakeButton
+                eventName="copyright_intake_clicked"
+                placement="copyright_hero"
+                label="Start Copyright Intake"
+                className="inline-flex bg-[#0E2A47] px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#B86A2E]"
+              />
 
-          <Link
-            href="/services/trademark"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            Trademark Protection
-          </Link>
+              <Link
+                href="/contact"
+                className="inline-flex border border-[#0E2A47]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
+              >
+                Contact the Firm
+              </Link>
+            </div>
+          </div>
+
+          <div className="border border-[#0E2A47]/10 bg-white p-8 shadow-[0_24px_70px_rgba(14,42,71,0.07)] sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#B86A2E]">
+              Common Creative Assets
+            </p>
+
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {works.map((item) => (
+                <div
+                  key={item}
+                  className="border-b border-[#0E2A47]/10 pb-4 font-serif text-xl"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-xs leading-5 text-[#7A8794]">
+              Eligibility, filing method, and scope depend on the work and the
+              facts surrounding creation, publication, and ownership.
+            </p>
+          </div>
         </div>
+      </section>
 
-        {/* Quick proof */}
-        <div className="mt-10 grid sm:grid-cols-3 gap-6">
-          {[
-            { label: "Creator-Aligned", desc: "Built for rights, usage, and monetization." },
-            { label: "Plain-English", desc: "Clear priorities and next steps." },
-            { label: "Deal-Ready", desc: "Licensing terms that match real campaigns." },
-          ].map((item) => (
-            <div key={item.label} className="rounded-xl border border-gray-100 bg-white p-6 text-center">
-              <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-                {item.label}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            How We Help
+          </p>
+          <h2 className="mt-5 max-w-3xl font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Registration is only part of the rights picture.
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((item) => (
+              <div key={item.title} className="border border-[#0E2A47]/10 bg-[#FBFAF7] p-7">
+                <h3 className="font-serif text-2xl">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#5F7386]">{item.text}</p>
               </div>
-              <div className="mt-2 text-sm text-gray-600">{item.desc}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Who we serve */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Who we serve</h2>
-        <p className="mt-2 text-gray-600 max-w-3xl">
-          Clients who create, commission, or commercialize content—and need ownership and usage rights to be clean.
-        </p>
+      <section className="border-y border-[#0E2A47]/10 bg-[#FBFAF7]">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-2 lg:px-12">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+              Ownership Matters
+            </p>
+            <h2 className="mt-5 font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+              Make sure the rights match the business.
+            </h2>
+          </div>
 
-        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-sm text-gray-700">
-          {whoItsFor.map((i) => (
-            <div key={i} className="rounded-lg border border-gray-100 bg-white px-3 py-2 text-center">
-              {i}
-            </div>
-          ))}
+          <div className="space-y-5 text-base leading-8 text-[#5F7386]">
+            <p>
+              A registration is more useful when ownership is clear. That can
+              become complicated when a project involves collaborators,
+              contractors, editors, designers, agencies, or production teams.
+            </p>
+            <p>
+              We review the contracts and facts around the work so the ownership
+              position is easier to understand before the asset is licensed,
+              sold, distributed, or used in a commercial deal.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Pillars */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">How we help</h2>
-        <p className="mt-2 text-gray-600 max-w-3xl">
-          Focused support for registration strategy, licensing terms, and ownership structure—so your content can be
-          monetized safely.
-        </p>
+      <section className="bg-[#0E2A47] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#D9894C]">
+            The Process
+          </p>
+          <h2 className="mt-5 max-w-3xl font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            From creation to commercial use.
+          </h2>
 
-        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {pillars.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {process.map((item) => (
+              <div key={item.step} className="border-t border-white/20 pt-5">
+                <p className="text-xs font-bold tracking-[0.2em] text-[#D9894C]">{item.step}</p>
+                <h3 className="mt-4 font-serif text-2xl">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/70">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-20 sm:px-10">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Frequently Asked Questions
+          </p>
+          <h2 className="mt-5 text-center font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Before you register or license the work.
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {faqs.map((item) => (
+              <div key={item.q} className="border border-[#0E2A47]/10 bg-[#FBFAF7] p-7">
+                <h3 className="font-serif text-xl">{item.q}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#5F7386]">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[#0E2A47]/10 bg-[#F7F6F3]">
+        <div className="mx-auto max-w-4xl px-6 py-20 text-center sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Ready to Protect the Work?
+          </p>
+          <h2 className="mt-5 font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Start with the asset.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#5F7386]">
+            Tell us what you created, whether it has been published, who helped
+            create it, and what you want to do with the rights.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <StartIntakeButton
+              eventName="copyright_intake_clicked"
+              placement="copyright_bottom"
+              label="Start Copyright Intake"
+              className="inline-flex bg-[#B86A2E] px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#9F5925]"
+            />
+            <Link
+              href="/services/entertainment"
+              className="inline-flex border border-[#0E2A47]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
             >
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400" />
-                <h3 className="text-lg font-semibold">{p.title}</h3>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">{p.desc}</p>
-              <ul className="mt-3 space-y-1 text-sm text-gray-600">
-                {p.bullets.map((b) => (
-                  <li key={b} className="flex gap-2">
-                    <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+              Explore Entertainment Counsel
+            </Link>
+          </div>
+
+          <p className="mt-6 text-xs leading-5 text-[#7A8794]">
+            Submitting an inquiry does not create an attorney-client relationship.
+            Representation begins only after conflict clearance and a written engagement agreement.
+          </p>
         </div>
-      </section>
-
-      {/* Process */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">A simple process</h2>
-        <div className="mt-6 grid md:grid-cols-3 gap-6">
-          {[
-            { step: "1", title: "Assess", text: "We identify what you’re protecting and how it’s being used commercially." },
-            { step: "2", title: "Structure", text: "We define ownership, licensing scope, and risk points in plain English." },
-            { step: "3", title: "Execute", text: "You get clean language, next steps, and templates for repeat deals." },
-          ].map((x) => (
-            <div key={x.step} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <div className="text-sm text-gray-500">Step {x.step}</div>
-              <h3 className="mt-1 font-semibold">{x.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{x.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">FAQs</h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {faqs.map((f) => (
-            <div key={f.q} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <h4 className="font-medium">{f.q}</h4>
-              <p className="mt-2 text-sm text-gray-600">{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="mt-16 text-center">
-        <h3 className="text-xl font-semibold">Want clean ownership and licensing terms?</h3>
-        <p className="mt-2 text-gray-600">Tell us what you’re creating—we’ll recommend the fastest path.</p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-block rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-        >
-          Tell Us About Your Matter
-        </Link>
-
-        <p className="mt-4 text-xs text-gray-500">Transactional counsel only. No litigation.</p>
       </section>
     </main>
   );

@@ -210,8 +210,8 @@ export default function HomePage() {
 
               <p className="mt-6 max-w-xl text-base leading-8 text-[#5F7386]">
                 Client feedback helps prospective clients understand what it is
-                like to work with our firm. View our Google Business Profile to
-                read current reviews.
+                like to work with our firm. Ascent Legal is currently rated 5.0
+                on Google. Visit our Google Business Profile to read current reviews.
               </p>
 
               <a
@@ -237,8 +237,7 @@ export default function HomePage() {
               </div>
 
               <p className="mt-6 font-serif text-2xl leading-relaxed text-[#0E2A47] sm:text-3xl">
-                See verified feedback from clients who have worked with
-                Ascent Legal.
+                Rated 5.0 on Google.
               </p>
 
               <div className="mt-8 h-px w-14 bg-[#B86A2E]" />

@@ -1,6 +1,4 @@
 // app/contact/page.jsx
-import TrustpilotBadge from "../../components/TrustpilotBadge";
-
 export const metadata = {
   title: "Contact | Ascent Legal",
   description:
@@ -30,11 +28,6 @@ export default function ContactPage() {
             <span className="h-2 w-2 rounded-full bg-indigo-500" />
             Secure client portal
           </div>
-
-         {/* Inside hero left column */}
-<div className="mt-8 flex justify-start">
-  <TrustpilotBadge />  {/* client component, loads script in useEffect */}
-</div>
 
         </div>
       </div>

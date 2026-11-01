@@ -195,6 +195,63 @@ export default function HomePage() {
       {/* REAL ATTORNEY SECTION */}
       <FounderSection />
 
+      {/* GOOGLE REVIEWS */}
+      <section className="border-y border-[#0E2A47]/10 bg-[#FBFAF7]">
+        <div className="mx-auto max-w-6xl px-6 py-20 sm:px-10 lg:px-12">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+                Google Reviews
+              </p>
+
+              <h2 className="mt-5 max-w-2xl font-serif text-4xl leading-tight tracking-[-0.025em] text-[#0E2A47] sm:text-5xl">
+                What clients say about working with Ascent Legal.
+              </h2>
+
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#5F7386]">
+                Client feedback helps prospective clients understand what it is
+                like to work with our firm. View our Google Business Profile to
+                read current reviews.
+              </p>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ascent+Legal+Long+Beach+CA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex border border-[#B86A2E] px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[#B86A2E] transition hover:bg-[#B86A2E] hover:text-white"
+              >
+                Read Our Google Reviews <span className="ml-3">→</span>
+              </a>
+            </div>
+
+            <div className="border border-[#0E2A47]/10 bg-white px-8 py-10 shadow-[0_18px_50px_rgba(14,42,71,0.06)] sm:px-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#5F7386]">
+                Client Feedback
+              </p>
+
+              <div
+                className="mt-6 text-2xl tracking-[0.18em] text-[#B86A2E]"
+                aria-label="Five stars"
+              >
+                ★★★★★
+              </div>
+
+              <p className="mt-6 font-serif text-2xl leading-relaxed text-[#0E2A47] sm:text-3xl">
+                See verified feedback from clients who have worked with
+                Ascent Legal.
+              </p>
+
+              <div className="mt-8 h-px w-14 bg-[#B86A2E]" />
+
+              <p className="mt-6 text-xs leading-5 text-[#7A8794]">
+                Reviews reflect individual experiences and do not guarantee
+                similar results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHO WE SERVE */}
       <section className="border-y border-[#0E2A47]/10 bg-white">
         <div className="mx-auto max-w-7xl px-6 py-14 sm:px-10 lg:px-12">

@@ -1,10 +1,15 @@
 "use client";
 
-export default function StartIntakeButton({ className = "" }) {
+export default function StartIntakeButton({
+  className = "",
+  eventName = "intake_homepage_cta_clicked",
+  placement = "homepage_bottom_cta",
+  label = "Start Intake",
+}) {
   function handleClick() {
-    window.gtag?.("event", "intake_homepage_cta_clicked", {
+    window.gtag?.("event", eventName, {
       feature: "ai_intake",
-      placement: "homepage_bottom_cta",
+      placement,
     });
 
     window.dispatchEvent(new CustomEvent("ascent:intake-open"));
@@ -16,7 +21,7 @@ export default function StartIntakeButton({ className = "" }) {
       onClick={handleClick}
       className={className}
     >
-      Start Intake <span className="ml-3">→</span>
+      {label} <span className="ml-3">→</span>
     </button>
   );
 }

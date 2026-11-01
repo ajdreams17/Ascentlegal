@@ -1,5 +1,6 @@
 import Link from "next/link";
 import FounderSection from "../components/FounderSection";
+import StartIntakeButton from "../components/StartIntakeButton";
 
 const practices = [
   {
@@ -299,12 +300,16 @@ export default function HomePage() {
             businesses you&apos;re building next.
           </p>
 
-          <Link
-            href="/contact"
-            className="mt-9 inline-flex border border-[#D9894C] px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#B86A2E]"
-          >
-            Tell Us About Your Matter <span className="ml-3">→</span>
-          </Link>
+          <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <StartIntakeButton className="inline-flex bg-[#B86A2E] px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#9F5925]" />
+
+            <Link
+              href="/contact"
+              className="inline-flex border border-white/70 px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:border-[#D9894C] hover:text-[#E0A06D]"
+            >
+              Contact the Firm <span className="ml-3">→</span>
+            </Link>
+          </div>
         </div>
       </section>
     </main>

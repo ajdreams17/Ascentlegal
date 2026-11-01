@@ -52,6 +52,23 @@ const contactReachedRef = useRef(false);
   }
 }, [messages, loading, open]);
 
+  useEffect(() => {
+    function openIntakeFromPage() {
+      setOpen(true);
+
+      if (!intakeOpenedRef.current) {
+        trackIntakeEvent("intake_opened");
+        intakeOpenedRef.current = true;
+      }
+    }
+
+    window.addEventListener("ascent:intake-open", openIntakeFromPage);
+
+    return () => {
+      window.removeEventListener("ascent:intake-open", openIntakeFromPage);
+    };
+  }, []);
+
   async function sendMessage(customMessage) {
     const text = (customMessage ?? message).trim();
 

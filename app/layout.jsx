@@ -65,7 +65,6 @@ export default function RootLayout({ children }) {
     image: "https://ascentlegal.io/og-image.png",
     description:
       "Business-first, plain-English counsel for creators, studios, and growing companies. Brand deals, trademarks, copyright, licensing, and commercial contracts. Transactional counsel only (no litigation).",
-    areaServed: "US",
     sameAs: [
       "https://www.instagram.com/ascent_legal",
       "https://www.tiktok.com/@ascent_legal",

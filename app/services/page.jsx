@@ -4,9 +4,20 @@ export const metadata = {
   title: "Services | Ascent Legal",
   description:
     "Business-first legal services for creators, brands, studios, agencies, and growing companies—brand deals, trademarks, copyright/licensing, and commercial contracts. Transactional counsel only (no litigation).",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const areas = [
+  {
+    title: "Creator Contract Review",
+    desc: "Focused review and negotiation support for creator, influencer, UGC, sponsorship, and brand deal agreements.",
+    bullets: ["Usage Rights", "Exclusivity", "Payment + Deliverables"],
+    href: "/services/creator-contract-review",
+    cta: "Review my creator contract",
+    also: { label: "Entertainment Counsel", href: "/services/entertainment" },
+  },
   {
     title: "Brand Deals & Entertainment Counsel",
     desc: "Drafting and negotiating sponsorships, influencer/UGC agreements, production terms, and creator/brand contracts.",
@@ -38,7 +49,7 @@ const areas = [
     cta: "Discuss deal desk support",
   },
   {
-    title: "Corporate & Formation",
+    title: "Business Formation",
     desc: "Entity setup, founder alignment, and governance that supports growth and protects ownership.",
     bullets: ["LLC & Corporation Formation", "Operating/Shareholder Agreements", "Bylaws & Resolutions"],
     href: "/services/corporate-formation",

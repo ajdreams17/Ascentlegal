@@ -27,6 +27,14 @@ const areas = [
     also: { label: "Copyright & Licensing", href: "/services/copyright" },
   },
   {
+    title: "Copyright Registration & Licensing",
+    desc: "Registration, ownership, work-for-hire, and licensing support for creative assets and content businesses.",
+    bullets: ["Copyright Registration", "Ownership + Assignments", "Licensing + Usage Rights"],
+    href: "/services/copyright",
+    cta: "Protect my creative work",
+    also: { label: "Creator Contract Review", href: "/services/creator-contract-review" },
+  },
+  {
     title: "Trademark Protection",
     desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
     bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],

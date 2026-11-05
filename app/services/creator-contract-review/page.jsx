@@ -244,6 +244,19 @@ export default function CreatorContractReviewPage() {
         </div>
       </section>
 
+      <section className="border-t border-[#0E2A47]/10 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-12 text-center sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Related Services
+          </p>
+          <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+            <Link href="/services/entertainment" className="text-[#0E2A47] hover:text-[#B86A2E]">Entertainment Counsel →</Link>
+            <Link href="/services/copyright" className="text-[#0E2A47] hover:text-[#B86A2E]">Copyright & Licensing →</Link>
+            <Link href="/services/trademark" className="text-[#0E2A47] hover:text-[#B86A2E]">Trademark Registration →</Link>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-[#0E2A47]/10 bg-[#F7F6F3]">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center sm:px-10">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">

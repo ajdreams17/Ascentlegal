@@ -61,19 +61,29 @@ export default function RootLayout({ children }) {
     "@type": ["Organization", "LegalService"],
     name: "Ascent Legal",
     url: "https://ascentlegal.io",
-    logo: "https://ascentlegal.io/logo.png", // ✅ make sure this exists
+    logo: "https://ascentlegal.io/ascent-legal-logo.png",
     image: "https://ascentlegal.io/og-image.png",
     description:
       "Business-first, plain-English counsel for creators, studios, and growing companies. Brand deals, trademarks, copyright, licensing, and commercial contracts. Transactional counsel only (no litigation).",
-    areaServed: "US",
     sameAs: [
-      // Add your real profiles if you have them
-      // "https://www.linkedin.com/company/...",
-      // "https://www.instagram.com/...",
+      "https://www.instagram.com/ascent_legal",
+      "https://www.tiktok.com/@ascent_legal",
+      "https://www.linkedin.com/company/ascent-legal/",
+      "https://www.facebook.com/ascentlegallaw",
     ],
-    // Optional: add phone/address if you want local SEO
-    // telephone: "+1-XXX-XXX-XXXX",
-    // address: { "@type": "PostalAddress", addressLocality: "Los Angeles", addressRegion: "CA", addressCountry: "US" },
+    telephone: "+1-714-203-3535",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "3780 Kilroy Airport Way, Suite 200",
+      addressLocality: "Long Beach",
+      addressRegion: "CA",
+      postalCode: "90806",
+      addressCountry: "US",
+    },
+    areaServed: [
+      { "@type": "State", name: "California" },
+      { "@type": "Country", name: "United States" },
+    ],
   };
 
   const websiteJsonLd = {

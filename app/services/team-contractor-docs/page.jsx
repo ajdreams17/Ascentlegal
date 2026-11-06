@@ -1,9 +1,13 @@
 import Link from "next/link";
+import StartIntakeButton from "../../../components/StartIntakeButton";
 
 export const metadata = {
   title: "Team & Contractor Docs | Ascent Legal",
   description:
-    "Independent contractor agreements, IP assignment, confidentiality, and work-for-hire clauses for creators, brands, agencies, studios, and growing companies. Transactional counsel only (no litigation).",
+    "Independent contractor agreements, IP assignment, confidentiality, work-for-hire, and team documents for creators, brands, agencies, studios, and growing businesses. Transactional counsel only.",
+  alternates: {
+    canonical: "/services/team-contractor-docs",
+  },
 };
 
 const included = [
@@ -50,8 +54,8 @@ const faqs = [
     a: "Yes. We can redline your existing agreement, explain risk in plain English, and deliver a cleaner version you can reuse.",
   },
   {
-    q: "Do you help with contractor classification?",
-    a: "We can provide practical guidance and document strategy. If your situation involves complex classification or multi-state compliance, we’ll flag it and recommend the right next step.",
+    q: "Do you handle worker-classification or employment disputes?",
+    a: "No. This service is focused on transactional documents, ownership, confidentiality, and project terms. We do not handle employment disputes or litigation through this practice area.",
   },
   {
     q: "How fast is turnaround?",
@@ -85,13 +89,12 @@ export default function TeamContractorDocsPage() {
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]
-            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-          >
-            Tell Us About Your Matter
-          </Link>
+          <StartIntakeButton
+            eventName="team_contractor_intake_clicked"
+            placement="team_contractor_hero"
+            label="Start Contractor Intake"
+            className="inline-flex rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
+          />
 
           <Link
             href="/services/contracts-drafting"
@@ -210,13 +213,12 @@ export default function TeamContractorDocsPage() {
       <section className="mt-16 text-center">
         <h3 className="text-xl font-semibold">Ready to clean up your contractor docs?</h3>
         <p className="mt-2 text-gray-600">Tell us who you’re hiring and what they’ll create—we’ll recommend the fastest path.</p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-block rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]
-          focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-        >
-          Tell Us About Your Matter
-        </Link>
+        <StartIntakeButton
+          eventName="team_contractor_intake_clicked"
+          placement="team_contractor_bottom"
+          label="Start Contractor Intake"
+          className="mt-4 inline-flex rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
+        />
 
         <p className="mt-4 text-xs text-gray-500">Transactional counsel only. No litigation.</p>
       </section>

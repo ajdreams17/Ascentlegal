@@ -5,7 +5,7 @@ function clean(value, maxLength = 5000) {
 }
 
 function isValidEmail(email) {
-  return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 function line(label, value) {
@@ -73,8 +73,9 @@ export async function POST(request) {
       line("Turnaround Needs", body?.turnaroundNeeds),
       line("Internal Reviewer", body?.internalReviewer),
       line("Workflow Issues", body?.workflowIssues),
-      line("Additional Details", body?.otherDetails),
-    ].filter(Boolean).join("\\n");
+      line("Matter-Specific Details", body?.matterDetails),
+      line("Final Notes", body?.finalNotes),
+    ].filter(Boolean).join("\n");
 
     const deadline = clean(body?.deadline, 160);
     const hasDeadline = deadline && !["none", "no", "n/a", "not applicable"].includes(deadline.toLowerCase());

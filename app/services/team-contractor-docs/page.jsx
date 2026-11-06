@@ -2,7 +2,7 @@ import Link from "next/link";
 import StartIntakeButton from "../../../components/StartIntakeButton";
 
 export const metadata = {
-  title: "Team & Contractor Docs | Ascent Legal",
+  title: "Team & Contractor Agreements | Ascent Legal",
   description:
     "Independent contractor agreements, IP assignment, confidentiality, work-for-hire, and team documents for creators, brands, agencies, studios, and growing businesses. Transactional counsel only.",
   alternates: {
@@ -24,8 +24,8 @@ const included = [
     desc: "Proper work-for-hire language (when applicable) plus rights/usage terms for content, creative, and deliverables.",
   },
   {
-    title: "Team Documents (as needed)",
-    desc: "Offer letters and basic onboarding docs when you’re scaling beyond contractors.",
+    title: "Creative Services Agreements",
+    desc: "Project-based terms for editors, designers, videographers, producers, developers, and other outside collaborators.",
   },
 ];
 
@@ -65,27 +65,31 @@ const faqs = [
 
 export default function TeamContractorDocsPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-16">
+    <main className="bg-[#F7F6F3] text-[#0E2A47]">
       {/* Hero */}
-      <section>
-        <p className="text-sm font-medium text-gray-600">Services</p>
+      <section className="border-b border-[#0E2A47]/10">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+          Team & Contractor Agreements
+        </p>
 
-        <h1 className="mt-2 text-4xl md:text-5xl font-bold">
-          Team &{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            Contractor Docs
-          </span>
+        <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+          Put the working relationship in writing.
         </h1>
 
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl">
+        <p className="mt-7 max-w-3xl text-lg leading-8 text-[#5F7386]">
           Contractor documents that protect ownership, set clear expectations, and keep projects moving—built for creators,
           brands, studios, agencies, and growing companies. Transactional counsel only. No litigation.
         </p>
 
-        {/* SEO bridge line (natural keywords) */}
-        <p className="mt-3 text-sm text-gray-600 max-w-3xl">
-          We help with independent contractor agreements, IP assignment, confidentiality, and work-for-hire clauses (when
-          appropriate)—plus usage rights language for content and creative deliverables.
+        <p className="mt-4 max-w-3xl text-sm leading-7 text-[#5F7386]">
+          We help with independent contractor agreements, IP assignment,
+          confidentiality, work-for-hire provisions where appropriate, and
+          usage-rights language for content and creative deliverables.
+        </p>
+
+        <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-[#7A8794]">
+          Transactional counsel only. No litigation.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -115,7 +119,7 @@ export default function TeamContractorDocsPage() {
       </section>
 
       {/* Included */}
-      <section className="mt-16">
+      <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
         <h2 className="text-2xl md:text-3xl font-semibold">What we help with</h2>
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {included.map((x) => (
@@ -131,10 +135,10 @@ export default function TeamContractorDocsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </div></section>
 
       {/* Deliverables (conversion clarity) */}
-      <section className="mt-16">
+      <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
         <h2 className="text-2xl md:text-3xl font-semibold">What you get</h2>
         <p className="mt-2 text-gray-600 max-w-3xl">
           Clean documents you can use immediately—plus the context to understand what matters and why.
@@ -151,7 +155,7 @@ export default function TeamContractorDocsPage() {
             </div>
           ))}
         </div>
-      </section>
+      </div></section>
 
       {/* Use cases */}
       <section className="mt-16 grid md:grid-cols-2 gap-6">
@@ -197,7 +201,7 @@ export default function TeamContractorDocsPage() {
       </section>
 
       {/* FAQs */}
-      <section className="mt-16">
+      <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
         <h2 className="text-2xl md:text-3xl font-semibold">FAQs</h2>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           {faqs.map((f) => (

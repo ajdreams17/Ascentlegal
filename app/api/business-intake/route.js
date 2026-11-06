@@ -53,6 +53,8 @@ export async function POST(request) {
       line("Contract Type", body?.contractType),
       line("Counterparty", body?.counterparty),
       line("Contract Status", body?.contractStatus),
+      line("Contract Value", body?.contractValue),
+      line("Contract Received / Drafted Date", body?.contractReceivedDate),
       line("Governance Documents", body?.governanceDocs),
       line("Ownership Details", body?.ownershipDetails),
       line("All Owners Agree", body?.allOwnersAgree),

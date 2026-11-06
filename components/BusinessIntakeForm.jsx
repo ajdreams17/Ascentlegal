@@ -20,6 +20,8 @@ const initialForm = {
   contractType: "",
   counterparty: "",
   contractStatus: "",
+  contractValue: "",
+  contractReceivedDate: "",
   governanceDocs: "",
   ownershipDetails: "",
   allOwnersAgree: "",
@@ -307,8 +309,8 @@ export default function BusinessIntakeForm() {
                 setForm={setForm}
                 options={["No draft yet", "Draft received", "Under negotiation", "Signed / executed", "Other"]}
               />
-              <Field label="Approximate contract value, if known" name="investor1Amount" form={form} setForm={setForm} />
-              <Field label="Date the agreement was received or drafted" name="contractorStartDate" type="date" form={form} setForm={setForm} />
+              <Field label="Approximate contract value, if known" name="contractValue" form={form} setForm={setForm} />
+              <Field label="Date the agreement was received or drafted" name="contractReceivedDate" type="date" form={form} setForm={setForm} />
               <TextArea
                 label="What are the main business terms already agreed upon?"
                 name="proposedChange"

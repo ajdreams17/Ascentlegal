@@ -20,12 +20,31 @@ const initialForm = {
   contractType: "",
   counterparty: "",
   contractStatus: "",
+  contractValue: "",
+  contractReceivedDate: "",
   governanceDocs: "",
   ownershipDetails: "",
   allOwnersAgree: "",
   proposedChange: "",
   investorCount: "",
-  investorDetails: "",
+  investor1Name: "",
+  investor1Amount: "",
+  investor1Percent: "",
+  investor2Name: "",
+  investor2Amount: "",
+  investor2Percent: "",
+  investor3Name: "",
+  investor3Amount: "",
+  investor3Percent: "",
+  investor4Name: "",
+  investor4Amount: "",
+  investor4Percent: "",
+  investor5Name: "",
+  investor5Amount: "",
+  investor5Percent: "",
+  investor6Name: "",
+  investor6Amount: "",
+  investor6Percent: "",
   newClasses: "",
   sameRights: "",
   classRights: "",
@@ -35,11 +54,18 @@ const initialForm = {
   contractorPayment: "",
   contractorWorkProduct: "",
   contractorStartDate: "",
+  contractorTerm: "",
+  contractorConfidentialInfo: "",
+  contractorExistingAgreement: "",
   dealTypes: "",
   monthlyVolume: "",
   turnaroundNeeds: "",
   internalReviewer: "",
   workflowIssues: "",
+  preferredFeeStructure: "",
+  priorAttorney: "",
+  documentsAvailable: "",
+  opposingOrRelatedParties: "",
   matterDetails: "",
   finalNotes: "",
 };
@@ -243,7 +269,32 @@ export default function BusinessIntakeForm() {
               <Field label="Entity type, if known" name="entityType" form={form} setForm={setForm} placeholder="LLC, corporation, undecided, etc." />
               <Field label="State of formation or intended formation" name="formationState" form={form} setForm={setForm} />
               <TextArea label="List the founders / owners and proposed ownership percentages" name="owners" form={form} setForm={setForm} />
-              <TextArea label="Anything else we should know about the planned structure, investors, or IP being contributed?" name="matterDetails" form={form} setForm={setForm} />
+              <Select
+                label="Will there be more than one owner?"
+                name="allOwnersAgree"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure yet"]}
+              />
+              <TextArea
+                label="Describe each founder's role and expected responsibilities"
+                name="proposedChange"
+                form={form}
+                setForm={setForm}
+              />
+              <TextArea
+                label="Will any founder contribute existing intellectual property, content, trademarks, software, or other assets?"
+                name="matterDetails"
+                form={form}
+                setForm={setForm}
+              />
+              <Select
+                label="Do you expect outside investors in the next 12 months?"
+                name="newClasses"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure"]}
+              />
             </div>
           )}
 
@@ -258,7 +309,27 @@ export default function BusinessIntakeForm() {
                 setForm={setForm}
                 options={["No draft yet", "Draft received", "Under negotiation", "Signed / executed", "Other"]}
               />
-              <TextArea label="Describe the deal and any terms you are especially concerned about" name="matterDetails" form={form} setForm={setForm} />
+              <Field label="Approximate contract value, if known" name="contractValue" form={form} setForm={setForm} />
+              <Field label="Date the agreement was received or drafted" name="contractReceivedDate" type="date" form={form} setForm={setForm} />
+              <TextArea
+                label="What are the main business terms already agreed upon?"
+                name="proposedChange"
+                form={form}
+                setForm={setForm}
+              />
+              <TextArea
+                label="What provisions or risks are you most concerned about?"
+                name="matterDetails"
+                form={form}
+                setForm={setForm}
+              />
+              <Select
+                label="Do you want Ascent Legal to negotiate directly with the other side?"
+                name="allOwnersAgree"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure"]}
+              />
             </div>
           )}
 
@@ -283,6 +354,12 @@ export default function BusinessIntakeForm() {
                 options={["Yes", "No", "Not sure"]}
               />
               <TextArea label="Describe any pending approvals or disagreements" name="approvalsOrDisagreements" form={form} setForm={setForm} />
+              <TextArea
+                label="Are there any buyout, transfer, voting, management, or deadlock issues we should know about?"
+                name="matterDetails"
+                form={form}
+                setForm={setForm}
+              />
             </div>
           )}
 
@@ -318,14 +395,39 @@ export default function BusinessIntakeForm() {
                 options={["Yes", "No", "Not sure"]}
               />
               <Field label="How many new investors are being added?" name="investorCount" type="number" form={form} setForm={setForm} />
-              <TextArea
-                label="List each investor's full legal name, investment amount, and ownership percentage"
-                name="investorDetails"
-                form={form}
-                setForm={setForm}
-                placeholder="Example: Jane Smith — $25,000 — 5%"
-                rows={6}
-              />
+
+              {[1, 2, 3, 4, 5, 6].map((number) => {
+                const count = Number(form.investorCount || 0);
+                if (number > count || number > 6) return null;
+
+                return (
+                  <div key={number} className="rounded-xl border border-[#0E2A47]/10 bg-white p-5">
+                    <p className="text-sm font-semibold text-[#0E2A47]">Investor {number}</p>
+                    <div className="mt-4 grid gap-4 sm:grid-cols-3">
+                      <Field
+                        label="Full legal name"
+                        name={`investor${number}Name`}
+                        form={form}
+                        setForm={setForm}
+                      />
+                      <Field
+                        label="Investment amount"
+                        name={`investor${number}Amount`}
+                        form={form}
+                        setForm={setForm}
+                        placeholder="$"
+                      />
+                      <Field
+                        label="Ownership percentage"
+                        name={`investor${number}Percent`}
+                        form={form}
+                        setForm={setForm}
+                        placeholder="%"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
               <Select
                 label="Are different classes of membership interests or equity being created?"
                 name="newClasses"
@@ -362,6 +464,20 @@ export default function BusinessIntakeForm() {
               <Field label="Payment structure" name="contractorPayment" form={form} setForm={setForm} placeholder="Flat fee, hourly, milestone, etc." />
               <TextArea label="What will the contractor create or what IP / confidential information will they access?" name="contractorWorkProduct" form={form} setForm={setForm} />
               <Field label="Expected start date" name="contractorStartDate" type="date" form={form} setForm={setForm} />
+              <Field label="Expected term or project duration" name="contractorTerm" form={form} setForm={setForm} />
+              <TextArea
+                label="What confidential information or systems will the contractor access?"
+                name="contractorConfidentialInfo"
+                form={form}
+                setForm={setForm}
+              />
+              <Select
+                label="Do you already have an agreement or template you want reviewed?"
+                name="contractorExistingAgreement"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No"]}
+              />
             </div>
           )}
 
@@ -372,6 +488,19 @@ export default function BusinessIntakeForm() {
               <Field label="Typical turnaround needed" name="turnaroundNeeds" form={form} setForm={setForm} placeholder="Same day, 1–3 days, one week, etc." />
               <Field label="Who currently reviews agreements internally?" name="internalReviewer" form={form} setForm={setForm} />
               <TextArea label="Where does the current contract workflow slow down or create problems?" name="workflowIssues" form={form} setForm={setForm} />
+              <Select
+                label="What type of support are you looking for?"
+                name="preferredFeeStructure"
+                form={form}
+                setForm={setForm}
+                options={["Per-project support", "Monthly / ongoing support", "Not sure"]}
+              />
+              <TextArea
+                label="What would an ideal legal workflow look like for your team?"
+                name="matterDetails"
+                form={form}
+                setForm={setForm}
+              />
             </div>
           )}
 
@@ -384,7 +513,34 @@ export default function BusinessIntakeForm() {
       )}
 
       <section className="border border-[#0E2A47]/10 bg-white p-6 sm:p-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#B86A2E]">4. Final Notes</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#B86A2E]">4. Conflicts & Documents</p>
+        <div className="mt-6 grid gap-5">
+          <TextArea
+            label="List any other people or companies involved in this matter"
+            name="opposingOrRelatedParties"
+            form={form}
+            setForm={setForm}
+            placeholder="Founders, investors, counterparties, vendors, managers, agencies, etc."
+          />
+          <Select
+            label="Are you currently represented by or working with another attorney on this matter?"
+            name="priorAttorney"
+            form={form}
+            setForm={setForm}
+            options={["Yes", "No"]}
+          />
+          <TextArea
+            label="What documents do you currently have available?"
+            name="documentsAvailable"
+            form={form}
+            setForm={setForm}
+            placeholder="Operating agreement, draft contract, cap table, formation documents, emails, term sheet, etc."
+          />
+        </div>
+      </section>
+
+      <section className="border border-[#0E2A47]/10 bg-white p-6 sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#B86A2E]">5. Final Notes</p>
         <div className="mt-6">
           <TextArea
             label="Anything else you want the attorney reviewing this intake to know?"

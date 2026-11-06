@@ -29,19 +29,6 @@ export async function POST(request) {
       );
     }
 
-    const orderedAnswers = Array.isArray(body?.answers)
-      ? body.answers
-          .map((answer) => {
-            const label = clean(answer?.label, 500);
-            const value = clean(answer?.value, 5000);
-            const section = clean(answer?.section, 200);
-            if (!label || !value) return "";
-            return section ? `[${section}] ${label}\n${value}` : `${label}\n${value}`;
-          })
-          .filter(Boolean)
-          .join("\n\n")
-      : "";
-
     const sections = [
       "BUSINESS INTAKE",
       "",
@@ -117,9 +104,6 @@ export async function POST(request) {
       "",
       line("Matter-Specific Details", body?.matterDetails),
       line("Final Notes", body?.finalNotes),
-      "",
-      orderedAnswers ? "QUESTIONNAIRE RESPONSES" : "",
-      orderedAnswers,
     ].filter(Boolean).join("\n");
 
     const deadline = clean(body?.deadline, 160);

@@ -12,6 +12,21 @@ const initialForm = {
   matterType: "",
   deadline: "",
   businessDescription: "",
+  dateEstablished: "",
+  referralSource: "",
+  referralDetails: "",
+  founderStatus: "",
+  founderDetails: "",
+  partnerContributions: "",
+  currentManager: "",
+  majorDecisionMaker: "",
+  finalAuthority: "",
+  operatingAgreementSigned: "",
+  operatingAgreementAmended: "",
+  operatingAgreementAmendmentDetails: "",
+  partnerConcerns: "",
+  unequalContributions: "",
+  desiredProtections: "",
   entityStatus: "",
   entityType: "",
   formationState: "",
@@ -228,13 +243,35 @@ export default function BusinessIntakeForm() {
               "Other",
             ]}
           />
+          <Field
+            label="When was the business established?"
+            name="dateEstablished"
+            type="date"
+            form={form}
+            setForm={setForm}
+          />
           <TextArea
-            label="Briefly describe the business and what it does"
+            label="Briefly describe the nature of the business and what it does"
             name="businessDescription"
             form={form}
             setForm={setForm}
             rows={3}
           />
+          <Select
+            label="How did you learn about Ascent Legal?"
+            name="referralSource"
+            form={form}
+            setForm={setForm}
+            options={["Referral from a person", "Google / online search", "Instagram", "TikTok", "LinkedIn", "Bar association / professional organization", "Networking event", "Existing or former client", "Other"]}
+          />
+          {form.referralSource && (
+            <Field
+              label="Please tell us who referred you or provide any additional details"
+              name="referralDetails"
+              form={form}
+              setForm={setForm}
+            />
+          )}
           <Field
             label="Is there a deadline, signing date, launch date, or other urgent date?"
             name="deadline"
@@ -268,7 +305,48 @@ export default function BusinessIntakeForm() {
               />
               <Field label="Entity type, if known" name="entityType" form={form} setForm={setForm} placeholder="LLC, corporation, undecided, etc." />
               <Field label="State of formation or intended formation" name="formationState" form={form} setForm={setForm} />
-              <TextArea label="List the founders / owners and proposed ownership percentages" name="owners" form={form} setForm={setForm} />
+              <TextArea label="List all founders / owners, their full legal names, and proposed ownership percentages" name="owners" form={form} setForm={setForm} />
+
+              <Select
+                label="Did you found or co-found the company?"
+                name="founderStatus"
+                form={form}
+                setForm={setForm}
+                options={["Yes — sole founder", "Yes — co-founder", "No", "Other"]}
+              />
+              <TextArea
+                label="Please describe your role in starting the company and how the other owners became involved"
+                name="founderDetails"
+                form={form}
+                setForm={setForm}
+              />
+              <TextArea
+                label="What did each owner or partner contribute to the business?"
+                name="partnerContributions"
+                form={form}
+                setForm={setForm}
+                placeholder="Cash, services, customers, intellectual property, equipment, relationships, content, etc."
+              />
+              <Field
+                label="Who currently manages the day-to-day operations?"
+                name="currentManager"
+                form={form}
+                setForm={setForm}
+              />
+              <Field
+                label="Who currently makes major business decisions?"
+                name="majorDecisionMaker"
+                form={form}
+                setForm={setForm}
+              />
+              <Select
+                label="Do you believe you have final authority over major business matters?"
+                name="finalAuthority"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Shared authority", "Not sure"]}
+              />
+
               <Select
                 label="Will there be more than one owner?"
                 name="allOwnersAgree"
@@ -338,13 +416,96 @@ export default function BusinessIntakeForm() {
               <Field label="Entity type" name="entityType" form={form} setForm={setForm} />
               <Field label="State of formation" name="formationState" form={form} setForm={setForm} />
               <Select
-                label="Do you have a current operating agreement, bylaws, or shareholder agreement?"
+                label="Do you have a current operating agreement, bylaws, shareholder agreement, or other governing document?"
                 name="governanceDocs"
                 form={form}
                 setForm={setForm}
                 options={["Yes", "No", "Not sure"]}
               />
-              <TextArea label="List the current owners / members / shareholders and ownership percentages" name="ownershipDetails" form={form} setForm={setForm} />
+              <Select
+                label="If there is an Operating Agreement or other governing agreement, did all current owners sign it?"
+                name="operatingAgreementSigned"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure", "Not applicable"]}
+              />
+              <Select
+                label="Has the Operating Agreement or other governing agreement ever been amended?"
+                name="operatingAgreementAmended"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure", "Not applicable"]}
+              />
+              {form.operatingAgreementAmended === "Yes" && (
+                <TextArea
+                  label="Please describe the amendments and when they were made"
+                  name="operatingAgreementAmendmentDetails"
+                  form={form}
+                  setForm={setForm}
+                />
+              )}
+              <TextArea label="List all current owners / members / shareholders, their full legal names, and ownership percentages" name="ownershipDetails" form={form} setForm={setForm} />
+
+              <Select
+                label="Did you found or co-found the company?"
+                name="founderStatus"
+                form={form}
+                setForm={setForm}
+                options={["Yes — sole founder", "Yes — co-founder", "No", "Other"]}
+              />
+              <TextArea
+                label="Please describe your role in starting the company and how the other owners became involved"
+                name="founderDetails"
+                form={form}
+                setForm={setForm}
+              />
+              <TextArea
+                label="What did each owner or partner contribute to the business?"
+                name="partnerContributions"
+                form={form}
+                setForm={setForm}
+                placeholder="Cash, services, customers, intellectual property, equipment, relationships, content, etc."
+              />
+              <Field
+                label="Who currently manages the day-to-day operations?"
+                name="currentManager"
+                form={form}
+                setForm={setForm}
+              />
+              <Field
+                label="Who currently makes major business decisions?"
+                name="majorDecisionMaker"
+                form={form}
+                setForm={setForm}
+              />
+              <Select
+                label="Do you believe you have final authority over major business matters?"
+                name="finalAuthority"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Shared authority", "Not sure"]}
+              />
+
+              <Select
+                label="Are you concerned that one or more owners contributed substantially less than others?"
+                name="unequalContributions"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure"]}
+              />
+              <TextArea
+                label="Describe any concerns about your partners, unequal contributions, management, access to information, money, or control"
+                name="partnerConcerns"
+                form={form}
+                setForm={setForm}
+              />
+              <TextArea
+                label="What specifically do you want to protect or strengthen?"
+                name="desiredProtections"
+                form={form}
+                setForm={setForm}
+                placeholder="Your ownership percentage, management authority, voting rights, personal assets, intellectual property, the business itself, or something else"
+              />
               <TextArea label="What ownership or governance change are you considering?" name="proposedChange" form={form} setForm={setForm} />
               <Select
                 label="Are all current owners in agreement with the proposed change?"
@@ -375,12 +536,34 @@ export default function BusinessIntakeForm() {
                 options={["Member-managed", "Manager-managed", "Not applicable / not sure"]}
               />
               <Select
-                label="Do you have a current operating agreement or governing documents?"
+                label="Do you have a current Operating Agreement or governing documents?"
                 name="governanceDocs"
                 form={form}
                 setForm={setForm}
                 options={["Yes", "No", "Not sure"]}
               />
+              <Select
+                label="Did all current members or owners sign the Operating Agreement?"
+                name="operatingAgreementSigned"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure", "Not applicable"]}
+              />
+              <Select
+                label="Has the Operating Agreement been amended?"
+                name="operatingAgreementAmended"
+                form={form}
+                setForm={setForm}
+                options={["Yes", "No", "Not sure", "Not applicable"]}
+              />
+              {form.operatingAgreementAmended === "Yes" && (
+                <TextArea
+                  label="Please describe the amendments and when they were made"
+                  name="operatingAgreementAmendmentDetails"
+                  form={form}
+                  setForm={setForm}
+                />
+              )}
               <TextArea
                 label="List all current owners, ownership percentages, and capital contributions"
                 name="ownershipDetails"

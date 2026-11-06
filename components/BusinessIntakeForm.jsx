@@ -40,7 +40,8 @@ const initialForm = {
   turnaroundNeeds: "",
   internalReviewer: "",
   workflowIssues: "",
-  otherDetails: "",
+  matterDetails: "",
+  finalNotes: "",
 };
 
 const inputClass =
@@ -242,7 +243,7 @@ export default function BusinessIntakeForm() {
               <Field label="Entity type, if known" name="entityType" form={form} setForm={setForm} placeholder="LLC, corporation, undecided, etc." />
               <Field label="State of formation or intended formation" name="formationState" form={form} setForm={setForm} />
               <TextArea label="List the founders / owners and proposed ownership percentages" name="owners" form={form} setForm={setForm} />
-              <TextArea label="Anything else we should know about the planned structure, investors, or IP being contributed?" name="otherDetails" form={form} setForm={setForm} />
+              <TextArea label="Anything else we should know about the planned structure, investors, or IP being contributed?" name="matterDetails" form={form} setForm={setForm} />
             </div>
           )}
 
@@ -257,7 +258,7 @@ export default function BusinessIntakeForm() {
                 setForm={setForm}
                 options={["No draft yet", "Draft received", "Under negotiation", "Signed / executed", "Other"]}
               />
-              <TextArea label="Describe the deal and any terms you are especially concerned about" name="otherDetails" form={form} setForm={setForm} />
+              <TextArea label="Describe the deal and any terms you are especially concerned about" name="matterDetails" form={form} setForm={setForm} />
             </div>
           )}
 
@@ -376,7 +377,7 @@ export default function BusinessIntakeForm() {
 
           {matterType === "Other" && (
             <div className="mt-6">
-              <TextArea label="Please describe the matter" name="otherDetails" form={form} setForm={setForm} required rows={6} />
+              <TextArea label="Please describe the matter" name="matterDetails" form={form} setForm={setForm} required rows={6} />
             </div>
           )}
         </section>
@@ -387,7 +388,7 @@ export default function BusinessIntakeForm() {
         <div className="mt-6">
           <TextArea
             label="Anything else you want the attorney reviewing this intake to know?"
-            name="otherDetails"
+            name="finalNotes"
             form={form}
             setForm={setForm}
             rows={4}

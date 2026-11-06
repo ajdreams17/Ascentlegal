@@ -25,8 +25,8 @@ export default function BusinessIntakePage() {
             Business Intake
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-[#5F7386]">
-            Answer one question at a time. The questionnaire will adapt based on the type of business matter you select
-            so we can collect the specific information an attorney needs to evaluate the inquiry.
+            Use this form to provide preliminary information about a transactional business matter. The questions will
+            adjust based on the type of help you select.
           </p>
           <p className="mt-4 max-w-3xl text-sm leading-6 text-[#7A8794]">
             This form is for preliminary intake only. Please do not send highly sensitive or unnecessary confidential

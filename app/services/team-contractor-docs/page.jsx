@@ -116,6 +116,7 @@ export default function TeamContractorDocsPage() {
             View all services
           </Link>
         </div>
+        </div>
       </section>
 
       {/* Included */}
@@ -210,6 +211,7 @@ export default function TeamContractorDocsPage() {
               <p className="mt-2 text-sm text-gray-600">{f.a}</p>
             </div>
           ))}
+        </div>
         </div>
       </section>
 

@@ -2,231 +2,348 @@ import Link from "next/link";
 import StartIntakeButton from "../../../components/StartIntakeButton";
 
 export const metadata = {
-  title: "Team & Contractor Agreements | Ascent Legal",
+  title: "Contractor Agreements & Team Documents | Ascent Legal",
   description:
-    "Independent contractor agreements, IP assignment, confidentiality, work-for-hire, and team documents for creators, brands, agencies, studios, and growing businesses. Transactional counsel only.",
+    "Independent contractor agreements, IP assignment, confidentiality, work-for-hire, creative services agreements, and team documents for creators, brands, agencies, studios, and growing businesses. Transactional counsel only.",
   alternates: {
     canonical: "/services/team-contractor-docs",
   },
 };
 
-const included = [
+const services = [
   {
     title: "Independent Contractor Agreements",
-    desc: "Clear scope, deliverables, payment terms, and timelines—written to match how you actually work.",
+    text: "Document scope, deliverables, payment, timelines, approvals, confidentiality, and termination for project-based or recurring outside contractors.",
   },
   {
-    title: "IP Assignment + Confidentiality",
-    desc: "Ownership and confidentiality terms that protect what’s created and keep sensitive business info secure.",
+    title: "IP Assignment & Confidentiality",
+    text: "Clarify ownership of deliverables and protect confidential business information when contractors, collaborators, or vendors contribute to the work.",
   },
   {
-    title: "Work-for-Hire + Usage Rights",
-    desc: "Proper work-for-hire language (when applicable) plus rights/usage terms for content, creative, and deliverables.",
+    title: "Work-for-Hire Provisions",
+    text: "Use work-for-hire language where legally appropriate and pair it with assignment provisions when additional ownership protection is needed.",
   },
   {
     title: "Creative Services Agreements",
-    desc: "Project-based terms for editors, designers, videographers, producers, developers, and other outside collaborators.",
+    text: "Structure project terms for editors, designers, videographers, producers, developers, consultants, and other outside creative or technical talent.",
+  },
+  {
+    title: "Reusable Contractor Templates",
+    text: "Create base agreements for repeat roles so future engagements can start from a consistent document instead of rebuilding from scratch.",
+  },
+  {
+    title: "Existing Agreement Review",
+    text: "Review current contractor or team documents, identify ownership or scope gaps, and prepare cleaner terms for future use.",
   },
 ];
 
 const commonUseCases = [
-  "Hiring editors, designers, videographers, VAs, producers, and developers",
-  "Agency or studio contractors supporting client work (repeat engagements)",
-  "Content creation, UGC, and production workflows",
-  "Protecting IP when multiple collaborators are involved",
-  "Clarifying deliverables, deadlines, approvals, and revision terms",
+  "Hiring editors, designers, videographers, producers, developers, consultants, or virtual assistants",
+  "Using contractors across agency or studio client projects",
+  "Protecting ownership of content, software, designs, and other deliverables",
+  "Clarifying revisions, approvals, deadlines, and project scope",
+  "Creating reusable agreements for repeat contractor roles",
+  "Cleaning up inconsistent or outdated contractor documents",
 ];
 
-const deliverables = [
-  { title: "Plain-English Summary", desc: "What matters, what to change, and why—without legalese." },
-  { title: "Redlines + Clean Version", desc: "Marked-up edits plus a signature-ready clean copy." },
-  { title: "Reusable Language", desc: "Clauses you can reuse across repeat hires and projects." },
-  { title: "Optional Templates", desc: "A base template set for recurring contractor roles." },
+const process = [
+  {
+    step: "01",
+    title: "Tell us about the role",
+    text: "Share what the contractor will do, what they will create, how they are paid, and how often the relationship will recur.",
+  },
+  {
+    step: "02",
+    title: "Map the rights and scope",
+    text: "We identify the key ownership, confidentiality, deliverable, approval, payment, and termination terms that need to be documented.",
+  },
+  {
+    step: "03",
+    title: "Draft or revise",
+    text: "We prepare a new agreement or revise the document you already use, with practical language tailored to the workflow.",
+  },
+  {
+    step: "04",
+    title: "Build for repeat use",
+    text: "When appropriate, we structure the document so it can serve as a base template for future contractor engagements.",
+  },
 ];
 
 const faqs = [
   {
-    q: "Is this employment law?",
-    a: "This service is document-first and transactional. We help with contractor/team documents and IP protection (not litigation).",
+    q: "Is this an employment-law service?",
+    a: "No. This practice area is focused on transactional contractor and team documents, including scope, ownership, confidentiality, payment, and project terms. It is not an employment-disputes or litigation service.",
   },
   {
-    q: "Can you review what I already have?",
-    a: "Yes. We can redline your existing agreement, explain risk in plain English, and deliver a cleaner version you can reuse.",
+    q: "Can you review an agreement I already use?",
+    a: "Yes. We can review and redline an existing contractor, consulting, creative services, or similar agreement and explain the key issues in plain English.",
   },
   {
-    q: "Do you handle worker-classification or employment disputes?",
-    a: "No. This service is focused on transactional documents, ownership, confidentiality, and project terms. We do not handle employment disputes or litigation through this practice area.",
+    q: "Can you help protect intellectual property created by contractors?",
+    a: "Yes. We can draft or review assignment, confidentiality, and work-for-hire provisions where appropriate to help document ownership of deliverables.",
   },
   {
-    q: "How fast is turnaround?",
-    a: "Most reviews and standard document packages return within 1–3 business days depending on scope and timing.",
+    q: "Can you create a reusable contractor template?",
+    a: "Yes. For repeat roles or recurring project types, we can build a base agreement that can be adapted for future engagements.",
+  },
+  {
+    q: "Do you advise on worker classification?",
+    a: "This service is primarily document-focused. Classification can involve fact-specific employment and tax considerations, so broader classification advice may require separate analysis or coordination with other counsel.",
+  },
+  {
+    q: "Do you handle contractor or employment litigation?",
+    a: "No. Ascent Legal provides transactional document support through this practice area and does not handle litigation.",
+  },
+  {
+    q: "Does submitting an intake mean the firm represents me?",
+    a: "No. An inquiry does not create an attorney-client relationship. Representation begins only after conflict clearance and a signed engagement agreement.",
   },
 ];
 
 export default function TeamContractorDocsPage() {
   return (
     <main className="bg-[#F7F6F3] text-[#0E2A47]">
-      {/* Hero */}
       <section className="border-b border-[#0E2A47]/10">
-        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
-          Team & Contractor Agreements
-        </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[1.08fr_.92fr] lg:px-12 lg:py-24">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+              Contractor Agreements & Team Documents
+            </p>
 
-        <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
-          Put the working relationship in writing.
-        </h1>
+            <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+              Put the working relationship in writing.
+            </h1>
 
-        <p className="mt-7 max-w-3xl text-lg leading-8 text-[#5F7386]">
-          Contractor documents that protect ownership, set clear expectations, and keep projects moving—built for creators,
-          brands, studios, agencies, and growing companies. Transactional counsel only. No litigation.
-        </p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5F7386]">
+              Contractor agreements and project-based team documents for
+              creators, brands, studios, agencies, and growing businesses. We
+              help clarify scope, ownership, payment, confidentiality, and the
+              rights attached to what gets created.
+            </p>
 
-        <p className="mt-4 max-w-3xl text-sm leading-7 text-[#5F7386]">
-          We help with independent contractor agreements, IP assignment,
-          confidentiality, work-for-hire provisions where appropriate, and
-          usage-rights language for content and creative deliverables.
-        </p>
+            <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-[#7A8794]">
+              Transactional counsel only. No litigation.
+            </p>
 
-        <p className="mt-4 text-sm font-medium uppercase tracking-[0.16em] text-[#7A8794]">
-          Transactional counsel only. No litigation.
-        </p>
+            <div className="mt-9 flex flex-wrap gap-4">
+              <StartIntakeButton
+                eventName="team_contractor_intake_clicked"
+                placement="team_contractor_hero"
+                label="Start Contractor Intake"
+                className="inline-flex bg-[#0E2A47] px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#B86A2E]"
+              />
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <StartIntakeButton
-            eventName="team_contractor_intake_clicked"
-            placement="team_contractor_hero"
-            label="Start Contractor Intake"
-            className="inline-flex rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-          />
-
-          <Link
-            href="/services/contracts-drafting"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300
-            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-          >
-            Contracts drafting
-          </Link>
-
-          <Link
-            href="/services"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300
-            focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-          >
-            View all services
-          </Link>
-        </div>
-        </div>
-      </section>
-
-      {/* Included */}
-      <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
-        <h2 className="text-2xl md:text-3xl font-semibold">What we help with</h2>
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {included.map((x) => (
-            <div
-              key={x.title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400" />
-                <h3 className="text-lg font-semibold">{x.title}</h3>
-              </div>
-              <p className="mt-3 text-sm text-gray-600">{x.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div></section>
-
-      {/* Deliverables (conversion clarity) */}
-      <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
-        <h2 className="text-2xl md:text-3xl font-semibold">What you get</h2>
-        <p className="mt-2 text-gray-600 max-w-3xl">
-          Clean documents you can use immediately—plus the context to understand what matters and why.
-        </p>
-
-        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {deliverables.map((d) => (
-            <div
-              key={d.title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
-            >
-              <h3 className="text-lg font-semibold">{d.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{d.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div></section>
-
-      {/* Use cases */}
-      <section className="mt-16 grid md:grid-cols-2 gap-6">
-        <div className="rounded-2xl border border-gray-100 bg-white p-8">
-          <h2 className="text-2xl font-semibold">Common use cases</h2>
-          <ul className="mt-6 space-y-2 text-sm text-gray-700">
-            {commonUseCases.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="rounded-2xl border border-gray-100 bg-gray-50 p-8">
-          <h2 className="text-2xl font-semibold">Good to know</h2>
-          <p className="mt-2 text-gray-600">
-            This service is document-first and transactional. If you’re dealing with a dispute or litigation matter, we’re
-            not the right fit—but we can help you tighten agreements to reduce risk going forward.
-          </p>
-
-          <div className="mt-5 text-sm text-gray-700">
-            Helpful pairing:
-            <div className="mt-2 flex flex-wrap gap-2">
-              <Link
-                href="/services/corporate-formation"
-                className="rounded-lg border border-gray-200 bg-white px-3 py-2 hover:border-indigo-300
-                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              <a
+                href="#services"
+                className="inline-flex border border-[#0E2A47]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
               >
-                Corporate & Formation
-              </Link>
-              <Link
-                href="/services/deal-desk-support"
-                className="rounded-lg border border-gray-200 bg-white px-3 py-2 hover:border-indigo-300
-                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-              >
-                Deal Desk Support
-              </Link>
+                See What We Handle
+              </a>
+            </div>
+          </div>
+
+          <div className="border border-[#0E2A47]/10 bg-white p-8 shadow-[0_24px_70px_rgba(14,42,71,0.07)] sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#B86A2E]">
+              Common Document Needs
+            </p>
+
+            <div className="mt-7 space-y-5">
+              {[
+                "Contractor agreements",
+                "Creative services agreements",
+                "IP assignments",
+                "Confidentiality terms",
+                "Work-for-hire language",
+                "Reusable templates",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-center justify-between border-b border-[#0E2A47]/10 pb-4 font-serif text-2xl"
+                >
+                  <span>{item}</span>
+                  <span className="text-[#B86A2E]">→</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-white"><div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
-        <h2 className="text-2xl md:text-3xl font-semibold">FAQs</h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {faqs.map((f) => (
-            <div key={f.q} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <h4 className="font-medium">{f.q}</h4>
-              <p className="mt-2 text-sm text-gray-600">{f.a}</p>
-            </div>
-          ))}
-        </div>
+      <section id="services" className="scroll-mt-24 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            How We Help
+          </p>
+
+          <h2 className="mt-5 max-w-3xl font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Documents that match how the team actually works.
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((item) => (
+              <div
+                key={item.title}
+                className="border border-[#0E2A47]/10 bg-[#FBFAF7] p-7"
+              >
+                <h3 className="font-serif text-2xl">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#5F7386]">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="mt-16 text-center">
-        <h3 className="text-xl font-semibold">Ready to clean up your contractor docs?</h3>
-        <p className="mt-2 text-gray-600">Tell us who you’re hiring and what they’ll create—we’ll recommend the fastest path.</p>
-        <StartIntakeButton
-          eventName="team_contractor_intake_clicked"
-          placement="team_contractor_bottom"
-          label="Start Contractor Intake"
-          className="mt-4 inline-flex rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-        />
+      <section className="border-y border-[#0E2A47]/10 bg-[#FBFAF7]">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-2 lg:px-12">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+              Common Use Cases
+            </p>
+            <h2 className="mt-5 font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+              Especially useful when outside contributors touch the work.
+            </h2>
+          </div>
 
-        <p className="mt-4 text-xs text-gray-500">Transactional counsel only. No litigation.</p>
+          <div className="space-y-4">
+            {commonUseCases.map((item) => (
+              <div
+                key={item}
+                className="flex gap-4 border-b border-[#0E2A47]/10 pb-4 text-sm leading-7 text-[#5F7386]"
+              >
+                <span className="text-[#B86A2E]">◆</span>
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#0E2A47] text-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#D9894C]">
+            The Process
+          </p>
+
+          <h2 className="mt-5 max-w-3xl font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            From role description to reusable agreement.
+          </h2>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {process.map((item) => (
+              <div key={item.step} className="border-t border-white/20 pt-5">
+                <p className="text-xs font-bold tracking-[0.2em] text-[#D9894C]">
+                  {item.step}
+                </p>
+                <h3 className="mt-4 font-serif text-2xl">{item.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-white/70">
+                  {item.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-20 sm:px-10">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Frequently Asked Questions
+          </p>
+
+          <h2 className="mt-5 text-center font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Before you hire the contractor.
+          </h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {faqs.map((item) => (
+              <div
+                key={item.q}
+                className="border border-[#0E2A47]/10 bg-[#FBFAF7] p-7"
+              >
+                <h3 className="font-serif text-xl">{item.q}</h3>
+                <p className="mt-4 text-sm leading-7 text-[#5F7386]">
+                  {item.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[#0E2A47]/10 bg-white">
+        <div className="mx-auto max-w-5xl px-6 py-12 text-center sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Related Services
+          </p>
+
+          <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold">
+            <Link
+              href="/services/contracts-drafting"
+              className="hover:text-[#B86A2E]"
+            >
+              Contract Drafting & Review →
+            </Link>
+            <Link
+              href="/services/deal-desk-support"
+              className="hover:text-[#B86A2E]"
+            >
+              Deal Desk Support →
+            </Link>
+            <Link
+              href="/services/corporate-formation"
+              className="hover:text-[#B86A2E]"
+            >
+              Business Formation →
+            </Link>
+            <Link
+              href="/services/copyright"
+              className="hover:text-[#B86A2E]"
+            >
+              Copyright & Licensing →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-[#0E2A47]/10 bg-[#F7F6F3]">
+        <div className="mx-auto max-w-4xl px-6 py-20 text-center sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Ready to Clean Up the Contractor Docs?
+          </p>
+
+          <h2 className="mt-5 font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Start with the role and deliverables.
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#5F7386]">
+            Tell us who you are hiring, what they will do, what they will
+            create, how they will be paid, and whether you need a new agreement
+            or a review of an existing one.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <StartIntakeButton
+              eventName="team_contractor_intake_clicked"
+              placement="team_contractor_bottom"
+              label="Start Contractor Intake"
+              className="inline-flex bg-[#B86A2E] px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-white transition hover:bg-[#9F5925]"
+            />
+
+            <Link
+              href="/contact"
+              className="inline-flex border border-[#0E2A47]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.14em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
+            >
+              Contact the Firm
+            </Link>
+          </div>
+
+          <p className="mt-6 text-xs leading-5 text-[#7A8794]">
+            Submitting an inquiry does not create an attorney-client relationship.
+            Representation begins only after conflict clearance and a written engagement agreement.
+          </p>
+        </div>
       </section>
     </main>
   );

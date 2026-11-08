@@ -80,7 +80,7 @@ export default function ResourcePage() {
           <div className="mt-5 grid gap-3 sm:grid-cols-2">
             <Link href="/resources/perpetuity-creator-contracts" className="text-sm font-semibold text-[#0E2A47] hover:text-[#B86A2E]">Perpetuity in Creator Contracts →</Link>
             <Link href="/resources/creator-contract-usage-rights" className="text-sm font-semibold text-[#0E2A47] hover:text-[#B86A2E]">Creator Usage Rights →</Link>
-            <Link href="/resources/whitelisting-paid-media-creator-contracts" className="text-sm font-semibold text-[#0E2A47] hover:text-[#B86A2E]">Whitelisting & Paid Media →</Link>
+            <Link href="/resources/morality-clause-creator-contracts" className="text-sm font-semibold text-[#0E2A47] hover:text-[#B86A2E]">Morality Clauses →</Link>
             <Link href="/resources/exclusivity-creator-brand-deals" className="text-sm font-semibold text-[#0E2A47] hover:text-[#B86A2E]">Exclusivity in Brand Deals →</Link>
           </div>
         </div>

@@ -131,19 +131,25 @@ export default function PrivacyPolicyPage() {
 
         <h2>8) Cookies &amp; Analytics</h2>
         <p>
-          We use cookies and similar technologies, including analytics technologies, to operate the
-          site, understand usage, and measure interactions such as page views, link clicks, and
-          inquiry conversions. Depending on your browser and applicable law, you may be able to
-          limit or block certain technologies through browser or device settings. Disabling them may
-          affect site functionality.
+          We use Google Analytics to understand website usage and measure interactions such as page
+          views, service-page activity, and inquiry conversions. Analytics storage is set to denied
+          by default. We withhold our site analytics events until you choose “Allow Analytics” through
+          the website preference control.
+        </p>
+        <p>
+          You may decline analytics when the preference banner appears. You may later reopen the same
+          control by selecting “Privacy Choices” in the website footer and change your selection.
+          Declining analytics does not prevent you from using the website, contact form, or preliminary
+          intake features.
         </p>
 
-        <h2>9) “Do Not Sell or Share” (CCPA/CPRA)</h2>
+        <h2>9) California Privacy Choices</h2>
         <p>
-          We do not sell personal information for money. To the extent analytics or ad-tech could be
-          considered “sharing” under California law, you may opt out by adjusting cookie preferences
-          (via your browser or any cookie banner we provide) or by contacting us using the details
-          below.
+          We do not sell personal information for money. The website does not use Google advertising
+          personalization through the analytics implementation described above. You can decline or
+          withdraw analytics permission through the website’s Privacy Choices control. Depending on
+          applicable law and the circumstances, you may also have additional rights concerning certain
+          uses or disclosures of personal information.
         </p>
 
         <h2>10) Your Privacy Rights</h2>

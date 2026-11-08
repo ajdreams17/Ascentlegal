@@ -14,7 +14,7 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="border border-[#0E2A47]/10 bg-white p-7 shadow-[0_20px_50px_rgba(14,42,71,0.06)] sm:p-8"
     >
-      <input type="hidden" name="_redirect" value="/thank-you" />
+      <input type="hidden" name="_redirect" value="https://ascentlegal.io/thank-you?source=contact-form" />
       <input type="hidden" name="_subject" value="New Ascent Legal Inquiry" />
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} />
       <input type="email" name="_replyto" className="hidden" />

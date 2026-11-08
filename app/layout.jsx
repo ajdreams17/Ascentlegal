@@ -72,6 +72,7 @@ export default function RootLayout({ children }) {
       "https://www.facebook.com/ascentlegallaw",
     ],
     telephone: "+1-714-203-3535",
+    priceRange: "$",
     address: {
       "@type": "PostalAddress",
       streetAddress: "3780 Kilroy Airport Way, Suite 200",
@@ -80,10 +81,20 @@ export default function RootLayout({ children }) {
       postalCode: "90806",
       addressCountry: "US",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 33.8087,
+      longitude: -118.1450,
+    },
     areaServed: [
+      { "@type": "City", name: "Long Beach" },
+      { "@type": "AdministrativeArea", name: "Los Angeles County" },
+      { "@type": "AdministrativeArea", name: "Orange County" },
       { "@type": "State", name: "California" },
       { "@type": "Country", name: "United States" },
     ],
+    hasMap:
+      "https://www.google.com/maps/search/?api=1&query=Ascent+Legal+Long+Beach+CA",
   };
 
   const websiteJsonLd = {

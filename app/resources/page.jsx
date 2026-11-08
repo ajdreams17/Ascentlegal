@@ -18,6 +18,51 @@ const topicChips = [
 
 const guides = [
   {
+    slug: "creator-contract-usage-rights",
+    title: "Creator Contract Usage Rights: What Are You Actually Giving the Brand?",
+    description:
+      "Understand term, territory, media, edits, sublicensing, paid media, ownership, and compensation in creator usage-rights clauses.",
+    readTime: "7 min read",
+    badge: "Creator Contracts",
+    topic: "brand-deals",
+  },
+  {
+    slug: "whitelisting-paid-media-creator-contracts",
+    title: "Whitelisting and Paid Media in Creator Contracts",
+    description:
+      "What creators should know about paid amplification, dark posts, account access, approvals, duration, and compensation.",
+    readTime: "7 min read",
+    badge: "Creator Contracts",
+    topic: "brand-deals",
+  },
+  {
+    slug: "exclusivity-creator-brand-deals",
+    title: "Exclusivity in Creator Brand Deals: How Broad Is Too Broad?",
+    description:
+      "How competitor definitions, product categories, duration, channels, and carve-outs can affect future creator opportunities.",
+    readTime: "6 min read",
+    badge: "Creator Contracts",
+    topic: "brand-deals",
+  },
+  {
+    slug: "creator-management-agreement-review",
+    title: "Creator Management Agreements: Terms to Review Before You Sign",
+    description:
+      "A practical look at commission, scope, exclusivity, authority, post-term commissions, termination, expenses, and conflicts.",
+    readTime: "7 min read",
+    badge: "Management Agreements",
+    topic: "brand-deals",
+  },
+  {
+    slug: "morality-clause-creator-contracts",
+    title: "Morality Clauses in Creator Contracts: What Can Trigger Termination?",
+    description:
+      "Understand conduct triggers, discretion, notice, cure rights, termination remedies, and payment consequences.",
+    readTime: "6 min read",
+    badge: "Creator Contracts",
+    topic: "brand-deals",
+  },
+  {
     slug: "perpetuity-creator-contracts",
     title: "What Does Perpetuity Mean in a Creator Contract?",
     description:
@@ -330,7 +375,7 @@ export default function ResourcesPage() {
 
         <div id="brand-deals" className="scroll-mt-24">
           <div className="mb-6 flex items-end justify-between">
-            <h2 className="text-2xl md:text-3xl font-semibold">Brand Deals</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Creator Contracts & Brand Deals</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {byTopic["brand-deals"].length ? (
@@ -343,13 +388,22 @@ export default function ResourcesPage() {
           </div>
 
           <div className="mt-6">
-            <Link
-              href="/services/entertainment"
-              className="text-sm font-medium text-indigo-600 hover:underline rounded-md
-                focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
-            >
-              Explore Entertainment & Creator counsel →
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/services/creator-contract-review"
+                className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+                  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              >
+                Explore Creator Contract Review →
+              </Link>
+              <Link
+                href="/services/entertainment"
+                className="text-sm font-medium text-indigo-600 hover:underline rounded-md
+                  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-indigo-500/30"
+              >
+                Explore Entertainment Counsel →
+              </Link>
+            </div>
           </div>
         </div>
 

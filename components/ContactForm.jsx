@@ -23,6 +23,19 @@ export default function ContactForm() {
   }, []);
 
   function handleSubmit() {
+    try {
+      window.sessionStorage.setItem(
+        "ascent_last_contact_lead",
+        JSON.stringify({
+          service_requested: service || "not_selected",
+          reported_source: heardFrom || "not_selected",
+          ...attribution,
+        })
+      );
+    } catch {
+      // Tracking context should never block form submission.
+    }
+
     window.gtag?.("event", "contact_form_submit_clicked", {
       placement: "contact_page",
       service_requested: service || "not_selected",

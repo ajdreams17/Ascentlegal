@@ -2,6 +2,7 @@ export const metadata = {
   title: "Terms & Conditions | Ascent Legal",
   description:
     "Terms of Use governing your access to and use of the Ascent Legal Website and Services.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {
@@ -15,7 +16,7 @@ export default function TermsPage() {
           </span>
         </h1>
         <p className="mt-4 text-gray-600">
-          Effective date: <span className="font-medium">August 17, 2025</span>
+          Effective date: <span className="font-medium">November 7, 2026</span>
         </p>
       </header>
 
@@ -69,15 +70,15 @@ export default function TermsPage() {
 
         <h2>4. Privacy & Data Protection</h2>
         <p>
-          Our collection and use of data are governed by our Privacy Policy, which complies with
-          applicable laws including the California Consumer Privacy Act (CCPA/CPRA), the EU General
-          Data Protection Regulation (GDPR) (where applicable), and other state privacy laws.
+          Our collection and use of data are governed by our Privacy Policy. Privacy rights and
+          obligations may vary depending on applicable law and the circumstances of the interaction.
         </p>
         <ul>
           <li>
-            <strong>Cookies & Tracking:</strong> We use cookies, analytics tools, and may use
-            AI-assisted systems for site functionality and improvement. You may manage preferences
-            through your browser or our cookie banner.
+            <strong>Cookies & Tracking:</strong> We use cookies and analytics tools to operate,
+            secure, understand, and measure use of the Website, including inquiry and conversion
+            activity. We also use AI-assisted systems for preliminary intake as described in the
+            Privacy Policy.
           </li>
           <li>
             <strong>Your Rights:</strong> Depending on your jurisdiction, you may have rights to

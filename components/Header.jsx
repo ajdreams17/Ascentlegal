@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import TrackedLink from "./TrackedLink";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -39,17 +40,36 @@ export default function Header() {
 
         <nav className="hidden items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#0e2a47] md:flex">
           <Link href="/about" className="px-3 py-2 hover:text-[#b86a2e]">About</Link>
-          <Link href="/services" className="px-3 py-2 hover:text-[#b86a2e]">Services</Link>
+          <div className="group relative">
+            <Link href="/services" className="px-3 py-2 hover:text-[#b86a2e]">Services</Link>
+            <div className="invisible absolute left-0 top-full mt-2 w-72 border border-[#0e2a47]/10 bg-[#f7f6f3] p-3 opacity-0 shadow-xl transition group-hover:visible group-hover:opacity-100">
+              {[
+                ["/services/creator-contract-review", "Creator Contract Review"],
+                ["/services/entertainment", "Entertainment & Brand Deals"],
+                ["/services/trademark", "Trademark Registration"],
+                ["/services/copyright", "Copyright & Licensing"],
+                ["/services/contracts-drafting", "Contract Drafting & Review"],
+                ["/services/corporate-formation", "Business Formation"],
+                ["/services/deal-desk-support", "Deal Desk Support"],
+              ].map(([href, label]) => (
+                <Link key={href} href={href} className="block px-3 py-2 text-[11px] tracking-[0.12em] hover:bg-white hover:text-[#b86a2e]">
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
           <Link href="/attorneys" className="px-3 py-2 hover:text-[#b86a2e]">Attorneys</Link>
           <Link href="/resources" className="px-3 py-2 hover:text-[#b86a2e]">Resources</Link>
           <span className="mx-3 h-7 w-px bg-[#0e2a47]/15" />
           <span className="hidden xl:block text-[10px] tracking-[0.18em] text-[#0e2a47]/55">Legal built for your ascent.</span>
-          <Link
+          <TrackedLink
             href="/contact"
+            eventName="contact_clicked"
+            placement="header_desktop"
             className="ml-3 bg-[#b86a2e] px-5 py-3 text-white transition hover:bg-[#9f5724]"
           >
             Contact
-          </Link>
+          </TrackedLink>
         </nav>
 
         <button
@@ -86,7 +106,7 @@ export default function Header() {
               <Link href="/services" className="border-b border-[#0e2a47]/10 py-3">Services</Link>
               <Link href="/attorneys" className="border-b border-[#0e2a47]/10 py-3">Attorneys</Link>
               <Link href="/resources" className="border-b border-[#0e2a47]/10 py-3">Resources</Link>
-              <Link href="/contact" className="mt-4 bg-[#b86a2e] px-4 py-3 text-center font-semibold uppercase tracking-[0.14em] text-white">Contact</Link>
+              <TrackedLink href="/contact" eventName="contact_clicked" placement="header_mobile" className="mt-4 bg-[#b86a2e] px-4 py-3 text-center font-semibold uppercase tracking-[0.14em] text-white">Contact</TrackedLink>
             </nav>
           </div>
         </div>

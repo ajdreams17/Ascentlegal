@@ -142,23 +142,11 @@ const contactReachedRef = useRef(false);
 
     if (!contact.name.trim() || !contact.email.trim() || submitting) return;
 
-   trackIntakeEvent("intake_submitted");
-    
     setSubmitting(true);
     setSubmissionError("");
 
     try {
       const attribution = getLeadAttribution();
-
-      window.gtag?.("event", "intake_lead_submitted", {
-        feature: "ai_intake",
-        service_requested: selectedPracticeArea || "not_selected",
-        reported_source: contact.source || "not_selected",
-        utm_source: attribution.utm_source || "none",
-        utm_medium: attribution.utm_medium || "none",
-        utm_campaign: attribution.utm_campaign || "none",
-        first_landing_page: attribution.first_landing_page || "unknown",
-      });
 
       const response = await fetch("/api/intake/submit", {
         method: "POST",
@@ -181,6 +169,21 @@ const contactReachedRef = useRef(false);
       if (!response.ok) {
         throw new Error(data?.error || "Unable to submit intake.");
       }
+
+      const leadParams = {
+        feature: "ai_intake",
+        lead_type: "ai_intake",
+        service_requested: selectedPracticeArea || "not_selected",
+        reported_source: contact.source || "not_selected",
+        utm_source: attribution.utm_source || "none",
+        utm_medium: attribution.utm_medium || "none",
+        utm_campaign: attribution.utm_campaign || "none",
+        first_landing_page: attribution.first_landing_page || "unknown",
+      };
+
+      trackIntakeEvent("intake_submitted");
+      window.gtag?.("event", "intake_lead_submitted", leadParams);
+      window.gtag?.("event", "generate_lead", leadParams);
 
       setSubmitted(true);
       setReadyForSubmission(false);

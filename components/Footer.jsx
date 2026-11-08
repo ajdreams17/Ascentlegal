@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaTiktok, FaLinkedin, FaFacebook } from "react-icons/fa";
 import TrackedLink from "./TrackedLink";
+import PrivacyChoicesButton from "./PrivacyChoicesButton";
 
 export default function Footer() {
   return (
@@ -34,6 +35,7 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm text-[#0e2a47]/65">
               <li><Link href="/terms" className="hover:text-[#b86a2e]">Terms</Link></li>
               <li><Link href="/privacy" className="hover:text-[#b86a2e]">Privacy</Link></li>
+              <li><PrivacyChoicesButton className="hover:text-[#b86a2e]" /></li>
             </ul>
           </div>
 

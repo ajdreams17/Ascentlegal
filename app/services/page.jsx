@@ -1,289 +1,214 @@
-import Link from "next/link";
+import TrackedLink from "../../components/TrackedLink";
+import StartIntakeButton from "../../components/StartIntakeButton";
 
 export const metadata = {
-  title: "Services | Ascent Legal",
+  title: "Legal Services for Creators, Brands & Businesses | Ascent Legal",
   description:
-    "Business-first legal services for creators, brands, studios, agencies, and growing companies—brand deals, trademarks, copyright/licensing, and commercial contracts. Transactional counsel only (no litigation).",
+    "Transactional legal services for creators, brands, agencies, studios, founders, and growing companies. Creator contracts, entertainment, trademarks, copyright, business contracts, formation, and deal desk support.",
   alternates: {
     canonical: "/services",
   },
 };
 
-const areas = [
+const groups = [
   {
-    title: "Creator Contract Review",
-    desc: "Focused review and negotiation support for creator, influencer, UGC, sponsorship, and brand deal agreements.",
-    bullets: ["Usage Rights", "Exclusivity", "Payment + Deliverables"],
-    href: "/services/creator-contract-review",
-    cta: "Review my creator contract",
-    also: { label: "Entertainment Counsel", href: "/services/entertainment" },
+    eyebrow: "Deals",
+    title: "Negotiate and document the deal.",
+    description:
+      "For agreements, recurring deal flow, creator partnerships, commercial relationships, and project-based teams.",
+    services: [
+      {
+        title: "Creator Contract Review",
+        desc: "Focused review and negotiation for creator, influencer, UGC, sponsorship, and brand deal agreements.",
+        href: "/services/creator-contract-review",
+        cta: "Review a creator contract",
+      },
+      {
+        title: "Entertainment & Brand Deals",
+        desc: "Drafting and negotiation for sponsorships, production, talent, licensing, and creator-economy transactions.",
+        href: "/services/entertainment",
+        cta: "Explore entertainment counsel",
+      },
+      {
+        title: "Contract Drafting & Review",
+        desc: "Commercial agreements, collaborations, service contracts, NDAs, statements of work, and redlines.",
+        href: "/services/contracts-drafting",
+        cta: "Explore contract services",
+      },
+      {
+        title: "Deal Desk Support",
+        desc: "On-call review, drafting, negotiation, templates, and workflow support for businesses with repeat deal volume.",
+        href: "/services/deal-desk-support",
+        cta: "Explore deal desk support",
+      },
+      {
+        title: "Contractor Agreements",
+        desc: "Independent contractor, creative services, IP assignment, confidentiality, and work-for-hire documentation.",
+        href: "/services/team-contractor-docs",
+        cta: "Explore contractor documents",
+      },
+    ],
   },
   {
-    title: "Brand Deals & Entertainment Counsel",
-    desc: "Drafting and negotiating sponsorships, influencer/UGC agreements, production terms, and creator/brand contracts.",
-    bullets: ["Brand + Sponsorship Deals", "Influencer/UGC Agreements", "Production + Media Agreements"],
-    href: "/services/entertainment",
-    cta: "Explore brand deals counsel",
-    also: { label: "Copyright & Licensing", href: "/services/copyright" },
+    eyebrow: "Protect",
+    title: "Protect the brand and creative work.",
+    description:
+      "For names, content, ownership, licensing, registrations, and the rights attached to creative assets.",
+    services: [
+      {
+        title: "Trademark Registration",
+        desc: "Clearance, filing strategy, USPTO applications, Office Action support, and maintenance.",
+        href: "/services/trademark",
+        cta: "Explore trademark services",
+      },
+      {
+        title: "Copyright & Licensing",
+        desc: "Registration, ownership, work-for-hire, assignments, licensing, and commercial usage rights.",
+        href: "/services/copyright",
+        cta: "Explore copyright services",
+      },
+    ],
   },
   {
-    title: "Copyright Registration & Licensing",
-    desc: "Registration, ownership, work-for-hire, and licensing support for creative assets and content businesses.",
-    bullets: ["Copyright Registration", "Ownership + Assignments", "Licensing + Usage Rights"],
-    href: "/services/copyright",
-    cta: "Protect my creative work",
-    also: { label: "Creator Contract Review", href: "/services/creator-contract-review" },
-  },
-  {
-    title: "Trademark Protection",
-    desc: "Name clearance, USPTO filing, and protection strategy for your brand assets.",
-    bullets: ["Search & Clearance", "USPTO Filing & Prosecution", "Monitoring + Enforcement Support"],
-    href: "/services/trademark",
-    cta: "Protect my brand",
-    // NOTE: removed "also" here to avoid forcing an odd pairing
-  },
-  {
-    title: "Contracts Drafting",
-    desc: "Drafting, reviewing, and negotiating agreements that protect revenue, clarify terms, and reduce risk.",
-    bullets: ["Service + Vendor Agreements", "Partnership + Collaboration Terms", "Statements of Work + Scopes"],
-    href: "/services/contracts-drafting",
-    cta: "Review my contract",
-  },
-  {
-    title: "Deal Desk Support",
-    desc: "On-call contract review, drafting, and negotiation support for repeat deals and partnerships.",
-    bullets: ["Fast Contract Reviews", "Redlines + Negotiation Language", "Repeat Deal Templates"],
-    href: "/services/deal-desk-support",
-    cta: "Discuss deal desk support",
-  },
-  {
-    title: "Business Formation",
-    desc: "Entity setup, founder alignment, and governance that supports growth and protects ownership.",
-    bullets: ["LLC & Corporation Formation", "Operating/Shareholder Agreements", "Bylaws & Resolutions"],
-    href: "/services/corporate-formation",
-    cta: "Start formation",
-  },
-  {
-    title: "Team & Contractor Docs",
-    desc: "Practical documents for contractors and teams that protect your IP and set clear expectations.",
-    bullets: ["Contractor + IP Assignment", "Offer Letters (as needed)", "Policies for Growing Teams"],
-    href: "/services/team-contractor-docs",
-    cta: "Set up team docs",
-  },
-];
-
-const faqs = [
-  {
-    q: "Do you offer flat fees?",
-    a: "Yes—many matters are offered at transparent flat rates. We’ll scope custom work up front so there are no surprises.",
-  },
-  {
-    q: "How fast can you turn something around?",
-    a: "Most reviews return within 1–3 business days. If you have a deadline, tell us up front and we’ll confirm timing.",
-  },
-  {
-    q: "Do you handle litigation?",
-    a: "No. We provide transactional counsel only (no litigation). We can support negotiation strategy and contract interpretation, but we do not appear in court.",
-  },
-  {
-    q: "Can you work with my existing documents?",
-    a: "Absolutely. We’ll redline what you have, explain risks in plain English, and provide negotiation language you can use.",
+    eyebrow: "Build",
+    title: "Build the business on a cleaner foundation.",
+    description:
+      "For entity formation, founder alignment, governance, ownership, and the legal structure behind the business.",
+    services: [
+      {
+        title: "Business Formation",
+        desc: "LLCs, corporations, operating agreements, bylaws, founder documents, governance, and entity cleanup.",
+        href: "/services/corporate-formation",
+        cta: "Explore business formation",
+      },
+    ],
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 py-16">
-      {/* Hero */}
-      <section>
-        <h1 className="text-4xl md:text-5xl font-bold">
-          Business-First{" "}
-          <span className="bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-            Legal Services
-          </span>
-        </h1>
+    <main className="bg-[#F7F6F3] text-[#0E2A47]">
+      <section className="border-b border-[#0E2A47]/10">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12 lg:py-24">
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+                Transactional Legal Services
+              </p>
 
-        <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Business-first, plain-English support for creators, brands, studios, and agencies, plus commercial contracts for
-          growing companies. Strategic guidance for sponsorships, licensing, trademarks, copyright, and
-          revenue-protecting agreements. Transactional counsel only. No litigation.
-        </p>
-
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link
-            href="/contact"
-            className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-          >
-            Tell Us About Your Matter
-          </Link>
-          <Link
-            href="/services/deal-desk-support"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            Deal Desk Support
-          </Link>
-          <a
-            href="#practice"
-            className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-          >
-            Explore practice areas
-          </a>
-        </div>
-      </section>
-
-      {/* Quick proof */}
-      <div className="mt-10 grid sm:grid-cols-3 gap-6">
-        {[
-          { label: "Deals + IP Focus", desc: "Built for partnerships, licensing, and protection." },
-          { label: "Plain-English Guidance", desc: "Clear next steps without legalese." },
-          { label: "Predictable Pricing", desc: "Transparent flat fees and scoped projects." },
-        ].map((item) => (
-          <div key={item.label} className="rounded-xl border border-gray-100 p-6 text-center bg-white">
-            <div className="text-xl font-semibold bg-gradient-to-r from-indigo-500 to-teal-400 bg-clip-text text-transparent">
-              {item.label}
+              <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.98] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+                Legal support for the deal, the rights, and the business behind them.
+              </h1>
             </div>
-            <div className="mt-2 text-sm text-gray-600">{item.desc}</div>
+
+            <div>
+              <p className="text-lg leading-8 text-[#5F7386]">
+                Ascent Legal works with creators, brands, agencies, studios,
+                founders, and growing companies on transactional entertainment,
+                intellectual property, contracts, and business matters.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-4">
+                <StartIntakeButton
+                  eventName="services_hub_intake_clicked"
+                  placement="services_hero"
+                  label="Start Guided Intake"
+                  className="inline-flex bg-[#0E2A47] px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[#B86A2E]"
+                />
+
+                <TrackedLink
+                  href="/contact"
+                  eventName="contact_clicked"
+                  placement="services_hero"
+                  className="inline-flex border border-[#0E2A47]/25 px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
+                >
+                  Contact the Firm
+                </TrackedLink>
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-
-      {/* Practice Areas */}
-      <section id="practice" className="mt-16">
-        <div className="mb-6 flex items-end justify-between">
-          <h2 className="text-2xl md:text-3xl font-semibold">Practice Areas</h2>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {areas.map((a) => (
-            <div
-              key={a.title}
-              className="rounded-2xl border border-gray-100 bg-white p-6 hover:shadow-sm transition-shadow"
-            >
-              <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-teal-400" />
-                <h3 className="text-lg font-semibold">{a.title}</h3>
-              </div>
-
-              <p className="mt-3 text-sm text-gray-600">{a.desc}</p>
-
-              <ul className="mt-3 space-y-1 text-sm text-gray-600">
-                {a.bullets.map((b) => (
-                  <li key={b} className="flex gap-2">
-                    <span className="h-1.5 w-1.5 mt-2 rounded-full bg-indigo-500" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-
-              {/* Primary + optional secondary link */}
-              <div className="mt-4 space-y-2">
-                <Link href={a.href} className="text-sm font-medium text-indigo-600 hover:underline">
-                  {a.cta} →
-                </Link>
-
-                {a.also && (
-                  <Link href={a.also.href} className="text-sm text-gray-600 hover:underline">
-                    Also: {a.also.label} →
-                  </Link>
-                )}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
-      {/* Who we serve */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">Who we serve</h2>
-        <p className="mt-2 text-gray-600 max-w-3xl">
-          Creators, brands, studios, agencies, and growing companies who monetize through partnerships, content, and
-          commercial contracts.
-        </p>
-
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-sm text-gray-700">
-          {["Creators + Influencers", "Studios + Production", "Brands + Partnerships", "E-commerce", "Startups + Founders", "Agencies"].map(
-            (i) => (
-              <div key={i} className="rounded-lg border border-gray-100 bg-white px-3 py-2 text-center">
-                {i}
+      {groups.map((group, index) => (
+        <section
+          key={group.eyebrow}
+          className={index % 2 === 0 ? "bg-white" : "border-y border-[#0E2A47]/10 bg-[#FBFAF7]"}
+        >
+          <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+            <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr]">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+                  {group.eyebrow}
+                </p>
+                <h2 className="mt-5 font-serif text-4xl leading-tight tracking-[-0.025em] sm:text-5xl">
+                  {group.title}
+                </h2>
+                <p className="mt-5 max-w-md text-sm leading-7 text-[#5F7386]">
+                  {group.description}
+                </p>
               </div>
-            )
-          )}
-        </div>
 
-        <div className="mt-6 rounded-2xl border border-gray-100 bg-gray-50 p-6">
-          <p className="text-sm text-gray-600">
-            <span className="font-medium text-gray-900">Transactional counsel only.</span> No litigation.
+              <div className="grid gap-5 md:grid-cols-2">
+                {group.services.map((service) => (
+                  <TrackedLink
+                    key={service.href}
+                    href={service.href}
+                    eventName="service_page_clicked"
+                    placement={`services_hub_${group.eyebrow.toLowerCase()}`}
+                    className="group border border-[#0E2A47]/10 bg-[#F7F6F3] p-7 transition hover:border-[#B86A2E]/60 hover:bg-white"
+                  >
+                    <h3 className="font-serif text-2xl">{service.title}</h3>
+                    <p className="mt-4 text-sm leading-7 text-[#5F7386]">
+                      {service.desc}
+                    </p>
+                    <p className="mt-6 text-xs font-bold uppercase tracking-[0.18em] text-[#B86A2E]">
+                      {service.cta} <span className="ml-2 transition group-hover:ml-3">→</span>
+                    </p>
+                  </TrackedLink>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      <section className="bg-[#0E2A47] text-white">
+        <div className="mx-auto max-w-5xl px-6 py-20 text-center sm:px-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#D9894C]">
+            Not Sure Where to Start?
+          </p>
+          <h2 className="mt-5 font-serif text-4xl tracking-[-0.025em] sm:text-5xl">
+            Tell us about the matter. We&apos;ll route the inquiry from there.
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/70">
+            The guided intake can collect preliminary information about the
+            agreement, brand, creative work, or business issue before our team
+            reviews whether the matter fits the firm.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <StartIntakeButton
+              eventName="services_hub_intake_clicked"
+              placement="services_bottom"
+              label="Start Guided Intake"
+              className="inline-flex bg-[#B86A2E] px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-[#9F5925]"
+            />
+            <TrackedLink
+              href="/contact"
+              eventName="contact_clicked"
+              placement="services_bottom"
+              className="inline-flex border border-white/40 px-7 py-4 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:border-[#D9894C] hover:text-[#E0A06D]"
+            >
+              Contact the Firm
+            </TrackedLink>
+          </div>
+
+          <p className="mx-auto mt-7 max-w-2xl text-xs leading-5 text-white/50">
+            Submitting an inquiry does not create an attorney-client relationship.
+            Representation begins only after conflict clearance and a written engagement agreement.
           </p>
         </div>
-      </section>
-
-      {/* Process */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">How it works</h2>
-        <div className="mt-6 grid md:grid-cols-3 gap-6">
-          {[
-            { step: "1", title: "Discovery Call", text: "Share goals and timelines; we map a clear plan." },
-            { step: "2", title: "Draft/Review", text: "We prepare documents or redlines with plain-English explanations." },
-            { step: "3", title: "Finalize + Execute", text: "You get clean versions, negotiation language, and next steps." },
-          ].map((p) => (
-            <div key={p.step} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <div className="text-sm text-gray-500">Step {p.step}</div>
-              <h3 className="mt-1 font-semibold">{p.title}</h3>
-              <p className="mt-2 text-sm text-gray-600">{p.text}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Pricing teaser */}
-      <section className="mt-16 rounded-2xl border border-gray-100 bg-gradient-to-r from-indigo-50 to-teal-50 p-8">
-        <div className="grid md:grid-cols-2 gap-6 items-center">
-          <div>
-            <h3 className="text-xl font-semibold">Predictable pricing</h3>
-            <p className="mt-2 text-sm text-gray-600">
-              Flat fees for common matters; scoped estimates for complex projects. No surprises.
-            </p>
-          </div>
-          <div className="flex gap-3 md:justify-end">
-            <Link
-              href="/contact"
-              className="rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-            >
-              Get a quote
-            </Link>
-            <Link
-              href="/services/trademark"
-              className="rounded-xl border border-gray-200 px-5 py-3 text-gray-800 hover:border-indigo-300"
-            >
-              Trademark Protection
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs */}
-      <section className="mt-16">
-        <h2 className="text-2xl md:text-3xl font-semibold">FAQs</h2>
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
-          {faqs.map((f) => (
-            <div key={f.q} className="rounded-2xl border border-gray-100 bg-white p-6">
-              <h4 className="font-medium">{f.q}</h4>
-              <p className="mt-2 text-sm text-gray-600">{f.a}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="mt-16 text-center">
-        <h3 className="text-xl font-semibold">Not sure where to start?</h3>
-        <p className="mt-2 text-gray-600">Tell us what you’re working on—we’ll recommend the fastest path.</p>
-        <Link
-          href="/contact"
-          className="mt-4 inline-block rounded-xl bg-[#0E2A47] px-5 py-3 text-white shadow hover:bg-[#B86A2E]"
-        >
-          Tell Us About Your Matter
-        </Link>
       </section>
     </main>
   );

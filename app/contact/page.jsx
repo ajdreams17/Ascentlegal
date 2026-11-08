@@ -1,116 +1,60 @@
-// app/contact/page.jsx
+import ContactForm from "../../components/ContactForm";
+import StartIntakeButton from "../../components/StartIntakeButton";
+
 export const metadata = {
   title: "Contact | Ascent Legal",
   description:
-    "Tell us briefly about your matter. We aim to respond within one business day.",
+    "Tell us briefly about your transactional legal matter. Contact Ascent Legal about contracts, entertainment, trademarks, copyright, business formation, and related services.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20 grid md:grid-cols-2 gap-12">
-      {/* Left column: heading + tagline + bullets */}
-      <div>
-        <h1 className="text-4xl md:text-5xl font-bold">Tell us about your matter</h1>
-        <p className="mt-4 text-gray-600">
-          Share a brief description of what you need. We aim to respond within one business day.
-        </p>
+    <main className="bg-[#F7F6F3] text-[#0E2A47]">
+      <section className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[.9fr_1.1fr] lg:px-12 lg:py-24">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Contact Ascent Legal
+          </p>
 
-        <div className="mt-8 space-y-4 text-sm text-gray-600">
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-indigo-500" />
-            Transparent flat-fee options
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-teal-400" />
-            Dedicated point of contact
-          </div>
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-indigo-500" />
-            Secure client portal
+          <h1 className="mt-6 font-serif text-5xl leading-[1.02] tracking-[-0.03em] sm:text-6xl">
+            Tell us what you&apos;re building, protecting, or signing.
+          </h1>
+
+          <p className="mt-7 max-w-xl text-lg leading-8 text-[#5F7386]">
+            Share a brief description of the matter, the parties involved, and
+            any timing concerns. Our public practice is focused on transactional
+            entertainment, intellectual property, contracts, and business matters.
+          </p>
+
+          <div className="mt-9 space-y-5 border-t border-[#0E2A47]/10 pt-7">
+            {[
+              ["Clear Scope", "We define the work and engagement before representation begins."],
+              ["Transactional Focus", "Contracts, entertainment, IP, formation, and related business matters."],
+              ["Deadline Awareness", "Tell us about any signing, filing, launch, or response deadline at the outset."],
+            ].map(([title,text]) => (
+              <div key={title}>
+                <h2 className="font-serif text-xl">{title}</h2>
+                <p className="mt-1 text-sm leading-6 text-[#5F7386]">{text}</p>
+              </div>
+            ))}
           </div>
 
+          <div className="mt-9">
+            <p className="text-sm text-[#5F7386]">Prefer guided intake?</p>
+            <StartIntakeButton
+              eventName="contact_page_intake_clicked"
+              placement="contact_page"
+              label="Start Guided Intake"
+              className="mt-3 inline-flex border border-[#B86A2E] px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] text-[#B86A2E] transition hover:bg-[#B86A2E] hover:text-white"
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Right column: Formspree-connected form */}
-     <form
-  action="https://formspree.io/f/mrbladoo"
-  method="POST"
-  className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
->
-  {/* (Optional) redirect after submit – create /thank-you if you want this */}
-  <input type="hidden" name="_redirect" value="/thank-you" />
-
-  {/* Custom subject line for emails */}
-  <input type="hidden" name="_subject" value="New Ascent Legal Inquiry" />
-
-  {/* Honeypot spam trap */}
-  <input type="text" name="_gotcha" className="hidden" tabIndex={-1} />
-
-  {/* Extra hidden replyto field for email clients */}
-  <input type="email" name="_replyto" className="hidden" />
-
-  {/* Your visible fields start here */}
-  <div className="grid grid-cols-1 gap-4">
-    <label className="sr-only" htmlFor="name">Your name</label>
-    <input
-      id="name"
-      name="name"
-      placeholder="Your name"
-      className="h-11 rounded-md border border-gray-300 px-3"
-      required
-    />
-
-    <label className="sr-only" htmlFor="email">Email</label>
-    <input
-      id="email"
-      type="email"
-      name="email"
-      placeholder="Email"
-      className="h-11 rounded-md border border-gray-300 px-3"
-      required
-    />
-
-    <label className="sr-only" htmlFor="company">Company</label>
-    <input
-      id="company"
-      name="company"
-      placeholder="Company"
-      className="h-11 rounded-md border border-gray-300 px-3"
-    />
-
-    <label className="sr-only" htmlFor="message">How can we help?</label>
-    <textarea
-      id="message"
-      name="message"
-      rows={5}
-      placeholder="How can we help?"
-      className="rounded-md border border-gray-300 px-3 py-2"
-      required
-    />
-
-    <div>
-      <button
-        type="submit"
-        className="w-full rounded-xl bg-[#0E2A47] px-4 py-3 text-white transition-colors hover:bg-[#B86A2E]"
-      >
-        Send message
-      </button>
-    </div>
-  </div>
-
-  <p className="mt-3 text-xs text-gray-500">
-    Contacting Ascent Legal or submitting this form does not create an attorney-client relationship.
-    Do not send confidential or time-sensitive information. We do not represent you unless and until
-    we confirm that no conflict prevents the representation and both you and the firm sign a written
-    engagement agreement. Submitting this form does not guarantee a response. By submitting, you
-    agree to our{" "}
-    <a href="/privacy" className="underline hover:text-indigo-600">
-      privacy policy
-    </a>.
-  </p>
-</form>
-
-    </section>
+        <ContactForm />
+      </section>
+    </main>
   );
 }

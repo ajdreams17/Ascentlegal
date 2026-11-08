@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FaInstagram, FaTiktok, FaLinkedin, FaFacebook } from "react-icons/fa";
+import TrackedLink from "./TrackedLink";
 
 export default function Footer() {
   return (
@@ -40,8 +41,8 @@ export default function Footer() {
             <ul className="mt-4 space-y-2 text-sm leading-6 text-[#0e2a47]/65">
               <li>3780 Kilroy Airport Way, Suite 200</li>
               <li>Long Beach, CA 90806</li>
-              <li><a href="mailto:info@ascentlegal.io" className="hover:text-[#b86a2e]">info@ascentlegal.io</a></li>
-              <li><a href="tel:+17142033535" className="hover:text-[#b86a2e]">(714) 203-3535</a></li>
+              <li><TrackedLink href="mailto:info@ascentlegal.io" eventName="email_clicked" placement="footer" className="hover:text-[#b86a2e]">info@ascentlegal.io</TrackedLink></li>
+              <li><TrackedLink href="tel:+17142033535" eventName="phone_clicked" placement="footer" className="hover:text-[#b86a2e]">(714) 203-3535</TrackedLink></li>
             </ul>
           </div>
         </div>

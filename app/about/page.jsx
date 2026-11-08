@@ -5,6 +5,7 @@ export const metadata = {
   title: "About Us | Ascent Legal",
   description:
     "Meet Ascent Legal — a brother and sister law firm built for content creators, production companies, and growing businesses. Brand deals, IP protection, trademarks, and business formation. Transactional only (no litigation).",
+  alternates: { canonical: "/about" },
 };
 
 const attorneys = [
@@ -177,6 +178,49 @@ export default function AboutPage() {
           </p>
         </div>
       </div>
+
+
+      {/* ===== Local Presence ===== */}
+      <section className="mt-16 border-y border-[#0E2A47]/10 bg-[#FBFAF7] px-6 py-12 sm:px-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#B86A2E]">
+          Long Beach Office
+        </p>
+        <div className="mt-5 grid gap-8 md:grid-cols-[1.1fr_.9fr] md:items-start">
+          <div>
+            <h2 className="font-serif text-3xl text-[#0E2A47] md:text-4xl">
+              Based in Long Beach. Built for creative and growing businesses.
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#5F7386]">
+              Ascent Legal is based at 3780 Kilroy Airport Way, Suite 200,
+              Long Beach, California 90806. The firm works with creators,
+              brands, agencies, production companies, founders, and growing
+              businesses on transactional entertainment, intellectual property,
+              contracts, and business matters.
+            </p>
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-[#5F7386]">
+              We serve clients throughout Los Angeles County, Orange County,
+              California, and, where appropriate, clients with federal
+              trademark and copyright matters across the United States.
+            </p>
+          </div>
+
+          <div className="border border-[#0E2A47]/10 bg-white p-6">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#0E2A47]">
+              Office Information
+            </p>
+            <div className="mt-4 space-y-2 text-sm leading-6 text-[#5F7386]">
+              <p>3780 Kilroy Airport Way, Suite 200</p>
+              <p>Long Beach, CA 90806</p>
+              <p>(714) 203-3535</p>
+              <p>info@ascentlegal.io</p>
+              <p className="pt-2 text-xs uppercase tracking-[0.16em] text-[#7A8794]">
+                Meetings by appointment
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* ===== Meet the Founders ===== */}
       <section className="mt-16">

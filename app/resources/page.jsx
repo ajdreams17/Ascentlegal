@@ -9,12 +9,42 @@ export const metadata = {
 };
 
 const topicChips = [
+  { label: "Creator Contracts", href: "#brand-deals" },
   { label: "Trademarks", href: "#trademarks" },
   { label: "Copyright + Licensing", href: "#copyright" },
-  { label: "Brand Deals", href: "#brand-deals" },
+  { label: "Business Formation", href: "#formation" },
+  { label: "Contractor IP", href: "#contracts" },
 ];
 
 const guides = [
+  {
+    slug: "perpetuity-creator-contracts",
+    title: "What Does Perpetuity Mean in a Creator Contract?",
+    description:
+      "A practical guide to perpetual usage rights, paid media, whitelisting, sublicensing, and what creators should review before signing a brand deal.",
+    readTime: "6 min read",
+    badge: "Creator Contracts",
+    topic: "brand-deals",
+  },
+  {
+    slug: "llc-vs-trademark-business-name",
+    title: "LLC vs. Trademark: What Actually Protects Your Business Name?",
+    description:
+      "Entity formation and trademark registration do different jobs. Learn when a growing business may need one, the other, or both.",
+    readTime: "6 min read",
+    badge: "Trademark + Formation",
+    topic: "formation",
+  },
+  {
+    slug: "work-for-hire-vs-copyright-assignment",
+    title: "Work-for-Hire vs. Copyright Assignment for Contractors",
+    description:
+      "Why paying a contractor does not always mean you own the work—and how work-for-hire and assignment language differ.",
+    readTime: "6 min read",
+    badge: "Contractor IP",
+    topic: "contracts",
+  },
+
   // Trademarks
   {
     slug: "how-to-trademark-your-logo",
@@ -197,8 +227,7 @@ export default function ResourcesPage() {
         </h1>
 
         <p className="mt-4 text-lg text-gray-600 max-w-3xl">
-          Practical, business-first content on trademarks, brand deals, commercial contracts, and formation. No fluff. Just
-          what you need to move fast and stay protected.
+          Practical, business-first guides on creator contracts, trademarks, copyright, commercial agreements, contractor IP, and business formation. Built to help you understand the issue before you make the next move.
         </p>
 
         {/* Topic chips */}
@@ -325,6 +354,37 @@ export default function ResourcesPage() {
         </div>
 
       </section>
+
+        <div id="formation" className="scroll-mt-24">
+          <div className="mb-6 flex items-end justify-between">
+            <h2 className="text-2xl md:text-3xl font-semibold">Business Formation</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {byTopic.formation.map((g) => <GuideCard key={g.slug} g={g} />)}
+          </div>
+          <div className="mt-6">
+            <Link href="/services/corporate-formation" className="text-sm font-medium text-indigo-600 hover:underline">
+              Explore Business Formation services →
+            </Link>
+          </div>
+        </div>
+
+        <div id="contracts" className="scroll-mt-24">
+          <div className="mb-6 flex items-end justify-between">
+            <h2 className="text-2xl md:text-3xl font-semibold">Contracts + Contractor IP</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {byTopic.contracts.map((g) => <GuideCard key={g.slug} g={g} />)}
+          </div>
+          <div className="mt-6 flex flex-wrap gap-4">
+            <Link href="/services/contracts-drafting" className="text-sm font-medium text-indigo-600 hover:underline">
+              Explore Contract Drafting →
+            </Link>
+            <Link href="/services/team-contractor-docs" className="text-sm font-medium text-indigo-600 hover:underline">
+              Explore Contractor Agreement services →
+            </Link>
+          </div>
+        </div>
 
       {/* Downloads */}
       <section className="mt-16">

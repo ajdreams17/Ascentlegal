@@ -44,7 +44,7 @@ export default function Post() {
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-gray-500">
-            <span>Updated Sep 2025</span>
+            <span>Updated Nov 2026</span>
             <span className="h-1 w-1 rounded-full bg-gray-300" />
             <span>6 min read</span>
           </div>
@@ -143,9 +143,11 @@ export default function Post() {
           <section id="costs-timeline" className="mt-10">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Costs & timeline</h2>
             <p className="mt-4 text-gray-700 leading-relaxed">
-              Expect USPTO fees of roughly <span className="font-medium">$250–$350 per class</span> (filing option dependent).
-              Many founders budget <span className="font-medium">$1k–$2.5k</span> for attorney assistance. Most applications
-              take <span className="font-medium">6–12+ months</span> depending on examiner backlogs and any Office Actions.
+              The USPTO currently lists a base application filing fee of <span className="font-medium">$350 per class</span>
+              for qualifying Section 1 or Section 44 applications. Additional USPTO fees may apply depending on the application,
+              filing basis, or later submissions. As of October 1, 2026, the USPTO reported an average of approximately
+              <span className="font-medium"> 4.3 months to a first examining action</span> and approximately
+              <span className="font-medium"> 10.4 months from filing to registration or abandonment</span>. Individual applications vary.
             </p>
           </section>
 
@@ -162,7 +164,7 @@ export default function Post() {
           <div id="wrap-up" className="mt-12 rounded-2xl border border-gray-100 bg-gradient-to-r from-indigo-50 to-teal-50 p-6">
             <h3 className="text-xl font-semibold">Want a faster, cleaner filing?</h3>
             <p className="mt-2 text-gray-700">
-              We run comprehensive searches and handle the paperwork so you can focus on growth.
+              We can assist with clearance, filing strategy, application preparation, and USPTO correspondence based on the scope of the engagement.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link
@@ -179,6 +181,10 @@ export default function Post() {
               </Link>
             </div>
           </div>
+
+          <p className="mt-6 text-xs leading-5 text-gray-500">
+            USPTO fees and processing times can change. This article is general information only and is not legal advice.
+          </p>
 
           {/* prev/next */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between text-sm">

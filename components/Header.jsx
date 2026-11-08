@@ -104,6 +104,14 @@ export default function Header() {
             <nav className="flex flex-col p-4 text-sm font-medium text-[#0e2a47]">
               <Link href="/about" className="border-b border-[#0e2a47]/10 py-3">About</Link>
               <Link href="/services" className="border-b border-[#0e2a47]/10 py-3">Services</Link>
+              <div className="grid grid-cols-2 gap-x-4 border-b border-[#0e2a47]/10 py-3 text-xs text-[#0e2a47]/70">
+                <Link href="/services/creator-contract-review" className="py-2">Creator Contracts</Link>
+                <Link href="/services/trademark" className="py-2">Trademarks</Link>
+                <Link href="/services/copyright" className="py-2">Copyright</Link>
+                <Link href="/services/contracts-drafting" className="py-2">Contracts</Link>
+                <Link href="/services/corporate-formation" className="py-2">Formation</Link>
+                <Link href="/services/deal-desk-support" className="py-2">Deal Desk</Link>
+              </div>
               <Link href="/attorneys" className="border-b border-[#0e2a47]/10 py-3">Attorneys</Link>
               <Link href="/resources" className="border-b border-[#0e2a47]/10 py-3">Resources</Link>
               <TrackedLink href="/contact" eventName="contact_clicked" placement="header_mobile" className="mt-4 bg-[#b86a2e] px-4 py-3 text-center font-semibold uppercase tracking-[0.14em] text-white">Contact</TrackedLink>

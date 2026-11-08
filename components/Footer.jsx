@@ -25,6 +25,7 @@ export default function Footer() {
               <li><Link href="/services" className="hover:text-[#b86a2e]">Services</Link></li>
               <li><Link href="/attorneys" className="hover:text-[#b86a2e]">Attorneys</Link></li>
               <li><Link href="/resources" className="hover:text-[#b86a2e]">Resources</Link></li>
+              <li><Link href="/review" className="hover:text-[#b86a2e]">Reviews</Link></li>
             </ul>
           </div>
 
@@ -48,7 +49,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-5 pt-6 text-xs text-[#0e2a47]/55 sm:flex-row sm:items-center sm:justify-between">
-          <div>Los Angeles &nbsp; | &nbsp; Orange County &nbsp; | &nbsp; By Appointment</div>
+          <div>Long Beach &nbsp; | &nbsp; Los Angeles County &nbsp; | &nbsp; Orange County &nbsp; | &nbsp; By Appointment</div>
           <div className="flex items-center gap-4 text-lg text-[#0e2a47]/55">
             <a href="https://www.instagram.com/ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram className="hover:text-[#b86a2e]" /></a>
             <a href="https://www.tiktok.com/@ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok className="hover:text-[#b86a2e]" /></a>

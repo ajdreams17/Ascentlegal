@@ -1,7 +1,8 @@
 export const metadata = {
   title: "Privacy Policy | Ascent Legal",
   description:
-    "How Ascent Legal collects, uses, and protects your information, and the privacy rights available to you under CCPA/CPRA, GDPR, and other laws.",
+    "How Ascent Legal collects, uses, and protects information submitted through the website, contact forms, analytics, and AI-assisted preliminary intake.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPolicyPage() {
@@ -15,7 +16,7 @@ export default function PrivacyPolicyPage() {
           </span>
         </h1>
         <p className="mt-4 text-gray-600">
-          Effective date: <span className="font-medium">August 17, 2025</span>
+          Effective date: <span className="font-medium">November 7, 2026</span>
         </p>
       </header>
 
@@ -130,9 +131,11 @@ export default function PrivacyPolicyPage() {
 
         <h2>8) Cookies &amp; Analytics</h2>
         <p>
-          We use cookies and similar technologies to operate the site and understand usage. You can
-          adjust your browser settings to refuse cookies or show a consent banner where applicable.
-          Disabling cookies may affect site functionality.
+          We use cookies and similar technologies, including analytics technologies, to operate the
+          site, understand usage, and measure interactions such as page views, link clicks, and
+          inquiry conversions. Depending on your browser and applicable law, you may be able to
+          limit or block certain technologies through browser or device settings. Disabling them may
+          affect site functionality.
         </p>
 
         <h2>9) “Do Not Sell or Share” (CCPA/CPRA)</h2>

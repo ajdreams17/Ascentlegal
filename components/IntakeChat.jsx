@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { getLeadAttribution } from "./leadAttribution";
 
 const INITIAL_MESSAGE = {
   role: "assistant",
@@ -34,10 +35,12 @@ export default function IntakeChat() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState("");
+  const [selectedPracticeArea, setSelectedPracticeArea] = useState("");
   const [contact, setContact] = useState({
     name: "",
     email: "",
     phone: "",
+    source: "",
   });
 
   const messagesEndRef = useRef(null);
@@ -139,12 +142,12 @@ const contactReachedRef = useRef(false);
 
     if (!contact.name.trim() || !contact.email.trim() || submitting) return;
 
-   trackIntakeEvent("intake_submitted");
-    
     setSubmitting(true);
     setSubmissionError("");
 
     try {
+      const attribution = getLeadAttribution();
+
       const response = await fetch("/api/intake/submit", {
         method: "POST",
         headers: {
@@ -154,6 +157,9 @@ const contactReachedRef = useRef(false);
           name: contact.name,
           email: contact.email,
           phone: contact.phone,
+          reported_source: contact.source,
+          service_requested: selectedPracticeArea,
+          attribution,
           messages,
         }),
       });
@@ -163,6 +169,21 @@ const contactReachedRef = useRef(false);
       if (!response.ok) {
         throw new Error(data?.error || "Unable to submit intake.");
       }
+
+      const leadParams = {
+        feature: "ai_intake",
+        lead_type: "ai_intake",
+        service_requested: selectedPracticeArea || "not_selected",
+        reported_source: contact.source || "not_selected",
+        utm_source: attribution.utm_source || "none",
+        utm_medium: attribution.utm_medium || "none",
+        utm_campaign: attribution.utm_campaign || "none",
+        first_landing_page: attribution.first_landing_page || "unknown",
+      };
+
+      trackIntakeEvent("intake_submitted");
+      window.gtag?.("event", "intake_lead_submitted", leadParams);
+      window.gtag?.("event", "generate_lead", leadParams);
 
       setSubmitted(true);
       setReadyForSubmission(false);
@@ -197,10 +218,12 @@ const contactReachedRef = useRef(false);
     setSubmitted(false);
     setSubmitting(false);
     setSubmissionError("");
+    setSelectedPracticeArea("");
     setContact({
       name: "",
       email: "",
       phone: "",
+      source: "",
     });
   }
 
@@ -298,7 +321,10 @@ const contactReachedRef = useRef(false);
                   <button
                     type="button"
                     key={area}
-                    onClick={() => sendMessage(area)}
+                    onClick={() => {
+                      setSelectedPracticeArea(area);
+                      sendMessage(area);
+                    }}
                     disabled={loading}
                     className="rounded-xl border border-[#0E2A47]/15 bg-white px-4 py-3 text-left text-sm font-medium text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
                   >
@@ -366,6 +392,28 @@ const contactReachedRef = useRef(false);
                     autoComplete="tel"
                     className="rounded-xl border border-[#0E2A47]/15 px-3 py-3 text-sm text-[#0E2A47] outline-none focus:border-[#B86A2E]"
                   />
+
+                  <select
+                    value={contact.source}
+                    onChange={(event) =>
+                      setContact((current) => ({
+                        ...current,
+                        source: event.target.value,
+                      }))
+                    }
+                    className="rounded-xl border border-[#0E2A47]/15 bg-white px-3 py-3 text-sm text-[#0E2A47] outline-none focus:border-[#B86A2E]"
+                  >
+                    <option value="">How did you hear about us? (optional)</option>
+                    <option value="Google Search">Google Search</option>
+                    <option value="Google Maps / Business Profile">Google Maps / Business Profile</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Instagram">Instagram</option>
+                    <option value="TikTok">TikTok</option>
+                    <option value="LinkedIn">LinkedIn</option>
+                    <option value="Speaking Event / Bar Association">Speaking Event / Bar Association</option>
+                    <option value="Existing Client">Existing Client</option>
+                    <option value="Other">Other</option>
+                  </select>
 
                   {submissionError && (
                     <p className="text-xs leading-5 text-red-700">

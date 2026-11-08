@@ -332,6 +332,16 @@ export async function POST(request) {
     const name = clean(body?.name, 120);
     const email = clean(body?.email, 200);
     const phone = clean(body?.phone, 60);
+    const reportedSource = clean(body?.reported_source, 120);
+    const serviceRequested = clean(body?.service_requested, 120);
+    const attribution = body?.attribution || {};
+    const firstLandingPage = clean(attribution?.first_landing_page, 500);
+    const firstReferrer = clean(attribution?.first_referrer, 500);
+    const utmSource = clean(attribution?.utm_source, 200);
+    const utmMedium = clean(attribution?.utm_medium, 200);
+    const utmCampaign = clean(attribution?.utm_campaign, 200);
+    const utmTerm = clean(attribution?.utm_term, 200);
+    const utmContent = clean(attribution?.utm_content, 200);
 
     if (!name || !email || !isValidEmail(email)) {
       return Response.json(
@@ -408,6 +418,15 @@ const emailSubject = deadlineReported
           transcript || "No intake transcript available.",
 
         source: "Ascent Legal AI Intake Assistant",
+        service_requested: serviceRequested || "Not selected",
+        reported_source: reportedSource || "Not provided",
+        first_landing_page: firstLandingPage || "Not captured",
+        first_referrer: firstReferrer || "Not captured",
+        utm_source: utmSource || "None",
+        utm_medium: utmMedium || "None",
+        utm_campaign: utmCampaign || "None",
+        utm_term: utmTerm || "None",
+        utm_content: utmContent || "None",
         submitted_at: new Date().toISOString(),
       }),
     });

@@ -11,8 +11,7 @@ Ascent Legal currently handles inquiries involving:
 2. Trademark matters
 3. Copyright and licensing matters
 4. Business and corporate matters
-5. Plaintiff-side employment matters
-6. Other matters that may require referral or further review
+5. Other matters that may require referral or further review
 
 YOUR PURPOSE
 
@@ -107,7 +106,6 @@ Entertainment
 Trademark
 Copyright / Licensing
 Business
-Employment
 Something Else
 
 ENTERTAINMENT MATTERS
@@ -182,26 +180,6 @@ For business and corporate matters, identify:
 
 Do not advise the visitor which entity type to choose or provide tax advice.
 
-EMPLOYMENT MATTERS
-
-For plaintiff-side employment matters, keep the intake high-level.
-
-Identify:
-
-- Whether the visitor is currently employed or is a former employee.
-- The employer's name for conflict review.
-- The city and state where the visitor worked.
-- Whether the visitor was terminated, resigned, placed on leave, disciplined, demoted, denied accommodation, not paid properly, harassed, discriminated against, retaliated against, or experienced another workplace issue.
-- The approximate date of termination or most recent important event, if applicable.
-- Whether the visitor complained internally, requested leave or accommodation, reported misconduct, or engaged in another protected activity, if relevant.
-- Whether there is an upcoming deadline, hearing, agency filing, severance deadline, arbitration deadline, or other urgent date.
-- What the visitor wants an attorney to review.
-
-Do not tell the visitor that they were wrongfully terminated, discriminated against, retaliated against, harassed, or that the employer violated the law.
-
-Do not estimate damages or case value.
-
-Do not ask for detailed medical information.
 
 SOMETHING ELSE
 
@@ -275,6 +253,44 @@ When the inquiry has actually been submitted successfully, the confirmation shou
 Never guarantee a response time unless the firm has specifically authorized one.
 `;
 
+const intakeRateLimitStore = globalThis.__ascentIntakeRateLimitStore || new Map();
+globalThis.__ascentIntakeRateLimitStore = intakeRateLimitStore;
+
+function getClientKey(request) {
+  const forwarded = request.headers.get("x-forwarded-for") || "";
+  const ip = forwarded.split(",")[0].trim() || request.headers.get("x-real-ip") || "unknown";
+  return ip.slice(0, 120);
+}
+
+function isRateLimited(request) {
+  const key = getClientKey(request);
+  const now = Date.now();
+  const windowMs = 10 * 60 * 1000;
+  const maxRequests = 20;
+
+  const recent = (intakeRateLimitStore.get(key) || []).filter(
+    (timestamp) => now - timestamp < windowMs
+  );
+
+  if (recent.length >= maxRequests) {
+    intakeRateLimitStore.set(key, recent);
+    return true;
+  }
+
+  recent.push(now);
+  intakeRateLimitStore.set(key, recent);
+
+  if (intakeRateLimitStore.size > 5000) {
+    for (const [storedKey, timestamps] of intakeRateLimitStore.entries()) {
+      const active = timestamps.filter((timestamp) => now - timestamp < windowMs);
+      if (active.length) intakeRateLimitStore.set(storedKey, active);
+      else intakeRateLimitStore.delete(storedKey);
+    }
+  }
+
+  return false;
+}
+
 function extractText(data) {
   if (!Array.isArray(data?.output)) return "";
 
@@ -288,6 +304,21 @@ function extractText(data) {
 
 export async function POST(request) {
   try {
+    if (isRateLimited(request)) {
+      return Response.json(
+        { error: "Too many intake requests. Please wait a few minutes and try again." },
+        { status: 429, headers: { "Retry-After": "600" } }
+      );
+    }
+
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (contentLength > 50000) {
+      return Response.json(
+        { error: "The intake request is too large." },
+        { status: 413 }
+      );
+    }
+
     if (!process.env.OPENAI_API_KEY) {
       return Response.json(
         { error: "OpenAI API key is not configured." },
@@ -307,8 +338,15 @@ export async function POST(request) {
       );
     }
 
+    if (message.length > 4000) {
+      return Response.json(
+        { error: "Please shorten your message and try again." },
+        { status: 400 }
+      );
+    }
+
     const history = Array.isArray(body?.history)
-      ? body.history.slice(-30)
+      ? body.history.slice(-24)
       : [];
 
     const conversationHistory = history

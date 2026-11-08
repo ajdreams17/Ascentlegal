@@ -1,3 +1,26 @@
+const submitRateLimitStore = globalThis.__ascentSubmitRateLimitStore || new Map();
+globalThis.__ascentSubmitRateLimitStore = submitRateLimitStore;
+
+function getSubmitClientKey(request) {
+  const forwarded = request.headers.get("x-forwarded-for") || "";
+  return (forwarded.split(",")[0].trim() || request.headers.get("x-real-ip") || "unknown").slice(0, 120);
+}
+
+function isSubmitRateLimited(request) {
+  const key = getSubmitClientKey(request);
+  const now = Date.now();
+  const windowMs = 30 * 60 * 1000;
+  const maxRequests = 6;
+  const recent = (submitRateLimitStore.get(key) || []).filter((t) => now - t < windowMs);
+  if (recent.length >= maxRequests) {
+    submitRateLimitStore.set(key, recent);
+    return true;
+  }
+  recent.push(now);
+  submitRateLimitStore.set(key, recent);
+  return false;
+}
+
 const FORMSPREE_URL = "https://formspree.io/f/mrbladoo";
 
 function clean(value, maxLength = 500) {
@@ -289,6 +312,21 @@ ${transcript}
 
 export async function POST(request) {
   try {
+    if (isSubmitRateLimited(request)) {
+      return Response.json(
+        { error: "Too many submissions. Please wait before trying again." },
+        { status: 429, headers: { "Retry-After": "1800" } }
+      );
+    }
+
+    const contentLength = Number(request.headers.get("content-length") || 0);
+    if (contentLength > 100000) {
+      return Response.json(
+        { error: "The intake submission is too large." },
+        { status: 413 }
+      );
+    }
+
     const body = await request.json();
 
     const name = clean(body?.name, 120);

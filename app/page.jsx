@@ -66,12 +66,14 @@ export default function HomePage() {
                 className="inline-flex items-center bg-[#0E2A47] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#B86A2E]"
               />
 
-              <Link
+              <TrackedLink
                 href="/services"
+                eventName="services_clicked"
+                placement="homepage_hero"
                 className="inline-flex items-center border border-[#0E2A47]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-[#0E2A47] transition hover:border-[#B86A2E] hover:text-[#B86A2E]"
               >
                 Explore Services
-              </Link>
+              </TrackedLink>
             </div>
           </div>
         </div>

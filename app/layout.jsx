@@ -81,9 +81,14 @@ export default function RootLayout({ children }) {
       addressCountry: "US",
     },
     areaServed: [
+      { "@type": "City", name: "Long Beach" },
+      { "@type": "AdministrativeArea", name: "Los Angeles County" },
+      { "@type": "AdministrativeArea", name: "Orange County" },
       { "@type": "State", name: "California" },
       { "@type": "Country", name: "United States" },
     ],
+    hasMap:
+      "https://www.google.com/maps/search/?api=1&query=Ascent+Legal+Long+Beach+CA",
   };
 
   const websiteJsonLd = {

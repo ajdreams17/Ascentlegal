@@ -3,6 +3,7 @@
 
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
+import { getLeadAttribution } from "./leadAttribution";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
@@ -11,7 +12,11 @@ export default function GA() {
   const search = useSearchParams();
 
   useEffect(() => {
-    if (!GA_ID || typeof window === "undefined") return;
+    if (typeof window === "undefined") return;
+
+    getLeadAttribution();
+
+    if (!GA_ID) return;
 
     const query = search?.toString();
     const page_path = query ? `${pathname}?${query}` : pathname;

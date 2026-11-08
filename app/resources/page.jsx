@@ -353,8 +353,6 @@ export default function ResourcesPage() {
           </div>
         </div>
 
-      </section>
-
         <div id="formation" className="scroll-mt-24">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="text-2xl md:text-3xl font-semibold">Business Formation</h2>
@@ -385,6 +383,7 @@ export default function ResourcesPage() {
             </Link>
           </div>
         </div>
+      </section>
 
       {/* Downloads */}
       <section className="mt-16">

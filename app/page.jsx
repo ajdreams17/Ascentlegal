@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FounderSection from "../components/FounderSection";
 import StartIntakeButton from "../components/StartIntakeButton";
+import TrackedLink from "../components/TrackedLink";
 
 const practices = [
   {
@@ -58,13 +59,12 @@ export default function HomePage() {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
+              <StartIntakeButton
+                eventName="homepage_hero_intake_clicked"
+                placement="homepage_hero"
+                label="Start Intake"
                 className="inline-flex items-center bg-[#0E2A47] px-7 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#B86A2E]"
-              >
-                Work With Us
-                <span className="ml-3">→</span>
-              </Link>
+              />
 
               <Link
                 href="/services"
@@ -215,14 +215,16 @@ export default function HomePage() {
                 on Google. Visit our Google Business Profile to read current reviews.
               </p>
 
-              <a
+              <TrackedLink
                 href="https://www.google.com/maps/search/?api=1&query=Ascent+Legal+Long+Beach+CA"
+                eventName="google_reviews_clicked"
+                placement="homepage_reviews"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex border border-[#B86A2E] px-6 py-3 text-xs font-bold uppercase tracking-[0.2em] text-[#B86A2E] transition hover:bg-[#B86A2E] hover:text-white"
               >
                 Read Our Google Reviews <span className="ml-3">→</span>
-              </a>
+              </TrackedLink>
             </div>
 
             <div className="border border-[#0E2A47]/10 bg-white px-8 py-10 shadow-[0_18px_50px_rgba(14,42,71,0.06)] sm:px-10">
@@ -303,12 +305,14 @@ export default function HomePage() {
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <StartIntakeButton className="inline-flex bg-[#B86A2E] px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#9F5925]" />
 
-            <Link
+            <TrackedLink
               href="/contact"
+              eventName="contact_clicked"
+              placement="homepage_bottom_cta"
               className="inline-flex border border-white/70 px-7 py-4 text-xs font-bold uppercase tracking-[0.2em] text-white transition hover:border-[#D9894C] hover:text-[#E0A06D]"
             >
               Contact the Firm <span className="ml-3">→</span>
-            </Link>
+            </TrackedLink>
           </div>
         </div>
       </section>

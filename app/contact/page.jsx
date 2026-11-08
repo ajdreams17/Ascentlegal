@@ -1,8 +1,12 @@
+import TrackedLink from "../../components/TrackedLink";
 // app/contact/page.jsx
 export const metadata = {
   title: "Contact | Ascent Legal",
   description:
     "Tell us briefly about your matter. We aim to respond within one business day.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -92,6 +96,7 @@ export default function ContactPage() {
     <div>
       <button
         type="submit"
+        onClick={() => window.gtag?.("event", "contact_form_submit_clicked", { placement: "contact_page" })}
         className="w-full rounded-xl bg-[#0E2A47] px-4 py-3 text-white transition-colors hover:bg-[#B86A2E]"
       >
         Send message

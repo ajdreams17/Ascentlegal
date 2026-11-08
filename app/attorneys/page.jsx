@@ -5,6 +5,7 @@ export const metadata = {
   title: "Attorneys | Ascent Legal",
   description:
     "Meet April Paredes and Anthony Paredes, the attorneys behind Ascent Legal's entertainment, contracts, trademark, IP, and business formation practice.",
+  alternates: { canonical: "/attorneys" },
 };
 
 const attorneys = [
@@ -15,11 +16,6 @@ const attorneys = [
     photo: "/attorneys/April_Paredes.jpg",
     objectPosition: "top",
     background: "Entertainment & Media",
-    credentials: [
-      "JD, Georgetown University Law Center",
-      "M.S., Communication Management, University of Southern California",
-      "Former Associate, Sheppard Mullin Richter & Hampton LLP",
-    ],
     bio:
       "April is a business and entertainment attorney with deep roots in the creator economy and media industry. She advises content creators, production companies, brands, and growing businesses on brand deals, production and media agreements, licensing, copyright, rights acquisition, and commercial contracts.",
     focus: [
@@ -38,11 +34,6 @@ const attorneys = [
     photo: "/attorneys/Anthony_Paredes.png",
     objectPosition: "center 15%",
     background: "Marketing & Business",
-    credentials: [
-      "JD, Chapman University, Fowler School of Law",
-      "LLM, Loyola Law School",
-      "Background in marketing and business",
-    ],
     bio:
       "Anthony brings a marketing and business background to trademark strategy, intellectual property, and business formation. He helps creators and growing companies protect brand names and creative assets, structure entities, and build the legal foundation needed to scale with confidence.",
     focus: [
@@ -100,13 +91,6 @@ export default function AttorneysPage() {
                           <span>{item}</span>
                         </li>
                       ))}
-                    </ul>
-                  </div>
-
-                  <div className="mt-7 border-t border-[#0e2a47]/10 pt-6">
-                    <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-[#0e2a47]">Credentials</h3>
-                    <ul className="mt-4 space-y-2 text-sm text-[#465c70]">
-                      {attorney.credentials.map((item) => <li key={item}>{item}</li>)}
                     </ul>
                   </div>
 

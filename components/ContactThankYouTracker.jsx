@@ -28,11 +28,7 @@ export default function ContactThankYouTracker() {
     };
 
     window.gtag?.("event", "contact_form_submitted", eventParams);
-    window.gtag?.("event", "generate_lead", {
-      ...eventParams,
-      currency: "USD",
-      value: 0,
-    });
+    window.gtag?.("event", "generate_lead", eventParams);
 
     try {
       window.sessionStorage.removeItem("ascent_last_contact_lead");

@@ -14,7 +14,6 @@ const PRACTICE_AREAS = [
   "Trademark",
   "Copyright / Licensing",
   "Business",
-  "Employment",
   "Something Else",
 ];
 

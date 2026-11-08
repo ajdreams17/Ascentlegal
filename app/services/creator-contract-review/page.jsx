@@ -244,6 +244,39 @@ export default function CreatorContractReviewPage() {
         </div>
       </section>
 
+      <section className="border-t border-[#0E2A47]/10 bg-[#FBFAF7]">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Creator Contract Guides
+          </p>
+          <h2 className="mt-5 max-w-3xl font-serif text-4xl tracking-[-0.02em] sm:text-5xl">
+            Understand the clauses before you negotiate them.
+          </h2>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              ["/resources/creator-contract-usage-rights", "Usage Rights"],
+              ["/resources/whitelisting-paid-media-creator-contracts", "Whitelisting & Paid Media"],
+              ["/resources/exclusivity-creator-brand-deals", "Exclusivity"],
+              ["/resources/creator-management-agreement-review", "Management Agreements"],
+              ["/resources/morality-clause-creator-contracts", "Morality Clauses"],
+              ["/resources/perpetuity-creator-contracts", "Perpetuity"],
+            ].map(([href, title]) => (
+              <Link
+                key={href}
+                href={href}
+                className="group border border-[#0E2A47]/10 bg-white p-6 transition hover:border-[#B86A2E]/60"
+              >
+                <h3 className="font-serif text-2xl">{title}</h3>
+                <p className="mt-5 text-xs font-bold uppercase tracking-[0.18em] text-[#B86A2E]">
+                  Read Guide <span className="ml-2 transition group-hover:ml-3">→</span>
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-[#0E2A47]/10 bg-white">
         <div className="mx-auto max-w-5xl px-6 py-12 text-center sm:px-10">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">

@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GA from "../components/GA";
 import IntakeChat from "../components/IntakeChat";
+import ConsentBanner from "../components/ConsentBanner";
 
 export const metadata = {
   metadataBase: new URL("https://ascentlegal.io"),
@@ -117,6 +118,19 @@ export default function RootLayout({ children }) {
 
         {GA_ID && (
           <>
+            <Script id="ga-consent-default" strategy="beforeInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('consent', 'default', {
+                  analytics_storage: 'denied',
+                  ad_storage: 'denied',
+                  ad_user_data: 'denied',
+                  ad_personalization: 'denied',
+                  wait_for_update: 500
+                });
+              `}
+            </Script>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
               strategy="afterInteractive"
@@ -124,7 +138,7 @@ export default function RootLayout({ children }) {
             <Script id="ga4-init" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
+                window.gtag = window.gtag || function(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_ID}', { send_page_view: false, anonymize_ip: true });
               `}
@@ -136,6 +150,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         <IntakeChat />
+        <ConsentBanner />
         
         {GA_ID && (
           <Suspense fallback={null}>

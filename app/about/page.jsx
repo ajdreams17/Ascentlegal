@@ -79,6 +79,73 @@ export default function AboutPage() {
         </div>
       </section>
 
+
+      <section className="border-t border-[#0E2A47]/10 bg-white">
+        <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">
+            Published & Presented
+          </p>
+          <div className="mt-5 grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
+            <div>
+              <h2 className="font-serif text-4xl tracking-[-0.025em] sm:text-5xl">
+                Legal insight beyond the client matter.
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-[#5F7386]">
+                Ascent Legal attorneys contribute to professional publications
+                and continuing legal education on creator-economy,
+                entertainment, licensing, and contract issues.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {[
+                {
+                  source: "Daily Journal",
+                  title: "Building Compliant Partnerships in the Content Creator Economy",
+                  href: "https://www.dailyjournal.com/article/387166-building-compliant-partnerships-in-the-content-creator-economy",
+                },
+                {
+                  source: "OC Lawyer",
+                  title: "Creator Economy Legal Risks",
+                  href: "https://www.virtualonlineeditions.com/article/Creator+Economy+Legal+Risks/5132319/862733/article.html",
+                },
+                {
+                  source: "Beverly Hills Bar Association",
+                  title: "Contract Drafting: Creator Partnership & Licensing Agreements",
+                  href: "https://bhba.org/speakers/april-paredes/",
+                },
+                {
+                  source: "Beverly Hills Bar Association",
+                  title: "Lights, Camera, Paperwork: Navigating Immigration & Entertainment Law in Hollywood",
+                  href: "https://bhba.org/cle/lights-camera-paperwork-navigating-immigration-entertainment-law-in-hollywo/",
+                },
+              ].map((item) => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col gap-2 border border-[#0E2A47]/10 bg-[#FBFAF7] p-6 transition hover:border-[#B86A2E]/50 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#B86A2E]">
+                      {item.source}
+                    </p>
+                    <h3 className="mt-2 font-serif text-xl leading-7 text-[#0E2A47]">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <span className="shrink-0 text-xs font-bold uppercase tracking-[0.14em] text-[#0E2A47]">
+                    View →
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="border-y border-[#0E2A47]/10 bg-[#FBFAF7]">
         <div className="mx-auto max-w-7xl px-6 py-20 sm:px-10 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr]">

@@ -131,6 +131,17 @@ export default function AprilParedesPage() {
               </section>
             </div>
 
+            <section className="mt-6 border border-[#0E2A47]/10 bg-[#FBFAF7] p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B86A2E]">
+                Professional Involvement
+              </p>
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-[#455D72]">
+                <li>Board Member, Orange County Bar Association, Entertainment, Sports and Marketing Section</li>
+                <li>Board Member, Whittier Bar Association</li>
+                <li>Member, Beverly Hills Bar Association</li>
+              </ul>
+            </section>
+
             <div className="mt-10 bg-[#0E2A47] p-8 text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D9894C]">
                 Have a Deal to Review?

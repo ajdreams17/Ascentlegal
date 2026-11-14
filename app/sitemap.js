@@ -15,6 +15,7 @@ export default function sitemap() {
     { path: "/resources/llc-vs-trademark-business-name", priority: 0.8 },
     { path: "/resources/work-for-hire-vs-copyright-assignment", priority: 0.8 },
     { path: "/contact", priority: 0.8 },
+    { path: "/employment", priority: 0.8 },
     { path: "/services/creator-contract-review", priority: 0.9 },
     { path: "/services/entertainment", priority: 0.9 },
     { path: "/services/trademark", priority: 0.9 },

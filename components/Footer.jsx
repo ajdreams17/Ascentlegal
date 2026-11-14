@@ -54,7 +54,7 @@ export default function Footer() {
           <div>Long Beach &nbsp; | &nbsp; Los Angeles County &nbsp; | &nbsp; Orange County &nbsp; | &nbsp; By Appointment</div>
           <div className="flex items-center gap-4 text-lg text-[#0e2a47]/55">
             <a href="https://www.instagram.com/ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><FaInstagram className="hover:text-[#b86a2e]" /></a>
-            <a href="https://www.tiktok.com/@ascent_legal" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok className="hover:text-[#b86a2e]" /></a>
+            <a href="https://www.tiktok.com/@coffeewithapril" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><FaTiktok className="hover:text-[#b86a2e]" /></a>
             <a href="https://www.linkedin.com/company/ascent-legal/?viewAsMember=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><FaLinkedin className="hover:text-[#b86a2e]" /></a>
             <a href="https://www.facebook.com/ascentlegallaw" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><FaFacebook className="hover:text-[#b86a2e]" /></a>
           </div>

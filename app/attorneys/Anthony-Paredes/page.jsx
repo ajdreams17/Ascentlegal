@@ -129,6 +129,15 @@ export default function AnthonyParedesPage() {
 
             <section className="mt-6 border border-[#0E2A47]/10 bg-[#FBFAF7] p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B86A2E]">
+                Professional Involvement
+              </p>
+              <ul className="mt-5 space-y-3 text-sm leading-6 text-[#455D72]">
+                <li>Board Member, Whittier Bar Association</li>
+              </ul>
+            </section>
+
+            <section className="mt-6 border border-[#0E2A47]/10 bg-[#FBFAF7] p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#B86A2E]">
                 Broader Legal Experience
               </p>
               <p className="mt-4 text-sm leading-7 text-[#5F7386]">

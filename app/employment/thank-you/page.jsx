@@ -1,4 +1,5 @@
 import Link from "next/link";
+import EmploymentThankYouTracker from "../../../components/EmploymentThankYouTracker";
 
 export const metadata = {
   title: "Employment Inquiry Received | Ascent Legal",
@@ -8,6 +9,7 @@ export const metadata = {
 export default function EmploymentThankYouPage() {
   return (
     <main className="bg-[#F7F6F3] text-[#0E2A47]">
+      <EmploymentThankYouTracker />
       <section className="mx-auto max-w-4xl px-6 py-24 text-center sm:px-10 lg:py-32">
         <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B86A2E]">Inquiry Received</p>
         <h1 className="mt-6 font-serif text-5xl leading-tight tracking-[-0.03em] sm:text-6xl">

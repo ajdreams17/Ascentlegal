@@ -55,6 +55,7 @@ export const metadata = {
 };
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const CLIENT_PORTAL_URL = process.env.ASCENT_CLIENT_PORTAL_URL;
 
 export default function RootLayout({ children }) {
   const orgJsonLd = {
@@ -146,7 +147,7 @@ export default function RootLayout({ children }) {
           </>
         )}
 
-        <Header />
+        <Header clientPortalUrl={CLIENT_PORTAL_URL === "https://portal.ascentlegal.io" ? CLIENT_PORTAL_URL : undefined} />
         {children}
         <Footer />
         <IntakeChat />

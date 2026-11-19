@@ -77,6 +77,31 @@ test('Drive verifies the intake boundary and validates resumable upload receipts
   await assert.rejects(providers.saveFile(upload), /unexpected destination/);
 });
 
+test('Compute Engine authentication requests a short-lived token for the configured account and Drive scope', async (t) => {
+  const account = 'test-portal@example-project.iam.gserviceaccount.com';
+  let tokenCalls = 0;
+  t.mock.method(globalThis, 'fetch', async (input, options) => {
+    const url = new URL(input);
+    if (url.hostname === '169.254.169.254') {
+      assert.equal(decodeURIComponent(url.pathname),
+        '/computeMetadata/v1/instance/service-accounts/' + account + '/token');
+      assert.equal(url.searchParams.get('scopes'), 'https://www.googleapis.com/auth/drive');
+      assert.equal(url.searchParams.get('enforce_scopes'), 'true');
+      assert.equal(options.headers['Metadata-Flavor'], 'Google');
+      assert.equal(options.redirect, 'error');
+      tokenCalls += 1;
+      return Response.json({ access_token: 'short-lived-token', expires_in: 3600 });
+    }
+    assert.equal(url.hostname, 'www.googleapis.com');
+    assert.equal(options.headers.Authorization, 'Bearer short-lived-token');
+    return Response.json({ ids: ['synthetic-file-id'] });
+  });
+  const providers = makeProviders({ googleComputeAccount: account });
+  assert.equal(await providers.reserveFile(), 'synthetic-file-id');
+  assert.equal(await providers.reserveFile(), 'synthetic-file-id');
+  assert.equal(tokenCalls, 1);
+});
+
 test('ClamAV wire integration accepts clean files and rejects a detection', async (t) => {
   const temp = mkdtempSync(join(tmpdir(), 'ascent-scan-test-'));
   t.after(() => rmSync(temp, { recursive: true, force: true }));

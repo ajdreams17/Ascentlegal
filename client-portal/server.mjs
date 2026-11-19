@@ -20,10 +20,16 @@ if (![...staff, notificationEmail].every(validEmail) || secret.length < 32) {
   throw new Error('Configure valid email addresses and a random authentication secret of at least 32 bytes.');
 }
 
+const googleComputeAccount = process.env.PORTAL_GOOGLE_COMPUTE_ACCOUNT?.trim();
+if (googleComputeAccount && (!validEmail(googleComputeAccount) || !googleComputeAccount.endsWith('.iam.gserviceaccount.com'))) {
+  throw new Error('PORTAL_GOOGLE_COMPUTE_ACCOUNT must be a Google service account email.');
+}
+
 const config = {
   origin: url.origin, notificationEmail, staff, secret,
   trustedProxy: process.env.PORTAL_TRUSTED_PROXY,
-  googleCredentials: required('GOOGLE_APPLICATION_CREDENTIALS'),
+  googleComputeAccount,
+  googleCredentials: googleComputeAccount ? undefined : required('GOOGLE_APPLICATION_CREDENTIALS'),
   driveId: required('PORTAL_DRIVE_ID'),
   driveRoot: required('PORTAL_INTAKE_ROOT_ID'),
   emailFrom: required('PORTAL_EMAIL_FROM'),

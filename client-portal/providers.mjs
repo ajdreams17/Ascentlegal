@@ -4,35 +4,36 @@ import { createConnection } from 'node:net';
 
 const folderMime = 'application/vnd.google-apps.folder';
 const driveApi = 'https://www.googleapis.com/drive/v3';
+const driveScope = 'https://www.googleapis.com/auth/drive';
 const encode = (value) => Buffer.from(JSON.stringify(value)).toString('base64url');
 
 export function makeProviders(config) {
-  const identity = JSON.parse(readFileSync(config.googleCredentials, 'utf8'));
-  if (identity.type !== 'service_account' || !identity.client_email || !identity.private_key) {
-    throw new Error('Provide a Google service-account credential file.');
+  let requestToken;
+  if (config.googleComputeAccount) {
+    const account = encodeURIComponent(config.googleComputeAccount);
+    const endpoint = new URL('http://169.254.169.254/computeMetadata/v1/instance/service-accounts/' + account + '/token');
+    endpoint.searchParams.set('scopes', driveScope);
+    endpoint.searchParams.set('enforce_scopes', 'true');
+    requestToken = () => fetch(endpoint, {
+      headers: { 'Metadata-Flavor': 'Google' },
+      redirect: 'error',
+      signal: AbortSignal.timeout(5000),
+    });
+  } else {
+    requestToken = keyTokenRequest(config.googleCredentials);
   }
 
   let accessToken;
   let tokenExpires = 0;
   async function googleToken() {
     if (Date.now() < tokenExpires) return accessToken;
-    const now = Math.floor(Date.now() / 1000);
-    const audience = 'https://oauth2.googleapis.com/token';
-    const claims = encode({
-      iss: identity.client_email, scope: 'https://www.googleapis.com/auth/drive',
-      aud: audience, iat: now, exp: now + 3600,
-    });
-    const jwt = encode({ alg: 'RS256', typ: 'JWT' }) + '.' + claims;
-    const signature = createSign('RSA-SHA256').update(jwt).sign(identity.private_key, 'base64url');
-    const result = await fetch(audience, {
-      method: 'POST',
-      body: new URLSearchParams({
-        grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: jwt + '.' + signature,
-      }),
-      signal: AbortSignal.timeout(10000),
-    });
+    const result = await requestToken();
     if (!result.ok) throw new Error('Google token exchange failed.');
     const token = await result.json();
+    if (typeof token.access_token !== 'string' || !token.access_token ||
+        !Number.isFinite(token.expires_in) || token.expires_in <= 0) {
+      throw new Error('Google returned an invalid access token.');
+    }
     accessToken = token.access_token;
     tokenExpires = Date.now() + (token.expires_in - 60) * 1000;
     return accessToken;
@@ -124,6 +125,28 @@ export function makeProviders(config) {
   }
 
   return { validateFolder, reserveFile, saveFile, mail, scan: (content) => scanFile(config, content) };
+}
+
+function keyTokenRequest(credentialFile) {
+  const identity = JSON.parse(readFileSync(credentialFile, 'utf8'));
+  if (identity.type !== 'service_account' || !identity.client_email || !identity.private_key) {
+    throw new Error('Provide a Google service-account credential file.');
+  }
+  return () => {
+    const now = Math.floor(Date.now() / 1000);
+    const audience = 'https://oauth2.googleapis.com/token';
+    const claims = encode({ iss: identity.client_email, scope: driveScope, aud: audience, iat: now, exp: now + 3600 });
+    const jwt = encode({ alg: 'RS256', typ: 'JWT' }) + '.' + claims;
+    const signature = createSign('RSA-SHA256').update(jwt).sign(identity.private_key, 'base64url');
+    return fetch(audience, {
+      method: 'POST',
+      body: new URLSearchParams({
+        grant_type: 'urn:ietf:params:oauth:grant-type:jwt-bearer', assertion: jwt + '.' + signature,
+      }),
+      redirect: 'error',
+      signal: AbortSignal.timeout(10000),
+    });
+  };
 }
 
 // ClamAV INSTREAM. The scanner is reachable over a private network only.

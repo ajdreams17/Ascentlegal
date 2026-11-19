@@ -70,7 +70,17 @@ if ! compgen -G '/var/lib/clamav/main.c[lv]d' >/dev/null ||
   echo "ClamAV signatures are not available yet. Check: sudo journalctl -u clamav-freshclam -n 35 --no-pager" >&2
   exit 1
 fi
-systemctl restart clamav-daemon.service
+# Debian passes sockets to clamd through systemd, which takes precedence over
+# the TCP settings in clamd.conf. Keep the packaged Unix socket and add loopback.
+install -d -m 0755 /etc/systemd/system/clamav-daemon.socket.d
+cat > /etc/systemd/system/clamav-daemon.socket.d/ascent-portal.conf <<'SOCKET'
+[Socket]
+ListenStream=127.0.0.1:3310
+SOCKET
+systemctl stop clamav-daemon.service clamav-daemon.socket
+systemctl daemon-reload
+systemctl start clamav-daemon.socket
+systemctl start clamav-daemon.service
 
 /opt/ascent-node/bin/node --version
 python3 - <<'PY'

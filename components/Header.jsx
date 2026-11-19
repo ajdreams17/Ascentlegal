@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import TrackedLink from "./TrackedLink";
 
-export default function Header() {
+export default function Header({ clientPortalUrl }) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -61,7 +61,11 @@ export default function Header() {
           <Link href="/attorneys" className="px-3 py-2 hover:text-[#b86a2e]">Attorneys</Link>
           <Link href="/resources" className="px-3 py-2 hover:text-[#b86a2e]">Resources</Link>
           <span className="mx-3 h-7 w-px bg-[#0e2a47]/15" />
-          <span className="hidden xl:block text-[10px] tracking-[0.18em] text-[#0e2a47]/55">Legal built for your ascent.</span>
+          {clientPortalUrl ? (
+            <a href={clientPortalUrl} className="px-3 py-2 hover:text-[#b86a2e]">Client Portal</a>
+          ) : (
+            <span className="hidden xl:block text-[10px] tracking-[0.18em] text-[#0e2a47]/55">Legal built for your ascent.</span>
+          )}
           <TrackedLink
             href="/contact"
             eventName="contact_clicked"
@@ -114,6 +118,7 @@ export default function Header() {
               </div>
               <Link href="/attorneys" className="border-b border-[#0e2a47]/10 py-3">Attorneys</Link>
               <Link href="/resources" className="border-b border-[#0e2a47]/10 py-3">Resources</Link>
+              {clientPortalUrl && <a href={clientPortalUrl} className="border-b border-[#0e2a47]/10 py-3">Client Portal</a>}
               <TrackedLink href="/contact" eventName="contact_clicked" placement="header_mobile" className="mt-4 bg-[#b86a2e] px-4 py-3 text-center font-semibold uppercase tracking-[0.14em] text-white">Contact</TrackedLink>
             </nav>
           </div>

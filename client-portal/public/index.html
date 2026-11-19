@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Client Portal | Ascent Legal</title>
+  <link rel="stylesheet" href="/portal.css">
+  <script type="module" src="/portal.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="https://ascentlegal.io" aria-label="Ascent Legal website"><img src="/brand.png" alt="Ascent Legal" width="160" height="70"></a>
+      <button id="logout" type="button" class="secondary" hidden>Sign out</button>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="intro">
+      <p class="eyebrow">Client portal</p>
+      <h1 id="page-title" tabindex="-1">Send documents to Ascent Legal</h1>
+    </div>
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <noscript><p>Enable JavaScript to sign in and upload documents.</p></noscript>
+    <section id="signin" class="card" hidden aria-labelledby="sign-title">
+      <h2 id="sign-title">Sign in</h2>
+      <p id="email-help">Use the email address where you received your invitation. We’ll send you a one-time code.</p>
+      <form id="email-form">
+        <label for="login-email">Email address</label>
+        <input id="login-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+        <button>Send sign-in code</button>
+      </form>
+      <form id="code-form" hidden>
+        <label for="code">Eight-digit code</label>
+        <input id="code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="8" pattern="[0-9]{8}" required>
+        <div class="actions"><button>Sign in</button><button class="secondary" id="change-email" type="button">Use a different email or request a new code</button></div>
+      </form>
+    </section>
+    <section id="client" class="card" hidden aria-labelledby="upload-title">
+      <h2 id="upload-title">Upload a document</h2>
+      <p id="signed-in" class="muted"></p>
+      <form id="upload-form">
+        <label for="matters">Matter</label>
+        <select id="matters" name="matter" required></select>
+        <label for="document">Document</label>
+        <input id="document" type="file" accept=".pdf,.docx,.xlsx,.jpg,.jpeg,.png" required aria-describedby="file-help">
+        <p id="file-help" class="hint">PDF, DOCX, XLSX, JPG or PNG. Up to 20 MB per file.</p>
+        <button>Upload document</button>
+      </form>
+      <p id="upload-receipt" class="receipt" hidden></p>
+    </section>
+    <section id="staff" class="staff" hidden aria-labelledby="staff-title">
+      <h2 id="staff-title">Staff dashboard</h2>
+      <div class="staff-grid">
+        <form id="matter-form" class="card">
+          <h3>Add a matter</h3>
+          <label for="matter-label">Client-facing matter label</label>
+          <input name="label" id="matter-label" required maxlength="120">
+          <label for="folder-id">Client Uploads folder ID</label>
+          <input name="folder" id="folder-id" required maxlength="120" aria-describedby="folder-help">
+          <p class="hint" id="folder-help">Copy the ID after <code>/folders/</code> in the Google Drive URL.</p>
+          <button>Add matter</button>
+        </form>
+        <form id="invite-form" class="card">
+          <h3>Invite a client</h3>
+          <label for="invite-email">Client email address</label>
+          <input name="email" id="invite-email" type="email" maxlength="254" required>
+          <label for="invite-matter">Matter</label>
+          <select name="matter" id="invite-matter" required></select>
+          <button>Send invitation</button>
+        </form>
+      </div>
+      <section class="card"><h3>Client access</h3><ul id="grants"></ul></section>
+      <section class="card"><h3>Recent uploads</h3><ul id="receipts"></ul></section>
+    </section>
+  </main>
+  <footer>Ascent Legal A.P.L.C. <a href="https://ascentlegal.io/contact">Contact the firm</a></footer>
+</body>
+</html>

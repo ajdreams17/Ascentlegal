@@ -80,15 +80,18 @@ test('Drive verifies the intake boundary and validates resumable upload receipts
 test('Compute Engine authentication requests a short-lived token for the configured account and Drive scope', async (t) => {
   const account = 'test-portal@example-project.iam.gserviceaccount.com';
   let tokenCalls = 0;
+  let attachedAccount = account;
   t.mock.method(globalThis, 'fetch', async (input, options) => {
     const url = new URL(input);
     if (url.hostname === '169.254.169.254') {
-      assert.equal(decodeURIComponent(url.pathname),
-        '/computeMetadata/v1/instance/service-accounts/' + account + '/token');
-      assert.equal(url.searchParams.get('scopes'), 'https://www.googleapis.com/auth/drive');
-      assert.equal(url.searchParams.get('enforce_scopes'), 'true');
       assert.equal(options.headers['Metadata-Flavor'], 'Google');
       assert.equal(options.redirect, 'error');
+      if (url.pathname === '/computeMetadata/v1/instance/service-accounts/default/email') {
+        return new Response(attachedAccount);
+      }
+      assert.equal(url.pathname, '/computeMetadata/v1/instance/service-accounts/default/token');
+      assert.equal(url.searchParams.get('scopes'), 'https://www.googleapis.com/auth/drive');
+      assert.equal(url.searchParams.get('enforce_scopes'), 'true');
       tokenCalls += 1;
       return Response.json({ access_token: 'short-lived-token', expires_in: 3600 });
     }
@@ -99,6 +102,10 @@ test('Compute Engine authentication requests a short-lived token for the configu
   const providers = makeProviders({ googleComputeAccount: account });
   assert.equal(await providers.reserveFile(), 'synthetic-file-id');
   assert.equal(await providers.reserveFile(), 'synthetic-file-id');
+  assert.equal(tokenCalls, 1);
+  attachedAccount = 'wrong@example-project.iam.gserviceaccount.com';
+  await assert.rejects(makeProviders({ googleComputeAccount: account }).reserveFile(),
+    /not using the configured Google service account/);
   assert.equal(tokenCalls, 1);
 });
 

@@ -10,15 +10,22 @@ const encode = (value) => Buffer.from(JSON.stringify(value)).toString('base64url
 export function makeProviders(config) {
   let requestToken;
   if (config.googleComputeAccount) {
-    const account = encodeURIComponent(config.googleComputeAccount);
-    const endpoint = new URL('http://169.254.169.254/computeMetadata/v1/instance/service-accounts/' + account + '/token');
+    const metadata = 'http://169.254.169.254/computeMetadata/v1/instance/service-accounts/default/';
+    const endpoint = new URL('token', metadata);
     endpoint.searchParams.set('scopes', driveScope);
     endpoint.searchParams.set('enforce_scopes', 'true');
-    requestToken = () => fetch(endpoint, {
+    const readMetadata = (url) => fetch(url, {
       headers: { 'Metadata-Flavor': 'Google' },
       redirect: 'error',
       signal: AbortSignal.timeout(5000),
     });
+    requestToken = async () => {
+      const identity = await readMetadata(new URL('email', metadata));
+      if (!identity.ok || (await identity.text()).trim() !== config.googleComputeAccount) {
+        throw new Error('The VM is not using the configured Google service account.');
+      }
+      return readMetadata(endpoint);
+    };
   } else {
     requestToken = keyTokenRequest(config.googleCredentials);
   }

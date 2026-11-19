@@ -8,6 +8,14 @@ From the repository root with Node.js 24, run `node --test client-portal/*.test.
 
 ## Configure the live portal
 
+### Stage the dedicated Debian VM
+
+From the VM, check out the portal branch and run `sudo bash client-portal/deploy/stage-debian.sh` from the repository root. It installs Node.js 24, ClamAV, Caddy, and the portal's systemd unit. It copies the application to `/opt/ascent-client-portal`, keeps the scanner on the loopback interface, and leaves the portal service inactive.
+
+For this staged layout, put the runtime settings in `/etc/ascent-client-portal/portal.env` with mode `0600` and set `PORTAL_DB_PATH=/var/lib/ascent-client-portal/portal.db`. The service manager creates and protects the state directory. Configure HTTPS and the email provider before enabling the service.
+
+### Finish configuration
+
 1. Use a firm-managed Google Cloud project and enable the Drive API. Create a dedicated service account with no domain-wide delegation. In Workspace, set up a private Shared Drive for portal intake and a dedicated intake root folder within it. Give the service account the least access required to traverse the configured path and upload into the client folders. Keep the service account restricted to the portal intake area. If Workspace policy prevents granting this account access, ask the Workspace administrator for an approved service identity.
 2. Set up a firm-owned Resend account with a verified sending domain and a send-only API key. Use dedicated firm email accounts for staff sign-in and require MFA for those mailboxes.
 3. Deploy the whole repository checkout to a firm-approved Node.js 24 host so the portal can use the firm logo in `public/`. Run one server instance behind an HTTPS reverse proxy. Use a private persistent disk for SQLite with encrypted backups and a firm-defined retention schedule for receipt metadata. Point DNS for `portal.ascentlegal.io` to the approved host and configure TLS. Block access to the Node port from outside the proxy. Set the proxy's request body limit to at least 20 MiB and configure timeouts to allow scanning and upload. Set `PORTAL_TRUSTED_PROXY` to the direct proxy socket address and have the proxy overwrite `X-Real-IP` with the actual client address. Leave that variable unset when the proxy cannot establish a trustworthy client address.

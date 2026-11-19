@@ -1,0 +1,25 @@
+[Unit]
+Description=Ascent Legal client upload portal
+After=network-online.target clamav-daemon.service
+Wants=network-online.target
+Requires=clamav-daemon.service
+
+[Service]
+Type=simple
+User=ascent-portal
+Group=ascent-portal
+WorkingDirectory=/opt/ascent-client-portal
+EnvironmentFile=/etc/ascent-client-portal/portal.env
+ExecStart=/opt/ascent-node/bin/node /opt/ascent-client-portal/client-portal/server.mjs
+StateDirectory=ascent-client-portal
+StateDirectoryMode=0700
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
